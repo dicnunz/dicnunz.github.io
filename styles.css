@@ -25,6 +25,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   color: var(--ink);
@@ -53,6 +58,7 @@ img {
 .detail-card,
 .mini-card,
 .project-card {
+  min-width: 0;
   position: relative;
 }
 
@@ -97,6 +103,7 @@ h1,
 h2,
 h3,
 p {
+  overflow-wrap: break-word;
   margin-top: 0;
 }
 
@@ -294,22 +301,48 @@ h1 {
 
 @media (max-width: 720px) {
   .page-shell {
-    width: min(100% - 18px, 1180px);
-    padding-top: 12px;
+    width: 100%;
+    max-width: 1180px;
+    padding: 12px 9px 56px;
+  }
+
+  .hero {
+    gap: 18px;
   }
 
   .hero-copy,
+  .hero-panel,
   .section,
   .detail-card,
   .mini-card {
+    width: 100%;
+    max-width: calc(100vw - 18px);
     padding: 22px;
   }
 
   h1 {
-    font-size: 2.7rem;
+    max-width: 9ch;
+    font-size: 2.45rem;
   }
 
   .section-head h2 {
+    max-width: 12ch;
     font-size: 2rem;
+  }
+
+  .lede,
+  .signal-card p,
+  .project-body p,
+  .mini-card p,
+  .detail-card p,
+  .principles p {
+    max-width: 28ch;
+  }
+
+  .hero-actions a,
+  .project-links a,
+  .mini-card a {
+    max-width: 100%;
+    white-space: normal;
   }
 }

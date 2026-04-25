@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nicholas Dunzelman</title>
+    <title>Codex Relay by Nicholas Dunzelman</title>
     <meta
       name="description"
-      content="Local-first AI tools, eval harnesses, browser automation workflows, and product prototypes by Nicholas Dunzelman."
+      content="Codex Relay turns an allow-listed Telegram DM into a local Codex run on your Mac."
     />
-    <meta name="theme-color" content="#16181b" />
-    <meta property="og:title" content="Nicholas Dunzelman" />
+    <meta name="theme-color" content="#090a0b" />
+    <meta property="og:title" content="Text your Mac. Codex works." />
     <meta
       property="og:description"
-      content="Local-first AI tools, eval harnesses, browser automation workflows, and product prototypes."
+      content="A private Telegram remote for local Codex on your Mac."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dicnunz.github.io/" />
     <meta
       property="og:image"
-      content="https://dicnunz.github.io/assets/generated/portfolio-hero-collage.png"
+      content="https://dicnunz.github.io/assets/generated/codex-relay-hero.png"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,351 +29,148 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="hero">
+    <header class="topbar" aria-label="Primary">
+      <a class="brand" href="#top">Nicholas Dunzelman</a>
+      <nav>
+        <a href="https://github.com/dicnunz/codex-relay">Repo</a>
+        <a href="https://github.com/dicnunz/codex-relay#install">Install</a>
+        <a href="https://x.com/nicdunz/status/2048166756762427808">Launch</a>
+        <a href="https://github.com/dicnunz">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Codex Relay">
+        <img
+          src="./assets/generated/codex-relay-hero.png"
+          alt="Phone relaying work to a Mac"
+          class="hero-image"
+        />
+        <div class="hero-shade"></div>
         <div class="hero-copy">
-          <p class="eyebrow">Nicholas Dunzelman</p>
-          <h1>Proof-first AI tools, local by default.</h1>
+          <p class="eyebrow">Codex Relay</p>
+          <h1>Text your Mac. Codex works.</h1>
           <p class="lede">
-            I am a Computer Science student at Florida Tech with an
-            entrepreneurship minor. I build eval harnesses, browser automation
-            workflows, developer tools, and small product systems that are easy
-            to run, inspect, and judge.
+            A Telegram DM becomes a local Codex run on your Mac. The phone is
+            the remote. The Mac keeps the files, tools, sandbox, and account
+            context.
           </p>
           <div class="hero-actions">
-            <a href="https://github.com/dicnunz">GitHub</a>
-            <a href="https://www.linkedin.com/in/nicdunz/">LinkedIn</a>
-            <a href="https://github.com/dicnunz/dicnunz">Profile README</a>
-            <a href="https://dicnunz.github.io/mentor-worker-benchmark/">
-              Live Leaderboard
-            </a>
+            <a class="primary" href="https://github.com/dicnunz/codex-relay">Open repo</a>
+            <a href="https://github.com/dicnunz/codex-relay#install">Install</a>
+            <a href="https://github.com/dicnunz/codex-relay/blob/main/assets/codex-relay-demo.mp4">Watch demo</a>
           </div>
         </div>
-        <div class="hero-panel">
-          <img
-            src="./assets/generated/portfolio-hero-collage.png"
-            alt="Portfolio visual system collage"
-            class="hero-art"
-          />
+      </section>
+
+      <section class="strip" aria-label="Flow">
+        <div>
+          <span>01</span>
+          <h2>DM the bot.</h2>
+          <p>Send a task, screenshot, repo prompt, or command from Telegram.</p>
         </div>
-      </header>
+        <div>
+          <span>02</span>
+          <h2>The Mac runs it.</h2>
+          <p>A local LaunchAgent calls the Codex CLI with your configured context.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <h2>Get the receipt.</h2>
+          <p>The final answer comes back to Telegram when Codex is done.</p>
+        </div>
+      </section>
 
-      <main>
-        <section class="section">
-          <div class="section-head">
-            <p class="eyebrow">Selected Work</p>
-            <h2>Projects that show the pattern.</h2>
-          </div>
-          <div class="project-grid">
-            <article class="project-card">
-              <img
-                src="./assets/generated/codex-relay-hero.png"
-                alt="Codex Relay phone to Mac visual"
-                class="project-art"
-              />
-              <div class="project-body">
-                <p class="project-type">Mac automation / Python</p>
-                <h3>Codex Relay</h3>
-                <p>
-                  A private Telegram remote that lets an allow-listed phone DM
-                  hand work to local Codex on a Mac through a LaunchAgent.
-                </p>
-                <div class="project-links">
-                  <a href="#codex-relay">Portfolio section</a>
-                  <a href="https://github.com/dicnunz/codex-relay">Repo</a>
-                </div>
-              </div>
-            </article>
+      <section class="product">
+        <div class="product-copy">
+          <p class="eyebrow">The One Project To Judge</p>
+          <h2>Small surface. Real utility.</h2>
+          <p>
+            Codex Relay is the clearest product in the portfolio: a private
+            phone-to-Mac remote for local AI work. It is not a hosted agent
+            platform, not VNC, and not an official OpenAI or Telegram app.
+          </p>
+          <ul>
+            <li>allow-listed Telegram access</li>
+            <li>macOS LaunchAgent install flow</li>
+            <li>health, screenshot, jobs, history, and policy commands</li>
+            <li>no-token demo path and macOS CI</li>
+          </ul>
+        </div>
+        <div class="install-card" aria-label="Install commands">
+          <p class="terminal-label">install</p>
+          <pre><code>git clone https://github.com/dicnunz/codex-relay.git
+cd codex-relay
+./scripts/install.sh</code></pre>
+          <a href="https://github.com/dicnunz/codex-relay#security">Read the safety boundary</a>
+        </div>
+      </section>
 
-            <article class="project-card">
-              <img
-                src="./assets/generated/taskproof-hero.png"
-                alt="TaskProof evidence flow visual"
-                class="project-art"
-              />
-              <div class="project-body">
-                <p class="project-type">Browser proof / TypeScript</p>
-                <h3>TaskProof</h3>
-                <p>
-                  A Playwright workflow that turns browser task specs into
-                  screenshots, DOM snapshots, console/network evidence, and
-                  static proof reports.
-                </p>
-                <div class="project-links">
-                  <a href="#taskproof">Portfolio section</a>
-                  <a href="https://github.com/dicnunz/taskproof">Repo</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img
-                src="./assets/generated/boundary-atlas-hero.png"
-                alt="Boundary Atlas architecture blueprint visual"
-                class="project-art"
-              />
-              <div class="project-body">
-                <p class="project-type">Architecture analysis / TypeScript</p>
-                <h3>Boundary Atlas</h3>
-                <p>
-                  A local analyzer for TS/JS import graphs, cycles, deep
-                  imports, architecture drift, and offline report generation.
-                </p>
-                <div class="project-links">
-                  <a href="#boundary-atlas">Portfolio section</a>
-                  <a href="https://github.com/dicnunz/boundary-atlas">Repo</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img
-                src="./assets/generated/counterexample-studio-hero.png"
-                alt="Counterexample Studio shrink trace visual"
-                class="project-art"
-              />
-              <div class="project-body">
-                <p class="project-type">Testing workflow / TypeScript</p>
-                <h3>Counterexample Studio</h3>
-                <p>
-                  A property-testing workbench that makes failing inputs,
-                  shrink traces, deterministic seeds, and rerun commands easier
-                  to inspect.
-                </p>
-                <div class="project-links">
-                  <a href="#counterexample-studio">Portfolio section</a>
-                  <a href="https://github.com/dicnunz/counterexample-studio">Repo</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img
-                src="./assets/generated/pixelmelt-astral-sigil.png"
-                alt="PixelMelt generated seed source"
-                class="project-art"
-              />
-              <div class="project-body">
-                <p class="project-type">Creative coding / TypeScript</p>
-                <h3>PixelMelt</h3>
-                <p>
-                  A client-side image-to-material simulation with direct canvas
-                  interaction and exportable WebM clips.
-                </p>
-                <div class="project-links">
-                  <a href="#pixelmelt">Portfolio section</a>
-                  <a href="https://github.com/dicnunz/pixelmelt">Repo</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img
-                src="./assets/generated/mentor-worker-hero.png"
-                alt="Mentor worker benchmark visual"
-                class="project-art"
-              />
-              <div class="project-body">
-                <p class="project-type">Local LLM benchmark / Python</p>
-                <h3>Mentor-worker benchmark</h3>
-                <p>
-                  A local benchmark for testing whether mentor guidance
-                  improves worker-model performance on deterministic coding
-                  tasks, with reproducibility docs and leaderboard artifacts.
-                </p>
-                <div class="project-links">
-                  <a href="#mentor-worker-benchmark">Portfolio section</a>
-                  <a href="https://github.com/dicnunz/mentor-worker-benchmark">Repo</a>
-                  <a href="https://dicnunz.github.io/mentor-worker-benchmark/">Live</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section band">
-          <div class="section-head">
-            <p class="eyebrow">Other Public Work</p>
-            <h2>Additional product surfaces.</h2>
-          </div>
-          <div class="mini-grid">
-            <article id="signal-match" class="mini-card">
-              <h3>SignalMatch</h3>
-              <p>
-                Truth-first ATS/job-match prototype that improves application
-                positioning without inventing credentials or fake achievements.
-              </p>
-              <a href="https://github.com/dicnunz/signal-match">Open repo</a>
-            </article>
-            <article id="agent-marketplace-evals" class="mini-card">
-              <h3>Agent Marketplace Evals</h3>
-              <p>
-                Synthetic marketplace benchmark harness with deterministic
-                demo mode, bounded Codex pilot artifacts, and strict claim rules.
-              </p>
-              <a href="https://github.com/dicnunz/agent-marketplace-evals">Open repo</a>
-            </article>
-            <article id="med-explain" class="mini-card">
-              <h3>Med Explain</h3>
-              <p>
-                Local clinical-PDF explainer prototype with OCR fallback, lab
-                parsing, charts, and FHIR export.
-              </p>
-              <a href="https://github.com/dicnunz/med-explain">Open repo</a>
-            </article>
-            <article id="trolley-tracker" class="mini-card">
-              <h3>Trolley Tracker</h3>
-              <p>
-                Campus transit UI prototype for live trolley positions, stop
-                ETAs, rider alerts, and schedule fallback.
-              </p>
-              <a href="https://github.com/dicnunz/trolley-tracker">Open repo</a>
-            </article>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-head">
-            <p class="eyebrow">How To Read This</p>
-            <h2>What I am trying to prove.</h2>
-          </div>
-          <div class="principles">
+      <section class="supporting">
+        <div class="section-head">
+          <p class="eyebrow">Proof Behind It</p>
+          <h2>The rest of the work supports the same pattern.</h2>
+        </div>
+        <div class="project-grid">
+          <article>
+            <img src="./assets/generated/taskproof-hero.png" alt="TaskProof evidence visual" />
             <div>
-              <h3>AI-assisted, clearly labeled</h3>
-              <p>
-                I use AI heavily for coding and iteration. The work is presented
-                that way on purpose, with emphasis on judgment, verification,
-                and the finished artifact.
-              </p>
-            </div>
-            <div>
-              <h3>Runnability matters</h3>
-              <p>
-                The strongest projects include clear setup paths, sample
-                outputs, screenshots, tests, reports, or live pages so the work
-                can be checked quickly.
-              </p>
-            </div>
-            <div>
-              <h3>Product shape matters</h3>
-              <p>
-                I care about narrowing the idea, making the workflow obvious,
-                and turning technical experiments into something another person
-                can understand fast.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="section detail-stack">
-          <article id="codex-relay" class="detail-card">
-            <div class="detail-head">
-              <p class="eyebrow">Mac Remote</p>
-              <h2>codex-relay</h2>
-            </div>
-            <p>
-              A local Telegram-to-Codex bridge with allow-listed access,
-              LaunchAgent install flow, health checks, screenshot command,
-              job control, and a clear safety boundary.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/dicnunz/codex-relay">Repo</a>
-            </div>
-          </article>
-
-          <article id="mentor-worker-benchmark" class="detail-card">
-            <div class="detail-head">
-              <p class="eyebrow">Benchmark</p>
-              <h2>mentor-worker-benchmark</h2>
-            </div>
-            <p>
-              A local benchmark around whether mentor guidance improves a
-              worker model on objective coding tasks. The strongest parts are
-              the methodology, reproducibility docs, objective scoring, and
-              artifact trail.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/dicnunz/mentor-worker-benchmark">Repo</a>
-              <a href="https://dicnunz.github.io/mentor-worker-benchmark/">Live leaderboard</a>
-            </div>
-          </article>
-
-          <article id="taskproof" class="detail-card">
-            <div class="detail-head">
-              <p class="eyebrow">Browser Proof</p>
-              <h2>taskproof</h2>
-            </div>
-            <p>
-              A browser automation tool that turns a task spec into screenshots,
-              DOM captures, network evidence, console logs, and a shareable
-              static report.
-            </p>
-            <div class="project-links">
+              <p class="project-type">Browser proof</p>
+              <h3>TaskProof</h3>
+              <p>Browser specs into screenshots, DOM captures, console/network evidence, and static reports.</p>
               <a href="https://github.com/dicnunz/taskproof">Repo</a>
             </div>
           </article>
-
-          <article id="boundary-atlas" class="detail-card">
-            <div class="detail-head">
-              <p class="eyebrow">Static Analysis</p>
-              <h2>boundary-atlas</h2>
-            </div>
-            <p>
-              A TypeScript/JavaScript architecture analyzer that makes import
-              graphs, boundary violations, cycles, deep imports, and drift
-              easier to review.
-            </p>
-            <div class="project-links">
+          <article>
+            <img src="./assets/generated/boundary-atlas-hero.png" alt="Boundary Atlas blueprint visual" />
+            <div>
+              <p class="project-type">Architecture</p>
+              <h3>Boundary Atlas</h3>
+              <p>Import graphs, cycles, deep imports, boundary drift, and offline TypeScript/JavaScript reports.</p>
               <a href="https://github.com/dicnunz/boundary-atlas">Repo</a>
             </div>
           </article>
-
-          <article id="counterexample-studio" class="detail-card">
-            <div class="detail-head">
-              <p class="eyebrow">Testing UX</p>
-              <h2>counterexample-studio</h2>
-            </div>
-            <p>
-              A local workbench for the part of property-based testing that
-              usually feels opaque: minimal failing witnesses, shrink paths, and
-              exact rerun commands.
-            </p>
-            <div class="project-links">
+          <article>
+            <img src="./assets/generated/counterexample-studio-hero.png" alt="Counterexample Studio visual" />
+            <div>
+              <p class="project-type">Testing UX</p>
+              <h3>Counterexample Studio</h3>
+              <p>Minimal failing inputs, deterministic seeds, shrink traces, and exact rerun commands.</p>
               <a href="https://github.com/dicnunz/counterexample-studio">Repo</a>
             </div>
           </article>
-
-          <article id="pixelmelt" class="detail-card">
-            <div class="detail-head">
-              <p class="eyebrow">Creative Tool</p>
-              <h2>pixelmelt</h2>
-            </div>
-            <p>
-              A playful but real browser tool: upload an image, convert it into
-              a material field, interact with the simulation, and export a short
-              clip from the canvas.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/dicnunz/pixelmelt">Repo</a>
+          <article>
+            <img src="./assets/generated/mentor-worker-hero.png" alt="Mentor worker benchmark visual" />
+            <div>
+              <p class="project-type">Evals</p>
+              <h3>Mentor-worker benchmark</h3>
+              <p>Local benchmark artifacts for mentor-worker LLM collaboration with reproducible scoring.</p>
+              <a href="https://dicnunz.github.io/mentor-worker-benchmark/">Live</a>
             </div>
           </article>
+        </div>
+      </section>
 
-          <article id="llm-eval-harness" class="detail-card">
-            <div class="detail-head">
-              <p class="eyebrow">CLI Utility</p>
-              <h2>llm-eval-harness</h2>
-            </div>
-            <p>
-              A narrow CLI for sanity-checking a local model server, saving
-              artifacts, and keeping a small eval history while swapping
-              prompts, models, or serving stacks.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/dicnunz/llm-eval-harness">Repo</a>
-            </div>
-          </article>
-        </section>
-      </main>
-    </div>
+      <section class="principles">
+        <div>
+          <h2>AI-assisted, clearly labeled.</h2>
+          <p>The signal is judgment: choosing bounded ideas, validating behavior, and packaging the result.</p>
+        </div>
+        <div>
+          <h2>Local-first when possible.</h2>
+          <p>Repos should be easy to run on a Mac without unnecessary hosted infrastructure or paid services.</p>
+        </div>
+        <div>
+          <h2>Proof over promises.</h2>
+          <p>Screenshots, demos, tests, reports, and install commands carry more weight than broad claims.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="https://github.com/dicnunz">GitHub</a>
+      <a href="https://www.linkedin.com/in/nicdunz/">LinkedIn</a>
+      <a href="https://github.com/dicnunz/dicnunz">Profile README</a>
+    </footer>
   </body>
 </html>

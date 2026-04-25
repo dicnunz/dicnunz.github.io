@@ -18,7 +18,7 @@
     <meta property="og:url" content="https://dicnunz.github.io/" />
     <meta
       property="og:image"
-      content="https://dicnunz.github.io/assets/generated/codex-relay-hero.png"
+      content="https://dicnunz.github.io/assets/social-card.png"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,9 +33,9 @@
       <a class="brand" href="#top">Nicholas Dunzelman</a>
       <nav>
         <a href="https://github.com/dicnunz/codex-relay">Repo</a>
+        <a href="#demo">Demo</a>
         <a href="https://github.com/dicnunz/codex-relay#install">Install</a>
-        <a href="https://x.com/nicdunz/status/2048166756762427808">Launch</a>
-        <a href="https://github.com/dicnunz">GitHub</a>
+        <a href="#feedback">Feedback</a>
       </nav>
     </header>
 
@@ -58,7 +58,7 @@
           <div class="hero-actions">
             <a class="primary" href="https://github.com/dicnunz/codex-relay">Open repo</a>
             <a href="https://github.com/dicnunz/codex-relay#install">Install</a>
-            <a href="https://github.com/dicnunz/codex-relay/blob/main/assets/codex-relay-demo.mp4">Watch demo</a>
+            <a href="#demo">Watch demo</a>
           </div>
         </div>
       </section>
@@ -79,6 +79,21 @@
           <h2>Get the receipt.</h2>
           <p>The final answer comes back to Telegram when Codex is done.</p>
         </div>
+      </section>
+
+      <section id="demo" class="demo" aria-label="Demo video">
+        <div class="section-head">
+          <p class="eyebrow">Watch First</p>
+          <h2>The product in 52 seconds.</h2>
+        </div>
+        <video
+          controls
+          preload="metadata"
+          poster="./assets/codex-relay-demo-poster.png"
+          aria-label="Codex Relay demo video"
+        >
+          <source src="./assets/codex-relay-demo.mp4" type="video/mp4" />
+        </video>
       </section>
 
       <section class="product">
@@ -106,48 +121,30 @@ cd codex-relay
         </div>
       </section>
 
-      <section class="supporting">
+      <section id="feedback" class="feedback">
         <div class="section-head">
-          <p class="eyebrow">Proof Behind It</p>
-          <h2>The rest of the work supports the same pattern.</h2>
+          <p class="eyebrow">Builder Feedback</p>
+          <h2>Try it for 15 minutes.</h2>
         </div>
-        <div class="project-grid">
-          <article>
-            <img src="./assets/generated/taskproof-hero.png" alt="TaskProof evidence visual" />
-            <div>
-              <p class="project-type">Browser proof</p>
-              <h3>TaskProof</h3>
-              <p>Browser specs into screenshots, DOM captures, console/network evidence, and static reports.</p>
-              <a href="https://github.com/dicnunz/taskproof">Repo</a>
-            </div>
-          </article>
-          <article>
-            <img src="./assets/generated/boundary-atlas-hero.png" alt="Boundary Atlas blueprint visual" />
-            <div>
-              <p class="project-type">Architecture</p>
-              <h3>Boundary Atlas</h3>
-              <p>Import graphs, cycles, deep imports, boundary drift, and offline TypeScript/JavaScript reports.</p>
-              <a href="https://github.com/dicnunz/boundary-atlas">Repo</a>
-            </div>
-          </article>
-          <article>
-            <img src="./assets/generated/counterexample-studio-hero.png" alt="Counterexample Studio visual" />
-            <div>
-              <p class="project-type">Testing UX</p>
-              <h3>Counterexample Studio</h3>
-              <p>Minimal failing inputs, deterministic seeds, shrink traces, and exact rerun commands.</p>
-              <a href="https://github.com/dicnunz/counterexample-studio">Repo</a>
-            </div>
-          </article>
-          <article>
-            <img src="./assets/generated/mentor-worker-hero.png" alt="Mentor worker benchmark visual" />
-            <div>
-              <p class="project-type">Evals</p>
-              <h3>Mentor-worker benchmark</h3>
-              <p>Local benchmark artifacts for mentor-worker LLM collaboration with reproducible scoring.</p>
-              <a href="https://dicnunz.github.io/mentor-worker-benchmark/">Live</a>
-            </div>
-          </article>
+        <div class="feedback-card">
+          <p>
+            I am looking for 10 real Mac/Codex users to install Codex Relay,
+            run the first commands, try one safe local task, and report the
+            first confusing, broken, or slow part.
+          </p>
+          <a href="https://github.com/dicnunz/codex-relay/issues/new?template=install-feedback.yml">
+            Send install feedback
+          </a>
+        </div>
+      </section>
+
+      <section class="other-work" aria-label="Other work">
+        <p class="eyebrow">Other Work</p>
+        <div>
+          <a href="https://github.com/dicnunz/taskproof">TaskProof</a>
+          <a href="https://github.com/dicnunz/boundary-atlas">Boundary Atlas</a>
+          <a href="https://github.com/dicnunz/counterexample-studio">Counterexample Studio</a>
+          <a href="https://dicnunz.github.io/mentor-worker-benchmark/">Mentor-worker benchmark</a>
         </div>
       </section>
 
@@ -168,9 +165,10 @@ cd codex-relay
     </main>
 
     <footer>
+      <a href="https://github.com/dicnunz/codex-relay">Codex Relay</a>
+      <a href="https://x.com/nicdunz/status/2048166756762427808">Launch post</a>
       <a href="https://github.com/dicnunz">GitHub</a>
       <a href="https://www.linkedin.com/in/nicdunz/">LinkedIn</a>
-      <a href="https://github.com/dicnunz/dicnunz">Profile README</a>
     </footer>
   </body>
 </html>

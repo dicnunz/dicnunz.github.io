@@ -61,7 +61,6 @@ img {
 .eyebrow,
 .hero-actions,
 .terminal-label,
-.project-type,
 footer {
   font-family: "IBM Plex Mono", monospace;
 }
@@ -80,7 +79,7 @@ footer {
 }
 
 .topbar a:hover,
-.project-grid a:hover,
+.other-work a:hover,
 footer a:hover {
   color: var(--teal);
 }
@@ -158,8 +157,7 @@ h1 {
 }
 
 .hero-actions a,
-.install-card a,
-.project-grid a {
+.install-card a {
   display: inline-flex;
   align-items: center;
   min-height: 42px;
@@ -171,16 +169,17 @@ h1 {
 }
 
 .hero-actions .primary,
-.install-card a,
-.project-grid a {
+.install-card a {
   color: var(--paper-ink);
   background: var(--paper);
   border-color: transparent;
 }
 
 .strip,
+.demo,
 .product,
-.supporting,
+.feedback,
+.other-work,
 .principles,
 footer {
   width: min(1180px, calc(100% - 32px));
@@ -220,7 +219,6 @@ footer {
 
 .strip p,
 .product p,
-.project-grid p,
 .principles p {
   color: var(--ink-muted);
   line-height: 1.62;
@@ -234,9 +232,22 @@ footer {
   padding: 66px 0 48px;
 }
 
+.demo {
+  padding: 54px 0 28px;
+}
+
+.demo video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #030405;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
 .product-copy,
 .install-card,
-.project-grid article,
 .principles div {
   border-radius: 8px;
 }
@@ -322,8 +333,8 @@ code {
   line-height: 1.65;
 }
 
-.supporting {
-  padding: 60px 0 18px;
+.feedback {
+  padding: 42px 0 20px;
 }
 
 .section-head {
@@ -338,45 +349,64 @@ code {
   max-width: 14ch;
 }
 
-.project-grid {
+.feedback-card {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.project-grid article {
-  min-width: 0;
-  overflow: hidden;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  padding: clamp(24px, 4vw, 42px);
   background: var(--panel);
   border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
 }
 
-.project-grid img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  background: #101112;
+.feedback-card p {
+  max-width: 72ch;
+  margin-bottom: 0;
+  color: var(--ink-muted);
+  font-size: 1.08rem;
+  line-height: 1.6;
 }
 
-.project-grid article > div {
-  padding: 18px;
+.feedback-card a,
+.other-work a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.84rem;
+  line-height: 1.2;
 }
 
-.project-type {
-  margin-bottom: 8px;
-  color: var(--teal);
-  font-size: 0.74rem;
-  text-transform: uppercase;
+.feedback-card a {
+  color: var(--paper-ink);
+  background: var(--paper);
+  border-color: transparent;
+  white-space: nowrap;
 }
 
-.project-grid h3 {
-  margin-bottom: 10px;
-  font-size: 1.24rem;
+.other-work {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  padding: 28px 0 20px;
+  border-top: 1px solid var(--line);
 }
 
-.project-grid p {
-  min-height: 104px;
-  font-size: 0.95rem;
+.other-work .eyebrow {
+  margin: 0;
+}
+
+.other-work div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 .principles {
@@ -405,7 +435,7 @@ footer {
   .strip,
   .product,
   .section-head,
-  .project-grid,
+  .feedback-card,
   .principles {
     grid-template-columns: 1fr;
   }
@@ -419,8 +449,9 @@ footer {
     padding-top: 34px;
   }
 
-  .project-grid p {
-    min-height: auto;
+  .feedback-card a {
+    justify-content: center;
+    white-space: normal;
   }
 }
 
@@ -446,14 +477,15 @@ footer {
   }
 
   .hero-actions a,
-  .install-card a,
-  .project-grid a {
+  .install-card a {
     max-width: 100%;
   }
 
   .strip,
+  .demo,
   .product,
-  .supporting,
+  .feedback,
+  .other-work,
   .principles,
   footer {
     width: calc(100% - 18px);
@@ -461,7 +493,7 @@ footer {
 
   .strip div,
   .install-card,
-  .project-grid article > div,
+  .feedback-card,
   .principles div {
     padding: 18px;
   }
@@ -472,5 +504,14 @@ footer {
 
   .product-copy ul {
     grid-template-columns: 1fr;
+  }
+
+  .other-work {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .other-work div {
+    justify-content: flex-start;
   }
 }

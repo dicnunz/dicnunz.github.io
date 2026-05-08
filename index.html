@@ -1,150 +1,182 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Codex Relay by Nicholas Dunzelman</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex Mission Control by Nicholas Dunzelman</title>
     <meta
       name="description"
-      content="Codex Relay turns an allow-listed Telegram DM into a local Codex run on your Mac."
-    />
-    <meta name="theme-color" content="#090a0b" />
-    <meta property="og:title" content="Text your Mac. Codex works." />
+      content="Nicholas Dunzelman builds Codex Mission Control, local-first AI operator tooling, and proof-heavy developer systems."
+    >
+    <meta name="theme-color" content="#090a0b">
+    <meta property="og:title" content="Codex Mission Control by Nicholas Dunzelman">
     <meta
       property="og:description"
-      content="A private Telegram remote for local Codex on your Mac."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://dicnunz.github.io/" />
+      content="Local traffic control for multiple Codex chats on your Mac: missions, lanes, approval packets, and optional phone remote."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/">
     <meta
       property="og:image"
-      content="https://dicnunz.github.io/assets/social-card.png"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      content="https://dicnunz.github.io/assets/codex-mission-control-social-card.png"
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    >
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <header class="topbar" aria-label="Primary">
       <a class="brand" href="#top">Nicholas Dunzelman</a>
       <nav>
-        <a href="https://github.com/dicnunz/codex-relay">Repo</a>
-        <a href="#demo">Demo</a>
-        <a href="https://github.com/dicnunz/codex-relay#install">Install</a>
-        <a href="#feedback">Feedback</a>
+        <a href="#flagship">Flagship</a>
+        <a href="#proof">Proof</a>
+        <a href="#systems">Systems</a>
+        <a href="https://github.com/dicnunz">GitHub</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero" aria-label="Codex Relay">
+      <section class="hero" aria-label="Codex Mission Control">
         <img
-          src="./assets/generated/codex-relay-hero.png"
-          alt="Phone relaying work to a Mac"
+          src="./assets/codex-mission-control-hero.png"
+          alt="A dark Mac control room with mission cards, lanes, and locked shared surfaces"
           class="hero-image"
-        />
+        >
         <div class="hero-shade"></div>
         <div class="hero-copy">
-          <p class="eyebrow">Codex Relay</p>
-          <h1>Text your Mac. Codex works.</h1>
+          <p class="eyebrow">Flagship project</p>
+          <h1>Codex Mission Control.</h1>
           <p class="lede">
-            A Telegram DM becomes a local Codex run on your Mac. The phone is
-            the remote. The Mac keeps the files, tools, sandbox, and account
-            context.
+            Local traffic control for Mac-side Codex work: projects become
+            missions, shared surfaces get lanes, risky actions become exact
+            approval packets, and the phone remote stays optional.
           </p>
           <div class="hero-actions">
-            <a class="primary" href="https://github.com/dicnunz/codex-relay">Open repo</a>
-            <a href="https://github.com/dicnunz/codex-relay#install">Install</a>
-            <a href="#demo">Watch demo</a>
+            <a class="primary" href="https://github.com/dicnunz/codex-mission-control">Open flagship repo</a>
+            <a href="https://github.com/dicnunz/codex-mission-control/actions/workflows/ci.yml">CI proof</a>
+            <a href="#systems">See the system</a>
           </div>
         </div>
       </section>
 
-      <section class="strip" aria-label="Flow">
+      <section class="strip" aria-label="Codex Mission Control loop">
         <div>
           <span>01</span>
-          <h2>DM the bot.</h2>
-          <p>Send a task, screenshot, repo prompt, or command from Telegram.</p>
+          <h2>Missions.</h2>
+          <p>Projects are discovered into a local hub without moving the real folders.</p>
         </div>
         <div>
           <span>02</span>
-          <h2>The Mac runs it.</h2>
-          <p>A local LaunchAgent calls the Codex CLI with your configured context.</p>
+          <h2>Lanes.</h2>
+          <p>Browser, GitHub, email, desktop, public social, commerce, and global writes stop colliding.</p>
         </div>
         <div>
           <span>03</span>
-          <h2>Get the receipt.</h2>
-          <p>The final answer comes back to Telegram when Codex is done.</p>
+          <h2>Approval packets.</h2>
+          <p>Public, account, payment, outreach, and risky work turns into exact go/no-go packets.</p>
         </div>
       </section>
 
-      <section id="demo" class="demo" aria-label="Demo video">
-        <div class="section-head">
-          <p class="eyebrow">Watch First</p>
-          <h2>The product in 52 seconds.</h2>
-        </div>
-        <video
-          controls
-          preload="metadata"
-          poster="./assets/codex-relay-demo-poster.png"
-          aria-label="Codex Relay demo video"
-        >
-          <source src="./assets/codex-relay-demo.mp4" type="video/mp4" />
-        </video>
-      </section>
-
-      <section class="product">
+      <section id="flagship" class="product" aria-label="Current flagship">
         <div class="product-copy">
-          <p class="eyebrow">The One Project To Judge</p>
-          <h2>Small surface. Real utility.</h2>
+          <p class="eyebrow">Why this is the flagship</p>
+          <h2>It turns many AI chats into one controlled local operation.</h2>
           <p>
-            Codex Relay is the clearest product in the portfolio: a private
-            phone-to-Mac remote for local AI work. It is not a hosted agent
-            platform, not VNC, and not an official OpenAI or Telegram app.
+            Codex Mission Control is the product center because it solves the
+            real problem behind the rest of the portfolio: multiple capable
+            agents are useful only when shared surfaces, handoffs, and approval
+            gates are explicit.
           </p>
           <ul>
-            <li>allow-listed Telegram access</li>
-            <li>macOS LaunchAgent install flow</li>
-            <li>health, screenshot, jobs, history, and policy commands</li>
-            <li>no-token demo path and macOS CI</li>
+            <li>local hub at <code>~/Codex Mission Control</code></li>
+            <li>mission outboxes and dashboard</li>
+            <li>surface locks with stale-lock detection</li>
+            <li>optional Telegram relay for phone control</li>
           </ul>
         </div>
-        <div class="install-card" aria-label="Install commands">
-          <p class="terminal-label">install</p>
-          <pre><code>git clone https://github.com/dicnunz/codex-relay.git
-cd codex-relay
-./scripts/install.sh</code></pre>
-          <a href="https://github.com/dicnunz/codex-relay#security">Read the safety boundary</a>
+        <aside class="install-card" aria-label="Codex Mission Control commands">
+          <p class="terminal-label">first run</p>
+          <pre><code>git clone https://github.com/dicnunz/codex-mission-control.git
+cd codex-mission-control
+./scripts/install.sh
+cmc status
+cmc lanes
+cmc packet
+cmc dashboard</code></pre>
+          <a href="https://github.com/dicnunz/codex-mission-control/blob/main/docs/FIRST_10_BUILDERS.md">First-builder feedback</a>
+        </aside>
+      </section>
+
+      <section id="proof" class="proof-wall" aria-label="Proof surfaces">
+        <div class="section-head">
+          <p class="eyebrow">Receipts</p>
+          <h2>Proof surfaces are part of the product.</h2>
+        </div>
+        <div class="proof-grid">
+          <figure>
+            <img src="./assets/codex-mission-control-dashboard.png" alt="Codex Mission Control dashboard instrument visual">
+            <figcaption>Private local dashboard for missions, lanes, Relay health, and copyable commands.</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/codex-mission-control-lane-lock.png" alt="Lane lock visual for shared browser, repo, email, and desktop surfaces">
+            <figcaption>Lane locks make shared browser, GitHub, email, desktop, public, and commerce surfaces visible.</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/codex-mission-control-approval-packet.png" alt="Approval packet visual for risky public actions">
+            <figcaption>Approval packets preserve exact action, target, proof, risk, reason, and stop condition.</figcaption>
+          </figure>
         </div>
       </section>
 
-      <section id="feedback" class="feedback">
+      <section id="systems" class="demo" aria-label="Systems">
         <div class="section-head">
-          <p class="eyebrow">Builder Feedback</p>
-          <h2>Try it for 15 minutes.</h2>
+          <p class="eyebrow">Supporting systems</p>
+          <h2>One operator stack, several sharp tools.</h2>
         </div>
-        <div class="feedback-card">
-          <p>
-            I am looking for 10 real Mac/Codex users to install Codex Relay,
-            run the first commands, try one safe local task, and report the
-            first confusing, broken, or slow part.
-          </p>
-          <a href="https://github.com/dicnunz/codex-relay/issues/new?template=install-feedback.yml">
-            Send install feedback
+        <div class="project-grid">
+          <a href="https://github.com/dicnunz/clawdeck">
+            <span>Clawdeck</span>
+            <p>Local-model mode for OpenClaw/Codex workspaces, with Ollama defaults, smoke tests, and explicit cloud/local boundaries.</p>
+          </a>
+          <a href="https://github.com/dicnunz/taskproof">
+            <span>TaskProof</span>
+            <p>Browser task specs into screenshots, DOM, console/network evidence, rerun scripts, and static proof reports.</p>
+          </a>
+          <a href="https://github.com/dicnunz/boundary-atlas">
+            <span>Boundary Atlas</span>
+            <p>Local architecture radar for TS/JS imports, cycles, deep imports, boundaries, dead exports, and drift.</p>
+          </a>
+          <a href="https://github.com/dicnunz/counterexample-studio">
+            <span>Counterexample Studio</span>
+            <p>Property-test failures with deterministic seeds, minimal witnesses, shrink traces, and exact rerun commands.</p>
+          </a>
+          <a href="https://dicnunz.github.io/mentor-worker-benchmark/">
+            <span>Mentor-worker benchmark</span>
+            <p>Local benchmark for mentor/worker LLM collaboration on deterministic Python repair tasks scored by pytest.</p>
+          </a>
+          <a href="https://github.com/dicnunz/CHATTY-Revival">
+            <span>CHATTY Revival</span>
+            <p>Public transparency experiment with explicit no-wallet, no-spend, no-fake-engagement, and no-investment-claim rules.</p>
           </a>
         </div>
       </section>
 
-      <section class="other-work" aria-label="Other work">
-        <p class="eyebrow">Other Work</p>
-        <div>
-          <a href="https://github.com/dicnunz/taskproof">TaskProof</a>
-          <a href="https://github.com/dicnunz/boundary-atlas">Boundary Atlas</a>
-          <a href="https://github.com/dicnunz/counterexample-studio">Counterexample Studio</a>
-          <a href="https://dicnunz.github.io/mentor-worker-benchmark/">Mentor-worker benchmark</a>
+      <section class="feedback" aria-label="Builder profile">
+        <div class="section-head">
+          <p class="eyebrow">Builder profile</p>
+          <h2>Local-first, evidence-first, AI-assisted.</h2>
+        </div>
+        <div class="feedback-card">
+          <p>
+            I am a Florida Tech CS student building tools that make AI work
+            more operationally honest: bounded scope, visible state, explicit
+            controls, runnable demos, and proof artifacts people can inspect.
+          </p>
+          <a href="https://github.com/dicnunz/dicnunz">Profile README</a>
         </div>
       </section>
 
@@ -155,20 +187,20 @@ cd codex-relay
         </div>
         <div>
           <h2>Local-first when possible.</h2>
-          <p>Repos should be easy to run on a Mac without unnecessary hosted infrastructure or paid services.</p>
+          <p>Repos should run on a Mac without unnecessary hosted infrastructure, paid services, or hidden accounts.</p>
         </div>
         <div>
           <h2>Proof over promises.</h2>
-          <p>Screenshots, demos, tests, reports, and install commands carry more weight than broad claims.</p>
+          <p>Screenshots, demos, tests, reports, audits, and install commands carry more weight than broad claims.</p>
         </div>
       </section>
     </main>
 
     <footer>
-      <a href="https://github.com/dicnunz/codex-relay">Codex Relay</a>
-      <a href="https://x.com/nicdunz/status/2048166756762427808">Launch post</a>
+      <a href="https://github.com/dicnunz/codex-mission-control">Codex Mission Control</a>
       <a href="https://github.com/dicnunz">GitHub</a>
       <a href="https://www.linkedin.com/in/nicdunz/">LinkedIn</a>
+      <a href="https://x.com/nicdunz">X</a>
     </footer>
   </body>
 </html>

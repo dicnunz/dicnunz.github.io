@@ -179,6 +179,7 @@ h1 {
 .demo,
 .product,
 .feedback,
+.proof-wall,
 .other-work,
 .principles,
 footer {
@@ -233,6 +234,10 @@ footer {
 }
 
 .demo {
+  padding: 54px 0 28px;
+}
+
+.proof-wall {
   padding: 54px 0 28px;
 }
 
@@ -370,7 +375,8 @@ code {
 }
 
 .feedback-card a,
-.other-work a {
+.other-work a,
+.project-grid a {
   display: inline-flex;
   align-items: center;
   min-height: 42px;
@@ -387,6 +393,68 @@ code {
   background: var(--paper);
   border-color: transparent;
   white-space: nowrap;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.project-grid a {
+  min-height: 186px;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.project-grid span {
+  color: var(--teal);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.86rem;
+}
+
+.project-grid p {
+  margin: 18px 0 0;
+  color: var(--ink-muted);
+  line-height: 1.52;
+}
+
+.project-grid a:hover {
+  border-color: rgba(112, 216, 204, 0.5);
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.proof-grid figure {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.proof-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.proof-grid figcaption {
+  padding: 16px;
+  color: var(--ink-muted);
+  font-size: 0.96rem;
+  line-height: 1.5;
 }
 
 .other-work {
@@ -436,6 +504,8 @@ footer {
   .product,
   .section-head,
   .feedback-card,
+  .project-grid,
+  .proof-grid,
   .principles {
     grid-template-columns: 1fr;
   }
@@ -452,6 +522,10 @@ footer {
   .feedback-card a {
     justify-content: center;
     white-space: normal;
+  }
+
+  .project-grid a {
+    min-height: auto;
   }
 }
 
@@ -484,8 +558,9 @@ footer {
   .strip,
   .demo,
   .product,
-  .feedback,
-  .other-work,
+    .feedback,
+    .proof-wall,
+    .other-work,
   .principles,
   footer {
     width: calc(100% - 18px);

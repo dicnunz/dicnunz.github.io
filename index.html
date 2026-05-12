@@ -3,72 +3,260 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nicholas Dunzelman</title>
+    <title>Nicholas Dunzelman | Proof-first AI operator tools</title>
     <meta
       name="description"
-      content="Nicholas Dunzelman builds local tools that make Codex/browser work inspectable."
+      content="Nicholas Dunzelman builds proof-first AI operator tools, local-first developer systems, and inspectable portfolio projects."
     >
-    <meta name="theme-color" content="#f6f2e9">
-    <meta property="og:title" content="Nicholas Dunzelman">
+    <meta name="theme-color" content="#090a0b">
+    <meta property="og:title" content="Nicholas Dunzelman | Proof-first AI operator tools">
     <meta
       property="og:description"
-      content="Local tools for Codex, browser evidence, and inspectable agent work."
+      content="A portfolio of local-first AI operator systems, runnable developer tools, and proof-heavy project surfaces."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dicnunz.github.io/">
-    <meta property="og:image" content="https://dicnunz.github.io/assets/social-card.png">
+    <meta
+      property="og:image"
+      content="https://dicnunz.github.io/assets/social-card.png"
+    >
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <meta property="og:image:alt" content="Nicholas Dunzelman portfolio social card">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nicholas Dunzelman | Proof-first AI operator tools">
+    <meta
+      name="twitter:description"
+      content="A portfolio of local-first AI operator systems, runnable developer tools, and proof-heavy project surfaces."
+    >
+    <meta name="twitter:image" content="https://dicnunz.github.io/assets/social-card.png">
+    <meta name="twitter:image:alt" content="Nicholas Dunzelman portfolio social card">
+    <link rel="canonical" href="https://dicnunz.github.io/">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    >
     <link rel="stylesheet" href="./styles.css">
+    <script src="./site.js" defer></script>
   </head>
   <body>
-    <header class="rail topbar">
-      <a class="brand" href="#top">Nicholas Dunzelman</a>
-      <nav aria-label="Primary links">
-        <a href="https://x.com/nicdunz">X</a>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar" aria-label="Site header">
+      <a class="brand" href="#top">Nic Dunzelman</a>
+      <nav aria-label="Primary navigation" data-section-nav>
+        <a href="#work">Work</a>
+        <a href="#proof">Proof</a>
+        <a href="#contact">Contact</a>
         <a href="https://github.com/dicnunz">GitHub</a>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="rail intro" aria-label="Introduction">
-        <p class="meta">Florida Tech CS</p>
-        <h1>Nicholas Dunzelman</h1>
-        <p class="claim">I build local tools that make Codex/browser work inspectable.</p>
+    <main id="top" tabindex="-1">
+      <section class="hero portfolio-hero" aria-labelledby="intro-title">
+        <img
+          src="./assets/codex-mission-control-hero.png"
+          alt="A dark Mac control room showing AI work lanes, mission cards, and proof surfaces"
+          class="hero-image"
+        >
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Personal portfolio</p>
+          <h1 id="intro-title">AI tools.<br>Proof.</h1>
+          <p class="lede">
+            Nicholas Dunzelman is a Florida Tech CS student building local-first
+            systems for agent workflows, browser evidence, architecture drift,
+            and AI-assisted software work. The common thread is simple:
+            runnable projects, explicit boundaries, and proof people can inspect.
+          </p>
+          <div class="hero-actions">
+            <a class="primary" href="#work">Work</a>
+            <a href="#flagship">Flagship</a>
+            <a href="#proof">Proof</a>
+            <a href="#contact">Contact</a>
+            <a href="https://github.com/dicnunz">GitHub</a>
+          </div>
+        </div>
       </section>
 
-      <section class="rail work" aria-label="Selected work">
-        <h2>Selected work</h2>
-        <ol>
-          <li>
-            <a href="https://github.com/dicnunz/codex-mission-control">Codex Mission Control</a>
-            <span>Mac-side mission state and lane locks for parallel Codex runs.</span>
-          </li>
-          <li>
-            <a href="https://github.com/dicnunz/taskproof">TaskProof</a>
-            <span>Browser flows captured as screenshots, logs, and rerun reports.</span>
-          </li>
-          <li>
-            <a href="https://github.com/dicnunz/agentproof">AgentProof</a>
-            <span>Proof packets for AI-built apps and public PRs.</span>
-          </li>
-        </ol>
+      <section class="strip portfolio-focus" aria-label="Portfolio focus" data-reveal>
+        <div>
+          <span>01</span>
+          <h2>Agent operations.</h2>
+          <p>Tools for coordinating many AI work threads without hiding state or crossing surfaces blindly.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <h2>Developer evidence.</h2>
+          <p>Specs, screenshots, DOM traces, tests, and reports that make browser and repo work reviewable.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <h2>Local-first systems.</h2>
+          <p>Small Mac-runnable projects with clear setup paths, explicit limits, and no hidden service dependency by default.</p>
+        </div>
       </section>
 
-      <section class="artifact" aria-label="Mission Control screenshot">
-        <figure>
-          <img
-            src="./assets/codex-mission-control-dashboard.png"
-            alt="Codex Mission Control dashboard showing mission state, lane locks, and command status"
-          >
-          <figcaption>Mission Control dashboard: local state, lane locks, commands, packet status.</figcaption>
-        </figure>
+      <section id="flagship" class="product flagship-project" aria-labelledby="flagship-title" data-reveal>
+        <div class="product-copy">
+          <p class="eyebrow">Flagship project</p>
+          <h2 id="flagship-title">Codex Mission Control turns many AI chats into one local operation.</h2>
+          <p>
+            The site keeps Codex Mission Control upfront because it is the best
+            snapshot of the broader portfolio: local operator tooling, visible
+            shared surfaces, exact handoffs, and proof-oriented workflows for
+            AI-assisted work on a Mac.
+          </p>
+          <ul>
+            <li>local hub at <code>~/Codex Mission Control</code></li>
+            <li>mission outboxes and dashboard views</li>
+            <li>surface locks with stale-lock detection</li>
+            <li>optional Telegram relay for phone control</li>
+          </ul>
+        </div>
+        <aside class="install-card" aria-label="Try Codex Mission Control locally">
+          <p class="terminal-label">local install</p>
+          <pre id="install-commands"><code>git clone https://github.com/dicnunz/codex-mission-control.git
+cd codex-mission-control
+./scripts/install.sh
+cmc status
+cmc lanes
+cmc packet
+cmc dashboard</code></pre>
+          <div class="install-actions">
+            <a href="https://github.com/dicnunz/codex-mission-control">Open the repo</a>
+            <button class="copy-button" type="button" data-copy data-copy-target="#install-commands code">
+              Copy commands
+            </button>
+          </div>
+        </aside>
+      </section>
+
+      <section id="proof" class="proof-wall portfolio-proof" aria-labelledby="proof-title" data-reveal>
+        <div class="section-head">
+          <p class="eyebrow">Proof</p>
+          <h2 id="proof-title">Evidence is part of the interface.</h2>
+        </div>
+        <div class="proof-grid">
+          <figure>
+            <img src="./assets/codex-mission-control-dashboard.png" alt="Codex Mission Control dashboard showing local missions and lane state">
+            <figcaption>Codex Mission Control keeps missions, lanes, relay health, and copyable commands visible.</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/taskproof-report.png" alt="TaskProof report with browser evidence and captured verification details">
+            <figcaption>TaskProof packages browser-task evidence into screenshots, DOM context, logs, and rerun paths.</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/boundary-atlas-home.png" alt="Boundary Atlas project screen showing architecture analysis output">
+            <figcaption>Boundary Atlas turns import drift, cycles, and architecture boundaries into inspectable reports.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="work" class="demo selected-work" aria-labelledby="work-title" data-reveal>
+        <div class="section-head">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="work-title">Small tools with concrete jobs.</h2>
+        </div>
+        <div class="project-grid">
+          <a href="https://github.com/dicnunz/codex-mission-control">
+            <span>Codex Mission Control</span>
+            <p>Mac-side traffic control for many Codex chats, with missions, lanes, packets, dashboards, and optional phone relay.</p>
+          </a>
+          <a href="https://nicdunz.gumroad.com/l/agent-operator-starter-bundle">
+            <span>Agent Operator Starter Bundle</span>
+            <p>Self-serve browser-agent lane boards, public-action gates, proof ledgers, and handoff templates for people running agents near real surfaces.</p>
+          </a>
+          <a href="https://github.com/dicnunz/clawdeck">
+            <span>Clawdeck</span>
+            <p>Local-model mode for OpenClaw/Codex workspaces, with Ollama defaults, smoke tests, and explicit cloud/local boundaries.</p>
+          </a>
+          <a href="https://github.com/dicnunz/taskproof">
+            <span>TaskProof</span>
+            <p>Browser task specs into screenshots, DOM, console/network evidence, rerun scripts, and static proof reports.</p>
+          </a>
+          <a href="https://github.com/dicnunz/agentproof">
+            <span>AgentProof</span>
+            <p>Proof packets for AI-built apps and public PRs, with the claim, evidence, and rerun trail kept together.</p>
+          </a>
+          <a href="https://github.com/dicnunz/boundary-atlas">
+            <span>Boundary Atlas</span>
+            <p>Local architecture radar for TS/JS imports, cycles, deep imports, boundaries, dead exports, and drift.</p>
+          </a>
+          <a href="https://github.com/dicnunz/counterexample-studio">
+            <span>Counterexample Studio</span>
+            <p>Property-test failures with deterministic seeds, minimal witnesses, shrink traces, and exact rerun commands.</p>
+          </a>
+          <a href="https://dicnunz.github.io/mentor-worker-benchmark/">
+            <span>Mentor-worker benchmark</span>
+            <p>Local benchmark for mentor/worker LLM collaboration on deterministic Python repair tasks scored by pytest.</p>
+          </a>
+          <a href="https://github.com/dicnunz/CHATTY-Revival">
+            <span>CHATTY Revival</span>
+            <p>Public transparency experiment with explicit no-wallet, no-spend, no-fake-engagement, and no-investment-claim rules.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="feedback builder-profile" aria-labelledby="profile-title" data-reveal>
+        <div class="section-head">
+          <p class="eyebrow">Builder profile</p>
+          <h2 id="profile-title">Local-first, evidence-first, AI-assisted.</h2>
+        </div>
+        <div class="feedback-card">
+          <p>
+            I am a Florida Tech CS student building tools that make AI work
+            more operationally honest: bounded scope, visible state, explicit
+            controls, runnable demos, and proof artifacts people can inspect.
+          </p>
+          <a href="https://github.com/dicnunz/dicnunz">Profile README</a>
+        </div>
+      </section>
+
+      <section class="principles working-principles" aria-label="Working principles" data-reveal>
+        <div>
+          <h2>AI-assisted, clearly labeled.</h2>
+          <p>The signal is judgment: choosing bounded ideas, validating behavior, and packaging the result.</p>
+        </div>
+        <div>
+          <h2>Local-first when possible.</h2>
+          <p>Repos should run on a Mac without unnecessary hosted infrastructure, paid services, or hidden accounts.</p>
+        </div>
+        <div>
+          <h2>Proof over promises.</h2>
+          <p>Screenshots, demos, tests, reports, audits, and install commands carry more weight than broad claims.</p>
+        </div>
+      </section>
+
+      <section id="contact" class="feedback contact-section" aria-labelledby="contact-title" data-reveal>
+        <div class="section-head">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Contact paths.</h2>
+        </div>
+        <div class="feedback-card contact-card">
+          <p>
+            For code, start with GitHub. For internship, collaboration, or feedback
+            threads, LinkedIn and X are the cleanest public contact paths.
+          </p>
+          <div class="contact-actions" role="group" aria-label="Contact links">
+            <a href="https://github.com/dicnunz">GitHub</a>
+            <a href="https://www.linkedin.com/in/nicdunz/">LinkedIn</a>
+            <a href="https://x.com/nicdunz">X</a>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer class="rail footer">
-      <span>Nicholas Dunzelman</span>
-      <a href="https://x.com/nicdunz">@nicdunz</a>
-      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+    <footer aria-label="Footer links">
+      <a href="https://github.com/dicnunz/codex-mission-control">Codex Mission Control</a>
+      <a href="https://dicnunz.github.io/codex-operator-sprint/">Operator Sprint</a>
+      <a href="https://nicdunz.gumroad.com/l/agent-operator-starter-bundle">Starter bundle</a>
+      <a href="https://nicdunz.gumroad.com/l/smrimu">Support receipt</a>
+      <a href="https://github.com/dicnunz">GitHub</a>
+      <a href="https://www.linkedin.com/in/nicdunz/">LinkedIn</a>
+      <a href="https://x.com/nicdunz">X</a>
     </footer>
   </body>
 </html>

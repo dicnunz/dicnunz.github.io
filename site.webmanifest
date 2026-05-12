@@ -1,0 +1,11 @@
+{
+  "name": "Nicholas Dunzelman | Proof-first AI operator tools",
+  "short_name": "Nicholas Dunzelman",
+  "description": "Nicholas Dunzelman builds proof-first AI operator tools, local-first developer systems, and inspectable portfolio projects.",
+  "id": "https://dicnunz.github.io/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#090a0b",
+  "theme_color": "#090a0b"
+}

@@ -6,13 +6,13 @@
     <title>Nicholas Dunzelman</title>
     <meta
       name="description"
-      content="Nicholas Dunzelman builds local-first tools for Codex, browser automation, and inspectable AI-agent work."
+      content="Nicholas Dunzelman builds local tools that make Codex/browser work inspectable."
     >
-    <meta name="theme-color" content="#f7f5ee">
+    <meta name="theme-color" content="#f6f2e9">
     <meta property="og:title" content="Nicholas Dunzelman">
     <meta
       property="og:description"
-      content="Local-first Codex tools, browser evidence reports, and inspectable agent work."
+      content="Local tools for Codex, browser evidence, and inspectable agent work."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dicnunz.github.io/">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <header class="topbar">
+    <header class="rail topbar">
       <a class="brand" href="#top">Nicholas Dunzelman</a>
       <nav aria-label="Primary links">
         <a href="https://x.com/nicdunz">X</a>
@@ -30,52 +30,42 @@
     </header>
 
     <main id="top">
-      <section class="hero" aria-label="Introduction">
-        <p class="kicker">Florida Tech CS</p>
-        <h1>I make AI agents show their work.</h1>
-        <p class="lede">
-          Local-first tools for Codex and browser automation: screenshots,
-          logs, reruns, lane state, and reports.
-        </p>
-        <div class="links" aria-label="Primary actions">
-          <a class="primary" href="https://github.com/dicnunz/codex-mission-control">Mission Control</a>
-          <a href="https://github.com/dicnunz/taskproof">TaskProof</a>
-          <a href="https://github.com/dicnunz/agentproof">AgentProof</a>
-        </div>
+      <section class="rail intro" aria-label="Introduction">
+        <p class="meta">Florida Tech CS</p>
+        <h1>Nicholas Dunzelman</h1>
+        <p class="claim">I build local tools that make Codex/browser work inspectable.</p>
       </section>
 
-      <section class="selected" aria-label="Selected work">
-        <a href="https://github.com/dicnunz/codex-mission-control">
-          <span>01</span>
-          <strong>Codex Mission Control</strong>
-          <p>Traffic control for many Codex chats running on one Mac.</p>
-        </a>
-        <a href="https://github.com/dicnunz/taskproof">
-          <span>02</span>
-          <strong>TaskProof</strong>
-          <p>Browser tasks turned into screenshots, logs, and rerun reports.</p>
-        </a>
-        <a href="https://github.com/dicnunz/agentproof">
-          <span>03</span>
-          <strong>AgentProof</strong>
-          <p>Proof packets for AI-built apps and public PRs.</p>
-        </a>
+      <section class="rail work" aria-label="Selected work">
+        <h2>Selected work</h2>
+        <ol>
+          <li>
+            <a href="https://github.com/dicnunz/codex-mission-control">Codex Mission Control</a>
+            <span>Mac-side mission state and lane locks for parallel Codex runs.</span>
+          </li>
+          <li>
+            <a href="https://github.com/dicnunz/taskproof">TaskProof</a>
+            <span>Browser flows captured as screenshots, logs, and rerun reports.</span>
+          </li>
+          <li>
+            <a href="https://github.com/dicnunz/agentproof">AgentProof</a>
+            <span>Proof packets for AI-built apps and public PRs.</span>
+          </li>
+        </ol>
       </section>
 
-      <section class="proof" aria-label="Proof screenshot">
+      <section class="artifact" aria-label="Mission Control screenshot">
         <figure>
           <img
             src="./assets/codex-mission-control-dashboard.png"
-            alt="Codex Mission Control dashboard showing mission and lane status"
+            alt="Codex Mission Control dashboard showing mission state, lane locks, and command status"
           >
-          <figcaption>
-            Local mission state, lane locks, commands, and proof packets.
-          </figcaption>
+          <figcaption>Mission Control dashboard: local state, lane locks, commands, packet status.</figcaption>
         </figure>
       </section>
     </main>
 
-    <footer>
+    <footer class="rail footer">
       <span>Nicholas Dunzelman</span>
       <a href="https://x.com/nicdunz">@nicdunz</a>
       <a href="https://github.com/dicnunz">github.com/dicnunz</a>

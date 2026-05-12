@@ -6,13 +6,13 @@
     <title>Nicholas Dunzelman</title>
     <meta
       name="description"
-      content="Nicholas Dunzelman is a Florida Tech CS student building local-first AI operator systems, proof-heavy developer tools, and public Codex experiments."
+      content="Nicholas Dunzelman builds local-first tools for Codex, browser automation, and inspectable AI-agent work."
     >
-    <meta name="theme-color" content="#0d0f0d">
+    <meta name="theme-color" content="#f7f5ee">
     <meta property="og:title" content="Nicholas Dunzelman">
     <meta
       property="og:description"
-      content="A public operating record for Nic's Codex, agent tooling, proof systems, browser experiments, and AI-native projects."
+      content="Local-first Codex tools, browser evidence reports, and inspectable agent work."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dicnunz.github.io/">
@@ -21,194 +21,64 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <canvas id="fieldCanvas" class="field-canvas" aria-hidden="true"></canvas>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="topbar" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Nicholas Dunzelman home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Nicholas Dunzelman</span>
-      </a>
-      <nav aria-label="Site sections">
-        <a href="#now">Now</a>
-        <a href="#map">Map</a>
-        <a href="#proof">Proof</a>
-        <a href="#routes">Links</a>
+    <header class="topbar">
+      <a class="brand" href="#top">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="https://x.com/nicdunz">X</a>
+        <a href="https://github.com/dicnunz">GitHub</a>
       </nav>
     </header>
 
-    <main id="main">
-      <section id="top" class="hero" aria-label="Nicholas Dunzelman">
-        <div class="hero-copy">
-          <p class="eyebrow">Local AI operator / builder / CS student</p>
-          <h1><span>Nicholas</span><span>Dunzelman</span></h1>
-          <p class="lede">
-            I build the surfaces around AI agents: local command centers, browser
-            proof tools, eval harnesses, small public experiments, and weird
-            software that is useful before it becomes polished.
-          </p>
-          <div class="hero-actions" aria-label="Primary links">
-            <a class="primary-link" href="https://x.com/nicdunz">X: @nicdunz</a>
-            <a href="https://github.com/dicnunz">GitHub: dicnunz</a>
-            <a href="#map">Open the work map</a>
-          </div>
-        </div>
-
-        <aside class="identity-panel" aria-label="Public profile snapshot">
-          <div class="portrait-row">
-            <img
-              src="https://avatars.githubusercontent.com/u/139033898?v=4"
-              alt="Nicholas Dunzelman's GitHub profile avatar"
-              width="112"
-              height="112"
-            >
-            <div>
-              <span class="status-dot"></span>
-              <p>Public snapshot, May 12 2026</p>
-              <strong>11.7K X followers</strong>
-            </div>
-          </div>
-          <dl class="signal-list">
-            <div>
-              <dt>Active public lane</dt>
-              <dd>Codex, GPT-5.5, browser agents, agent reliability</dd>
-            </div>
-            <div>
-              <dt>Daily workbench</dt>
-              <dd>Codex, Chrome, ChatGPT, GitHub, Notion, Canvas, local files</dd>
-            </div>
-            <div>
-              <dt>Best first read</dt>
-              <dd>Proof systems, not generic portfolio claims</dd>
-            </div>
-          </dl>
-        </aside>
-      </section>
-
-      <section id="now" class="now-section" aria-labelledby="now-title">
-        <div class="section-head compact">
-          <p class="eyebrow">Live intake</p>
-          <h2 id="now-title">The public version of what the Mac is pointing at.</h2>
-        </div>
-        <div class="now-grid">
-          <article>
-            <span>01</span>
-            <h3>Agent control room</h3>
-            <p>
-              Local workflows revolve around Codex, Chrome, ChatGPT, GitHub,
-              project folders, and proof artifacts instead of one isolated app.
-            </p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Current research pressure</h3>
-            <p>
-              Open tabs and local artifacts show AI research, cancer hypothesis
-              writing, internship routing, X feedback, and offer triage.
-            </p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Public center of gravity</h3>
-            <p>
-              The best work is inspectable: repos, demos, reports, screenshots,
-              command-line tools, and runnable static sites.
-            </p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Toolchain taste</h3>
-            <p>
-              The local app stack is practical: Codex, Chrome, Cursor, VS Code,
-              Xcode, Docker, Postman, Ollama, LM Studio, Notion, and Telegram.
-            </p>
-          </article>
+    <main id="top">
+      <section class="hero" aria-label="Introduction">
+        <p class="kicker">Florida Tech CS</p>
+        <h1>I make AI agents show their work.</h1>
+        <p class="lede">
+          Local-first tools for Codex and browser automation: screenshots,
+          logs, reruns, lane state, and reports.
+        </p>
+        <div class="links" aria-label="Primary actions">
+          <a class="primary" href="https://github.com/dicnunz/codex-mission-control">Mission Control</a>
+          <a href="https://github.com/dicnunz/taskproof">TaskProof</a>
+          <a href="https://github.com/dicnunz/agentproof">AgentProof</a>
         </div>
       </section>
 
-      <section id="map" class="map-section" aria-labelledby="map-title">
-        <div class="map-header">
-          <div>
-            <p class="eyebrow">Operating map</p>
-            <h2 id="map-title">Projects arranged by what they prove.</h2>
-          </div>
-          <div class="filter-group" role="group" aria-label="Project filters">
-            <button class="active" type="button" data-filter="all">All</button>
-            <button type="button" data-filter="operator">Operator</button>
-            <button type="button" data-filter="proof">Proof</button>
-            <button type="button" data-filter="eval">Eval</button>
-            <button type="button" data-filter="experiment">Experiment</button>
-          </div>
-        </div>
-
-        <div class="map-layout">
-          <div class="map-frame">
-            <canvas id="workMap" width="980" height="560" aria-label="Interactive project map"></canvas>
-          </div>
-          <aside id="mapDetail" class="detail-panel" aria-live="polite"></aside>
-        </div>
+      <section class="selected" aria-label="Selected work">
+        <a href="https://github.com/dicnunz/codex-mission-control">
+          <span>01</span>
+          <strong>Codex Mission Control</strong>
+          <p>Traffic control for many Codex chats running on one Mac.</p>
+        </a>
+        <a href="https://github.com/dicnunz/taskproof">
+          <span>02</span>
+          <strong>TaskProof</strong>
+          <p>Browser tasks turned into screenshots, logs, and rerun reports.</p>
+        </a>
+        <a href="https://github.com/dicnunz/agentproof">
+          <span>03</span>
+          <strong>AgentProof</strong>
+          <p>Proof packets for AI-built apps and public PRs.</p>
+        </a>
       </section>
 
-      <section id="proof" class="proof-section" aria-labelledby="proof-title">
-        <div class="section-head">
-          <p class="eyebrow">Receipts</p>
-          <h2 id="proof-title">Real surfaces, not a vibes wall.</h2>
-        </div>
-        <div class="proof-wall">
-          <a href="https://github.com/dicnunz/codex-mission-control">
-            <img src="./assets/codex-mission-control-dashboard.png" alt="Codex Mission Control dashboard">
-            <span>Codex Mission Control</span>
-          </a>
-          <a href="https://github.com/dicnunz/taskproof">
-            <img src="./assets/taskproof-report.png" alt="TaskProof browser evidence report">
-            <span>TaskProof</span>
-          </a>
-          <a href="https://github.com/dicnunz/boundary-atlas">
-            <img src="./assets/boundary-atlas-home.png" alt="Boundary Atlas architecture report">
-            <span>Boundary Atlas</span>
-          </a>
-          <a href="https://github.com/dicnunz/counterexample-studio">
-            <img src="./assets/counterexample-studio-workbench.png" alt="Counterexample Studio workbench">
-            <span>Counterexample Studio</span>
-          </a>
-        </div>
-      </section>
-
-      <section id="routes" class="routes-section" aria-labelledby="routes-title">
-        <div class="section-head compact">
-          <p class="eyebrow">Open the right door</p>
-          <h2 id="routes-title">The site changes shape depending on why you came.</h2>
-        </div>
-        <div class="route-tabs" role="tablist" aria-label="Visitor routes">
-          <button class="active" type="button" data-route="x">From X</button>
-          <button type="button" data-route="builder">Builder</button>
-          <button type="button" data-route="recruiter">Recruiter</button>
-          <button type="button" data-route="research">Research</button>
-        </div>
-        <div id="routePanel" class="route-panel" aria-live="polite"></div>
-      </section>
-
-      <section class="index-section" aria-labelledby="index-title">
-        <div class="index-copy">
-          <p class="eyebrow">Searchable index</p>
-          <h2 id="index-title">Everything important, compressed.</h2>
-        </div>
-        <div class="search-box">
-          <label for="signalSearch">Search projects, tools, and themes</label>
-          <input id="signalSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Try codex, proof, eval, browser, game, local">
-          <div id="searchResults" class="search-results" aria-live="polite"></div>
-        </div>
+      <section class="proof" aria-label="Proof screenshot">
+        <figure>
+          <img
+            src="./assets/codex-mission-control-dashboard.png"
+            alt="Codex Mission Control dashboard showing mission and lane status"
+          >
+          <figcaption>
+            Local mission state, lane locks, commands, and proof packets.
+          </figcaption>
+        </figure>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer>
       <span>Nicholas Dunzelman</span>
-      <a href="https://x.com/nicdunz">X</a>
-      <a href="https://github.com/dicnunz">GitHub</a>
-      <a href="https://dicnunz.github.io/devday-glassbox/">Glassbox</a>
-      <a href="https://dicnunz.github.io/codex-commons/">Codex Commons</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
     </footer>
-
-    <script src="./main.js" defer></script>
   </body>
 </html>

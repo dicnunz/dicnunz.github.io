@@ -255,7 +255,6 @@ for (const file of htmlFiles) {
     ['meta name="viewport"', metaContent(tags, "name", "viewport")],
     ['meta property="og:title"', metaContent(tags, "property", "og:title")],
     ['meta property="og:description"', metaContent(tags, "property", "og:description")],
-    ['meta property="og:image"', metaContent(tags, "property", "og:image")],
   ];
 
   for (const [label, content] of seoRequirements) {

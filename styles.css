@@ -1,12 +1,12 @@
 :root {
-  --bg: #f6f2e9;
+  --bg: #f7f8f4;
   --ink: #15120e;
   --muted: #6f675d;
-  --line: #d9d0c2;
-  --line-strong: #b8ad9d;
+  --line: #d5d9ce;
+  --line-strong: #a9b4a2;
   --accent: #315f4c;
   --accent-soft: #e6ede7;
-  --panel: #fffaf0;
+  --panel: #ffffff;
   --max: 820px;
 }
 
@@ -197,18 +197,30 @@ h2 {
 }
 
 .project-list p,
-.note-list p {
+.note-list p,
+.summer-copy p,
+.signal-list {
   color: var(--muted);
 }
 
 .project-list p,
-.note-list p {
+.note-list p,
+.summer-copy p,
+.signal-list {
   margin-bottom: 0;
 }
 
-.note-list {
+.note-list,
+.summer-copy {
   display: grid;
   gap: 12px;
+}
+
+.signal-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 2px;
+  padding-left: 1.1rem;
 }
 
 .link-row a {

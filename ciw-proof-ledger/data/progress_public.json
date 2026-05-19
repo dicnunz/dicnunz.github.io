@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T03:39:10Z",
+  "updated_at": "2026-05-19T03:51:38Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -402,6 +402,26 @@
         "pages-run:26074679474-success"
       ],
       "next": []
+    },
+    {
+      "id": "ai-coding-deployment-sample-run",
+      "title": "AI Coding Deployment Sample Run",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Filled public-safe deployment run showing the field kit applied to a real proof-publication task with scope card, receipt, failure taxonomy, decision table, and product feedback.",
+      "evidence": [
+        "applications/openai/AI_CODING_DEPLOYMENT_SAMPLE_RUN.md",
+        "https://dicnunz.github.io/ai-coding-deployment-sample-run/",
+        "local path withheld",
+        "commit:480fdf1",
+        "cleanroom-run:26075041640-success",
+        "commit:e244935",
+        "pages-run:26075063258-success"
+      ],
+      "next": [
+        "Keep this linked as the example when the field kit is challenged as template-only."
+      ]
     }
   ],
   "edges": [
@@ -932,6 +952,66 @@
       "to": "ai-coding-deployment-field-kit",
       "relation": "mirrors-source",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "ai-coding-deployment-sample-run",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "target-role-ai-deployment-engineer-codex",
+      "to": "ai-coding-deployment-sample-run",
+      "relation": "targets",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-field-kit",
+      "to": "ai-coding-deployment-sample-run",
+      "relation": "applied-by",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-sample-run",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-sample-run",
+      "to": "openai-30-day-field-trial-plan",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-sample-run",
+      "to": "openai-interview-conversion-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-sample-run",
+      "to": "openai-review-window-packet",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-deployment-sample-run",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "ai-coding-deployment-sample-run",
+      "relation": "mirrors-source",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-deployment-sample-run",
+      "to": "public-proof-ledger-inspector",
+      "relation": "recorded-by",
+      "weight": 4
     }
   ],
   "views": {
@@ -946,6 +1026,7 @@
       "openai-application-receipt",
       "openai-review-window-packet",
       "ai-coding-deployment-field-kit",
+      "ai-coding-deployment-sample-run",
       "openai-30-day-field-trial-plan",
       "openai-interview-conversion-packet",
       "warm-referral-route"

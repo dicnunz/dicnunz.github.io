@@ -240,5 +240,16 @@
     "source_hash": "62d7b0f867dc81b028b30d0ce3613145a677c9b1b7c4dd0825957e2ec5875de0",
     "prev_hash": "1a2148ebcd50b038de5a42e63ad438c0f4eae2385f8dfbf4ae7c819f9922a693",
     "hash": "ff281b3ab6844b7b096af58048c73e59058564b51ff3d8cbd77c73bfcc4909d6"
+  },
+  {
+    "index": 22,
+    "timestamp": "2026-05-19T03:51:56+00:00",
+    "actor": "codex",
+    "action": "published AI coding deployment sample run",
+    "details": "Created applications/openai/AI_CODING_DEPLOYMENT_SAMPLE_RUN.md, published https://dicnunz.github.io/ai-coding-deployment-sample-run/ at Pages commit e244935 with Pages run 26075063258 success, added cleanroom source doc docs/ai-coding-deployment-sample-run.md at commit 480fdf1 with GitHub Actions run 26075041640 success, linked the sample from the proof brief, field kit, and 30-day plan, and added graph node ai-coding-deployment-sample-run.",
+    "visibility": "public projection",
+    "source_hash": "c8e41577daab1748faf0339ec491118e122f69ca59a3293250dc0dc6eae610e8",
+    "prev_hash": "ff281b3ab6844b7b096af58048c73e59058564b51ff3d8cbd77c73bfcc4909d6",
+    "hash": "8ec621f6fe938e03282d86de608e526eb4d0ed11c34321c8ab3e2dc15b41ef9c"
   }
 ]

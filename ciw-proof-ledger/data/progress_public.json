@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T13:03:42Z",
+  "updated_at": "2026-05-19T13:10:26Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -980,12 +980,14 @@
       "type": "outcome-watch",
       "status": "watch",
       "priority": "P0",
-      "summary": "Read-only Gmail outcome check found application receipt only on 2026-05-19; no verified offer, interview loop, collaboration path, recruiter-owned next step, or equivalent OpenAI-side traction. Watch expires on 2026-05-26.",
+      "summary": "Fresh read-only Gmail outcome check on 2026-05-19T13:09:30Z still found application receipt only; no verified offer, interview loop, collaboration path, recruiter-owned next step, human-owned reply, or equivalent OpenAI-side traction. Watch expires on 2026-05-26.",
       "evidence": [
         "ops/openai_outcome_watch.json",
         "ops/OPENAI_OUTCOME_WATCH.md",
         "read-only-private receipt reference withheld-receipt-only",
-        "read-only-outcome-refresh:2026-05-19T11:56:39Z"
+        "read-only-outcome-refresh:2026-05-19T11:56:39Z",
+        "read-only-outcome-refresh:2026-05-19T13:09:30Z",
+        "read-only-private receipt reference withheld-application-receipt-only"
       ],
       "next": [
         "Refresh again on 2026-05-26, immediately if a real OpenAI recruiter/hiring-manager/referral reply appears, and keep the active goal incomplete until OpenAI-side outcome evidence exists."

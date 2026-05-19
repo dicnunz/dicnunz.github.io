@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T02:24:46Z",
+  "updated_at": "2026-05-19T02:34:27Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -279,6 +279,22 @@
       "next": [
         "Use as the product-depth proof link when a recruiter or referral contact needs more than the brief."
       ]
+    },
+    {
+      "id": "openai-review-window-packet",
+      "title": "OpenAI review-window packet",
+      "type": "hiring-route",
+      "status": "done",
+      "priority": "P0",
+      "summary": "No-spam recruiter/referral packet for the post-submission review window, refreshed against official OpenAI role pages, Gmail state, and the new Proof Ledger inspector.",
+      "evidence": [
+        "applications/openai/OPENAI_REVIEW_WINDOW_PACKET.md",
+        "https://openai.com/careers/ai-deployment-engineer-codex-remote-us/",
+        "https://openai.com/interview-guide/"
+      ],
+      "next": [
+        "Use after a recruiter reply, Cory reply, explicit Nic direction, or the 2026-05-26 no-reply gate."
+      ]
     }
   ],
   "edges": [
@@ -497,6 +513,36 @@
       "to": "public-proof-ledger-inspector",
       "relation": "produces",
       "weight": 5
+    },
+    {
+      "from": "application-submit",
+      "to": "openai-review-window-packet",
+      "relation": "enables",
+      "weight": 5
+    },
+    {
+      "from": "openai-application-receipt",
+      "to": "openai-review-window-packet",
+      "relation": "clocks",
+      "weight": 5
+    },
+    {
+      "from": "public-proof-ledger-inspector",
+      "to": "openai-review-window-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "openai-review-window-packet",
+      "to": "warm-referral-route",
+      "relation": "gates",
+      "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "openai-review-window-packet",
+      "relation": "contains",
+      "weight": 5
     }
   ],
   "views": {
@@ -507,6 +553,7 @@
       "public-openai-codex-proof-brief",
       "application-submit",
       "openai-application-receipt",
+      "openai-review-window-packet",
       "warm-referral-route"
     ],
     "next_branches": [

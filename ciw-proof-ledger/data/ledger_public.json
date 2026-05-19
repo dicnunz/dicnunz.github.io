@@ -141,5 +141,16 @@
     "source_hash": "58a58e4be7328540d300010f5ac2cf8c6a60a76442c7a208534f4c4cc3934e9e",
     "prev_hash": "5962570299b0134cf8658e1a2a571888e4e5115de2f5f86d8639240fbfdfd0b2",
     "hash": "7780684bdcb1c972a1d64d2fcc3115a50156c21cc544fa0b7d789cb768bf3169"
+  },
+  {
+    "index": 13,
+    "timestamp": "2026-05-19T02:34:57+00:00",
+    "actor": "Codex",
+    "action": "created OpenAI review-window packet",
+    "details": "Built applications/openai/OPENAI_REVIEW_WINDOW_PACKET.md after refreshing official OpenAI role pages and Gmail state; updated warm-route copy with the Proof Ledger inspector and 2026-05-26 no-reply gate.",
+    "visibility": "public projection",
+    "source_hash": "fa1724408d898b45e6788548b32f06765c3115156080221ea14e425cb7070403",
+    "prev_hash": "7780684bdcb1c972a1d64d2fcc3115a50156c21cc544fa0b7d789cb768bf3169",
+    "hash": "06700423cfd0310776aa2501b858de48c0ccd31484ce15629882e0f704fe1529"
   }
 ]

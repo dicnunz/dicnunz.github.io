@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Security Review Packet</title>
+    <meta
+      name="description"
+      content="A public-safe Cleanroom Intelligence Works security review packet for AI coding deployment proof: data boundaries, secrets, permissions, approvals, receipts, rollback, and security communication."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Security Review Packet">
+    <meta
+      property="og:description"
+      content="Seven pre-deployment security checks turn an enterprise proof gap into an executable packet without customer rollout or affiliation claims."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-security-review-packet/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-security-review-packet/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .security-hero h1 {
+        max-width: min(910px, 100%);
+        font-size: clamp(2.35rem, 6vw, 4.8rem);
+        text-wrap: balance;
+      }
+
+      .security-hero .claim {
+        max-width: min(780px, 100%);
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile,
+      .review-list li,
+      .gate-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        padding: 14px;
+      }
+
+      .score-tile strong,
+      .review-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.42rem;
+        font-weight: 760;
+      }
+
+      .review-list,
+      .gate-list,
+      .command-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .review-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .review-list b {
+        display: block;
+        margin: 7px 0;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .review-list span,
+      .gate-list span,
+      .command-list,
+      .boundary-note {
+        color: var(--muted);
+      }
+
+      .review-list small {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 760;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .gate-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .command-list {
+        padding-left: 18px;
+        list-style: disc;
+      }
+
+      .command-list code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      nav,
+      .topbar,
+      .security-hero,
+      .security-hero .claim,
+      .review-list li > span {
+        min-width: 0;
+      }
+
+      nav {
+        max-width: 100%;
+      }
+
+      nav a,
+      .security-hero .claim,
+      .review-list span,
+      .gate-list span {
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 760px) {
+        .topbar,
+        .intro,
+        .section,
+        .footer {
+          width: calc(100vw - 32px);
+          max-width: calc(100vw - 32px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+          padding: 12px 0;
+        }
+
+        nav {
+          justify-content: flex-start;
+          gap: 12px;
+        }
+
+        nav a {
+          font-size: 0.95rem;
+        }
+
+        .security-hero h1 {
+          max-width: 12ch;
+          font-size: clamp(2.04rem, 9vw, 2.85rem);
+          line-height: 1;
+        }
+
+        .security-hero .claim {
+          width: 100%;
+          font-size: 1rem;
+        }
+
+        .score-strip,
+        .review-list,
+        .gate-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../openai-codex-route-index/">Route index</a>
+        <a href="../ciw-proof-ledger/?view=graph&node=ai-coding-security-review-packet">Graph node</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/security_review_packet.json">Fixture</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro security-hero" aria-labelledby="intro-title">
+        <p class="meta">Security review cadence · checked May 19, 2026</p>
+        <h1 id="intro-title">Before deployment proof, name the security boundary.</h1>
+        <p class="claim">
+          This public-safe packet turns the enterprise-readiness gap into seven executable checks: data boundary,
+          secrets and credentials, tool permissions, human approval, audit receipts, rollback containment, and security communication.
+          It is a proof-review fixture, not a customer rollout or legal clearance.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="score-title">
+        <div class="section-label">
+          <p class="meta">Result</p>
+          <h2 id="score-title">Current fixture</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Items</strong>
+            <span>7/7</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average</strong>
+            <span>4.7/5</span>
+          </div>
+          <div class="score-tile">
+            <strong>Blocked</strong>
+            <span>0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="review-title">
+        <div class="section-label">
+          <p class="meta">Review</p>
+          <h2 id="review-title">Seven areas</h2>
+        </div>
+        <ol class="review-list">
+          <li>
+            <span><strong>data_boundary</strong><b>What can enter the run?</b>Public-safe fixture text, public proof links, and verifier commands only.</span>
+            <span>Control: excluded data classes and a privacy scanner before publication. <small>Score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>secrets_credentials</strong><b>What must never ship?</b>Tokens, cookies, billing paths, inbox identifiers, credentials, and local paths.</span>
+            <span>Control: verifier scans plus public URL and relative-path evidence only. <small>Score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>tool_permissions</strong><b>Which actions stay forbidden?</b>Irreversible account, legal, money, compensation, or external-contact actions need separate human approval.</span>
+            <span>Control: scope card and public-pack verifier before promotion. <small>Score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>human_approval</strong><b>Where does autonomy stop?</b>Any send, signature, account change, legal claim, or money move remains outside this packet.</span>
+            <span>Control: no-send rules, date gate, source checks, and claim boundaries. <small>Score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>audit_receipts</strong><b>What proves the run later?</b>Commands, changed files, verifier output, decision state, limits, and promotion rules.</span>
+            <span>Control: structured receipt renderer with ready, repair, and reject states. <small>Score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>rollback_containment</strong><b>What if the run is unsafe?</b>Repair or reject state must name the failed verifier, next owner, and containment action.</span>
+            <span>Control: repair fixture and handoff path before public leverage. <small>Score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>security_comms</strong><b>How are limits explained?</b>Source-backed boundaries, no customer rollout, no affiliation, and no legal-clearance claim.</span>
+            <span>Control: source-to-answer index and public claim scanner. <small>Score 5/5</small></span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Release</p>
+          <h2 id="gates-title">Promotion gates</h2>
+        </div>
+        <ul class="gate-list">
+          <li>
+            <strong>Public-safe data</strong>
+            <span>Every item points to repository docs, fixtures, commands, or public URLs.</span>
+          </li>
+          <li>
+            <strong>No external action</strong>
+            <span>The packet can review and block proof; it cannot send, schedule, sign, approve, or contact anyone.</span>
+          </li>
+          <li>
+            <strong>Claim boundary</strong>
+            <span>No employment, endorsement, funding, revenue, legal entity, customer rollout, or target-company status claim.</span>
+          </li>
+          <li>
+            <strong>Enterprise gap addressed</strong>
+            <span>Seven named areas cover the minimum security-review shape before proof promotion.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="commands-title">
+        <div class="section-label">
+          <p class="meta">Executable</p>
+          <h2 id="commands-title">Verifier commands</h2>
+        </div>
+        <ul class="command-list">
+          <li><code>python3 tools/deployment_receipt.py validate-security-review --input examples/security_review_packet.json</code></li>
+          <li><code>python3 tools/deployment_receipt.py security-review --input examples/security_review_packet.json</code></li>
+          <li><code>python3 scripts/verify_public_pack.py</code></li>
+          <li><code>python3 -m unittest tests/test_deployment_receipt.py</code></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="sources-title">
+        <div class="section-label">
+          <p class="meta">Source</p>
+          <h2 id="sources-title">Inspect the implementation</h2>
+        </div>
+        <ul class="command-list">
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/7a14d86">Cleanroom commit 7a14d86</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/actions/runs/26094909944">Cleanroom CI run 26094909944</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/security_review_packet.json">Security review fixture</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-security-review-packet.md">Security review docs</a></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">What this does not claim</h2>
+        </div>
+        <p class="boundary-note">
+          This packet is a public-safe engineering review fixture. It does not claim legal review, customer deployment,
+          affiliation, employment, endorsement, authorization, revenue, funding, incorporation, or production security approval.
+          The no-outbound gate remains active until May 26, 2026 unless current reply evidence or a fresh explicit override changes the route.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom source</a>
+    </footer>
+  </body>
+</html>

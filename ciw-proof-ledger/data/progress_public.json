@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T11:26:00Z",
+  "updated_at": "2026-05-19T11:46:24Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -143,7 +143,9 @@
         "commit:d395dbb5353cb72feb382c2f4896e99274be27ed",
         "workflow:26073649280 success",
         "docs/ai-coding-deployment-workshop.md",
-        "docs/ai-coding-deployment-patterns.md"
+        "docs/ai-coding-deployment-patterns.md",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/7a14d86",
+        "cleanroom-run:26094909944-success"
       ],
       "next": [
         "Keep the repo and verifier green if the proof packet is updated."
@@ -1037,6 +1039,23 @@
       ],
       "next": [
         "Use set-next for corrections that replace a node next-step list; never rely on append-only graph edits or shell-substituted command text for metadata."
+      ]
+    },
+    {
+      "id": "ai-coding-security-review-packet",
+      "title": "AI coding security review packet",
+      "type": "role-fit-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Executable security review packet covers data boundaries, secrets, tool permissions, human approval, audit receipts, rollback containment, and security communication before proof promotion, without claiming customer rollout or target-company approval.",
+      "evidence": [
+        "applications/openai/AI_CODING_SECURITY_REVIEW_PACKET.md",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-security-review-packet.md",
+        "https://dicnunz.github.io/ai-coding-security-review-packet/",
+        "cleanroom-run:26094909944-success"
+      ],
+      "next": [
+        "Keep the validator, public page, digest, and no-outbound boundary green; do not treat this as legal review, customer proof, or target-company approval."
       ]
     }
   ],
@@ -2456,6 +2475,48 @@
       "to": "public-proof-ledger-inspector",
       "relation": "protects_projection",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "ai-coding-security-review-packet",
+      "relation": "contains",
+      "weight": 4
+    },
+    {
+      "from": "deployment-assessment-drill",
+      "to": "ai-coding-security-review-packet",
+      "relation": "exposes-enterprise-gap",
+      "weight": 4
+    },
+    {
+      "from": "proof-route-regression-suite",
+      "to": "ai-coding-security-review-packet",
+      "relation": "hardens",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-security-review-packet",
+      "to": "target-role-ai-deployment-engineer-codex",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-security-review-packet",
+      "to": "openai-reviewer-digest",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-security-review-packet",
+      "to": "post-gate-reply-review",
+      "relation": "gates",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-security-review-packet",
+      "to": "ciw-autonomous-operating-system",
+      "relation": "hardens",
+      "weight": 4
     }
   ],
   "views": {
@@ -2498,6 +2559,7 @@
       "proof-route-staleness-sentinel",
       "proof-route-renewal-drill",
       "proof-route-regression-suite",
+      "ai-coding-security-review-packet",
       "post-gate-reply-review",
       "warm-referral-route"
     ],

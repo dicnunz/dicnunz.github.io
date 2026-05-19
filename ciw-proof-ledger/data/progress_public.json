@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T18:01:41Z",
+  "updated_at": "2026-05-19T18:21:29Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1386,6 +1386,25 @@
       ],
       "next": [
         "Regenerate public inspector data before role-review and audit renders after any ledger or graph change."
+      ]
+    },
+    {
+      "id": "external-review-issue-receiver",
+      "title": "External review issue receiver",
+      "type": "proof-gate",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Inbound-only GitHub issue receiver that lets a future reviewer submit classified public-safe feedback after opening the route, tracing at least one claim through the source-to-answer index, and separating proof-lab launch from legal or commercial company launch. It does not send outreach, raise the score by itself, or create target-company outcome evidence.",
+      "evidence": [
+        "https://github.com/dicnunz/cleanroom-intelligence-works/issues/new?template=external-review.yml",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/.github/ISSUE_TEMPLATE/external-review.yml",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/external-review-intake.md",
+        "demo/external-review-intake/index.html",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/0bdbc76",
+        "cleanroom-run:26116639534-success"
+      ],
+      "next": [
+        "Use only after a real external note exists; classify the source before any score change, outcome claim, reply, or leverage move."
       ]
     }
   ],
@@ -3363,6 +3382,42 @@
       "to": "public-openai-codex-route-index",
       "relation": "guards",
       "weight": 4
+    },
+    {
+      "from": "external-reviewer-intake-route",
+      "to": "external-review-issue-receiver",
+      "relation": "publishes_receiver",
+      "weight": 5
+    },
+    {
+      "from": "source-to-answer-index",
+      "to": "external-review-issue-receiver",
+      "relation": "anchors_source_recovery",
+      "weight": 4
+    },
+    {
+      "from": "company-launch-readiness-matrix",
+      "to": "external-review-issue-receiver",
+      "relation": "guards_launch_boundary",
+      "weight": 4
+    },
+    {
+      "from": "review-route-shape-audit",
+      "to": "external-review-issue-receiver",
+      "relation": "requires_receiver",
+      "weight": 4
+    },
+    {
+      "from": "external-review-issue-receiver",
+      "to": "classified-reviewer-record-projection",
+      "relation": "feeds_classified_records",
+      "weight": 5
+    },
+    {
+      "from": "external-review-issue-receiver",
+      "to": "review-route-shape-audit",
+      "relation": "verified_by",
+      "weight": 4
     }
   ],
   "views": {
@@ -3409,6 +3464,7 @@
       "cookbook-style-codex-example",
       "external-reviewer-validation-harness",
       "external-reviewer-intake-route",
+      "external-review-issue-receiver",
       "classified-reviewer-record-projection",
       "reviewer-proof-count-sync",
       "post-gate-reply-review"

@@ -73,7 +73,7 @@
         <div class="section-label"><p class="meta">Checks</p><h2>What changed</h2></div>
         <table class="audit-table"><tbody><tr class="audit-row status-pass">
           <th scope="row"><span>pass</span><strong>Role review stays the first decision surface</strong></th>
-          <td>3 decision links, 728 words</td>
+          <td>3 decision links, 730 words</td>
           <td>The entrypoint stops being a short decision surface.</td>
         </tr><tr class="audit-row status-pass">
           <th scope="row"><span>pass</span><strong>Scorecard is rows, not card spam</strong></th>
@@ -101,15 +101,15 @@
           <td>The route claims validation before non-Nic feedback exists.</td>
         </tr><tr class="audit-row status-pass">
           <th scope="row"><span>pass</span><strong>External review intake is operational, not only a protocol</strong></th>
-          <td>status=ready_for_external_reviewer; records=0; fields=present</td>
-          <td>The route has a protocol but no public-safe blank reviewer record intake.</td>
+          <td>status=ready_for_external_reviewer; records=0; fields=present; receiver=present</td>
+          <td>The route has a protocol but no source-recovery path, launch boundary, or passive issue receiver.</td>
         </tr><tr class="audit-row status-pass">
           <th scope="row"><span>pass</span><strong>Classified external-review record projection is empty and explicit</strong></th>
           <td>record_count=0; records=0</td>
           <td>The route cannot prove whether external reviewer records exist.</td>
         </tr><tr class="audit-row status-pass">
           <th scope="row"><span>pass</span><strong>Role-review counts mirror ledger summary</strong></th>
-          <td>records=95; graph_nodes=81</td>
+          <td>records=96; graph_nodes=82</td>
           <td>The role-review entrypoint hardcodes stale receipt or graph counts.</td>
         </tr></tbody></table>
       </section>

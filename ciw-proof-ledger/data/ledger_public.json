@@ -1043,5 +1043,16 @@
     "source_hash": "2a7b60463470d1127e210661044b4c906e1f19ff6d4428b9eee6498fc1d78495",
     "prev_hash": "634685e330347f1dc0996796a2c5316ffbc36d676c44bc3a6360d5fc348ab8d8",
     "hash": "c4d21bf4674ad411e2edab99126333b7d6e9dbf0d703d4014705072a7caee9cf"
+  },
+  {
+    "index": 95,
+    "timestamp": "2026-05-19T18:21:36+00:00",
+    "actor": "Codex",
+    "action": "built external review issue receiver",
+    "details": "{\"boundary\":\"inbound receiver only; zero external records; no outbound, score lift, target-company outcome, affiliation, legal company, customer, revenue, or employment claim\",\"cleanroom_commit\":\"0bdbc76\",\"cleanroom_run\":\"26116639534-success\",\"files\":[\"local path withheld\",\"local path withheld\",\"ops/external_review_intake.json\",\"demo/external-review-intake/index.html\"],\"graph_node\":\"external-review-issue-receiver\",\"issue_form\":\"https://github.com/dicnunz/cleanroom-intelligence-works/issues/new?template=external-review.yml\"}",
+    "visibility": "public projection",
+    "source_hash": "d59dd13c554e23d430855d4ad02b6156d8ba999d87d2f23a5e984d3680bbf589",
+    "prev_hash": "c4d21bf4674ad411e2edab99126333b7d6e9dbf0d703d4014705072a7caee9cf",
+    "hash": "9a709e8bb73695aaa5f680815460b461837a14ab4db07ab6668d26aad66f2319"
   }
 ]

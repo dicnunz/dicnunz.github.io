@@ -1021,5 +1021,16 @@
     "source_hash": "a7df2d535d3946011e6b6e38270b79e2aaf1e257cddc66d7d84d346e19c9f9ad",
     "prev_hash": "e3d286b7c7dd19d44f0d34d4b2836a56e205580465297c40709fcc408af1cc2c",
     "hash": "d931ac33e77f6d3632fd73ec47884b827dba2954e80cef97176dca57d260b8ae"
+  },
+  {
+    "index": 93,
+    "timestamp": "2026-05-19T17:41:52+00:00",
+    "actor": "Codex",
+    "action": "rebuilt public CIW site into decision-route surface",
+    "details": "{\"changed\":[\"root CIW decision desk\",\"role-review three-link desk\",\"grouped brutal scorecard\",\"six-decision route index\",\"review-route audit page\"],\"proof\":[\"python3 -m unittest discover -s tests\",\"python3 scripts/verify_pack.py\",\"node tools/qa-check.mjs\",\"CDP mobile overflow check innerWidth=scrollWidth=390\"],\"public_urls\":[\"https://dicnunz.github.io/\",\"https://dicnunz.github.io/ciw-role-review/\",\"https://dicnunz.github.io/ciw-brutal-scorecard/\",\"https://dicnunz.github.io/openai-codex-route-index/\",\"https://dicnunz.github.io/ciw-review-route-audit/\"]}",
+    "visibility": "public projection",
+    "source_hash": "f58b46846e16baefe3a44b3e2a9d2e201550fefab5bb07d1abfa643954e02bfd",
+    "prev_hash": "d931ac33e77f6d3632fd73ec47884b827dba2954e80cef97176dca57d260b8ae",
+    "hash": "634685e330347f1dc0996796a2c5316ffbc36d676c44bc3a6360d5fc348ab8d8"
   }
 ]

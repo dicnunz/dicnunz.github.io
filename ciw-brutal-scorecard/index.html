@@ -17,31 +17,44 @@
     <style>
       :root { --score-red: #9f2d24; --score-amber: #8b5a13; --score-green: #2f614f; }
       .score-shell { max-width: 1080px; }
-      .score-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .34fr); gap: 28px; padding-top: 58px; padding-bottom: 30px; }
-      .score-hero h1 { max-width: 780px; margin-bottom: 16px; font-size: clamp(2.4rem, 5.6vw, 4.45rem); line-height: .96; }
-      .claim { max-width: 700px; }
+      .score-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .3fr); gap: 30px; padding-top: 58px; padding-bottom: 30px; }
+      .score-hero h1 { max-width: 760px; margin-bottom: 16px; font-size: clamp(2.55rem, 6vw, 4.9rem); line-height: .94; }
+      .claim { max-width: 720px; }
       .score-panel { align-self: end; border: 1px solid var(--ink); background: #ffffff; }
       .score-panel-row { display: grid; grid-template-columns: 118px minmax(0, 1fr); gap: 14px; padding: 12px 14px; border-top: 1px solid var(--line); }
       .score-panel-row:first-child { border-top: 0; }
       .score-panel-row dt { margin: 0; color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
       .score-panel-row dd { margin: 0; color: var(--ink); font-weight: 760; }
+      .score-panel-row dd { overflow-wrap: anywhere; }
       .score-panel-row.danger dd { color: var(--score-red); }
       .score-section { max-width: 1080px; grid-template-columns: 170px minmax(0, 1fr); }
+      .ceiling-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--line); background: var(--line); }
+      .ceiling-strip div { min-height: 108px; padding: 13px; background: #ffffff; }
+      .ceiling-strip strong { display: block; margin-bottom: 7px; font-size: 1.35rem; line-height: 1; }
+      .ceiling-strip span { color: var(--muted); }
+      .score-groups { display: grid; gap: 24px; }
+      .score-group-title { display: grid; grid-template-columns: minmax(160px, .26fr) minmax(0, 1fr); gap: 18px; padding-bottom: 10px; }
+      .score-group-title strong { font-size: 1rem; }
+      .score-group-title span { color: var(--muted); }
       .score-table { display: grid; border-top: 1px solid var(--line); }
-      .score-row { display: grid; grid-template-columns: minmax(170px, .26fr) 86px minmax(0, 1fr); gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+      .score-row { display: grid; grid-template-columns: minmax(170px, .26fr) 86px minmax(0, 1fr); gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--line); }
       .score-row.blocked, .score-row.weak { border-left: 3px solid var(--score-red); padding-left: 13px; }
       .score-row.gated, .score-row.partial { border-left: 3px solid var(--score-amber); padding-left: 13px; }
       .score-row.strong { border-left: 3px solid var(--score-green); padding-left: 13px; }
       .score-name span { display: block; margin-bottom: 5px; color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
       .score-name strong { display: block; line-height: 1.18; }
       .score-value { color: var(--ink); font-size: 1.28rem; font-weight: 820; line-height: 1.1; }
-      .score-copy { display: grid; gap: 7px; color: var(--muted); }
+      .score-copy { display: grid; gap: 6px; color: var(--muted); }
       .score-copy p { margin: 0; }
       .score-copy b { color: var(--ink); }
+      .next-gates { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+      .next-gates li { padding: 11px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+      .next-gates strong { color: var(--ink); }
       .gate-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
       .gate-list li { padding: 13px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
       @media (max-width: 860px) {
-        .score-hero, .score-section, .score-row { grid-template-columns: 1fr; }
+        .score-hero, .score-section, .ceiling-strip, .score-group-title, .score-row { grid-template-columns: 1fr; }
+        .score-hero h1 { max-width: 100%; font-size: clamp(2.25rem, 10vw, 3.1rem); line-height: .98; }
         .score-row { gap: 8px; }
       }
     </style>
@@ -63,7 +76,7 @@
         <div>
           <p class="meta">Brutal scorecard · checked 2026-05-19</p>
           <h1>7.6. Do not round up.</h1>
-          <p class="claim">The current CIW stack is a serious proof machine, not a finished OpenAI outcome and not a formed company. The executive review path cuts the proof surface down to three decision links, and the external reviewer harness now makes the weakest remaining controllable gap falsifiable. The missing target-side response, no collected external review, and blocked legal/commercial launch still keep the honest overall score below 8.</p>
+          <p class="claim">Serious proof, unfinished outcome. CIW has public receipts, role fit, and verifier-backed pages; it does not have target-side traction, external reviewer proof, legal formation, customers, or revenue.</p>
         </div>
         <dl class="score-panel" aria-label="Current score state">
           <div class="score-panel-row"><dt>Overall</dt><dd>7.6/10</dd></div>
@@ -74,121 +87,128 @@
       </section>
       <section class="section score-section">
         <div class="section-label"><p class="meta">Rule</p><h2>The ceiling</h2></div>
-        <div class="note-list"><p>No fake 10. A category can reach 10 only when current proof shows the outcome itself, not intent, polish, or volume. OpenAI-side outcome evidence is a hard ceiling on the overall rating until a verified human-owned signal appears.</p><p>The stack now has public artifacts, verifier-backed pages, a role portfolio, a graph, a ledger, autonomy checks, claim boundaries, and a falsifiable external-review intake. The weak spots are not mystery: no verified OpenAI reply, no collected non-Nic reviewer evidence, no real customer deployment, no legal company, no revenue, no production users, and no permission to send before the gate.</p></div>
+        <div class="ceiling-strip">
+          <div><strong>2.0</strong><span>OpenAI-side outcome score. Application receipt is delivery only.</span></div>
+          <div><strong>0</strong><span>External reviewer records. The route has not been cold-proven.</span></div>
+          <div><strong>Blocked</strong><span>Legal/commercial company launch needs real formation rails.</span></div>
+        </div>
       </section>
       <section class="section score-section">
         <div class="section-label"><p class="meta">Rows</p><h2>What earns or blocks the score</h2></div>
-        <div class="score-table"><article class="score-row strong">
-          <div class="score-name">
-            <span>legal-nonconfusion / strong</span>
-            <strong>Legal / Non-Confusion Discipline</strong>
-          </div>
-          <div class="score-value">8.8/10</div>
-          <div class="score-copy">
-            <p>The public route has non-affiliation language, banned-claim scans, protected-mark limits, and blocked commercial claims.</p>
-            <p><b>Missing:</b> No lawyer has reviewed trademark, corporate, terms, privacy, or commercial claims.</p>
-            <p><b>Gate:</b> Independent legal review plus clean public-copy scan after any commercial naming or launch change.</p>
-          </div>
-        </article><article class="score-row strong">
-          <div class="score-name">
-            <span>public-proof-surface / strong</span>
-            <strong>Public Proof Surface</strong>
-          </div>
-          <div class="score-value">9.0/10</div>
-          <div class="score-copy">
-            <p>The Pages route now has a canonical executive review page, blunt scorecard, role portfolio, ledger, route index, system map, and external-review validation harness.</p>
-            <p><b>Missing:</b> The surface is easier to enter and easier to test, but it still lacks completed third-party reviewer use and target-company traction.</p>
-            <p><b>Gate:</b> Live cold-review proof from a real reviewer or OpenAI-owned next step, with the three-link route still passing source and claim checks.</p>
-          </div>
-        </article><article class="score-row gated">
-          <div class="score-name">
-            <span>openai-role-leverage / gated</span>
-            <strong>OpenAI Role Leverage</strong>
-          </div>
-          <div class="score-value">7.5/10</div>
-          <div class="score-copy">
-            <p>The role packet maps one primary target and adjacent Codex lanes to exact proof nodes and honest gaps, and the reviewer harness can now test whether that argument lands without a walkthrough.</p>
-            <p><b>Missing:</b> A reviewer can believe the evidence, but OpenAI has not supplied a human-owned next step.</p>
-            <p><b>Gate:</b> Verified recruiter reply, interview loop, collaboration invitation, or equivalent target-company-owned action.</p>
-          </div>
-        </article><article class="score-row blocked">
-          <div class="score-name">
-            <span>openai-side-outcome / blocked</span>
-            <strong>OpenAI-Side Outcome Evidence</strong>
-          </div>
-          <div class="score-value">2.0/10</div>
-          <div class="score-copy">
-            <p>The application receipt proves delivery only; the outcome watch found no offer, interview, collaboration path, recruiter next step, or human reply.</p>
-            <p><b>Missing:</b> There is no verified target-side traction.</p>
-            <p><b>Gate:</b> Record current public-safe evidence for an OpenAI-owned next step, then update the objective completion audit.</p>
-          </div>
-        </article><article class="score-row partial">
-          <div class="score-name">
-            <span>company-launch / partial</span>
-            <strong>Company Launch Readiness</strong>
-          </div>
-          <div class="score-value">6.7/10</div>
-          <div class="score-copy">
-            <p>The proof lab can launch as a pre-incorporation venture concept with CEO framing, public proof, and hard claim boundaries.</p>
-            <p><b>Missing:</b> It is not incorporated, not commercial, not payment-ready, not backed by customer deployment proof, and not legally reviewed.</p>
-            <p><b>Gate:</b> Separate legal/admin/payment/tax route with qualified review, terms, privacy, support, and commercial operating rails.</p>
-          </div>
-        </article><article class="score-row gated">
-          <div class="score-name">
-            <span>autonomy / gated</span>
-            <strong>Autonomy</strong>
-          </div>
-          <div class="score-value">7.8/10</div>
-          <div class="score-copy">
-            <p>The local scheduler, heartbeat, verifier suite, public URL checks, graph, ledger, and next-work packet keep the lab inspected.</p>
-            <p><b>Missing:</b> It is audit autonomy, not an independently operating business, and it cannot safely take external or commercial actions.</p>
-            <p><b>Gate:</b> More self-repair coverage plus explicit user authorization and legal rails for any external business operation.</p>
-          </div>
-        </article><article class="score-row strong">
-          <div class="score-name">
-            <span>product-substance / strong</span>
-            <strong>Product Substance</strong>
-          </div>
-          <div class="score-value">8.2/10</div>
-          <div class="score-copy">
-            <p>Receipts, field kits, security review, feedback export, Cookbook-style example, drills, scorecards, sample runs, and external-review intake show real product mechanics.</p>
-            <p><b>Missing:</b> Most deployment evidence is simulated or proof-lab generated; no real customer/user field run exists.</p>
-            <p><b>Gate:</b> Verified external field run with public-safe receipt, accepted handoff, and measured before/after adoption signal.</p>
-          </div>
-        </article><article class="score-row strong">
-          <div class="score-name">
-            <span>reviewer-path / strong</span>
-            <strong>Cold Reviewer Path</strong>
-          </div>
-          <div class="score-value">8.9/10</div>
-          <div class="score-copy">
-            <p>The canonical role-review route lands the truth, role fit, and receipts in one screen and three links, and the reviewer validation harness defines the exact pass/fail record for a cold reviewer.</p>
-            <p><b>Missing:</b> It is structurally frictionless and testable, but not yet proven by an actual external reviewer or OpenAI-owned interaction.</p>
-            <p><b>Gate:</b> A real reviewer, recruiter, or collaborator uses the route and produces public-safe evidence that it was sufficient.</p>
-          </div>
-        </article><article class="score-row strong">
-          <div class="score-name">
-            <span>originality-taste / strong</span>
-            <strong>Originality / Taste</strong>
-          </div>
-          <div class="score-value">8.6/10</div>
-          <div class="score-copy">
-            <p>The benchmark scan, scale engine, role portfolio, and external-review harness push against generic AI-startup shape with mechanism and gates.</p>
-            <p><b>Missing:</b> Generated surfaces can still get repetitive when many proof nodes are rendered into one digest.</p>
-            <p><b>Gate:</b> Keep strict originality checks on every public-facing page and rewrite any generated digest that falls below threshold.</p>
-          </div>
-        </article><article class="score-row strong">
-          <div class="score-name">
-            <span>visual-system-map / strong</span>
-            <strong>Visual / System Map</strong>
-          </div>
-          <div class="score-value">8.4/10</div>
-          <div class="score-copy">
-            <p>The executive review path now sits above the full map, while the system map, graph, and reviewer harness keep the underlying machine visible, editable, and testable.</p>
-            <p><b>Missing:</b> The executive layer and reviewer harness still need live reviewer proof.</p>
-            <p><b>Gate:</b> External reviewer proof that the executive layer plus map answers the company-system question without extra explanation.</p>
-          </div>
-        </article></div>
+        <div class="score-groups"><section class="score-group" aria-label="Blocked">
+          <div class="score-group-title"><strong>Blocked</strong><span>Nothing here can be marketed as done.</span></div>
+          <div class="score-table"><article class="score-row blocked">
+            <div class="score-name">
+              <span>openai-side-outcome</span>
+              <strong>OpenAI-Side Outcome Evidence</strong>
+            </div>
+            <div class="score-value">2.0/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> The application receipt proves delivery only; the outcome watch found no offer, interview, collaboration path, recruiter next step, or human reply.</p>
+              <p><b>Missing:</b> There is no verified target-side traction.</p>
+            </div>
+          </article><article class="score-row partial">
+            <div class="score-name">
+              <span>company-launch</span>
+              <strong>Company Launch Readiness</strong>
+            </div>
+            <div class="score-value">6.7/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> The proof lab can launch as a pre-incorporation venture concept with CEO framing, public proof, and hard claim boundaries.</p>
+              <p><b>Missing:</b> It is not incorporated, not commercial, not payment-ready, not backed by customer deployment proof, and not legally reviewed.</p>
+            </div>
+          </article></div>
+        </section><section class="score-group" aria-label="Strong But Unproven">
+          <div class="score-group-title"><strong>Strong But Unproven</strong><span>Real proof exists, but the last mile is still external.</span></div>
+          <div class="score-table"><article class="score-row strong">
+            <div class="score-name">
+              <span>legal-nonconfusion</span>
+              <strong>Legal / Non-Confusion Discipline</strong>
+            </div>
+            <div class="score-value">8.8/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> The public route has non-affiliation language, banned-claim scans, protected-mark limits, and blocked commercial claims.</p>
+              <p><b>Missing:</b> No lawyer has reviewed trademark, corporate, terms, privacy, or commercial claims.</p>
+            </div>
+          </article><article class="score-row strong">
+            <div class="score-name">
+              <span>public-proof-surface</span>
+              <strong>Public Proof Surface</strong>
+            </div>
+            <div class="score-value">9.0/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> The Pages route now has a canonical executive review page, blunt scorecard, role portfolio, ledger, route index, system map, and external-review validation harness.</p>
+              <p><b>Missing:</b> The surface is easier to enter and easier to test, but it still lacks completed third-party reviewer use and target-company traction.</p>
+            </div>
+          </article><article class="score-row strong">
+            <div class="score-name">
+              <span>product-substance</span>
+              <strong>Product Substance</strong>
+            </div>
+            <div class="score-value">8.2/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> Receipts, field kits, security review, feedback export, Cookbook-style example, drills, scorecards, sample runs, and external-review intake show real product mechanics.</p>
+              <p><b>Missing:</b> Most deployment evidence is simulated or proof-lab generated; no real customer/user field run exists.</p>
+            </div>
+          </article><article class="score-row strong">
+            <div class="score-name">
+              <span>reviewer-path</span>
+              <strong>Cold Reviewer Path</strong>
+            </div>
+            <div class="score-value">8.9/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> The canonical role-review route lands the truth, role fit, and receipts in one screen and three links, and the reviewer validation harness defines the exact pass/fail record for a cold reviewer.</p>
+              <p><b>Missing:</b> It is structurally frictionless and testable, but not yet proven by an actual external reviewer or OpenAI-owned interaction.</p>
+            </div>
+          </article><article class="score-row strong">
+            <div class="score-name">
+              <span>originality-taste</span>
+              <strong>Originality / Taste</strong>
+            </div>
+            <div class="score-value">8.6/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> The benchmark scan, scale engine, role portfolio, and external-review harness push against generic AI-startup shape with mechanism and gates.</p>
+              <p><b>Missing:</b> Generated surfaces can still get repetitive when many proof nodes are rendered into one digest.</p>
+            </div>
+          </article><article class="score-row strong">
+            <div class="score-name">
+              <span>visual-system-map</span>
+              <strong>Visual / System Map</strong>
+            </div>
+            <div class="score-value">8.4/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> The executive review path now sits above the full map, while the system map, graph, and reviewer harness keep the underlying machine visible, editable, and testable.</p>
+              <p><b>Missing:</b> The executive layer and reviewer harness still need live reviewer proof.</p>
+            </div>
+          </article></div>
+        </section><section class="score-group" aria-label="Gated">
+          <div class="score-group-title"><strong>Gated</strong><span>Useful machinery that cannot promote the claim alone.</span></div>
+          <div class="score-table"><article class="score-row gated">
+            <div class="score-name">
+              <span>openai-role-leverage</span>
+              <strong>OpenAI Role Leverage</strong>
+            </div>
+            <div class="score-value">7.5/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> The role packet maps one primary target and adjacent Codex lanes to exact proof nodes and honest gaps, and the reviewer harness can now test whether that argument lands without a walkthrough.</p>
+              <p><b>Missing:</b> A reviewer can believe the evidence, but OpenAI has not supplied a human-owned next step.</p>
+            </div>
+          </article><article class="score-row gated">
+            <div class="score-name">
+              <span>autonomy</span>
+              <strong>Autonomy</strong>
+            </div>
+            <div class="score-value">7.8/10</div>
+            <div class="score-copy">
+              <p><b>Proof:</b> The local scheduler, heartbeat, verifier suite, public URL checks, graph, ledger, and next-work packet keep the lab inspected.</p>
+              <p><b>Missing:</b> It is audit autonomy, not an independently operating business, and it cannot safely take external or commercial actions.</p>
+            </div>
+          </article></div>
+        </section></div>
+      </section>
+      <section class="section score-section">
+        <div class="section-label"><p class="meta">Next</p><h2>Gates to move the number</h2></div>
+        <ul class="next-gates"><li><strong>Legal / Non-Confusion Discipline:</strong> Independent legal review plus clean public-copy scan after any commercial naming or launch change.</li><li><strong>Public Proof Surface:</strong> Live cold-review proof from a real reviewer or OpenAI-owned next step, with the three-link route still passing source and claim checks.</li><li><strong>OpenAI Role Leverage:</strong> Verified recruiter reply, interview loop, collaboration invitation, or equivalent target-company-owned action.</li><li><strong>OpenAI-Side Outcome Evidence:</strong> Record current public-safe evidence for an OpenAI-owned next step, then update the objective completion audit.</li><li><strong>Company Launch Readiness:</strong> Separate legal/admin/payment/tax route with qualified review, terms, privacy, support, and commercial operating rails.</li><li><strong>Autonomy:</strong> More self-repair coverage plus explicit user authorization and legal rails for any external business operation.</li><li><strong>Product Substance:</strong> Verified external field run with public-safe receipt, accepted handoff, and measured before/after adoption signal.</li><li><strong>Cold Reviewer Path:</strong> A real reviewer, recruiter, or collaborator uses the route and produces public-safe evidence that it was sufficient.</li><li><strong>Originality / Taste:</strong> Keep strict originality checks on every public-facing page and rewrite any generated digest that falls below threshold.</li><li><strong>Visual / System Map:</strong> External reviewer proof that the executive layer plus map answers the company-system question without extra explanation.</li></ul>
       </section>
       <section class="section score-section">
         <div class="section-label"><p class="meta">Stops</p><h2>Hard gates</h2></div>

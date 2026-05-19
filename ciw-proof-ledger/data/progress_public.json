@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T16:34:44Z",
+  "updated_at": "2026-05-19T17:41:22Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1091,7 +1091,8 @@
         "demo/role-review/index.html",
         "https://dicnunz.github.io/ciw-role-review/",
         "applications/openai/OPENAI_EXECUTIVE_REVIEW_PATH.md",
-        "ops/executive_review_path.json"
+        "ops/executive_review_path.json",
+        "Mobile/desktop visual QA captured after route-review redesign in artifacts/site-visual-qa/ and CDP overflow checks passed at 390px."
       ],
       "next": [
         "Use this as the first public link in post-gate reviewer or referral packets instead of starting from role-specific legacy URLs."
@@ -1321,6 +1322,22 @@
         "https://dicnunz.github.io/ciw-external-reviewer-validation/"
       ],
       "next": []
+    },
+    {
+      "id": "review-route-shape-audit",
+      "title": "Review route shape audit",
+      "type": "proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Measured verifier that the public route stays short, current, non-confusing, and honest about the missing external reviewer record after the site cleanup.",
+      "evidence": [
+        "ops/review_route_audit.json",
+        "applications/openai/OPENAI_REVIEW_ROUTE_AUDIT.md",
+        "https://dicnunz.github.io/ciw-review-route-audit/"
+      ],
+      "next": [
+        "Collect real non-Nic reviewer feedback before raising reviewer-validation score."
+      ]
     }
   ],
   "edges": [
@@ -3219,6 +3236,24 @@
       "to": "openai-outcome-watch",
       "relation": "preserves_boundary",
       "weight": 5
+    },
+    {
+      "from": "review-route-shape-audit",
+      "to": "neutral-public-role-review-route",
+      "relation": "measures",
+      "weight": 4
+    },
+    {
+      "from": "review-route-shape-audit",
+      "to": "external-reviewer-validation-harness",
+      "relation": "guards",
+      "weight": 4
+    },
+    {
+      "from": "review-route-shape-audit",
+      "to": "public-openai-codex-route-index",
+      "relation": "hardens",
+      "weight": 3
     }
   ],
   "views": {

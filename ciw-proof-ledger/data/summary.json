@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-05-19T02:18:45Z",
+  "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
+  "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
+  "ledger": {
+    "records": 12,
+    "latest_hash": "5962570299b0134cf8658e1a2a571888e4e5115de2f5f86d8639240fbfdfd0b2",
+    "latest_action": "synchronized progress web after application receipt",
+    "source_latest_hash": "801fd728bb203a957d625ef2f55444fd42a3ee149ddfa3ad44cbb33b206e87c2"
+  },
+  "graph": {
+    "nodes": 17,
+    "edges": 30,
+    "root": "goal-openai-role",
+    "status_counts": {
+      "active": 3,
+      "done": 12,
+      "next": 1,
+      "watch": 1
+    },
+    "updated_at": "2026-05-19T02:14:10Z"
+  },
+  "public_urls": {
+    "proof_brief": "https://dicnunz.github.io/openai-codex-proof/",
+    "cleanroom_repo": "https://github.com/dicnunz/cleanroom-intelligence-works",
+    "role_packet": "https://dicnunz.github.io/agentproof-role-packet/",
+    "deployment_memo": "https://dicnunz.github.io/codex-deployment-memo/"
+  }
+}

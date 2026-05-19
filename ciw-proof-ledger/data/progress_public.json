@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "title": "OpenAI Role Cleanroom Progress Web",
+  "updated_at": "2026-05-19T02:14:10Z",
+  "root": "goal-openai-role",
+  "nodes": [
+    {
+      "id": "goal-openai-role",
+      "title": "OpenAI role through cleanroom proof",
+      "type": "goal",
+      "status": "active",
+      "priority": "P0",
+      "summary": "Get Nic closer to an OpenAI role by building a legally distinct proof lab where he is founding CEO, then use the proof as hiring leverage.",
+      "evidence": [
+        "README.md",
+        ".codex/all-capable/MISSION.md"
+      ],
+      "next": [
+        "Keep public proof surfaces alive and legally non-confusing.",
+        "Turn the submitted application receipt into a warm referral or recruiter review path."
+      ]
+    },
+    {
+      "id": "legal-cleanroom-boundary",
+      "title": "Cleanroom legal boundary",
+      "type": "boundary",
+      "status": "done",
+      "priority": "P0",
+      "summary": "The route avoids copying OpenAI marks, UI, model behavior, private systems, affiliation claims, or clone/replacement language.",
+      "evidence": [
+        "legal/OPENAI_NONCONFUSION_POLICY.md",
+        "evidence/SOURCE_NOTES.md"
+      ],
+      "next": [
+        "Refresh brand and terms sources before any public launch step."
+      ]
+    },
+    {
+      "id": "ciw-company-pack",
+      "title": "Cleanroom Intelligence Works company pack",
+      "type": "company",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Pre-incorporation venture concept with Nic named as founding CEO and an operating system for proof-bearing AI work.",
+      "evidence": [
+        "company/CHARTER.md",
+        "company/CEO_OPERATING_SYSTEM.md"
+      ],
+      "next": [
+        "Do not imply incorporation until a separate legal/admin pass happens."
+      ]
+    },
+    {
+      "id": "proof-ledger",
+      "title": "Proof Ledger",
+      "type": "product",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Hash-chained JSONL receipt ledger for agent/operator work, with append, verify, and summary commands.",
+      "evidence": [
+        "tools/proof_ledger.py",
+        "tests/test_proof_ledger.py",
+        ".ciw/ledger.jsonl"
+      ],
+      "next": [
+        "Use this as the receipt spine for new public proof and application moves."
+      ]
+    },
+    {
+      "id": "target-role-ai-deployment-engineer-codex",
+      "title": "Target role: AI Deployment Engineer - Codex",
+      "type": "hiring-route",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Primary OpenAI target selected because it maps to Codex power use, customer workflows, demos, reference implementations, technical content, product feedback, and deployment readiness.",
+      "evidence": [
+        "applications/openai/TARGET_ROLE_DECISION.md",
+        "applications/openai/ASHBY_FORM_FIELDS.md",
+        "evidence/SOURCE_NOTES.md"
+      ],
+      "next": [
+        "Refresh the posting before any follow-up so role language stays current."
+      ]
+    },
+    {
+      "id": "application-packet",
+      "title": "OpenAI Codex application packet",
+      "type": "application",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Truthful tailored packet, resume, Ashby field map, and public proof URL used to support the submitted target application.",
+      "evidence": [
+        "applications/openai/AI_DEPLOYMENT_ENGINEER_CODEX_PACKET.md",
+        "applications/openai/Nicholas_Dunzelman_OpenAI_Codex_Resume.pdf",
+        "applications/openai/CODEX_DEPLOYMENT_MEMO.md"
+      ],
+      "next": [
+        "Keep this packet current for referral or recruiter review while the submitted application is under review.",
+        "Prefer a warm referral route only when it adds real signal instead of noise."
+      ]
+    },
+    {
+      "id": "public-agentproof-role-packet",
+      "title": "Public AgentProof role packet",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public proof page for role fit, published on GitHub Pages.",
+      "evidence": [
+        "https://dicnunz.github.io/agentproof-role-packet/"
+      ],
+      "next": [
+        "Keep it linked to stronger proof artifacts as they ship."
+      ]
+    },
+    {
+      "id": "public-codex-deployment-memo",
+      "title": "Public Codex deployment memo",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public memo that translates Codex deployment work into OpenAI-relevant operator proof.",
+      "evidence": [
+        "https://dicnunz.github.io/codex-deployment-memo/",
+        "applications/openai/CODEX_DEPLOYMENT_MEMO.md"
+      ],
+      "next": [
+        "Use as the strongest public link in referral or recruiter copy."
+      ]
+    },
+    {
+      "id": "public-cleanroom-repo",
+      "title": "Public Cleanroom Intelligence Works repo",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public non-affiliated proof-lab repo with cleanroom policy, Proof Ledger, deployment-readiness rubric, tests, and passing GitHub Actions verifier.",
+      "evidence": [
+        "local source path withheld",
+        "https://github.com/dicnunz/cleanroom-intelligence-works",
+        "commit:63bae81c0c0b8bc9f34dbbe26a609913e4abde2a",
+        "workflow:26071408747 success"
+      ],
+      "next": [
+        "Keep the repo and verifier green if the proof packet is updated."
+      ]
+    },
+    {
+      "id": "progress-web",
+      "title": "Progress web",
+      "type": "operating-system",
+      "status": "active",
+      "priority": "P0",
+      "summary": "Typed graph for traversing, editing, moving, and organizing the mission as it grows across proof, legal, product, public, and hiring nodes.",
+      "evidence": [
+        ".ciw/progress_graph.json",
+        "progress/PROGRESS_WEB.md",
+        "tools/progress_graph.py"
+      ],
+      "next": [
+        "Update this graph after every meaningful proof, blocker, or route change."
+      ]
+    },
+    {
+      "id": "ats-legal-fields",
+      "title": "Nic-only ATS legal fields",
+      "type": "blocker",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Nic-only Ashby legal/work-eligibility fields were resolved outside Codex before the submitted application receipt; exact answers are intentionally not stored here.",
+      "evidence": [
+        "applications/openai/ASHBY_FORM_FIELDS.md"
+      ],
+      "next": [
+        "Do not store Nic's legal/work-eligibility answers unless he explicitly asks; use the application receipt as proof this blocker is resolved."
+      ]
+    },
+    {
+      "id": "application-submit",
+      "title": "Submit target OpenAI application",
+      "type": "action",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Target OpenAI AI Deployment Engineer - Codex application was submitted; OpenAI Hiring Team receipt arrived in Gmail on May 19, 2026.",
+      "evidence": [
+        "applications/openai/ASHBY_FORM_FIELDS.md",
+        "applications/openai/AI_DEPLOYMENT_ENGINEER_CODEX_PACKET.md"
+      ],
+      "next": [
+        "Track review signals and use the submitted packet for warm referral or recruiter follow-up."
+      ]
+    },
+    {
+      "id": "warm-referral-route",
+      "title": "Warm referral route",
+      "type": "hiring-route",
+      "status": "active",
+      "priority": "P1",
+      "summary": "Active leverage path: use the submitted application receipt plus proof brief to seek a high-fit warm pass to Codex deployment or Technical Success without spamming stale contacts.",
+      "evidence": [
+        "applications/openai/AI_DEPLOYMENT_ENGINEER_CODEX_PACKET.md"
+      ],
+      "next": [
+        "Search for a high-fit warm route only when there is a real contact path or explicit outreach push."
+      ]
+    },
+    {
+      "id": "product-demo-depth",
+      "title": "Product demo depth",
+      "type": "product",
+      "status": "next",
+      "priority": "P1",
+      "summary": "Deepen Proof Ledger from receipt CLI into a fuller demo surface if the hiring route needs more product proof.",
+      "evidence": [
+        "product/FRONTIER_LAB_STACK.md",
+        "tools/proof_ledger.py"
+      ],
+      "next": [
+        "Build a small visual inspector or hosted demo only if it improves the application/referral leverage."
+      ]
+    },
+    {
+      "id": "legal-entity-review",
+      "title": "Legal entity and trademark review",
+      "type": "blocker",
+      "status": "watch",
+      "priority": "P2",
+      "summary": "Actual incorporation, trademark filing, fundraising, and public company launch require a separate legal/admin pass.",
+      "evidence": [
+        "legal/OPENAI_NONCONFUSION_POLICY.md"
+      ],
+      "next": [
+        "Do not overclaim legal status in public artifacts."
+      ]
+    },
+    {
+      "id": "public-openai-codex-proof-brief",
+      "title": "Public OpenAI Codex proof brief",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Single recruiter-readable page tying the role packet, deployment memo, cleanroom repo, and current Codex deployment lane into one sendable proof URL.",
+      "evidence": [
+        "https://dicnunz.github.io/openai-codex-proof/",
+        "commit:354199f7468a056285302762a7b5c20d6ddefcd3",
+        "pages-run:26071624083 success"
+      ],
+      "next": [
+        "Use as the top proof URL in referral, recruiter, and Ashby additional-info copy."
+      ]
+    },
+    {
+      "id": "openai-application-receipt",
+      "title": "OpenAI application receipt",
+      "type": "application",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Gmail receipt from OpenAI Hiring Team confirms the target application was received on May 19, 2026.",
+      "evidence": [
+        "private receipt reference withheld",
+        "subject: Thank you for applying to OpenAI"
+      ],
+      "next": [
+        "Use the proof brief for referral or recruiter follow-up while the submitted application is under review."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "goal-openai-role",
+      "to": "legal-cleanroom-boundary",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "ciw-company-pack",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "proof-ledger",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "target-role-ai-deployment-engineer-codex",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "progress-web",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "legal-cleanroom-boundary",
+      "to": "public-agentproof-role-packet",
+      "relation": "protects",
+      "weight": 4
+    },
+    {
+      "from": "legal-cleanroom-boundary",
+      "to": "public-codex-deployment-memo",
+      "relation": "protects",
+      "weight": 4
+    },
+    {
+      "from": "legal-cleanroom-boundary",
+      "to": "public-cleanroom-repo",
+      "relation": "protects",
+      "weight": 5
+    },
+    {
+      "from": "proof-ledger",
+      "to": "public-cleanroom-repo",
+      "relation": "powers",
+      "weight": 5
+    },
+    {
+      "from": "proof-ledger",
+      "to": "application-packet",
+      "relation": "supports",
+      "weight": 4
+    },
+    {
+      "from": "target-role-ai-deployment-engineer-codex",
+      "to": "application-packet",
+      "relation": "targets",
+      "weight": 5
+    },
+    {
+      "from": "public-agentproof-role-packet",
+      "to": "application-packet",
+      "relation": "supports",
+      "weight": 4
+    },
+    {
+      "from": "public-codex-deployment-memo",
+      "to": "application-packet",
+      "relation": "supports",
+      "weight": 5
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "application-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "application-packet",
+      "to": "application-submit",
+      "relation": "unlocks",
+      "weight": 5
+    },
+    {
+      "from": "ats-legal-fields",
+      "to": "application-submit",
+      "relation": "blocks",
+      "weight": 5
+    },
+    {
+      "from": "application-packet",
+      "to": "warm-referral-route",
+      "relation": "enables",
+      "weight": 4
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "product-demo-depth",
+      "relation": "seeds",
+      "weight": 3
+    },
+    {
+      "from": "ciw-company-pack",
+      "to": "legal-entity-review",
+      "relation": "eventually-needs",
+      "weight": 2
+    },
+    {
+      "from": "progress-web",
+      "to": "goal-openai-role",
+      "relation": "maps",
+      "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "legal-cleanroom-boundary",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "protects",
+      "weight": 5
+    },
+    {
+      "from": "public-agentproof-role-packet",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 4
+    },
+    {
+      "from": "public-codex-deployment-memo",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "public-openai-codex-proof-brief",
+      "to": "application-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "public-openai-codex-proof-brief",
+      "to": "warm-referral-route",
+      "relation": "enables",
+      "weight": 5
+    },
+    {
+      "from": "application-submit",
+      "to": "openai-application-receipt",
+      "relation": "produces",
+      "weight": 5
+    },
+    {
+      "from": "openai-application-receipt",
+      "to": "warm-referral-route",
+      "relation": "enables",
+      "weight": 5
+    },
+    {
+      "from": "public-openai-codex-proof-brief",
+      "to": "openai-application-receipt",
+      "relation": "supports",
+      "weight": 4
+    }
+  ],
+  "views": {
+    "active_path": [
+      "goal-openai-role",
+      "progress-web",
+      "public-openai-codex-proof-brief",
+      "application-submit",
+      "openai-application-receipt",
+      "warm-referral-route"
+    ],
+    "next_branches": [
+      "warm-referral-route",
+      "product-demo-depth",
+      "legal-entity-review"
+    ]
+  }
+}

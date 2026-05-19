@@ -1,0 +1,134 @@
+[
+  {
+    "index": 0,
+    "timestamp": "2026-05-19T01:14:30+00:00",
+    "actor": "Codex",
+    "action": "created cleanroom venture pack",
+    "details": "initial legal company and OpenAI hiring wedge artifacts",
+    "visibility": "public projection",
+    "source_hash": "6b486a46ae9642e05bf937af5fbc03547aaf104c62f1fc293a0e4dcb064484c4",
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "bf09ba67236a589416323545a8f8899fae60b3c24cba0a8eac113311548a2f2a"
+  },
+  {
+    "index": 1,
+    "timestamp": "2026-05-19T01:15:11+00:00",
+    "actor": "Codex",
+    "action": "verified cleanroom venture pack",
+    "details": "verify_pack PASS, unittest PASS, originality_gate PASS",
+    "visibility": "public projection",
+    "source_hash": "30c17581ab014dd3db307094da6ef1df7a797f3d0cb63daa1f0997a4df164c5f",
+    "prev_hash": "bf09ba67236a589416323545a8f8899fae60b3c24cba0a8eac113311548a2f2a",
+    "hash": "c66e122fc30662b3738e434434e07ffb4bf57de072e2d0e744f81e31973fed35"
+  },
+  {
+    "index": 2,
+    "timestamp": "2026-05-19T01:27:31+00:00",
+    "actor": "Codex",
+    "action": "published AgentProof role packet",
+    "details": "live URL https://dicnunz.github.io/agentproof-role-packet/ returned HTTP 200 after GitHub Pages deploy",
+    "visibility": "public projection",
+    "source_hash": "3588fb13ba8bae500714c9e8cb350e9a34d43629f9d4f2eff6e47718819ea682",
+    "prev_hash": "c66e122fc30662b3738e434434e07ffb4bf57de072e2d0e744f81e31973fed35",
+    "hash": "0dc768892fe145aa02fc85607d142a71898cd57fb7806380f130fc0ab0d2f32e"
+  },
+  {
+    "index": 3,
+    "timestamp": "2026-05-19T01:38:10+00:00",
+    "actor": "Codex",
+    "action": "prepared OpenAI Codex application packet",
+    "details": "Selected AI Deployment Engineer - Codex Remote - US, created applications/openai packet, targeted resume PDF/DOCX, Ashby form field map, and submission blocker for Nic-only legal/work eligibility fields.",
+    "visibility": "public projection",
+    "source_hash": "351fb199e1c4ea295296701bda2db75d731f9ecb84f415dc176dd1e66fc1bcb2",
+    "prev_hash": "0dc768892fe145aa02fc85607d142a71898cd57fb7806380f130fc0ab0d2f32e",
+    "hash": "59670057f7b61ad71fc826bdadc4cd3f7b297e14bb9c73984ee5436ecfb461c8"
+  },
+  {
+    "index": 4,
+    "timestamp": "2026-05-19T01:45:16+00:00",
+    "actor": "Codex",
+    "action": "published Codex deployment memo",
+    "details": "Published https://dicnunz.github.io/codex-deployment-memo/ via dicnunz.github.io commit af4e676, linked it from AgentProof role packet, verified GitHub Pages run 26071052720 and HTTP 200, updated OpenAI application packet.",
+    "visibility": "public projection",
+    "source_hash": "0e3e0b8e3c420a02edfd2229fa49533ddb9c81e1a519910005d45bd0ba883dd5",
+    "prev_hash": "59670057f7b61ad71fc826bdadc4cd3f7b297e14bb9c73984ee5436ecfb461c8",
+    "hash": "11117c6743c007de2b1b1da58868e4a7936a1506be34f2fe561c15d60fc00071"
+  },
+  {
+    "index": 5,
+    "timestamp": "2026-05-19T01:55:53+00:00",
+    "actor": "Codex",
+    "action": "created progress web",
+    "details": "Added .ciw/progress_graph.json, progress/PROGRESS_WEB.md, tools/progress_graph.py, and tests/test_progress_graph.py to track mission state as a traversable editable graph.",
+    "visibility": "public projection",
+    "source_hash": "fccff702f635a853981eabd57978b27dbc38eff38f5bd5943bdcc011e6dadc72",
+    "prev_hash": "11117c6743c007de2b1b1da58868e4a7936a1506be34f2fe561c15d60fc00071",
+    "hash": "a9638395f36eb42a969e2951a5a78f40594e315513f57330c5f40acca9a18d18"
+  },
+  {
+    "index": 6,
+    "timestamp": "2026-05-19T01:55:53+00:00",
+    "actor": "Codex",
+    "action": "published Cleanroom Intelligence Works public repo",
+    "details": "Published https://github.com/dicnunz/cleanroom-intelligence-works with cleanroom policy, Proof Ledger, deployment-readiness rubric, tests, and passing GitHub Actions run 26071408747 at commit 63bae81c0c0b8bc9f34dbbe26a609913e4abde2a.",
+    "visibility": "public projection",
+    "source_hash": "a8fa96810cae87c6a73206c98c8b287705fd0c6530e0b6d15b1a4c8c98570c4a",
+    "prev_hash": "a9638395f36eb42a969e2951a5a78f40594e315513f57330c5f40acca9a18d18",
+    "hash": "e5d9e8ce3a1d4676021e93b39d629d3f6618343723122e28dc76cc908650d8a7"
+  },
+  {
+    "index": 7,
+    "timestamp": "2026-05-19T02:03:46+00:00",
+    "actor": "Codex",
+    "action": "published OpenAI Codex proof brief",
+    "details": "Published https://dicnunz.github.io/openai-codex-proof/ via dicnunz.github.io commit 354199f7468a056285302762a7b5c20d6ddefcd3, linked it from role packet and deployment memo, verified Pages run 26071624083 and HTTP 200, and added it to the progress graph/application packet.",
+    "visibility": "public projection",
+    "source_hash": "3f5524cfcfd56166f1e4a5556906db0fe0b030bee9a95d0ffcca22d1d9300ae7",
+    "prev_hash": "e5d9e8ce3a1d4676021e93b39d629d3f6618343723122e28dc76cc908650d8a7",
+    "hash": "3eac00098044067d68a52fb03b4e241bc30ce9ad107a70ca01d1b0999435d52b"
+  },
+  {
+    "index": 8,
+    "timestamp": "2026-05-19T02:09:46+00:00",
+    "actor": "Codex",
+    "action": "confirmed OpenAI application receipt",
+    "details": "OpenAI application receipt was confirmed in the local Gmail account on 2026-05-19; the private message identifier is withheld from the public projection.",
+    "visibility": "public projection",
+    "source_hash": "82e1777f4a55b1d47e8b4423567a1f3760637e93c0fdcfe6700fa841b23adda2",
+    "prev_hash": "3eac00098044067d68a52fb03b4e241bc30ce9ad107a70ca01d1b0999435d52b",
+    "hash": "a5f688036a2c81f11b428649af59152b6e41ee1dc9c4f193102c89b2ef9b5b3a"
+  },
+  {
+    "index": 9,
+    "timestamp": "2026-05-19T02:09:46+00:00",
+    "actor": "Codex",
+    "action": "created OpenAI warm referral route packet",
+    "details": "Warm-route audit was completed with non-spam timing gates; private inbox identifiers and contact-thread details are withheld from the public projection.",
+    "visibility": "public projection",
+    "source_hash": "fd0c72cfa8043944e66c6c374bf5b34ac9f7e9934ff07518989d4123da3a684d",
+    "prev_hash": "a5f688036a2c81f11b428649af59152b6e41ee1dc9c4f193102c89b2ef9b5b3a",
+    "hash": "509b6dd1f61ac17cdfec308fa28c80a1faf1202ccc97fcf0ace3181db184a98d"
+  },
+  {
+    "index": 10,
+    "timestamp": "2026-05-19T02:11:05+00:00",
+    "actor": "Codex",
+    "action": "hardened OpenAI warm route packet",
+    "details": "Raised applications/openai/WARM_REFERRAL_ROUTE.md above strict originality gate to 88.2 and preserved non-spam timing gates for the Cory route.",
+    "visibility": "public projection",
+    "source_hash": "68cba7fb661050f995216e67002bdcc927465573b8010eabdd844fda9e07911e",
+    "prev_hash": "509b6dd1f61ac17cdfec308fa28c80a1faf1202ccc97fcf0ace3181db184a98d",
+    "hash": "70064a7b54c9a541943d25c302700531eef964c298cc3dd10638d1155de99c25"
+  },
+  {
+    "index": 11,
+    "timestamp": "2026-05-19T02:14:00+00:00",
+    "actor": "codex",
+    "action": "synchronized progress web after application receipt",
+    "details": "Renamed Ashby submission state, removed stale pre-submit graph next-actions, regenerated progress/PROGRESS_WEB.md, and reran cleanroom pack, graph, ledger, unit, and originality checks.",
+    "visibility": "public projection",
+    "source_hash": "801fd728bb203a957d625ef2f55444fd42a3ee149ddfa3ad44cbb33b206e87c2",
+    "prev_hash": "70064a7b54c9a541943d25c302700531eef964c298cc3dd10638d1155de99c25",
+    "hash": "5962570299b0134cf8658e1a2a571888e4e5115de2f5f86d8639240fbfdfd0b2"
+  }
+]

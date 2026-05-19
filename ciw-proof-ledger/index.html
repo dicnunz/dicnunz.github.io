@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CIW Proof Ledger Inspector</title>
+    <meta
+      name="description"
+      content="Public-safe inspector for Cleanroom Intelligence Works: a hash-chained proof ledger and progress graph for OpenAI-role proof."
+    >
+    <meta name="theme-color" content="#f5f4ee">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell" id="top" tabindex="-1">
+      <header class="masthead" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Cleanroom Intelligence Works</p>
+          <h1 id="page-title">Proof Ledger Inspector</h1>
+          <p class="lede">
+            A public-safe view of the receipt chain and progress graph behind Nic's OpenAI Codex proof packet.
+          </p>
+        </div>
+        <div class="verifier-panel" aria-live="polite">
+          <span class="label">In-browser chain check</span>
+          <strong id="verify-state">Loading</strong>
+          <span id="verify-detail">Fetching public projection.</span>
+        </div>
+      </header>
+
+      <section class="metric-strip" aria-label="Proof metrics">
+        <div>
+          <span class="label">Receipts</span>
+          <strong id="metric-records">-</strong>
+        </div>
+        <div>
+          <span class="label">Graph nodes</span>
+          <strong id="metric-nodes">-</strong>
+        </div>
+        <div>
+          <span class="label">Edges</span>
+          <strong id="metric-edges">-</strong>
+        </div>
+        <div>
+          <span class="label">Latest public hash</span>
+          <code id="metric-hash">-</code>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Inspector workspace">
+        <aside class="control-rail" aria-label="Inspector controls">
+          <label class="search-box">
+            <span class="label">Find proof</span>
+            <input id="search" type="search" placeholder="receipt, node, status, URL">
+          </label>
+          <div class="mode-list" role="tablist" aria-label="Inspector views">
+            <button class="mode-button is-active" type="button" role="tab" aria-selected="true" data-mode="chain">Chain</button>
+            <button class="mode-button" type="button" role="tab" aria-selected="false" data-mode="graph">Graph</button>
+            <button class="mode-button" type="button" role="tab" aria-selected="false" data-mode="route">Route</button>
+          </div>
+          <div class="boundary-note">
+            <span class="label">Boundary</span>
+            <p>
+              This projection withholds private inbox identifiers and local-only evidence. It does not claim affiliation
+              with OpenAI.
+            </p>
+          </div>
+          <div class="link-stack" id="public-links" aria-label="Public proof links"></div>
+        </aside>
+
+        <section class="surface" id="chain-panel" data-panel="chain" aria-labelledby="chain-title">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Tamper-evident trail</p>
+              <h2 id="chain-title">Receipt chain</h2>
+            </div>
+            <span class="count-badge" id="chain-count">0 records</span>
+          </div>
+          <div class="timeline" id="ledger-list"></div>
+        </section>
+
+        <section class="surface is-hidden" id="graph-panel" data-panel="graph" aria-labelledby="graph-title">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Mission topology</p>
+              <h2 id="graph-title">Progress graph</h2>
+            </div>
+            <span class="count-badge" id="graph-count">0 nodes</span>
+          </div>
+          <div class="graph-grid" id="graph-grid"></div>
+          <article class="node-detail" id="node-detail" aria-live="polite"></article>
+        </section>
+
+        <section class="surface is-hidden" id="route-panel" data-panel="route" aria-labelledby="route-title">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Current leverage branch</p>
+              <h2 id="route-title">Application receipt to warm route</h2>
+            </div>
+            <span class="count-badge" id="route-count">0 steps</span>
+          </div>
+          <ol class="route-list" id="route-list"></ol>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

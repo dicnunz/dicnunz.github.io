@@ -88,7 +88,7 @@
 
       .decision-row {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
       }
 
@@ -143,6 +143,7 @@
       <nav aria-label="Primary links">
         <a href="../agentproof-role-packet/">Role packet</a>
         <a href="../codex-deployment-memo/">Deployment memo</a>
+        <a href="../ciw-proof-ledger/">Ledger inspector</a>
         <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom repo</a>
       </nav>
     </header>
@@ -198,6 +199,10 @@
             <strong>Proof lab</strong>
             <span>Legally distinct cleanroom repo with Proof Ledger, tests, and CI verifier.</span>
           </a>
+          <a href="../ciw-proof-ledger/">
+            <strong>Inspector</strong>
+            <span>Public-safe receipt chain and progress graph with browser-side hash verification.</span>
+          </a>
         </div>
       </section>
 
@@ -221,7 +226,7 @@
           </li>
           <li>
             <strong>Proof Ledger</strong>
-            <span>A small hash-chained JSONL ledger shows how operator work can leave tamper-evident receipts.</span>
+            <span>A public-safe inspector verifies the projected hash chain and shows the current mission graph.</span>
           </li>
           <li>
             <strong>GitHub Actions</strong>

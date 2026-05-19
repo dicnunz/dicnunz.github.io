@@ -856,5 +856,16 @@
     "source_hash": "bd9c09b4ed1394df8ba42a10c7c3948d047c4b88b53fe93cae1f5caadbe967f5",
     "prev_hash": "a80fbf7dd8259cdd350e0ae372c3572dd805ccb370853f5660c810918125bf2a",
     "hash": "b3db04b7d261772409fe5619ab384360632832711498ec9ef9d0f937bada3f69"
+  },
+  {
+    "index": 78,
+    "timestamp": "2026-05-19T12:44:46+00:00",
+    "actor": "Codex",
+    "action": "added cookbook-style example proof",
+    "details": "{\"boundary\":\"not an OpenAI Cookbook submission; no affiliation, customer rollout, legal entity, revenue, employment, or outbound claim\",\"commands\":[\"python3 tools/deployment_receipt.py validate-cookbook-example --input examples/cookbook_style_codex_example.json\",\"python3 tools/deployment_receipt.py cookbook-example --input examples/cookbook_style_codex_example.json\",\"python3 scripts/verify_public_pack.py\"],\"doc\":\"https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-cookbook-style-example.md\",\"fixture\":\"https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/cookbook_style_codex_example.json\",\"graph_node\":\"cookbook-style-codex-example\",\"source_commit\":\"e120ef15885fee4623dc01352141a956f1edc8dd\",\"source_run\":\"26097750563-success\"}",
+    "visibility": "public projection",
+    "source_hash": "71e8151f1e053fde4a71e9baf4fdae744899b16647f3dd8492669193a6c660f0",
+    "prev_hash": "b3db04b7d261772409fe5619ab384360632832711498ec9ef9d0f937bada3f69",
+    "hash": "7e72a7582c831c2ad9806cfbc3a13b9f0dfd8012aab8d9f9f2549d32b185108a"
   }
 ]

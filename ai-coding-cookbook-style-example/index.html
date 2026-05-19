@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Cookbook-Style Example</title>
+    <meta
+      name="description"
+      content="A public-safe Cleanroom Intelligence Works Cookbook-style AI coding example: problem, minimal input, recipe steps, verifier markers, role signals, release gates, and extension notes."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Cookbook-Style Example">
+    <meta
+      property="og:description"
+      content="A cleanroom recipe packet for AI coding deployment proof. It is not an OpenAI Cookbook submission, customer rollout, or affiliation claim."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-cookbook-style-example/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-cookbook-style-example/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .cookbook-hero h1 {
+        max-width: min(900px, 100%);
+        font-size: clamp(2.4rem, 6vw, 4.9rem);
+        text-wrap: balance;
+      }
+
+      .cookbook-hero .claim {
+        max-width: min(790px, 100%);
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile,
+      .step-list li,
+      .signal-list li,
+      .gate-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        padding: 14px;
+      }
+
+      .score-tile strong,
+      .step-list strong,
+      .signal-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.42rem;
+        font-weight: 760;
+      }
+
+      .step-list,
+      .signal-list,
+      .gate-list,
+      .command-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .step-list,
+      .signal-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .step-list b,
+      .signal-list b {
+        display: block;
+        margin: 7px 0;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .step-list span,
+      .signal-list span,
+      .gate-list span,
+      .command-list,
+      .boundary-note {
+        color: var(--muted);
+      }
+
+      .step-list code,
+      .command-list code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .command-list {
+        padding-left: 18px;
+        list-style: disc;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      nav,
+      .topbar,
+      .cookbook-hero,
+      .cookbook-hero .claim,
+      .step-list li > span {
+        min-width: 0;
+      }
+
+      nav {
+        max-width: 100%;
+      }
+
+      nav a,
+      .cookbook-hero .claim,
+      .step-list span,
+      .signal-list span,
+      .gate-list span {
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 760px) {
+        .topbar,
+        .intro,
+        .section,
+        .footer {
+          width: calc(100vw - 32px);
+          max-width: calc(100vw - 32px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+          padding: 12px 0;
+        }
+
+        nav {
+          justify-content: flex-start;
+          gap: 12px;
+        }
+
+        nav a {
+          font-size: 0.95rem;
+        }
+
+        .cookbook-hero h1 {
+          font-size: clamp(2.02rem, 9vw, 2.85rem);
+          line-height: 1;
+        }
+
+        .cookbook-hero .claim {
+          width: 100%;
+          font-size: 1rem;
+        }
+
+        .score-strip,
+        .step-list,
+        .signal-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../ciw-review-digest/">Reviewer digest</a>
+        <a href="../openai-codex-route-index/">Route index</a>
+        <a href="../ciw-proof-ledger/?view=graph&node=cookbook-style-codex-example">Graph node</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/cookbook_style_codex_example.json">Fixture</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro cookbook-hero" aria-labelledby="intro-title">
+        <p class="meta">Cookbook-style example · checked May 19, 2026</p>
+        <h1 id="intro-title">A runnable recipe, not another proof memo.</h1>
+        <p class="claim">
+          AI Coding Cookbook-Style Example packages the cleanroom proof route as a teachable recipe:
+          problem, minimal public-safe input, six recipe steps, verifier markers, seven role signals,
+          release gates, and extension rules. It is not an OpenAI Cookbook submission, customer rollout,
+          affiliation claim, or outbound authorization.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="score-title">
+        <div class="section-label">
+          <p class="meta">Result</p>
+          <h2 id="score-title">Current fixture</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Recipe steps</strong>
+            <span>6</span>
+          </div>
+          <div class="score-tile">
+            <strong>Role signals</strong>
+            <span>7</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average</strong>
+            <span>4.6/5</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="problem-title">
+        <div class="section-label">
+          <p class="meta">Problem</p>
+          <h2 id="problem-title">What it proves</h2>
+        </div>
+        <p class="boundary-note">
+          A reviewer needs to see whether the operator can turn AI coding workflow knowledge into a small,
+          teachable, runnable example: clear problem, bounded input, steps, verifier, expected output,
+          failure gates, and extension route.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="steps-title">
+        <div class="section-label">
+          <p class="meta">Recipe</p>
+          <h2 id="steps-title">Six steps</h2>
+        </div>
+        <ol class="step-list">
+          <li><strong>problem_statement</strong><b>Name the reader problem.</b><span>The artifact teaches the proof route instead of selling it.</span></li>
+          <li><strong>minimal_input</strong><b>Constrain the input.</b><span>Only public-safe fixture text, public docs, public URLs, and verifier commands are allowed.</span></li>
+          <li><strong>recipe</strong><b>Render the handoff.</b><span>Commands, expected markers, release gates, role signals, and reviewer notes become one repeatable packet.</span></li>
+          <li><strong>verification</strong><b>Run the public-pack verifier.</b><span>The example cannot pass while missing required docs, fixtures, tests, or claim-boundary checks.</span></li>
+          <li><strong>handoff</strong><b>Publish only after checks.</b><span>The reviewer-facing page is connected to the graph after local verifier, privacy scan, and public URL checks pass.</span></li>
+          <li><strong>extension</strong><b>Extend only for new friction.</b><span>Future examples need a new verifier, source, or customer-workflow friction point.</span></li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="signals-title">
+        <div class="section-label">
+          <p class="meta">Role signals</p>
+          <h2 id="signals-title">Covered</h2>
+        </div>
+        <ol class="signal-list">
+          <li><strong>examples</strong><b>Concrete example format.</b><span>A runnable packet instead of only strategy copy.</span></li>
+          <li><strong>guides_patterns</strong><b>Guide linkage.</b><span>Connects the example to the existing deployment-pattern library.</span></li>
+          <li><strong>best_practices</strong><b>Reviewable practice.</b><span>Data boundary, permission, approval, rollback, and security communication are explicit.</span></li>
+          <li><strong>reference_implementation</strong><b>Executable source.</b><span>The validator and renderer make the example machine-checkable.</span></li>
+          <li><strong>customer_workflow_design</strong><b>Workflow shape.</b><span>Intake, workshop, receipt, review, and feedback are mapped without customer-traction claims.</span></li>
+          <li><strong>security_operational_readiness</strong><b>Gate discipline.</b><span>The security review packet is upstream of the example.</span></li>
+          <li><strong>product_feedback</strong><b>Signal routing.</b><span>Recipe observations can become product feedback without claiming real customer adoption.</span></li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="commands-title">
+        <div class="section-label">
+          <p class="meta">Verify</p>
+          <h2 id="commands-title">Commands</h2>
+        </div>
+        <ul class="command-list">
+          <li><code>python3 tools/deployment_receipt.py validate-cookbook-example --input examples/cookbook_style_codex_example.json</code></li>
+          <li><code>python3 tools/deployment_receipt.py cookbook-example --input examples/cookbook_style_codex_example.json</code></li>
+          <li><code>python3 scripts/verify_public_pack.py</code></li>
+          <li><code>python3 -m unittest tests/test_deployment_receipt.py</code></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="gates-title">Release gates</h2>
+        </div>
+        <ol class="gate-list">
+          <li><strong>Public-safe data</strong><span>Repository files, public proof URLs, and executable commands only.</span></li>
+          <li><strong>No target-company contribution claim</strong><span>Not an OpenAI Cookbook submission and not affiliated with OpenAI.</span></li>
+          <li><strong>No customer or traction claim</strong><span>No customer rollout, revenue, funding, legal entity, employment, endorsement, or real-world impact claim.</span></li>
+          <li><strong>No outbound before 2026-05-26</strong><span>The example is proof packaging only until the date gate, an inbound recruiter signal, or a current explicit override changes the route.</span></li>
+        </ol>
+      </section>
+    </main>
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom source</a>
+    </footer>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T12:26:31Z",
+  "updated_at": "2026-05-19T12:41:49Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1105,6 +1105,24 @@
       ],
       "next": [
         "Refresh and republish the autonomy status page after any graph or ledger change that changes public counts or latest receipt."
+      ]
+    },
+    {
+      "id": "cookbook-style-codex-example",
+      "title": "Cookbook-style Codex example",
+      "type": "role-fit-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Executable public-safe Cookbook-style example maps the role need for examples, guides, best practices, reference implementations, workflow design, security readiness, and product feedback into one fixture, validator, renderer, markdown handoff, and public page without claiming target-company submission, affiliation, customer rollout, or outbound.",
+      "evidence": [
+        "applications/openai/AI_CODING_COOKBOOK_STYLE_EXAMPLE.md",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/e120ef15885fee4623dc01352141a956f1edc8dd",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-cookbook-style-example.md",
+        "https://dicnunz.github.io/ai-coding-cookbook-style-example/",
+        "cleanroom-run:26097750563-success"
+      ],
+      "next": [
+        "Keep the validator, public page, digest, and no-outbound boundary green; do not call this an OpenAI Cookbook submission or customer deployment evidence."
       ]
     }
   ],
@@ -2632,6 +2650,60 @@
       "to": "proof-route-regression-suite",
       "relation": "strengthens",
       "weight": 3
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "cookbook-style-codex-example",
+      "relation": "contains",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-security-review-packet",
+      "to": "cookbook-style-codex-example",
+      "relation": "gates",
+      "weight": 4
+    },
+    {
+      "from": "public-ai-coding-patterns",
+      "to": "cookbook-style-codex-example",
+      "relation": "anchors",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-workflow-receipt-reference",
+      "to": "cookbook-style-codex-example",
+      "relation": "implements",
+      "weight": 4
+    },
+    {
+      "from": "product-feedback-export-fixture",
+      "to": "cookbook-style-codex-example",
+      "relation": "feeds",
+      "weight": 3
+    },
+    {
+      "from": "cookbook-style-codex-example",
+      "to": "target-role-ai-deployment-engineer-codex",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "cookbook-style-codex-example",
+      "to": "openai-reviewer-digest",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "cookbook-style-codex-example",
+      "to": "public-openai-codex-route-index",
+      "relation": "adds_route",
+      "weight": 4
+    },
+    {
+      "from": "cookbook-style-codex-example",
+      "to": "post-gate-reply-review",
+      "relation": "gates",
+      "weight": 4
     }
   ],
   "views": {
@@ -2675,6 +2747,7 @@
       "proof-route-renewal-drill",
       "proof-route-regression-suite",
       "ai-coding-security-review-packet",
+      "cookbook-style-codex-example",
       "post-gate-reply-review",
       "warm-referral-route"
     ],

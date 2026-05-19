@@ -680,5 +680,16 @@
     "source_hash": "9f26dd9045c9b8cf3c97b078f0c92ad7c4b146caf50ee1ee97a535242c2ffb13",
     "prev_hash": "8731512523c66a59adb2867f0bad7205f761f5ffc01820b257bc38ffaad3966f",
     "hash": "ca424df2072eead059d3a6405e9335f89a1cfa89aa412e1da5c3c860bee9dc1c"
+  },
+  {
+    "index": 62,
+    "timestamp": "2026-05-19T10:37:41+00:00",
+    "actor": "Codex",
+    "action": "published runbook freshness projection",
+    "details": "{\"gate\":\"runbook_freshness\",\"hard_gates\":[\"no outbound before 2026-05-26\",\"no legal/payment/hiring/fundraising actions\",\"no OpenAI affiliation or clone claims\"],\"live_checks\":[\"status page contains Runbook freshness\",\"summary records 62 before publication receipt\",\"progress graph exposes runbook-freshness-gate\"],\"pages_commit\":\"239282af6f11759b23310ee73700c730a70c2a74\",\"pages_run\":\"26091834776-success\",\"public_urls\":[\"https://dicnunz.github.io/ciw-autonomy-status/\",\"https://dicnunz.github.io/ciw-proof-ledger/data/summary.json\",\"https://dicnunz.github.io/openai-codex-review-digest/\"]}",
+    "visibility": "public projection",
+    "source_hash": "2387868479e8e997e459665230dd8ddd658d6cb860d7a8c7eb45c6b02025a128",
+    "prev_hash": "ca424df2072eead059d3a6405e9335f89a1cfa89aa412e1da5c3c860bee9dc1c",
+    "hash": "a481773d10565ac9739e601542712791c09a658464822a982e503b46c8c88206"
   }
 ]

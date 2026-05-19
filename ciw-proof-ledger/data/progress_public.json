@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T10:02:18Z",
+  "updated_at": "2026-05-19T10:17:38Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -910,14 +910,33 @@
       "id": "proof-route-regression-suite",
       "title": "Proof-route regression suite",
       "type": "hiring-route",
-      "status": "next",
+      "status": "done",
       "priority": "P0",
-      "summary": "Next safe autonomy branch: build one executable regression suite that runs role-source, staleness, renewal, draft-quality, route-index, ledger, public-URL, privacy, and no-outbound checks before any future route leverage.",
+      "summary": "Cleanroom source now validates and renders a public-safe proof-route regression suite: role_source, staleness, renewal, draft_quality, route_index, ledger, public_url, privacy, and no_outbound checks run as one pre-leverage gate so a failed marker becomes local repair work instead of a message.",
       "evidence": [
-        "planned-by:proof-route-renewal-drill"
+        "planned-by:proof-route-renewal-drill",
+        "cleanroom-run:26090770896-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/15d0da762c08ef135f5316fc96a17eac92e4e7fe",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_regression_suite.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-regression-suite.md"
       ],
       "next": [
-        "Build only as a local/public verifier bundle; no external account or outreach action before the 2026-05-26 gate."
+        "Build only as a local/public verifier bundle; no external account or outreach action before the 2026-05-26 gate.",
+        "Publish the regression suite page and projection; after that, stay audit-only until the 2026-05-26 no-outbound gate, a real reply, or a fresh explicit override."
+      ]
+    },
+    {
+      "id": "post-gate-reply-review",
+      "title": "Post-gate reply review",
+      "type": "hiring-route",
+      "status": "watch",
+      "priority": "P0",
+      "summary": "Guarded branch after the date gate: re-check live inbox and route state before deciding whether any warm follow-up is useful or repetitive.",
+      "evidence": [
+        "planned-by:proof-route-regression-suite"
+      ],
+      "next": [
+        "Do not run before 2026-05-26 unless a recruiter/Cory reply appears or Nic gives a fresh explicit override."
       ]
     }
   ],
@@ -2217,6 +2236,18 @@
       "to": "warm-referral-route",
       "relation": "guards",
       "weight": 4
+    },
+    {
+      "from": "post-gate-reply-review",
+      "to": "warm-referral-route",
+      "relation": "gates",
+      "weight": 5
+    },
+    {
+      "from": "proof-route-regression-suite",
+      "to": "post-gate-reply-review",
+      "relation": "guards",
+      "weight": 5
     }
   ],
   "views": {
@@ -2259,11 +2290,12 @@
       "proof-route-staleness-sentinel",
       "proof-route-renewal-drill",
       "proof-route-regression-suite",
+      "post-gate-reply-review",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
-      "proof-route-regression-suite",
+      "post-gate-reply-review",
       "warm-referral-route",
       "legal-entity-review"
     ]

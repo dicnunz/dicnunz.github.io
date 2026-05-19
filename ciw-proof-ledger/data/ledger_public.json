@@ -647,5 +647,16 @@
     "source_hash": "e00bc84135fe405d7aa8a71c320f068949eb878aa1ef9398cdc36312c3488fbe",
     "prev_hash": "64e83bfd330ff00344806e79ab3d09d72875ee334bd33fa7ec32dc6fad19f9a5",
     "hash": "86fe67f58eb72350cecaebef302e9ad4c5c4f5b99bdcdfb4a3abb2256ec2b320"
+  },
+  {
+    "index": 59,
+    "timestamp": "2026-05-19T10:16:20+00:00",
+    "actor": "Codex",
+    "action": "added proof-route regression suite",
+    "details": "{\"commands\":[\"python3 tools/deployment_receipt.py validate-regression-suite --input examples/proof_route_regression_suite.json\",\"python3 tools/deployment_receipt.py regression-suite --input examples/proof_route_regression_suite.json\",\"python3 scripts/verify_public_pack.py\",\"python3 -m unittest tests/test_proof_ledger.py tests/test_deployment_receipt.py\"],\"doc\":\"https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-regression-suite.md\",\"fixture\":\"https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_regression_suite.json\",\"originality_score\":\"96.3\",\"purpose\":\"run role-source, staleness, renewal, draft-quality, route-index, ledger, public-url, privacy, and no-outbound checks as one pre-leverage gate\",\"source_commit\":\"15d0da762c08ef135f5316fc96a17eac92e4e7fe\",\"source_run\":\"26090770896-success\"}",
+    "visibility": "public projection",
+    "source_hash": "5955ce0cdbccb1f71d2a2bf6db0a8b827fe59769a5d276f27ae9a3d4a87d9cbf",
+    "prev_hash": "86fe67f58eb72350cecaebef302e9ad4c5c4f5b99bdcdfb4a3abb2256ec2b320",
+    "hash": "17e634e9618b6f25a3fe956a73a3c03206d15369d6134ae480490ebefc1480ab"
   }
 ]

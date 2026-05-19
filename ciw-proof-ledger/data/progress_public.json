@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T08:26:30Z",
+  "updated_at": "2026-05-19T08:49:06Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -827,14 +827,34 @@
       "id": "no-send-follow-up-decision-kit",
       "title": "No-send follow-up decision kit",
       "type": "hiring-route",
-      "status": "next",
+      "status": "done",
       "priority": "P0",
-      "summary": "Next safe leverage branch: prebuild a local post-gate decision packet with send, hold, and do-not-send criteria so proof can be used after the no-outbound gate without rushed, generic, or repetitive outreach.",
+      "summary": "Source and public projection now validate, render, and publish the no-send follow-up decision kit: six send, hold, and do_not_send rules decide whether a post-gate follow-up should be used, held, or refused while preserving the 2026-05-26 no-outbound gate and the no-affiliation/no-customer/no-revenue claim boundary.",
       "evidence": [
-        "planned-by:proof-route-cold-read-simulation"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/23870ce",
+        "cleanroom-run:26086116602-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/no_send_follow_up_decision_kit.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-no-send-follow-up-decision-kit.md",
+        "https://dicnunz.github.io/ai-coding-no-send-follow-up-decision-kit/",
+        "commit:90671f99cdc957ef84b5d3ab6a058f95a28959cc",
+        "pages-run:26086548152-success"
       ],
       "next": [
-        "Build only as a local no-send artifact; do not touch external accounts or send messages before the 2026-05-26 gate."
+        "Use as a decision gate only; the next safe branch is a follow-up draft evaluation harness, not external outreach."
+      ]
+    },
+    {
+      "id": "follow-up-draft-eval-harness",
+      "title": "Follow-up draft evaluation harness",
+      "type": "hiring-route",
+      "status": "next",
+      "priority": "P0",
+      "summary": "Next safe leverage branch: build a local evaluator that scores any future post-gate follow-up draft for source freshness, recipient fit, repetition, claim safety, and proof-link economy before it can be used.",
+      "evidence": [
+        "planned-by:no-send-follow-up-decision-kit"
+      ],
+      "next": [
+        "Build only as a local verifier; do not touch external accounts or send messages before the 2026-05-26 gate."
       ]
     }
   ],
@@ -2086,6 +2106,18 @@
       "to": "warm-referral-route",
       "relation": "guards",
       "weight": 4
+    },
+    {
+      "from": "no-send-follow-up-decision-kit",
+      "to": "follow-up-draft-eval-harness",
+      "relation": "next_path",
+      "weight": 5
+    },
+    {
+      "from": "follow-up-draft-eval-harness",
+      "to": "warm-referral-route",
+      "relation": "guards",
+      "weight": 4
     }
   ],
   "views": {
@@ -2124,11 +2156,12 @@
       "source-to-answer-index",
       "proof-route-cold-read-simulation",
       "no-send-follow-up-decision-kit",
+      "follow-up-draft-eval-harness",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
-      "no-send-follow-up-decision-kit",
+      "follow-up-draft-eval-harness",
       "warm-referral-route",
       "legal-entity-review"
     ]

@@ -378,11 +378,11 @@
     "timestamp": "2026-05-19T05:26:39+00:00",
     "actor": "codex",
     "action": "hardened autonomy public-surface coverage",
-    "details": "{\"files\":[\"tools/ciw_autonomy.py\",\"ops/autonomy/autonomy_config.json\",\"ops/autonomy/state/latest_report.md\",\"ops/autonomy/state/next_work_packet.md\"],\"verification\":[\"python3 -m unittest tests/test_ciw_autonomy.py tests/test_reviewer_digest.py\",\"python3 tools/ciw_autonomy.py heartbeat\",\"python3 tools/progress_graph.py validate\",\"python3 tools/proof_ledger.py verify --ledger .ciw/ledger.jsonl\"],\"public_surfaces_added_to_heartbeat\":[\"openai-codex-route-index\",\"openai-codex-review-digest\"],\"gate\":\"no outbound before 2026-05-26 unless reply or explicit override\"}",
+    "details": "{\"files\":[\"tools/ciw_autonomy.py\",\"ops/autonomy/autonomy_config.json\",\"ops/autonomy/state/latest_report.md\",\"ops/autonomy/state/next_work_packet.md\"],\"gate\":\"no outbound before 2026-05-26 unless reply or explicit override\",\"public_surfaces_added_to_heartbeat\":[\"openai-codex-route-index\",\"openai-codex-review-digest\"],\"verification\":[\"python3 -m unittest tests/test_ciw_autonomy.py tests/test_reviewer_digest.py\",\"python3 tools/ciw_autonomy.py heartbeat\",\"python3 tools/progress_graph.py validate\",\"python3 tools/proof_ledger.py verify --ledger .ciw/ledger.jsonl\"]}",
     "visibility": "public projection",
     "source_hash": "25445d281ce7aefc13554e59a0437245145b80e947eb668ec4d9402906fcb700",
     "prev_hash": "5a5bb99b812fb55f3edbd9ce5628bfe2149473ea2c6562c7f7a29600d7ae5976",
-    "hash": "0e0e81a0d15e64602561a3914f1cb911b3bdf1591826a025e2c67223295e56f7"
+    "hash": "028332d0f09ac88f78ea5e9862cb04078d7f29dc50ab56764f3947c9f20a8d4b"
   },
   {
     "index": 35,
@@ -392,8 +392,8 @@
     "details": "Cleanroom commit 0f1478a adds validate-feedback-export and feedback-export commands, examples/product_feedback_export_input.json, docs/ai-coding-product-feedback-export.md, tests for private-evidence rejection plus routing/severity/gate validation, and verify_public_pack coverage. GitHub Actions run 26078339260 succeeded. Local progress graph now has product-feedback-export-fixture as a public-proof node with 39 nodes and 171 edges.",
     "visibility": "public projection",
     "source_hash": "bfb2dac1d1f018113c6b313572a65fcf1f940a616f4e4541b2dd520ae3f51fbe",
-    "prev_hash": "0e0e81a0d15e64602561a3914f1cb911b3bdf1591826a025e2c67223295e56f7",
-    "hash": "47662b3470b5919d23e2cc617a368c171cdd7d18aa3b452933ca2f385f235b8c"
+    "prev_hash": "028332d0f09ac88f78ea5e9862cb04078d7f29dc50ab56764f3947c9f20a8d4b",
+    "hash": "642062f5c4577728a018f81120c53430ee9765b925361d4bf83f157ed28804af"
   },
   {
     "index": 36,
@@ -403,8 +403,8 @@
     "details": "Cleanroom commit e9fb1d4 removes customer-deployment-history phrasing in favor of real customer rollout evidence, preserving the simulated/public-safe boundary. GitHub Actions run 26078483369 succeeded. Local public pages and progress graph were refreshed to avoid contextual banned-claim exceptions.",
     "visibility": "public projection",
     "source_hash": "1f55d34b6a25b97c0db660863e4be7cc6a46184b0684e17b7a942084b22c3511",
-    "prev_hash": "47662b3470b5919d23e2cc617a368c171cdd7d18aa3b452933ca2f385f235b8c",
-    "hash": "55b596d26ffc58c62fde802e2f170cdf9b87466337a49a7e31a0093bae279a9c"
+    "prev_hash": "642062f5c4577728a018f81120c53430ee9765b925361d4bf83f157ed28804af",
+    "hash": "57d33b9db024d794529635e9a2598a50857096ea862e946d92a1a8c0005c821f"
   },
   {
     "index": 37,
@@ -414,8 +414,8 @@
     "details": "Autonomy next-work packet now treats receipt, handoff, feedback-export, and route-index layers as shipped. Next safe branches are reviewer digest refresh only after state changes, a field-trial acceptance scorecard if verifier-backed, genuinely new executable deployment evidence, or the 2026-05-26 no-reply follow-up check. Heartbeat required checks passed; only known Pages index.html warning remains.",
     "visibility": "public projection",
     "source_hash": "052f168afa060fca7a9b1cd87df52daa4597c571b19b952c13ab0563cda51ff9",
-    "prev_hash": "55b596d26ffc58c62fde802e2f170cdf9b87466337a49a7e31a0093bae279a9c",
-    "hash": "166313ab7303135d4f451e0979e9515fd95f61cab423b69bdc680fe887de2af8"
+    "prev_hash": "57d33b9db024d794529635e9a2598a50857096ea862e946d92a1a8c0005c821f",
+    "hash": "c361d01dae22868ae3646034ac14caac0f3fa0fd922c8fbbffb048d6575277a6"
   },
   {
     "index": 38,
@@ -425,8 +425,8 @@
     "details": "Cleanroom source commit 83e52e7 and Actions run 26078967712 added a public-safe field-trial acceptance scorecard fixture, validator, renderer, docs, tests, and public-pack verification; local progress graph now uses it as the scorecard gate before warm-referral or autonomous growth work.",
     "visibility": "public projection",
     "source_hash": "3c0428644fa7149b92b656b0e45335411d6e73b82abd8e06dcd4c0a7771b71bb",
-    "prev_hash": "166313ab7303135d4f451e0979e9515fd95f61cab423b69bdc680fe887de2af8",
-    "hash": "fbf68982a517cd5c66bf0b7d70b6c2c19a57e9a7c37cb181d3caa5343c928267"
+    "prev_hash": "c361d01dae22868ae3646034ac14caac0f3fa0fd922c8fbbffb048d6575277a6",
+    "hash": "adcd3d16524ff24cd8861e3bf8bb0756d172e67153e9cdecf0a92d9d2ee5f02d"
   },
   {
     "index": 39,
@@ -436,8 +436,8 @@
     "details": "Autonomy heartbeat now verifies both the installed LaunchAgent plist and loaded launchctl runtime for com.nicdunz.ciw-autopilot, including expected command, workspace, and 21600-second interval. Unit tests cover config, plist rejection, and launchctl parsing; latest heartbeat passed launch_agent_plist and launch_agent_runtime with only the known unrelated Pages root index warning.",
     "visibility": "public projection",
     "source_hash": "a953b059280cf0e3d6d4e9e2efad4c61bb3c336d7b4d7bec0c4a6c4d9cc17c3c",
-    "prev_hash": "fbf68982a517cd5c66bf0b7d70b6c2c19a57e9a7c37cb181d3caa5343c928267",
-    "hash": "af6e7be5e6ef19dd49501c5811adc7a1e274c8e0d1b6b62e89ee662b56b3c24f"
+    "prev_hash": "adcd3d16524ff24cd8861e3bf8bb0756d172e67153e9cdecf0a92d9d2ee5f02d",
+    "hash": "251670382020549cc23cb71e3b6e04c520ba9a68d0aca52d27ff6c6581953d6c"
   },
   {
     "index": 40,
@@ -447,8 +447,8 @@
     "details": "Autonomy heartbeat now verifies the official AI Deployment Engineer - Codex target role page for title, Technical Success / Remote - US location, customer-adoption language, high-quality demo language, and operational-readiness language, and watches the official Codex search cluster for route drift. Local tests passed, validate-config passed, latest heartbeat passed both role_source checks with only the known unrelated Pages root warning.",
     "visibility": "public projection",
     "source_hash": "94f90e8bcb2d8901704acda7e286cba94340d8aea1ee46edd890cd6648994c0d",
-    "prev_hash": "af6e7be5e6ef19dd49501c5811adc7a1e274c8e0d1b6b62e89ee662b56b3c24f",
-    "hash": "5bbd0f7ecef1b2180350489ddbcb97278a9c6947fc8ae2ca5c1e4ccf2ebfef11"
+    "prev_hash": "251670382020549cc23cb71e3b6e04c520ba9a68d0aca52d27ff6c6581953d6c",
+    "hash": "04676a7646ac3029c95ff92dad3553dbd919650bf46893ffab12a84f77184233"
   },
   {
     "index": 41,
@@ -458,8 +458,8 @@
     "details": "Cleanroom source commit 10987eb adds a validated deployment assessment drill with fixture examples/deployment_assessment_drill.json, docs/ai-coding-deployment-assessment-drill.md, CLI commands validate-assessment and assessment, and tests covering interview-signal rendering, missing-signal rejection, and private-evidence rejection. Cleanroom CI run 26080549824 succeeded.",
     "visibility": "public projection",
     "source_hash": "68e4b50b8a236b3dae347c4ed022931d14ab427dbed8cf6d45071336a1dab23f",
-    "prev_hash": "5bbd0f7ecef1b2180350489ddbcb97278a9c6947fc8ae2ca5c1e4ccf2ebfef11",
-    "hash": "3caf5752460a7410932442a119a17862ceaed17b9807634e5fc0a7adca80d0e6"
+    "prev_hash": "04676a7646ac3029c95ff92dad3553dbd919650bf46893ffab12a84f77184233",
+    "hash": "401d5c18d54133295db9a6788af4c9ce7613e7685607b28570ede985791a6d1a"
   },
   {
     "index": 42,
@@ -469,8 +469,8 @@
     "details": "Autonomy runner now builds a deterministic growth plan before model-driven advance work: it verifies scorecard, assessment, scheduler, and live role-source guardrails; blocks required-gate failures; marks shipped proof modes redundant; preserves the 2026-05-26 no-outbound gate; and selects reviewer-time-to-understand-benchmark as the next safe branch.",
     "visibility": "public projection",
     "source_hash": "d68f3fcbb35185779bcf117d0ccf5ae5e738cd4a0aed504fc29f92c8b12855d9",
-    "prev_hash": "3caf5752460a7410932442a119a17862ceaed17b9807634e5fc0a7adca80d0e6",
-    "hash": "4ffb06d00145c8f08708f42245ce37706c342e61c0cd16cec5ff82fe5e7447c9"
+    "prev_hash": "401d5c18d54133295db9a6788af4c9ce7613e7685607b28570ede985791a6d1a",
+    "hash": "fe03308e93465c7707d0f40e38bb91cc8612db8a49977273bfed6ae3e96f1ab7"
   },
   {
     "index": 43,
@@ -480,8 +480,8 @@
     "details": "Cleanroom source commit 7110e46 and Actions run 26082012084 added a public-safe reviewer time-to-understand benchmark with fixture examples/reviewer_time_to_understand_benchmark.json, docs/ai-coding-reviewer-time-to-understand-benchmark.md, CLI commands validate-reviewer-benchmark and reviewer-benchmark, tests for route budget rendering, missing-signal rejection, private-evidence rejection, route-time overrun rejection, and public-pack verification. Local progress graph now marks reviewer-time-to-understand-benchmark done and selects interview-question-branching-drill as the next safe branch while preserving the 2026-05-26 no-outbound gate.",
     "visibility": "public projection",
     "source_hash": "51c6a74366bab6c4dcd63fda6985c9e16e75c99d3f51325658dc434153059252",
-    "prev_hash": "4ffb06d00145c8f08708f42245ce37706c342e61c0cd16cec5ff82fe5e7447c9",
-    "hash": "d75bcef4cdf29c85e9dd4554be94aef83618e88b4ed704d0f26dfd65c0c00e1c"
+    "prev_hash": "fe03308e93465c7707d0f40e38bb91cc8612db8a49977273bfed6ae3e96f1ab7",
+    "hash": "b3e1f849701aad0adb570fc47f9514dba9e64f6475f55a01870bb25d564b0858"
   },
   {
     "index": 44,
@@ -491,8 +491,8 @@
     "details": "Published https://dicnunz.github.io/ai-coding-reviewer-time-benchmark/ from dicnunz.github.io commit 2a02b55780a28a4904f10e10f2eb78f7910a308a; Pages run 26082462305 completed success; live checks confirmed the benchmark page, route index, reviewer digest, autonomy status, summary JSON, and reviewer-time graph preset. The graph node now carries source commit 7110e46, cleanroom run 26082012084-success, public URL, Pages commit, and Pages run evidence.",
     "visibility": "public projection",
     "source_hash": "2b88335f1daa311fdf25ddce14d45110820d963dc365ad2e8854561473a86f10",
-    "prev_hash": "d75bcef4cdf29c85e9dd4554be94aef83618e88b4ed704d0f26dfd65c0c00e1c",
-    "hash": "88930d7161388587f3ee09cc56303d277bd2276af415457a2d5a94cbb64ca9eb"
+    "prev_hash": "b3e1f849701aad0adb570fc47f9514dba9e64f6475f55a01870bb25d564b0858",
+    "hash": "dd9b90e9401d5edcd856169811ec3139eb70585453e3b1ac02eebdb93eab0de0"
   },
   {
     "index": 45,
@@ -502,8 +502,8 @@
     "details": "Cleanroom source commit 45b9e43 and Actions run 26083011070 added a public-safe interview question branching drill with fixture examples/interview_question_branching_drill.json, docs/ai-coding-interview-question-branching-drill.md, CLI commands validate-interview-branching and interview-branching, tests covering rendering, missing-signal rejection, private-evidence rejection, external-URL rejection, public-pack verification, and originality gate score 91.1. Local progress graph marks interview-question-branching-drill done and selects source-to-answer-index as the next safe no-outbound branch.",
     "visibility": "public projection",
     "source_hash": "21661febf3a72260d0fe2775195e34413a2aed13a41bf1b80923656430e2da9a",
-    "prev_hash": "88930d7161388587f3ee09cc56303d277bd2276af415457a2d5a94cbb64ca9eb",
-    "hash": "8e8c4d1b65df2518feed8a88495a775eed2832b6506a1326aa50a3f0dc3b297d"
+    "prev_hash": "dd9b90e9401d5edcd856169811ec3139eb70585453e3b1ac02eebdb93eab0de0",
+    "hash": "257b88af35d98f9e3a73969cecf2ae8346d77c102fd5a12d2b4872d61fd6b6b3"
   },
   {
     "index": 46,
@@ -513,8 +513,8 @@
     "details": "Published https://dicnunz.github.io/ai-coding-interview-question-branching-drill/ from dicnunz.github.io commit 7d78086; Pages run 26083510350 completed success; live checks confirmed the branching page, ten-link route index, reviewer digest, summary JSON, and interview-branching graph preset assets. The graph node now carries cleanroom commit 45b9e43, cleanroom run 26083011070-success, public URL, Pages commit, and Pages run evidence while the autonomy selector advances to source-to-answer-index.",
     "visibility": "public projection",
     "source_hash": "93fa4f183a458c663cf8541ff4a533722e91ed765259bb4ddaec047c67d86cd3",
-    "prev_hash": "8e8c4d1b65df2518feed8a88495a775eed2832b6506a1326aa50a3f0dc3b297d",
-    "hash": "274cf5407fcd811ea3bf3992dce4c70a7ad9e3237abad073598b48194a1f8322"
+    "prev_hash": "257b88af35d98f9e3a73969cecf2ae8346d77c102fd5a12d2b4872d61fd6b6b3",
+    "hash": "ac5ec941ec14e05655f5d47bfe8ba0c32acce067386400c2c308e2ca66f3bbd0"
   },
   {
     "index": 47,
@@ -524,8 +524,8 @@
     "details": "Cleanroom source commit 36e291f and Actions run 26084058125 added a public-safe source-to-answer index with fixture examples/source_to_answer_index.json, docs/ai-coding-source-to-answer-index.md, CLI commands validate-source-index and source-index, tests for lookup rendering, missing-question-type rejection, private-evidence rejection, external-URL rejection, public-pack verification, and originality gate score 86.7. Local progress graph now marks source-to-answer-index done and selects proof-route-cold-read-simulation as the next safe no-outbound branch.",
     "visibility": "public projection",
     "source_hash": "3b67891ad26bfdd65f163b516bf749e50a5071ac1dc2395311ba6231eb2b7129",
-    "prev_hash": "274cf5407fcd811ea3bf3992dce4c70a7ad9e3237abad073598b48194a1f8322",
-    "hash": "30da322ae611712f43a3410ca41a370c0c30011b916c2a15536d64e5f53d7939"
+    "prev_hash": "ac5ec941ec14e05655f5d47bfe8ba0c32acce067386400c2c308e2ca66f3bbd0",
+    "hash": "03a3973d6f489e1f3e8495b898fdc92c32e96644950d5936ae67970b71ab1ed1"
   },
   {
     "index": 48,
@@ -535,8 +535,8 @@
     "details": "Published https://dicnunz.github.io/ai-coding-source-to-answer-index/ from dicnunz.github.io commit c65187d; Pages run 26084358733 completed success; live checks confirmed the source-to-answer page, twelve-link route index, source-answer graph preset shell, summary JSON, and reviewer digest projection. The graph node now carries cleanroom commit 36e291f, cleanroom run 26084058125-success, public URL, Pages commit, and Pages run evidence while the autonomy selector advances to proof-route-cold-read-simulation.",
     "visibility": "public projection",
     "source_hash": "f159b0e7e07bef09d5e33a40ad86e31f8e62817d9a7d7d286b3d87807cbe991d",
-    "prev_hash": "30da322ae611712f43a3410ca41a370c0c30011b916c2a15536d64e5f53d7939",
-    "hash": "3c725fef4baea3e2f1145fab08984422c09235e12507bc2283e5d473064a9912"
+    "prev_hash": "03a3973d6f489e1f3e8495b898fdc92c32e96644950d5936ae67970b71ab1ed1",
+    "hash": "7899d95675b12925902a86859ef855336b64c49d690277c73a65030b193ce8ac"
   },
   {
     "index": 49,
@@ -546,8 +546,8 @@
     "details": "Cleanroom source commit a265fcb and Actions run 26084818713 added a public-safe proof-route cold-read simulation with fixture examples/proof_route_cold_read_simulation.json, docs/ai-coding-proof-route-cold-read-simulation.md, CLI commands validate-cold-read and cold-read, tests for route rendering, missing-answer-type rejection, private-start-url rejection, time-overrun rejection, public-pack verification, and originality gate score 86.8. Local progress graph marks proof-route-cold-read-simulation done and selects no-send-follow-up-decision-kit as the next safe no-outbound branch.",
     "visibility": "public projection",
     "source_hash": "de3e77851357835aca585c8742e596062ee3c6addd8d50e1989c7923fb105299",
-    "prev_hash": "3c725fef4baea3e2f1145fab08984422c09235e12507bc2283e5d473064a9912",
-    "hash": "4df6844299bf8dc6d790f712ec26a741581faa374b732250c95ad3b24e981f54"
+    "prev_hash": "7899d95675b12925902a86859ef855336b64c49d690277c73a65030b193ce8ac",
+    "hash": "71743542f4a56ee844f61b91c263c78179dee8bc7fbcc595552a97f059502244"
   },
   {
     "index": 50,
@@ -557,7 +557,29 @@
     "details": "Published https://dicnunz.github.io/ai-coding-proof-route-cold-read-simulation/ from dicnunz.github.io commit ffa9003; Pages run 26085423679 completed success; live checks confirmed the cold-read page, thirteen-link route index, cold-read graph preset data, summary JSON, and reviewer digest projection. Local Playwright checks captured desktop and Pixel 5 mobile screenshots for the new page, and the graph evidence now carries the public URL, Pages commit, and Pages run while the autonomy selector remains on no-send-follow-up-decision-kit.",
     "visibility": "public projection",
     "source_hash": "1447a736959060ab8efec3e885207dce3c5c3b53afc50cb95e75a832a8fd1aa9",
-    "prev_hash": "4df6844299bf8dc6d790f712ec26a741581faa374b732250c95ad3b24e981f54",
-    "hash": "914856b7dc3b3d83c04ef84f5f2bd446a32a3cab6a64867a1ec05ad6d3f20553"
+    "prev_hash": "71743542f4a56ee844f61b91c263c78179dee8bc7fbcc595552a97f059502244",
+    "hash": "485fc52362e60c09de6824e2a0a95ba3c133f8f38b4ad654091efe81e6de747a"
+  },
+  {
+    "index": 51,
+    "timestamp": "2026-05-19T08:41:25+00:00",
+    "actor": "Codex",
+    "action": "added no-send follow-up decision kit",
+    "details": "Cleanroom source commit 23870ce and Actions run 26086116602 added a public-safe no-send follow-up decision kit with fixture examples/no_send_follow_up_decision_kit.json, docs/ai-coding-no-send-follow-up-decision-kit.md, CLI commands validate-follow-up-kit and follow-up-kit, tests for lane coverage, private evidence rejection, gate-date rejection, premature-outbound phrase rejection, public-pack verification, and originality gate score 90.0. Local progress graph marks no-send-follow-up-decision-kit done and selects follow-up-draft-eval-harness as the next safe no-outbound branch.",
+    "visibility": "public projection",
+    "source_hash": "8db1fc98581911086031cf7360d6cc6dbfad5b290ce6fbffc1b23edf96ba85e1",
+    "prev_hash": "485fc52362e60c09de6824e2a0a95ba3c133f8f38b4ad654091efe81e6de747a",
+    "hash": "e87305a42fa394fd211adc2ef8efd6538c127d18d8af27755e8420b239c05a11"
+  },
+  {
+    "index": 52,
+    "timestamp": "2026-05-19T08:48:50+00:00",
+    "actor": "Codex",
+    "action": "published no-send follow-up decision kit page",
+    "details": "{\"gate\":\"no outbound before 2026-05-26 unless reply or explicit fresh override\",\"local_visual_qa\":[\"local path withheld\",\"local path withheld\",\"local path withheld\",\"local path withheld\"],\"pages_commit\":\"90671f99cdc957ef84b5d3ab6a058f95a28959cc\",\"pages_run\":\"26086548152-success\",\"public_urls\":[\"https://dicnunz.github.io/ai-coding-no-send-follow-up-decision-kit/\",\"https://dicnunz.github.io/openai-codex-route-index/\",\"https://dicnunz.github.io/ciw-proof-ledger/?preset=no-send\"],\"source_commit\":\"23870ce\",\"source_run\":\"26086116602-success\"}",
+    "visibility": "public projection",
+    "source_hash": "2586e50855d27b4a4eafb117d6d3c787ef98c6ff7b043ab8850ba453c79bbdb5",
+    "prev_hash": "e87305a42fa394fd211adc2ef8efd6538c127d18d8af27755e8420b239c05a11",
+    "hash": "b0e482959b6647e8946332ffb97ec2c2492c99e6aa51e6c2f468439d6225c85d"
   }
 ]

@@ -416,5 +416,16 @@
     "source_hash": "052f168afa060fca7a9b1cd87df52daa4597c571b19b952c13ab0563cda51ff9",
     "prev_hash": "55b596d26ffc58c62fde802e2f170cdf9b87466337a49a7e31a0093bae279a9c",
     "hash": "166313ab7303135d4f451e0979e9515fd95f61cab423b69bdc680fe887de2af8"
+  },
+  {
+    "index": 38,
+    "timestamp": "2026-05-19T05:53:37+00:00",
+    "actor": "Codex",
+    "action": "added field-trial acceptance scorecard",
+    "details": "Cleanroom source commit 83e52e7 and Actions run 26078967712 added a public-safe field-trial acceptance scorecard fixture, validator, renderer, docs, tests, and public-pack verification; local progress graph now uses it as the scorecard gate before warm-referral or autonomous growth work.",
+    "visibility": "public projection",
+    "source_hash": "3c0428644fa7149b92b656b0e45335411d6e73b82abd8e06dcd4c0a7771b71bb",
+    "prev_hash": "166313ab7303135d4f451e0979e9515fd95f61cab423b69bdc680fe887de2af8",
+    "hash": "fbf68982a517cd5c66bf0b7d70b6c2c19a57e9a7c37cb181d3caa5343c928267"
   }
 ]

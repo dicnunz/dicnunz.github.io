@@ -145,7 +145,8 @@
           renders into a markdown deployment receipt, product-feedback packet, and post-workshop handoff with
           friction deltas, safety gates, model behavior, tool gaps, adoption notes, and ready-state lineage across a
           second service surface. The latest path aggregates those fixtures into a simulated public-safe product
-          feedback export with routing, severity, release gates, and promotion rules.
+          feedback export with routing, severity, release gates, and promotion rules, then scores the field-trial lane
+          against role needs and no-outbound gates.
         </p>
         <pre class="code-panel" aria-label="Receipt reference commands"><code>python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_input.json
 python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_repair_input.json
@@ -158,6 +159,8 @@ python3 tools/deployment_receipt.py validate-handoff --input examples/post_works
 python3 tools/deployment_receipt.py handoff --input examples/post_workshop_handoff_ready_input.json
 python3 tools/deployment_receipt.py validate-feedback-export --input examples/product_feedback_export_input.json
 python3 tools/deployment_receipt.py feedback-export --input examples/product_feedback_export_input.json
+python3 tools/deployment_receipt.py validate-scorecard --input examples/field_trial_acceptance_scorecard.json
+python3 tools/deployment_receipt.py scorecard --input examples/field_trial_acceptance_scorecard.json
 python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py</code></pre>
       </section>
 
@@ -184,6 +187,8 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
               <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/post_workshop_handoff_ready_input.json">ready second-service handoff</a>,
               plus the
               <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/product_feedback_export_input.json">product feedback export</a>
+              and
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/field_trial_acceptance_scorecard.json">field-trial scorecard</a>
             </span>
           </div>
           <div class="proof-card">
@@ -192,7 +197,7 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
           </div>
           <div class="proof-card">
             <strong>CI</strong>
-            <span>Cleanroom verifier passed at latest export commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/e9fb1d4">e9fb1d4</a>.</span>
+            <span>Cleanroom verifier passed at latest scorecard commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/83e52e7">83e52e7</a>.</span>
           </div>
         </div>
       </section>
@@ -227,6 +232,10 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
             <strong>Export gaps</strong>
             <span>Missing simulated/public-safe source boundary, routed signal buckets, severity, release gates, promotion rules, or no-customer-claim language.</span>
           </li>
+          <li>
+            <strong>Scorecard gaps</strong>
+            <span>Missing role-need coverage, low average score, blocked ready-state gates, private evidence paths, non-official role URLs, or loss of the 2026-05-26 no-outbound gate.</span>
+          </li>
         </ol>
       </section>
 
@@ -242,7 +251,8 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
             turns the same validated run into a product-feedback packet, and adds a second handoff path for the end of a
             workshop. The handoff path now shows a repair-state first pass and a ready-state repeat on another
             public-safe service surface, then routes the fixture lineage into a simulated product-feedback export without
-            pretending it is real customer rollout evidence.
+            pretending it is real customer rollout evidence. The scorecard decides whether that fixture-backed field
+            lane is ready to show.
           </p>
           <p class="boundary-note">
             This is not real customer rollout evidence. It is a code-backed operating proof: a demo should produce
@@ -262,6 +272,7 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
           <a href="../ai-coding-deployment-field-kit/">Field kit</a>
           <a href="../ai-coding-deployment-sample-run/">Sample run</a>
           <a href="../openai-codex-30-day-plan/">30-day plan</a>
+          <a href="../ai-coding-field-trial-scorecard/">Scorecard</a>
           <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom repo</a>
         </div>
       </section>

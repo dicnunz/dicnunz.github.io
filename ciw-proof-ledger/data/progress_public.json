@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T05:37:25Z",
+  "updated_at": "2026-05-19T05:52:16Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -449,13 +449,14 @@
       "type": "operating-system",
       "status": "active",
       "priority": "P0",
-      "summary": "Scheduled local manager for verifier heartbeats, public-safety scans, graph and ledger health, next-work packets, and bounded daily Codex proof-growth passes.",
+      "summary": "Scheduled local manager for verifier heartbeats, public-safety scans, graph and ledger health, scorecard-gated next-work packets, and bounded daily Codex proof-growth passes.",
       "evidence": [
         "ops/AUTONOMOUS_OPERATING_SYSTEM.md",
         "tools/ciw_autonomy.py",
         "ops/autonomy/autonomy_config.json",
         "local path withheld",
-        "ops/autonomy/state/latest_report.md"
+        "ops/autonomy/state/latest_report.md",
+        "scorecard-gate:test_ciw_autonomy.py"
       ],
       "next": [
         "Let the scheduled cycle keep auditing; use next_work_packet.md as the autonomous branch selector."
@@ -651,6 +652,24 @@
       ],
       "next": [
         "Expose the export on the public receipt-reference page and use it only as simulated product-signal proof, never real customer rollout evidence."
+      ]
+    },
+    {
+      "id": "field-trial-acceptance-scorecard",
+      "title": "Field-trial acceptance scorecard",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Executable scorecard that validates AI Deployment Engineer role-need coverage across the 30-day plan, receipt fixtures, handoff fixtures, product-feedback export, safety boundary, public route, and no-outbound gate without claiming real customers.",
+      "evidence": [
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/83e52e7",
+        "cleanroom-run:26078967712-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/field_trial_acceptance_scorecard.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-field-trial-scorecard.md",
+        "https://dicnunz.github.io/ai-coding-field-trial-scorecard/"
+      ],
+      "next": [
+        "Keep the scorecard green as the autonomy gate; do not convert simulated readiness into customer rollout claims."
       ]
     }
   ],
@@ -1680,6 +1699,36 @@
       "to": "product-feedback-export-fixture",
       "relation": "next-growth-target",
       "weight": 4
+    },
+    {
+      "from": "product-feedback-export-fixture",
+      "to": "field-trial-acceptance-scorecard",
+      "relation": "feeds_scorecard",
+      "weight": 5
+    },
+    {
+      "from": "openai-30-day-field-trial-plan",
+      "to": "field-trial-acceptance-scorecard",
+      "relation": "becomes_verifiable",
+      "weight": 5
+    },
+    {
+      "from": "field-trial-acceptance-scorecard",
+      "to": "openai-reviewer-digest",
+      "relation": "strengthens_digest",
+      "weight": 4
+    },
+    {
+      "from": "field-trial-acceptance-scorecard",
+      "to": "warm-referral-route",
+      "relation": "strengthens_followup",
+      "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "field-trial-acceptance-scorecard",
+      "relation": "uses_as_gate",
+      "weight": 5
     }
   ],
   "views": {
@@ -1708,6 +1757,7 @@
       "public-openai-codex-route-index",
       "autonomy-public-surface-coverage",
       "product-feedback-export-fixture",
+      "field-trial-acceptance-scorecard",
       "warm-referral-route"
     ],
     "next_branches": [

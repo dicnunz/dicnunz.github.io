@@ -128,6 +128,18 @@
         padding-left: 14px;
       }
 
+      .code-panel {
+        border: 1px solid var(--line);
+        background: #151812;
+        color: #f4f1e8;
+        padding: 16px;
+        overflow-x: auto;
+      }
+
+      .code-panel code {
+        font: 0.9rem/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
       @media (max-width: 760px) {
         .week-list > li,
         .artifact-list > li {
@@ -145,6 +157,7 @@
         <a href="../ai-coding-deployment-field-kit/">Field kit</a>
         <a href="../ai-coding-deployment-sample-run/">Sample run</a>
         <a href="../ai-coding-workflow-receipt-reference/">Receipt reference</a>
+        <a href="../ai-coding-field-trial-scorecard/">Scorecard</a>
         <a href="../ai-coding-deployment-workshop/">Workshop kit</a>
         <a href="../ai-coding-deployment-patterns/">Patterns</a>
         <a href="../ciw-proof-ledger/">Ledger inspector</a>
@@ -182,10 +195,30 @@
             The public field-kit templates are here: <a href="../ai-coding-deployment-field-kit/">AI Coding Deployment Field Kit</a>.
             A filled example is here: <a href="../ai-coding-deployment-sample-run/">AI Coding Deployment Sample Run</a>.
             Runnable receipt proof is here: <a href="../ai-coding-workflow-receipt-reference/">AI Coding Workflow Receipt Reference</a>.
+            The acceptance scorecard is here: <a href="../ai-coding-field-trial-scorecard/">AI Coding Field Trial Scorecard</a>.
           </p>
           <p class="boundary-note">
             This is deliberately smaller than owning a portfolio. It is the fastest truthful path from high-potential
             candidate to measurable Codex deployment asset.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="scorecard-title">
+        <div class="section-label">
+          <p class="meta">Acceptance</p>
+          <h2 id="scorecard-title">Scorecard gate</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            The plan now has a runnable acceptance scorecard. It validates role-need coverage, verifier evidence,
+            release gates, official source URLs, and the no-outbound boundary before the field trial can be called ready.
+          </p>
+          <pre class="code-panel" aria-label="Field trial scorecard commands"><code>python3 tools/deployment_receipt.py validate-scorecard --input examples/field_trial_acceptance_scorecard.json
+python3 tools/deployment_receipt.py scorecard --input examples/field_trial_acceptance_scorecard.json</code></pre>
+          <p class="boundary-note">
+            Current result: ready, 4.4/5 average, no blocked gates, no outbound before 2026-05-26. This is still
+            public-safe readiness proof, not real customer rollout evidence.
           </p>
         </div>
       </section>

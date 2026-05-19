@@ -42,6 +42,12 @@ const ROLE_PRESETS = [
     filter: "active-path",
   },
   {
+    key: "scorecard",
+    label: "Scorecard",
+    node: "field-trial-acceptance-scorecard",
+    filter: "active-path",
+  },
+  {
     key: "field-kit-branch",
     label: "Field-kit branch",
     node: "ai-coding-deployment-field-kit",

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Field Trial Scorecard</title>
+    <meta
+      name="description"
+      content="Executable field-trial acceptance scorecard for Cleanroom Intelligence Works: role-need coverage, verifier evidence, release gates, and no-outbound boundary."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Field Trial Scorecard">
+    <meta
+      property="og:description"
+      content="A public-safe scorecard for AI Deployment Engineer role-fit proof without claiming real customers or affiliation."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-field-trial-scorecard/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-field-trial-scorecard/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .score-hero h1 {
+        max-width: 840px;
+        font-size: clamp(2.55rem, 6vw, 4.45rem);
+      }
+
+      .score-hero h1 span {
+        display: block;
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        padding: 14px;
+      }
+
+      .topbar nav a {
+        flex: 0 0 auto;
+      }
+
+      .score-tile strong,
+      .criterion-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.55rem;
+        font-weight: 760;
+      }
+
+      .criterion-list,
+      .gate-list {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .criterion-list li,
+      .gate-list li {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.35fr) minmax(0, 1fr);
+        gap: 18px;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .criterion-list span,
+      .gate-list span,
+      .source-list,
+      .command-panel {
+        color: var(--muted);
+      }
+
+      .criterion-list em,
+      .gate-list em {
+        color: var(--ink);
+        font-style: normal;
+        font-weight: 720;
+      }
+
+      .source-list {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .command-panel {
+        border: 1px solid var(--line);
+        background: #151812;
+        color: #f4f1e8;
+        padding: 16px;
+        overflow-x: auto;
+      }
+
+      .command-panel code {
+        font: 0.9rem/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .score-hero h1 {
+          max-width: 100%;
+          font-size: clamp(2.05rem, 9vw, 2.35rem);
+          line-height: 1.02;
+        }
+
+        .topbar nav {
+          gap: 10px 14px;
+        }
+
+        .score-hero .claim {
+          max-width: 31ch;
+          font-size: 1.08rem;
+          overflow-wrap: normal;
+        }
+
+        .score-strip,
+        .criterion-list li,
+        .gate-list li {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../openai-codex-route-index/">Route index</a>
+        <a href="../openai-codex-30-day-plan/">30-day plan</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Source</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro score-hero" aria-labelledby="intro-title">
+        <p class="meta">Field-trial acceptance scorecard · checked May 19, 2026</p>
+        <h1 id="intro-title"><span>A verifier-gated</span><span>answer to whether</span><span>the field trial is</span><span>ready to show.</span></h1>
+        <p class="claim">
+          The scorecard turns the 30-day Codex deployment plan into a runnable acceptance artifact: role needs,
+          evidence, verifier commands, release gates, and the no-outbound boundary in one public-safe fixture.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="status-title">
+        <div class="section-label">
+          <p class="meta">Status</p>
+          <h2 id="status-title">Current decision</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average score</strong>
+            <span>4.4 / 5</span>
+          </div>
+          <div class="score-tile">
+            <strong>Gate</strong>
+            <span>May 26</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="coverage-title">
+        <div class="section-label">
+          <p class="meta">Coverage</p>
+          <h2 id="coverage-title">Role need to evidence</h2>
+        </div>
+        <ol class="criterion-list">
+          <li>
+            <strong>SDLC workflow design</strong>
+            <span><em>5/5.</em> 30-day plan maps intake, demos, workshop, receipts, and product feedback into one adoption lane.</span>
+          </li>
+          <li>
+            <strong>Demos and references</strong>
+            <span><em>4/5.</em> Ready, repair, and reject fixtures turn demo states into runnable receipt proof.</span>
+          </li>
+          <li>
+            <strong>Workshops</strong>
+            <span><em>4/5.</em> Handoff fixture records friction deltas, safety gates, model/tool feedback, and next owner.</span>
+          </li>
+          <li>
+            <strong>Technical content</strong>
+            <span><em>4/5.</em> Patterns, sample runs, and receipt docs are public writing samples with verifier-backed code behind them.</span>
+          </li>
+          <li>
+            <strong>Product signal</strong>
+            <span><em>4/5.</em> Simulated feedback export routes deployment signal by bucket, severity, promotion rule, and review gate.</span>
+          </li>
+          <li>
+            <strong>Safety and security</strong>
+            <span><em>5/5.</em> Public-pack verifier and non-confusion policy scan for private evidence and forbidden claims.</span>
+          </li>
+          <li>
+            <strong>Operational readiness</strong>
+            <span><em>5/5.</em> Validators, renderers, fixtures, tests, CI, and autonomy heartbeat keep the proof lane inspectable.</span>
+          </li>
+          <li>
+            <strong>Communication</strong>
+            <span><em>4/5 watch.</em> Route index and reviewer digest compress the proof web, while outreach remains date-gated.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Release</p>
+          <h2 id="gates-title">Gates that must stay true</h2>
+        </div>
+        <ol class="gate-list">
+          <li>
+            <strong>Public-safe data</strong>
+            <span>Evidence artifacts are repository files or approved public URLs.</span>
+          </li>
+          <li>
+            <strong>No affiliation claim</strong>
+            <span>The fixture carries explicit no-affiliation and no-customer boundaries.</span>
+          </li>
+          <li>
+            <strong>No outbound before 2026-05-26</strong>
+            <span>The scorecard is proof packaging only; it does not authorize contact before the gate.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="commands-title">
+        <div class="section-label">
+          <p class="meta">Run it</p>
+          <h2 id="commands-title">Verifier commands</h2>
+        </div>
+        <pre class="command-panel"><code>python3 tools/deployment_receipt.py validate-scorecard --input examples/field_trial_acceptance_scorecard.json
+python3 tools/deployment_receipt.py scorecard --input examples/field_trial_acceptance_scorecard.json
+python3 scripts/verify_public_pack.py</code></pre>
+      </section>
+
+      <section class="section" aria-labelledby="sources-title">
+        <div class="section-label">
+          <p class="meta">Sources</p>
+          <h2 id="sources-title">Source and proof</h2>
+        </div>
+        <ul class="source-list">
+          <li><a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">AI Deployment Engineer - Codex role page</a></li>
+          <li><a href="https://openai.com/interview-guide/">OpenAI interview guide</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/83e52e7">Cleanroom source commit 83e52e7</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/actions/runs/26078967712">GitHub Actions run 26078967712</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/field_trial_acceptance_scorecard.json">Scorecard fixture</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-field-trial-scorecard.md">Scorecard documentation</a></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">What it does not prove</h2>
+        </div>
+        <div class="note-list">
+          <p class="boundary-note">
+            This is simulated, public-safe readiness proof. It is not real customer rollout evidence, employment,
+            endorsement, incorporation, revenue, production impact, or legal review.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

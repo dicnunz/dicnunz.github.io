@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-05-19T14:29:43Z",
+  "generated_at": "2026-05-19T15:10:06Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
-    "records": 87,
-    "latest_hash": "b6a3bb00c6129a242b68e1fe51a8e23320e8c691730fb9aed7827534ef1f3395",
-    "latest_action": "built company system map and launch readiness",
-    "source_latest_hash": "2997c455dc0dbf7cd3fdd2110e05c7d7d314822bd991716a568f98b05aa850a5"
+    "records": 89,
+    "latest_hash": "15e89be059b47336484a61251035acf5b412b27d67d6d8d0a2e9cdd93c63f380",
+    "latest_action": "built frontier-scale company engine",
+    "source_latest_hash": "5b8d4c51b19ad1b92d8a5b34bcd8c87a0c6d3cafcd3b80e0200d4c0cc8db5450"
   },
   "graph": {
-    "nodes": 72,
-    "edges": 290,
+    "nodes": 74,
+    "edges": 298,
     "root": "goal-openai-role",
     "status_counts": {
       "active": 4,
-      "done": 65,
+      "done": 67,
       "watch": 3
     },
-    "updated_at": "2026-05-19T14:17:04Z"
+    "updated_at": "2026-05-19T15:07:27Z"
   },
   "public_urls": {
     "role_review": "https://dicnunz.github.io/ciw-role-review/",
@@ -48,8 +48,10 @@
     "openai_outcome_watch": "https://dicnunz.github.io/openai-codex-outcome-watch/",
     "openai_signal_router": "https://dicnunz.github.io/openai-codex-signal-router/",
     "openai_application_delta": "https://dicnunz.github.io/openai-codex-application-delta/",
+    "collaboration_path": "https://dicnunz.github.io/ciw-collaboration-path/",
     "company_launch_readiness": "https://dicnunz.github.io/ciw-launch-readiness/",
     "company_system_map": "https://dicnunz.github.io/ciw-company-system-map/",
+    "company_scale_engine": "https://dicnunz.github.io/ciw-scale-engine/",
     "autonomy_status": "https://dicnunz.github.io/ciw-autonomy-status/",
     "reviewer_digest": "https://dicnunz.github.io/openai-codex-review-digest/",
     "route_index": "https://dicnunz.github.io/openai-codex-route-index/"

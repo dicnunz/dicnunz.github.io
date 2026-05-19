@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T14:17:04Z",
+  "updated_at": "2026-05-19T15:07:27Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1239,6 +1239,41 @@
       ],
       "next": [
         "Run before any public copy, outreach draft, naming change, commercial claim, or post-gate leverage action."
+      ]
+    },
+    {
+      "id": "openai-collaboration-path-packet",
+      "title": "OpenAI collaboration path packet",
+      "type": "collaboration-route",
+      "status": "done",
+      "priority": "P0",
+      "summary": "No-send collaboration-readiness packet that maps public OpenAI developer, Cookbook, docs-feedback, API-example, and repo-maintenance surfaces into a verified-interest session contract with explicit verifier, output, refusal, and non-affiliation gates.",
+      "evidence": [
+        "ops/openai_collaboration_path.json",
+        "applications/openai/OPENAI_COLLABORATION_PATH_PACKET.md",
+        "demo/collaboration-path/index.html",
+        "https://dicnunz.github.io/ciw-collaboration-path/"
+      ],
+      "next": [
+        "Use only after verified collaboration interest, a real reply, or a current override; otherwise keep it as no-send preparation evidence."
+      ]
+    },
+    {
+      "id": "frontier-scale-engine",
+      "title": "Frontier-scale company engine",
+      "type": "scale-engine",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Source-backed scale engine turning OpenAI, Anthropic, DeepMind/Gemini, frontier-lab, and chatbot-site benchmark research into CIW-owned flywheels, agent lanes, scale stages, and legal/design adaptation rules without copying brands, trade dress, screenshots, customer logos, partner badges, or official-status claims.",
+      "evidence": [
+        "research/FRONTIER_AI_BENCHMARK_SCAN.md",
+        "ops/company_scale_engine.json",
+        "ops/COMPANY_SCALE_ENGINE.md",
+        "demo/company-scale-engine/index.html",
+        "https://dicnunz.github.io/ciw-scale-engine/"
+      ],
+      "next": [
+        "Keep benchmark patterns as mechanisms only; use the scale engine for safe future growth selection and update it after any new frontier-lab, chatbot-product, legal/design, or public-proof signal."
       ]
     }
   ],
@@ -2981,6 +3016,54 @@
       "from": "legal-entity-review",
       "to": "launch-claim-boundary-pack",
       "relation": "led_to",
+      "weight": 3
+    },
+    {
+      "from": "openai-inbound-signal-router",
+      "to": "openai-collaboration-path-packet",
+      "relation": "routes",
+      "weight": 5
+    },
+    {
+      "from": "openai-collaboration-path-packet",
+      "to": "warm-referral-route",
+      "relation": "adds-collaboration-branch",
+      "weight": 4
+    },
+    {
+      "from": "openai-collaboration-path-packet",
+      "to": "goal-openai-role",
+      "relation": "evidence_for",
+      "weight": 4
+    },
+    {
+      "from": "company-system-map",
+      "to": "openai-collaboration-path-packet",
+      "relation": "exposes",
+      "weight": 3
+    },
+    {
+      "from": "frontier-scale-engine",
+      "to": "goal-openai-role",
+      "relation": "evidence_for",
+      "weight": 3
+    },
+    {
+      "from": "company-system-map",
+      "to": "frontier-scale-engine",
+      "relation": "exposes",
+      "weight": 3
+    },
+    {
+      "from": "frontier-scale-engine",
+      "to": "autonomous-growth-readiness-selector",
+      "relation": "informs",
+      "weight": 3
+    },
+    {
+      "from": "frontier-scale-engine",
+      "to": "launch-claim-boundary-pack",
+      "relation": "guarded_by",
       "weight": 3
     }
   ],

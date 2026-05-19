@@ -955,5 +955,27 @@
     "source_hash": "2997c455dc0dbf7cd3fdd2110e05c7d7d314822bd991716a568f98b05aa850a5",
     "prev_hash": "807ceb36d9df049fc7bb2e9c4b83985880f47eb81c9ce7fbe34bc87456d175b2",
     "hash": "b6a3bb00c6129a242b68e1fe51a8e23320e8c691730fb9aed7827534ef1f3395"
+  },
+  {
+    "index": 87,
+    "timestamp": "2026-05-19T14:49:01+00:00",
+    "actor": "Codex",
+    "action": "built OpenAI collaboration path packet",
+    "details": "{\"artifacts\":[\"ops/openai_collaboration_path.json\",\"applications/openai/OPENAI_COLLABORATION_PATH_PACKET.md\",\"demo/collaboration-path/index.html\"],\"proof\":\"no-send collaboration-readiness packet for verified-interest working session; maps official public developer/Cookbook/docs-feedback/community/careers sources to session contract and candidate lanes without affiliation or outbound claims\",\"verifiers\":[\"python3 tools/openai_collaboration_path.py validate --input ops/openai_collaboration_path.json\",\"python3 tools/openai_collaboration_path.py render --input ops/openai_collaboration_path.json --output applications/openai/OPENAI_COLLABORATION_PATH_PACKET.md --html demo/collaboration-path/index.html\",\"python3 scripts/verify_pack.py\",\"python3 -m unittest tests/test_openai_collaboration_path.py\"]}",
+    "visibility": "public projection",
+    "source_hash": "529bb68a5c24db8eb5ab0bcaf2794e44d2ed4deb1f8ab48b6b18ae4264fecc42",
+    "prev_hash": "b6a3bb00c6129a242b68e1fe51a8e23320e8c691730fb9aed7827534ef1f3395",
+    "hash": "8832ae442aae8b8894bf15d9a3fe75176dd5aeabe3dd31cabfc188f783816e00"
+  },
+  {
+    "index": 88,
+    "timestamp": "2026-05-19T15:07:20+00:00",
+    "actor": "codex",
+    "action": "built frontier-scale company engine",
+    "details": "Added source-backed frontier AI benchmark scan plus validated CIW scale engine with flywheels, agent lanes, stage gates, legal/design adaptation rules, rendered public page, verifier, autonomy integration, and system-map hooks.",
+    "visibility": "public projection",
+    "source_hash": "5b8d4c51b19ad1b92d8a5b34bcd8c87a0c6d3cafcd3b80e0200d4c0cc8db5450",
+    "prev_hash": "8832ae442aae8b8894bf15d9a3fe75176dd5aeabe3dd31cabfc188f783816e00",
+    "hash": "15e89be059b47336484a61251035acf5b412b27d67d6d8d0a2e9cdd93c63f380"
   }
 ]

@@ -823,5 +823,16 @@
     "source_hash": "a2c8886f860813d3aefec04e39dd42a5e49f78f9981ee17bbbaa11ed079fe7db",
     "prev_hash": "75ecc0c0a3b915288a61f6d615d21391f72890d42a76036fe2ccc2318918bf4e",
     "hash": "ee07abd2c723fb4e7e5076c6a5132d5d427e669bb256921208ddb0d342192556"
+  },
+  {
+    "index": 75,
+    "timestamp": "2026-05-19T12:19:57+00:00",
+    "actor": "codex",
+    "action": "made neutral role route URLs absolute",
+    "details": "Updated the canonical CIW role-review page to expose absolute public URLs for the digest, ledger, outcome watch, completion audit, and no-send gate; no outbound was sent and no affiliation or legal-status claim was added.",
+    "visibility": "public projection",
+    "source_hash": "06af4c79f1c8ded9a20831bd3b907139359630d518236887969ff0735a7ac35a",
+    "prev_hash": "ee07abd2c723fb4e7e5076c6a5132d5d427e669bb256921208ddb0d342192556",
+    "hash": "e9a6ef829645704446fd84157ad5c291693ebce987abe07d7275f9bcee298058"
   }
 ]

@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-19T12:15:04Z",
+  "generated_at": "2026-05-19T12:20:08Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
-    "records": 75,
-    "latest_hash": "ee07abd2c723fb4e7e5076c6a5132d5d427e669bb256921208ddb0d342192556",
-    "latest_action": "added neutral CIW role review route",
-    "source_latest_hash": "a2c8886f860813d3aefec04e39dd42a5e49f78f9981ee17bbbaa11ed079fe7db"
+    "records": 76,
+    "latest_hash": "e9a6ef829645704446fd84157ad5c291693ebce987abe07d7275f9bcee298058",
+    "latest_action": "made neutral role route URLs absolute",
+    "source_latest_hash": "06af4c79f1c8ded9a20831bd3b907139359630d518236887969ff0735a7ac35a"
   },
   "graph": {
     "nodes": 63,

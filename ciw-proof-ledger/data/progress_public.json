@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T09:39:37Z",
+  "updated_at": "2026-05-19T09:51:10Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -889,14 +889,32 @@
       "id": "proof-route-renewal-drill",
       "title": "Proof-route renewal drill",
       "type": "hiring-route",
-      "status": "next",
+      "status": "done",
       "priority": "P0",
-      "summary": "Next safe autonomy branch: build an executable renewal drill that takes a stale proof-route finding and regenerates the exact public sources, graph evidence, digest, route index, and ledger projection without sending outreach.",
+      "summary": "Cleanroom source now validates and renders a public-safe proof-route renewal drill: seven public_sources, reviewer_digest, route_index, ledger_projection, graph_state, autonomy_status, and no_outbound_gate repair steps convert stale-route refusal into deterministic local repair before any contact path can reopen.",
       "evidence": [
-        "planned-by:proof-route-staleness-sentinel"
+        "planned-by:proof-route-staleness-sentinel",
+        "cleanroom-run:26089607282-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/b0f58793e064f9c17a1ac023fc30c87db0f251ea",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_renewal_drill.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-renewal-drill.md"
       ],
       "next": [
-        "Build only as a local repair drill; do not touch external accounts or send messages before the 2026-05-26 gate."
+        "Use as the local repair drill after stale-route refusal; the next safe branch is a route regression suite, not external outreach."
+      ]
+    },
+    {
+      "id": "proof-route-regression-suite",
+      "title": "Proof-route regression suite",
+      "type": "hiring-route",
+      "status": "next",
+      "priority": "P0",
+      "summary": "Next safe autonomy branch: build one executable regression suite that runs role-source, staleness, renewal, draft-quality, route-index, ledger, public-URL, privacy, and no-outbound checks before any future route leverage.",
+      "evidence": [
+        "planned-by:proof-route-renewal-drill"
+      ],
+      "next": [
+        "Build only as a local/public verifier bundle; no external account or outreach action before the 2026-05-26 gate."
       ]
     }
   ],
@@ -2184,6 +2202,18 @@
       "to": "warm-referral-route",
       "relation": "guards",
       "weight": 4
+    },
+    {
+      "from": "proof-route-renewal-drill",
+      "to": "proof-route-regression-suite",
+      "relation": "next_path",
+      "weight": 5
+    },
+    {
+      "from": "proof-route-regression-suite",
+      "to": "warm-referral-route",
+      "relation": "guards",
+      "weight": 4
     }
   ],
   "views": {
@@ -2225,11 +2255,12 @@
       "follow-up-draft-eval-harness",
       "proof-route-staleness-sentinel",
       "proof-route-renewal-drill",
+      "proof-route-regression-suite",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
-      "proof-route-renewal-drill",
+      "proof-route-regression-suite",
       "warm-referral-route",
       "legal-entity-review"
     ]

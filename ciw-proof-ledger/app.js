@@ -111,6 +111,12 @@ const ROLE_PRESETS = [
     key: "renewal",
     label: "Renewal",
     node: "proof-route-renewal-drill",
+    filter: "active-path",
+  },
+  {
+    key: "regression",
+    label: "Regression",
+    node: "proof-route-regression-suite",
     filter: "next-branches",
   },
   {

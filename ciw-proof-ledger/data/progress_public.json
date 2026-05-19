@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T03:10:40Z",
+  "updated_at": "2026-05-19T03:16:33Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -349,6 +349,20 @@
       "next": [
         "Use only after recruiter, hiring-manager, referral, or explicit Nic prompt; do not send cold before the 2026-05-26 gate."
       ]
+    },
+    {
+      "id": "interview-conversion-hardening-pass",
+      "title": "Interview Conversion Hardening Pass",
+      "type": "quality-gate",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Rewrote the OpenAI interview conversion packet after verifier and originality gates caught an affiliation-heading ambiguity and generic phrasing; cleanroom verifier and strict originality gate now pass.",
+      "evidence": [
+        "applications/openai/OPENAI_INTERVIEW_CONVERSION_PACKET.md",
+        "scripts/verify_pack.py",
+        "local path withheld"
+      ],
+      "next": []
     }
   ],
   "edges": [
@@ -741,6 +755,30 @@
       "to": "warm-referral-route",
       "relation": "strengthens",
       "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "interview-conversion-hardening-pass",
+      "relation": "contains",
+      "weight": 4
+    },
+    {
+      "from": "openai-interview-conversion-packet",
+      "to": "interview-conversion-hardening-pass",
+      "relation": "refined-by",
+      "weight": 5
+    },
+    {
+      "from": "interview-conversion-hardening-pass",
+      "to": "openai-interview-conversion-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "interview-conversion-hardening-pass",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 4
     }
   ],
   "views": {

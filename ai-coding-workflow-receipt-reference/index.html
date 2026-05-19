@@ -143,7 +143,8 @@
         <p class="claim">
           This is a cleanroom reference implementation: structured JSON goes through required-field validation and
           renders into a markdown deployment receipt, product-feedback packet, and post-workshop handoff with
-          friction deltas, safety gates, model behavior, tool gaps, and adoption notes.
+          friction deltas, safety gates, model behavior, tool gaps, adoption notes, and ready-state lineage across a
+          second service surface.
         </p>
         <pre class="code-panel" aria-label="Receipt reference commands"><code>python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_input.json
 python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_repair_input.json
@@ -152,6 +153,8 @@ python3 tools/deployment_receipt.py render --input examples/deployment_receipt_i
 python3 tools/deployment_receipt.py feedback --input examples/deployment_receipt_input.json
 python3 tools/deployment_receipt.py validate-handoff --input examples/post_workshop_handoff_input.json
 python3 tools/deployment_receipt.py handoff --input examples/post_workshop_handoff_input.json
+python3 tools/deployment_receipt.py validate-handoff --input examples/post_workshop_handoff_ready_input.json
+python3 tools/deployment_receipt.py handoff --input examples/post_workshop_handoff_ready_input.json
 python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py</code></pre>
       </section>
 
@@ -173,7 +176,9 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
               and
               <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_reject_input.json">reject</a>,
               plus
-              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/post_workshop_handoff_input.json">post-workshop handoff</a>
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/post_workshop_handoff_input.json">repair handoff</a>
+              and
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/post_workshop_handoff_ready_input.json">ready second-service handoff</a>
             </span>
           </div>
           <div class="proof-card">
@@ -182,7 +187,7 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
           </div>
           <div class="proof-card">
             <strong>CI</strong>
-            <span>Cleanroom verifier passed at commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/d4811e67a96a3d388640daeef12823d176f20297">d4811e6</a>.</span>
+            <span>Cleanroom verifier passed at commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/3a418a100583039868130ed20c921760fca33bb3">3a418a1</a>.</span>
           </div>
         </div>
       </section>
@@ -226,7 +231,8 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
             The role asks for demos, reference implementations, workflow automations, technical content, product
             feedback, safety, and operational readiness. This reference turns the receipt pattern into runnable source,
             turns the same validated run into a product-feedback packet, and adds a second handoff path for the end of a
-            workshop.
+            workshop. The handoff path now shows a repair-state first pass and a ready-state repeat on another
+            public-safe service surface.
           </p>
           <p class="boundary-note">
             This is not customer deployment history. It is a code-backed operating proof: a demo should produce

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CIW External Review Intake</title>
+    <meta name="description" content="Public-safe blank intake for collecting future external review feedback without outbound, private data, or OpenAI-side outcome overclaiming.">
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="CIW External Review Intake">
+    <meta property="og:description" content="Give this to a reviewer later; do not send it as leverage now. Zero external records exist today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ciw-external-review-intake/">
+    <meta property="og:site_name" content="Cleanroom Intelligence Works">
+    <link rel="canonical" href="https://dicnunz.github.io/ciw-external-review-intake/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .intake-shell { max-width: 1080px; }
+      .intake-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, .32fr); gap: 28px; padding-top: 58px; padding-bottom: 30px; }
+      .intake-hero h1 { max-width: 760px; margin-bottom: 16px; font-size: clamp(2.35rem, 5.8vw, 4.55rem); line-height: .96; }
+      .state-panel { align-self: end; border: 1px solid var(--ink); background: #fff; }
+      .state-panel div { display: grid; grid-template-columns: 98px minmax(0, 1fr); gap: 12px; padding: 12px 14px; border-top: 1px solid var(--line); }
+      .state-panel div:first-child { border-top: 0; }
+      .state-panel dt { margin: 0; color: var(--muted); font-size: .72rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+      .state-panel dd { margin: 0; font-weight: 780; overflow-wrap: anywhere; }
+      .state-panel .bad dd { color: #9f2d24; }
+      .intake-section { max-width: 1080px; grid-template-columns: 170px minmax(0, 1fr); }
+      .intake-route { display: grid; border-top: 1px solid var(--line); }
+      .intake-row { display: grid; grid-template-columns: 50px minmax(0, 1fr) 76px; gap: 18px; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+      .intake-row:hover em, .intake-row:focus-visible em { color: var(--accent); border-color: var(--accent); }
+      .row-kicker { color: var(--muted); font-size: .72rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+      .intake-row strong { display: block; margin-bottom: 4px; font-size: 1.05rem; }
+      .intake-row span:nth-child(2) { color: var(--muted); }
+      .intake-row em { min-height: 34px; display: inline-grid; place-items: center; border: 1px solid var(--line-strong); color: var(--ink); font-size: .72rem; font-style: normal; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+      .record-block { margin: 0; padding: 16px; border: 1px solid var(--line); background: #fff; color: #26221d; overflow-x: auto; font-size: .86rem; line-height: 1.45; }
+      .classifier-table { width: 100%; border-collapse: collapse; border-top: 1px solid var(--line); }
+      .classifier-table th, .classifier-table td { padding: 13px 12px 13px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+      .classifier-table th { width: 20%; color: var(--accent); }
+      .classifier-table td { color: var(--muted); }
+      .check-list, .gate-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+      .check-list li, .gate-list li { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+      .check-list strong { display: block; color: var(--ink); }
+      @media (max-width: 820px) {
+        .intake-hero, .intake-section, .intake-row { grid-template-columns: 1fr; }
+        .intake-hero h1 { max-width: 100%; font-size: clamp(2.25rem, 10vw, 3.1rem); line-height: .98; }
+        .intake-row { gap: 8px; }
+        .intake-row em { width: 76px; }
+        .classifier-table, .classifier-table tbody, .classifier-table tr, .classifier-table th, .classifier-table td { display: block; width: 100%; }
+        .classifier-table td { padding-top: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar intake-shell">
+      <a class="brand" href="../">Cleanroom Intelligence Works</a>
+      <nav aria-label="Primary links">
+        <a href="../ciw-role-review/">Start</a>
+        <a href="../ciw-brutal-scorecard/">Score</a>
+        <a href="../ciw-review-route-audit/">Audit</a>
+        <a href="../ciw-proof-ledger/">Ledger</a>
+      </nav>
+    </header>
+    <main id="top" tabindex="-1">
+      <section class="intro intake-hero intake-shell">
+        <div>
+          <p class="meta">External review intake · generated 2026-05-19T17:53:44Z</p>
+          <h1>Give this to a reviewer. Do not send it as leverage.</h1>
+          <p class="claim">Turn the missing external-review proof into a reviewer-ready worksheet without sending outreach or claiming validation.</p>
+        </div>
+        <dl class="state-panel" aria-label="External review state">
+          <div><dt>Status</dt><dd>Ready for reviewer</dd></div>
+          <div class="bad"><dt>Records</dt><dd>0 external records</dd></div>
+          <div class="bad"><dt>Outcome</dt><dd>Application receipt only</dd></div>
+          <div class="bad"><dt>Gate</dt><dd>No outbound before 2026-05-26</dd></div>
+        </dl>
+      </section>
+      <section class="section intake-section">
+        <div class="section-label"><p class="meta">Reviewer task</p><h2>Open, read, record</h2></div>
+        <div class="intake-route"><a class="intake-row" href="https://dicnunz.github.io/ciw-role-review/"><span class="row-kicker">01</span><span><strong>Role review</strong>Decide whether the proof route deserves attention and name the one-sentence read.</span><em>Open</em></a>
+<a class="intake-row" href="https://dicnunz.github.io/ciw-brutal-scorecard/"><span class="row-kicker">02</span><span><strong>Brutal scorecard</strong>State why the current proof is not 10/10 and what evidence would change the score.</span><em>Open</em></a>
+<a class="intake-row" href="https://dicnunz.github.io/ciw-review-route-audit/"><span class="row-kicker">03</span><span><strong>Route audit</strong>Check whether the public route is short, current, non-confusing, and honest about the missing review record.</span><em>Open</em></a>
+<a class="intake-row" href="https://dicnunz.github.io/openai-codex-route-index/"><span class="row-kicker">04</span><span><strong>Route index</strong>Use the route index only after the short path if more context is needed.</span><em>Open</em></a>
+<a class="intake-row" href="https://dicnunz.github.io/ciw-proof-ledger/"><span class="row-kicker">05</span><span><strong>Proof ledger</strong>Cite the public-safe hash-chain and progress graph mechanism instead of trusting the narrative.</span><em>Open</em></a>
+<a class="intake-row" href="https://dicnunz.github.io/ciw-external-reviewer-validation/"><span class="row-kicker">06</span><span><strong>Validation harness</strong>Compare the completed record against the existing feedback classification protocol.</span><em>Open</em></a></div>
+      </section>
+      <section class="section intake-section">
+        <div class="section-label"><p class="meta">Blank record</p><h2>Copy this shape only after review</h2></div>
+        <div class="note-list"><p>Public projection: <a href="records.json">https://dicnunz.github.io/ciw-external-review-intake/records.json</a>. It is intentionally empty until classified feedback exists.</p><pre class="record-block"><code>{
+  &quot;allowed_next_action&quot;: &quot;&quot;,
+  &quot;blocked_next_action&quot;: &quot;No outbound, no OpenAI-side outcome claim, and no affiliation claim.&quot;,
+  &quot;classification&quot;: &quot;usable_non_target_feedback|ambiguous_feedback|target_owned_signal&quot;,
+  &quot;forbidden_claims_named&quot;: [],
+  &quot;one_sentence_read&quot;: &quot;&quot;,
+  &quot;proof_mechanism_cited&quot;: &quot;&quot;,
+  &quot;remaining_confusion&quot;: [],
+  &quot;reviewer_class&quot;: &quot;non_nic_reviewer|openai_owned_signal|unknown&quot;,
+  &quot;role_fit_read&quot;: &quot;&quot;,
+  &quot;route_opened&quot;: []
+}</code></pre></div>
+      </section>
+      <section class="section intake-section">
+        <div class="section-label"><p class="meta">Classifier</p><h2>Feedback is not outcome</h2></div>
+        <table class="classifier-table"><tbody><tr><th scope="row">usable-non-target-feedback</th><td>A non-Nic reviewer understood the public proof route, named the limits, and produced public-safe feedback.</td><td>Record the feedback, repair confusion, and keep outbound blocked unless a later gate opens.</td><td>No outbound, no OpenAI-side outcome claim, and no affiliation claim.</td></tr>
+<tr><th scope="row">ambiguous-feedback</th><td>The feedback is too vague, confused, private, or overclaimed to improve reviewer proof.</td><td>Record the ambiguity as a route-repair issue and tighten the public path.</td><td>No outbound, no score lift, no outcome claim, and no affiliation claim.</td></tr>
+<tr><th scope="row">target-owned-signal</th><td>The reviewer source appears to be OpenAI-owned or target-company-owned and must route through the signal router first.</td><td>Stop, classify through the inbound signal router, and refresh the outcome watch before reply.</td><td>No outbound, no outcome claim, and no affiliation claim until source ownership and next step are verified.</td></tr></tbody></table>
+      </section>
+      <section class="section intake-section">
+        <div class="section-label"><p class="meta">Acceptance</p><h2>What makes a record usable</h2></div>
+        <ul class="check-list"><li><strong>Route opened</strong><span>The reviewer names which public URLs were opened and can recover the route without private context.</span></li>
+<li><strong>One-sentence read</strong><span>The reviewer states what CIW is in one sentence without clone, official, affiliation, or employment language.</span></li>
+<li><strong>Claim boundary</strong><span>The reviewer explicitly names blocked claims: no target-side outcome, no legal company, no customers, no affiliation.</span></li>
+<li><strong>Proof mechanism</strong><span>The reviewer cites the hash-chain, graph, tests, route audit, or source repo as the proof mechanism.</span></li>
+<li><strong>Remaining confusion</strong><span>The reviewer names at least one remaining question or explicitly says the route is clear.</span></li>
+<li><strong>Classification chosen</strong><span>The record chooses usable_non_target_feedback, ambiguous_feedback, or target_owned_signal before next action.</span></li></ul>
+      </section>
+      <section class="section intake-section">
+        <div class="section-label"><p class="meta">Hard stops</p><h2>What stays blocked</h2></div>
+        <ul class="gate-list"><li>No outbound before 2026-05-26 unless a verified real reply or explicit fresh override changes the route.</li>
+<li>External reviewer feedback is not OpenAI-side outcome evidence unless a separate target-company-owned source is verified.</li>
+<li>No OpenAI affiliation, employment, endorsement, customer, legal, payment, or company-formation claim.</li>
+<li>No private data, email address, raw message text, local path, credential, account data, or customer material in public records.</li>
+<li>A blank intake record cannot raise the score; only classified public-safe feedback can repair the external-review gap.</li></ul>
+      </section>
+    </main>
+    <footer class="footer intake-shell">
+      <span>Cleanroom Intelligence Works</span>
+      <a href="../ciw-external-reviewer-validation/">Validation harness</a>
+      <a href="../openai-codex-route-index/">Route index</a>
+    </footer>
+  </body>
+</html>

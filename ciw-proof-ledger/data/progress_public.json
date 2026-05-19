@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T17:41:22Z",
+  "updated_at": "2026-05-19T18:01:41Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1337,6 +1337,55 @@
       ],
       "next": [
         "Collect real non-Nic reviewer feedback before raising reviewer-validation score."
+      ]
+    },
+    {
+      "id": "external-reviewer-intake-route",
+      "title": "External review intake route",
+      "type": "proof-gate",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public-safe blank intake route that gives a future non-Nic reviewer exact URLs, record shape, classifier, hard stops, and an explicit zero-record state without sending outreach or raising the score.",
+      "evidence": [
+        "ops/external_review_intake.json",
+        "applications/openai/OPENAI_EXTERNAL_REVIEW_INTAKE.md",
+        "demo/external-review-intake/index.html",
+        "https://dicnunz.github.io/ciw-external-review-intake/"
+      ],
+      "next": [
+        "Use only to collect classified public-safe feedback later; the blank intake itself is not validation or OpenAI-side outcome evidence."
+      ]
+    },
+    {
+      "id": "classified-reviewer-record-projection",
+      "title": "Classified reviewer record projection",
+      "type": "proof-data",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Explicit empty public-safe reviewer-record projection: zero classified external records, application receipt only, no score lift, no private data, and no affiliation or outcome claim.",
+      "evidence": [
+        "ops/external_review_records.json",
+        "demo/external-review-intake/records.json",
+        "https://dicnunz.github.io/ciw-external-review-intake/records.json"
+      ],
+      "next": [
+        "Append only classified public-safe reviewer records; zero records means the external-review gap stays real."
+      ]
+    },
+    {
+      "id": "reviewer-proof-count-sync",
+      "title": "Reviewer proof count sync",
+      "type": "proof-gate",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Route audit now checks that the role-review entrypoint mirrors the projected ledger record count and progress graph node count before the proof route can validate.",
+      "evidence": [
+        "tools/review_route_audit.py",
+        "demo/proof-ledger-inspector/data/summary.json",
+        "demo/role-review/index.html"
+      ],
+      "next": [
+        "Regenerate public inspector data before role-review and audit renders after any ledger or graph change."
       ]
     }
   ],
@@ -3254,6 +3303,66 @@
       "to": "public-openai-codex-route-index",
       "relation": "hardens",
       "weight": 3
+    },
+    {
+      "from": "neutral-public-role-review-route",
+      "to": "external-reviewer-intake-route",
+      "relation": "requires_intake",
+      "weight": 5
+    },
+    {
+      "from": "brutal-10-10-scorecard",
+      "to": "external-reviewer-intake-route",
+      "relation": "names_gap",
+      "weight": 5
+    },
+    {
+      "from": "external-reviewer-validation-harness",
+      "to": "external-reviewer-intake-route",
+      "relation": "operationalizes",
+      "weight": 5
+    },
+    {
+      "from": "public-openai-codex-route-index",
+      "to": "external-reviewer-intake-route",
+      "relation": "routes_to",
+      "weight": 4
+    },
+    {
+      "from": "external-reviewer-intake-route",
+      "to": "classified-reviewer-record-projection",
+      "relation": "publishes_empty_projection",
+      "weight": 5
+    },
+    {
+      "from": "external-reviewer-intake-route",
+      "to": "openai-outcome-watch",
+      "relation": "preserves_boundary",
+      "weight": 5
+    },
+    {
+      "from": "classified-reviewer-record-projection",
+      "to": "brutal-10-10-scorecard",
+      "relation": "keeps_score_locked",
+      "weight": 4
+    },
+    {
+      "from": "classified-reviewer-record-projection",
+      "to": "reviewer-proof-count-sync",
+      "relation": "feeds_count_truth",
+      "weight": 4
+    },
+    {
+      "from": "reviewer-proof-count-sync",
+      "to": "review-route-shape-audit",
+      "relation": "guards",
+      "weight": 5
+    },
+    {
+      "from": "reviewer-proof-count-sync",
+      "to": "public-openai-codex-route-index",
+      "relation": "guards",
+      "weight": 4
     }
   ],
   "views": {
@@ -3299,6 +3408,9 @@
       "ai-coding-security-review-packet",
       "cookbook-style-codex-example",
       "external-reviewer-validation-harness",
+      "external-reviewer-intake-route",
+      "classified-reviewer-record-projection",
+      "reviewer-proof-count-sync",
       "post-gate-reply-review"
     ],
     "next_branches": [

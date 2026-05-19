@@ -1032,5 +1032,16 @@
     "source_hash": "f58b46846e16baefe3a44b3e2a9d2e201550fefab5bb07d1abfa643954e02bfd",
     "prev_hash": "d931ac33e77f6d3632fd73ec47884b827dba2954e80cef97176dca57d260b8ae",
     "hash": "634685e330347f1dc0996796a2c5316ffbc36d676c44bc3a6360d5fc348ab8d8"
+  },
+  {
+    "index": 94,
+    "timestamp": "2026-05-19T18:02:43+00:00",
+    "actor": "Codex",
+    "action": "built public external review intake route",
+    "details": "{\"boundary\":\"zero external records; no outbound; no OpenAI-side outcome, affiliation, legal, customer, or revenue claim\",\"files\":[\"ops/external_review_intake.json\",\"ops/external_review_records.json\",\"applications/openai/OPENAI_EXTERNAL_REVIEW_INTAKE.md\",\"tools/external_review_intake.py\",\"tests/test_external_review_intake.py\"],\"graph_nodes\":[\"external-reviewer-intake-route\",\"classified-reviewer-record-projection\",\"reviewer-proof-count-sync\"],\"public_url\":\"https://dicnunz.github.io/ciw-external-review-intake/\",\"records_url\":\"https://dicnunz.github.io/ciw-external-review-intake/records.json\"}",
+    "visibility": "public projection",
+    "source_hash": "2a7b60463470d1127e210661044b4c906e1f19ff6d4428b9eee6498fc1d78495",
+    "prev_hash": "634685e330347f1dc0996796a2c5316ffbc36d676c44bc3a6360d5fc348ab8d8",
+    "hash": "c4d21bf4674ad411e2edab99126333b7d6e9dbf0d703d4014705072a7caee9cf"
   }
 ]

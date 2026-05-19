@@ -10,7 +10,7 @@
     <meta property="og:description" content="The proof route passes shape checks; real external reviewer feedback is still missing.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dicnunz.github.io/ciw-review-route-audit/">
-    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <meta property="og:site_name" content="Cleanroom Intelligence Works">
     <link rel="canonical" href="https://dicnunz.github.io/ciw-review-route-audit/">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../styles.css">
@@ -52,6 +52,7 @@
         <a href="../ciw-role-review/">Role review</a>
         <a href="../ciw-review-digest/">Digest</a>
         <a href="../ciw-external-reviewer-validation/">Reviewer harness</a>
+        <a href="../ciw-external-review-intake/">Intake</a>
         <a href="../openai-codex-route-index/">Index</a>
       </nav>
     </header>
@@ -72,7 +73,7 @@
         <div class="section-label"><p class="meta">Checks</p><h2>What changed</h2></div>
         <table class="audit-table"><tbody><tr class="audit-row status-pass">
           <th scope="row"><span>pass</span><strong>Role review stays the first decision surface</strong></th>
-          <td>3 decision links, 719 words</td>
+          <td>3 decision links, 728 words</td>
           <td>The entrypoint stops being a short decision surface.</td>
         </tr><tr class="audit-row status-pass">
           <th scope="row"><span>pass</span><strong>Scorecard is rows, not card spam</strong></th>
@@ -98,6 +99,18 @@
           <th scope="row"><span>watch</span><strong>External reviewer record is still the missing proof</strong></th>
           <td>external_reviewer_feedback=not_collected</td>
           <td>The route claims validation before non-Nic feedback exists.</td>
+        </tr><tr class="audit-row status-pass">
+          <th scope="row"><span>pass</span><strong>External review intake is operational, not only a protocol</strong></th>
+          <td>status=ready_for_external_reviewer; records=0; fields=present</td>
+          <td>The route has a protocol but no public-safe blank reviewer record intake.</td>
+        </tr><tr class="audit-row status-pass">
+          <th scope="row"><span>pass</span><strong>Classified external-review record projection is empty and explicit</strong></th>
+          <td>record_count=0; records=0</td>
+          <td>The route cannot prove whether external reviewer records exist.</td>
+        </tr><tr class="audit-row status-pass">
+          <th scope="row"><span>pass</span><strong>Role-review counts mirror ledger summary</strong></th>
+          <td>records=95; graph_nodes=81</td>
+          <td>The role-review entrypoint hardcodes stale receipt or graph counts.</td>
         </tr></tbody></table>
       </section>
       <section class="section audit-section">

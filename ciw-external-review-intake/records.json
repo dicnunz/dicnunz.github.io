@@ -1,0 +1,16 @@
+{
+  "boundary": "No outbound, no OpenAI-side outcome claim, no affiliation claim, and no private data.",
+  "current_state": {
+    "external_reviewer_records": 0,
+    "openai_side_outcome": "application_receipt_only"
+  },
+  "generated_at": "2026-05-19T17:53:44Z",
+  "intake_url": "https://dicnunz.github.io/ciw-external-review-intake/",
+  "no_outbound_before": "2026-05-26",
+  "public_safe": true,
+  "public_url": "https://dicnunz.github.io/ciw-external-review-intake/records.json",
+  "record_count": 0,
+  "records": [],
+  "schema_version": 1,
+  "scope": "public-safe external review record projection"
+}

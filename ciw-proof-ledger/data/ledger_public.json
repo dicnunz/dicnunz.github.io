@@ -438,5 +438,16 @@
     "source_hash": "a953b059280cf0e3d6d4e9e2efad4c61bb3c336d7b4d7bec0c4a6c4d9cc17c3c",
     "prev_hash": "fbf68982a517cd5c66bf0b7d70b6c2c19a57e9a7c37cb181d3caa5343c928267",
     "hash": "af6e7be5e6ef19dd49501c5811adc7a1e274c8e0d1b6b62e89ee662b56b3c24f"
+  },
+  {
+    "index": 40,
+    "timestamp": "2026-05-19T06:24:14+00:00",
+    "actor": "Codex",
+    "action": "added live OpenAI Codex role-source health gate",
+    "details": "Autonomy heartbeat now verifies the official AI Deployment Engineer - Codex target role page for title, Technical Success / Remote - US location, customer-adoption language, high-quality demo language, and operational-readiness language, and watches the official Codex search cluster for route drift. Local tests passed, validate-config passed, latest heartbeat passed both role_source checks with only the known unrelated Pages root warning.",
+    "visibility": "public projection",
+    "source_hash": "94f90e8bcb2d8901704acda7e286cba94340d8aea1ee46edd890cd6648994c0d",
+    "prev_hash": "af6e7be5e6ef19dd49501c5811adc7a1e274c8e0d1b6b62e89ee662b56b3c24f",
+    "hash": "5bbd0f7ecef1b2180350489ddbcb97278a9c6947fc8ae2ca5c1e4ccf2ebfef11"
   }
 ]

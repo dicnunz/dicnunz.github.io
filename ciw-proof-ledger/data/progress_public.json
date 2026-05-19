@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T06:10:00Z",
+  "updated_at": "2026-05-19T06:24:10Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -689,6 +689,24 @@
       ],
       "next": [
         "Keep this scheduler check required; if it fails, repair automation before adding new proof artifacts."
+      ]
+    },
+    {
+      "id": "live-codex-role-source-check",
+      "title": "Live Codex role source check",
+      "type": "role-source",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Autonomy heartbeat now verifies the official AI Deployment Engineer - Codex target role page for title, Technical Success / Remote - US location, customer-adoption language, high-quality demo language, and operational-readiness language, while watching the broader official Codex search cluster for route drift before future proof-building is trusted.",
+      "evidence": [
+        "ops/autonomy/state/latest_report.md",
+        "https://openai.com/careers/ai-deployment-engineer-codex-remote-us/",
+        "https://openai.com/careers/search/?q=codex",
+        "tests/test_ciw_autonomy.py",
+        "role-source-heartbeat:target+cluster-pass"
+      ],
+      "next": [
+        "If this source check fails, repair the role map, reviewer digest, scorecard, and public route before adding more artifacts."
       ]
     }
   ],
@@ -1766,6 +1784,30 @@
       "to": "openai-reviewer-digest",
       "relation": "strengthens_digest",
       "weight": 3
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "live-codex-role-source-check",
+      "relation": "checks_role_source",
+      "weight": 5
+    },
+    {
+      "from": "target-role-ai-deployment-engineer-codex",
+      "to": "live-codex-role-source-check",
+      "relation": "guarded_by",
+      "weight": 5
+    },
+    {
+      "from": "live-codex-role-source-check",
+      "to": "openai-reviewer-digest",
+      "relation": "protects_digest",
+      "weight": 4
+    },
+    {
+      "from": "live-codex-role-source-check",
+      "to": "field-trial-acceptance-scorecard",
+      "relation": "protects_gate",
+      "weight": 4
     }
   ],
   "views": {
@@ -1774,6 +1816,7 @@
       "progress-web",
       "ciw-autonomous-operating-system",
       "autonomy-scheduler-health",
+      "live-codex-role-source-check",
       "public-proof-ledger-inspector",
       "public-ai-coding-workshop",
       "public-ai-coding-patterns",

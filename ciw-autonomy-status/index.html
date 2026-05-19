@@ -6,13 +6,13 @@
     <title>CIW Autonomy Status</title>
     <meta
       name="description"
-      content="Public-safe autonomy status for Cleanroom Intelligence Works: scheduler health, scorecard gate, verifier heartbeat, and hard stops."
+      content="Public-safe autonomy status for Cleanroom Intelligence Works: scheduler health, live role-source checks, scorecard gate, verifier heartbeat, and hard stops."
     >
     <meta name="theme-color" content="#f7f8f4">
     <meta property="og:title" content="CIW Autonomy Status">
     <meta
       property="og:description"
-      content="A public-safe status page showing that the proof lab checks its scheduler, scorecard, public pages, and safety gates."
+      content="A public-safe status page showing that the proof lab checks its scheduler, live role source, scorecard, public pages, and safety gates."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dicnunz.github.io/ciw-autonomy-status/">
@@ -142,7 +142,7 @@
         <h1 id="intro-title"><span>The proof lab now</span><span>checks the scheduler</span><span>before it trusts</span><span>the loop.</span></h1>
         <p class="claim">
           This is the public-safe status layer for Cleanroom Intelligence Works: scheduler health, verifier heartbeat,
-          scorecard gate, public-page checks, and hard stops that prevent fake company claims or premature outreach.
+          live role-source checks, scorecard gate, public-page checks, and hard stops that prevent fake company claims or premature outreach.
         </p>
       </section>
 
@@ -161,8 +161,8 @@
             <span>Loaded</span>
           </div>
           <div class="status-tile">
-            <strong>Interval</strong>
-            <span>21600s</span>
+            <strong>Role source</strong>
+            <span>Live</span>
           </div>
           <div class="status-tile">
             <strong>Only warning</strong>
@@ -190,12 +190,16 @@
             <span>The field-trial acceptance scorecard validates and renders successfully before growth work proceeds.</span>
           </li>
           <li>
+            <strong>Live role source</strong>
+            <span>The target role page matched five expected markers; the broader role-search cluster matched four expected markers.</span>
+          </li>
+          <li>
             <strong>Public safety</strong>
             <span>Privacy and forbidden-claim scans passed across the public proof surfaces.</span>
           </li>
           <li>
             <strong>Graph and ledger</strong>
-            <span>Progress graph validation passed and the hash-chained ledger verified 40 records.</span>
+            <span>Progress graph validation passed with 42 nodes and 183 edges; the hash-chained ledger verified 41 records.</span>
           </li>
           <li>
             <strong>Public URLs</strong>
@@ -232,8 +236,9 @@
         </div>
         <ul class="proof-list">
           <li><a href="../ciw-proof-ledger/?preset=autonomy">Autonomy scheduler node in the public graph</a></li>
-          <li><a href="../ciw-proof-ledger/data/summary.json">Public ledger summary with 40 projected records</a></li>
-          <li><a href="../openai-codex-review-digest/">Reviewer digest with latest autonomy receipt</a></li>
+          <li><a href="../ciw-proof-ledger/?view=graph&node=live-codex-role-source-check">Live role-source node in the public graph</a></li>
+          <li><a href="../ciw-proof-ledger/data/summary.json">Public ledger summary with 41 projected records</a></li>
+          <li><a href="../openai-codex-review-digest/">Reviewer digest with latest role-source receipt</a></li>
           <li><a href="../ai-coding-field-trial-scorecard/">Field-trial scorecard gate</a></li>
         </ul>
       </section>

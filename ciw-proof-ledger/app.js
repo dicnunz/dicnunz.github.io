@@ -54,6 +54,12 @@ const ROLE_PRESETS = [
     filter: "active-path",
   },
   {
+    key: "role-source",
+    label: "Role source",
+    node: "live-codex-role-source-check",
+    filter: "active-path",
+  },
+  {
     key: "field-kit-branch",
     label: "Field-kit branch",
     node: "ai-coding-deployment-field-kit",

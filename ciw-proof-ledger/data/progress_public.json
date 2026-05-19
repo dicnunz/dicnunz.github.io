@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T09:10:42Z",
+  "updated_at": "2026-05-19T09:19:28Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -849,13 +849,16 @@
       "type": "hiring-route",
       "status": "done",
       "priority": "P0",
-      "summary": "Cleanroom source now validates and renders a public-safe follow-up draft evaluation harness: seven source_freshness, recipient_fit, new_proof_signal, claim_safety, repetition_control, proof_link_economy, and no_outbound_gate signals score a future post-gate note before it can be used, while preserving the 2026-05-26 no-outbound boundary and refusing private proof links, overclaims, stale-route use, or bloated link dumps.",
+      "summary": "Cleanroom source and public Pages now validate, render, and expose a public-safe follow-up draft evaluation harness: seven source_freshness, recipient_fit, new_proof_signal, claim_safety, repetition_control, proof_link_economy, and no_outbound_gate signals score a future post-gate note before it can be used, while preserving the 2026-05-26 no-outbound boundary and refusing private proof links, overclaims, stale-route use, or bloated link dumps.",
       "evidence": [
         "planned-by:no-send-follow-up-decision-kit",
         "cleanroom-run:26087529516-success",
         "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/follow_up_draft_evaluation_harness.json",
         "https://github.com/dicnunz/cleanroom-intelligence-works/commit/00e1601",
-        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-follow-up-draft-evaluation-harness.md"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-follow-up-draft-evaluation-harness.md",
+        "https://dicnunz.github.io/ai-coding-follow-up-draft-evaluation-harness/",
+        "commit:be14a30bc8acdeadb97a11c151661954e7d196e6",
+        "pages-run:26088040028-success"
       ],
       "next": [
         "Use only as a draft-quality gate; the next safe branch is a proof-route staleness sentinel, not external outreach."

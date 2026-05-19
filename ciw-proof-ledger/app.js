@@ -48,6 +48,12 @@ const ROLE_PRESETS = [
     filter: "active-path",
   },
   {
+    key: "assessment",
+    label: "Assessment",
+    node: "deployment-assessment-drill",
+    filter: "active-path",
+  },
+  {
     key: "autonomy",
     label: "Autonomy",
     node: "autonomy-scheduler-health",

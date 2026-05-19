@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T06:24:10Z",
+  "updated_at": "2026-05-19T06:36:17Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -707,6 +707,24 @@
       ],
       "next": [
         "If this source check fails, repair the role map, reviewer digest, scorecard, and public route before adding more artifacts."
+      ]
+    },
+    {
+      "id": "deployment-assessment-drill",
+      "title": "Deployment assessment drill",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Cleanroom source now validates and renders a public-safe deployment assessment drill that scores a candidate-style response against well-designed solution, code quality, performance, test coverage, communication, customer deployment judgment, and safety/operational readiness, turning interview preparation into executable proof instead of another static memo.",
+      "evidence": [
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/10987eb",
+        "cleanroom-run:26080549824-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_assessment_drill.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-deployment-assessment-drill.md",
+        "https://dicnunz.github.io/ai-coding-deployment-assessment-drill/"
+      ],
+      "next": [
+        "Use the drill for interview conversion and field-trial design only; do not claim interview status or customer deployment evidence."
       ]
     }
   ],
@@ -1808,6 +1826,30 @@
       "to": "field-trial-acceptance-scorecard",
       "relation": "protects_gate",
       "weight": 4
+    },
+    {
+      "from": "live-codex-role-source-check",
+      "to": "deployment-assessment-drill",
+      "relation": "shapes_assessment",
+      "weight": 5
+    },
+    {
+      "from": "deployment-assessment-drill",
+      "to": "field-trial-acceptance-scorecard",
+      "relation": "strengthens_scorecard",
+      "weight": 4
+    },
+    {
+      "from": "deployment-assessment-drill",
+      "to": "openai-reviewer-digest",
+      "relation": "strengthens_digest",
+      "weight": 5
+    },
+    {
+      "from": "deployment-assessment-drill",
+      "to": "warm-referral-route",
+      "relation": "strengthens_followup",
+      "weight": 4
     }
   ],
   "views": {
@@ -1839,6 +1881,7 @@
       "autonomy-public-surface-coverage",
       "product-feedback-export-fixture",
       "field-trial-acceptance-scorecard",
+      "deployment-assessment-drill",
       "warm-referral-route"
     ],
     "next_branches": [

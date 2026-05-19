@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Deployment Assessment Drill</title>
+    <meta
+      name="description"
+      content="A public-safe executable assessment drill for AI coding deployment work: design, code quality, performance, tests, communication, deployment judgment, and safety."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Deployment Assessment Drill">
+    <meta
+      property="og:description"
+      content="Cleanroom Intelligence Works assessment fixture that turns a role interview frame into executable deployment proof."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-deployment-assessment-drill/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-deployment-assessment-drill/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .assessment-hero h1 {
+        max-width: min(860px, 100%);
+        font-size: clamp(2.5rem, 6.6vw, 4.75rem);
+        text-wrap: balance;
+      }
+
+      .assessment-hero .claim {
+        max-width: min(570px, 100%);
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile,
+      .signal-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .score-tile {
+        padding: 14px;
+      }
+
+      .score-tile strong,
+      .signal-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.45rem;
+        font-weight: 760;
+      }
+
+      .signal-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .signal-list li {
+        padding: 14px;
+      }
+
+      .signal-list span,
+      .gate-list span,
+      .command-list {
+        color: var(--muted);
+      }
+
+      .gate-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .gate-list li {
+        display: grid;
+        grid-template-columns: minmax(170px, 0.32fr) minmax(0, 1fr);
+        gap: 18px;
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .gate-list li:first-child {
+        border-top: 0;
+      }
+
+      .command-list {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .command-list code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .topbar,
+        .intro,
+        .section,
+        .footer {
+          width: calc(100vw - 32px);
+          max-width: calc(100vw - 32px);
+        }
+
+        .assessment-hero h1 {
+          max-width: 10ch;
+          font-size: clamp(2.18rem, 10.4vw, 3rem);
+          line-height: 1;
+        }
+
+        .assessment-hero .claim {
+          font-size: 1rem;
+        }
+
+        .score-strip,
+        .signal-list,
+        .gate-list li {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../ciw-proof-ledger/?preset=assessment">Assessment graph</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_assessment_drill.json">Fixture</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro assessment-hero" aria-labelledby="intro-title">
+        <p class="meta">Assessment drill · checked May 19, 2026</p>
+        <h1 id="intro-title">A deployment interview signal, made executable.</h1>
+        <p class="claim">
+          The drill scores a candidate-style AI coding deployment response against design, code quality, performance,
+          tests, communication, customer deployment judgment, and operational safety. It is fixture-backed, public-safe,
+          and verifier-run.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="score-title">
+        <div class="section-label">
+          <p class="meta">Result</p>
+          <h2 id="score-title">Current fixture</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average</strong>
+            <span>4.4/5</span>
+          </div>
+          <div class="score-tile">
+            <strong>Rubric</strong>
+            <span>7 signals</span>
+          </div>
+          <div class="score-tile">
+            <strong>Release gates</strong>
+            <span>2 pass · 1 watch</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="signals-title">
+        <div class="section-label">
+          <p class="meta">Rubric</p>
+          <h2 id="signals-title">Interview signals covered</h2>
+        </div>
+        <ol class="signal-list">
+          <li>
+            <strong>Well-designed solution</strong>
+            <span>Intake, execution, verification, handoff, and release gates are separated into inspectable records.</span>
+          </li>
+          <li>
+            <strong>Code quality</strong>
+            <span>The response favors typed records, deterministic renderers, fixture validators, and ready/repair/reject states.</span>
+          </li>
+          <li>
+            <strong>Performance</strong>
+            <span>The plan tracks reviewer time-to-understand, files touched, command runtime, and repeatability.</span>
+          </li>
+          <li>
+            <strong>Test coverage</strong>
+            <span>Promotion is blocked unless validator tests, fixture checks, scorecard coverage, and public-pack verification pass.</span>
+          </li>
+          <li>
+            <strong>Communication</strong>
+            <span>The manager receives a decision packet: changed state, passed gates, failed gates, claim boundary, and owner.</span>
+          </li>
+          <li>
+            <strong>Deployment judgment</strong>
+            <span>Synthetic proof stays separate from customer rollout evidence and requires a reviewer owner before promotion.</span>
+          </li>
+          <li>
+            <strong>Operational safety</strong>
+            <span>The fixture blocks private paths, credentials, affiliation claims, and external sends without human review.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="commands-title">
+        <div class="section-label">
+          <p class="meta">Executable</p>
+          <h2 id="commands-title">Verifier commands</h2>
+        </div>
+        <ul class="command-list">
+          <li><code>python3 tools/deployment_receipt.py validate-assessment --input examples/deployment_assessment_drill.json</code></li>
+          <li><code>python3 tools/deployment_receipt.py assessment --input examples/deployment_assessment_drill.json</code></li>
+          <li><code>python3 scripts/verify_public_pack.py</code></li>
+          <li><code>python3 -m unittest tests/test_deployment_receipt.py</code></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="sources-title">
+        <div class="section-label">
+          <p class="meta">Source</p>
+          <h2 id="sources-title">Inspect the implementation</h2>
+        </div>
+        <ul class="command-list">
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/10987eb">Cleanroom commit 10987eb</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/actions/runs/26080549824">Cleanroom CI run 26080549824</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_assessment_drill.json">Assessment fixture</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-deployment-assessment-drill.md">Assessment docs</a></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">What this does not claim</h2>
+        </div>
+        <div class="note-list">
+          <p class="boundary-note">
+            This drill proves a cleanroom assessment mechanism. It does not claim an interview invitation, employment,
+            customer deployment, revenue, production impact, incorporation, endorsement, or target-company affiliation.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

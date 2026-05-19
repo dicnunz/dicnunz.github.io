@@ -713,5 +713,16 @@
     "source_hash": "3ecab2e54d98cbdf1f0acf3a6dfe6942a925b0abbf2be16668c17ee009570a03",
     "prev_hash": "19d674c024b8de500ea018a87e750d54f9d22a400a86ac594082544ec193ada8",
     "hash": "57637f5aa6ed3e6b4f2d528ee900639fb6a91d40ca80de2d55ccb6487215ab29"
+  },
+  {
+    "index": 65,
+    "timestamp": "2026-05-19T10:56:39+00:00",
+    "actor": "Codex",
+    "action": "checked OpenAI-side outcome watch",
+    "details": "{\"checked_at\":\"2026-05-19T10:53:00Z\",\"classification\":\"application_received_only\",\"finding\":\"application receipt only; no verified offer, interview loop, collaboration path, recruiter-owned next step, or equivalent OpenAI-side traction\",\"graph_node\":\"openai-outcome-watch\",\"hard_gates\":[\"no outbound before 2026-05-26\",\"no legal/payment/hiring/fundraising actions\",\"no OpenAI affiliation or clone claims\"],\"live_gmail_scope\":[\"broad OpenAI/Ashby/Codex search newer_than:30d\",\"sender-focused openai.com/ashby search newer_than:30d\",\"exact email address withheld search newer_than:30d\"],\"private_message_ids\":\"withheld\",\"refresh_due_on\":\"2026-05-26\"}",
+    "visibility": "public projection",
+    "source_hash": "675fa2ed0c943005a49443267c4bf568c2e4c42330c13ffce853d9c4976bb7e5",
+    "prev_hash": "57637f5aa6ed3e6b4f2d528ee900639fb6a91d40ca80de2d55ccb6487215ab29",
+    "hash": "8dd0874199711689fa07e7ff9e8d9b437856ff165e02f0262979a7b76313bcb2"
   }
 ]

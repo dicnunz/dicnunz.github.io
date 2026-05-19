@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T10:43:52Z",
+  "updated_at": "2026-05-19T10:56:33Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -970,6 +970,22 @@
       ],
       "next": [
         "Do not call update_goal until OpenAI-side outcome evidence is verified and recorded."
+      ]
+    },
+    {
+      "id": "openai-outcome-watch",
+      "title": "OpenAI-side outcome watch",
+      "type": "outcome-watch",
+      "status": "watch",
+      "priority": "P0",
+      "summary": "Read-only Gmail outcome check found application receipt only on 2026-05-19; no verified offer, interview loop, collaboration path, recruiter-owned next step, or equivalent OpenAI-side traction. Watch expires on 2026-05-26.",
+      "evidence": [
+        "ops/openai_outcome_watch.json",
+        "ops/OPENAI_OUTCOME_WATCH.md",
+        "read-only-private receipt reference withheld-receipt-only"
+      ],
+      "next": [
+        "Refresh outcome watch on 2026-05-26 or immediately if a real reply appears; keep goal active until outcome evidence is verified."
       ]
     }
   ],
@@ -2316,6 +2332,24 @@
       "from": "runbook-freshness-gate",
       "to": "objective-completion-audit",
       "relation": "hardens",
+      "weight": 4
+    },
+    {
+      "from": "openai-outcome-watch",
+      "to": "objective-completion-audit",
+      "relation": "informs",
+      "weight": 5
+    },
+    {
+      "from": "openai-outcome-watch",
+      "to": "post-gate-reply-review",
+      "relation": "gates",
+      "weight": 5
+    },
+    {
+      "from": "openai-application-receipt",
+      "to": "openai-outcome-watch",
+      "relation": "evidence_for",
       "weight": 4
     }
   ],

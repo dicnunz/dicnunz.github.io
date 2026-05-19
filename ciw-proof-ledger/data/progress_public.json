@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T10:23:38Z",
+  "updated_at": "2026-05-19T10:34:19Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -938,6 +938,22 @@
       ],
       "next": [
         "Do not run before 2026-05-26 unless a recruiter/Cory reply appears or Nic gives a fresh explicit override."
+      ]
+    },
+    {
+      "id": "runbook-freshness-gate",
+      "title": "Runbook freshness gate",
+      "type": "autonomy",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Autonomy heartbeat now fails when the operating runbooks claim a stale selected branch instead of the live audit-only growth plan.",
+      "evidence": [
+        "heartbeat:runbook_freshness-pass",
+        "ops/AUTONOMOUS_OPERATING_SYSTEM.md",
+        "company/CEO_OPERATING_SYSTEM.md"
+      ],
+      "next": [
+        "Keep runbook claims synchronized with tools/ciw_autonomy.py plan before any autonomous advance."
       ]
     }
   ],
@@ -2249,6 +2265,24 @@
       "to": "post-gate-reply-review",
       "relation": "guards",
       "weight": 5
+    },
+    {
+      "from": "proof-route-regression-suite",
+      "to": "runbook-freshness-gate",
+      "relation": "hardens",
+      "weight": 5
+    },
+    {
+      "from": "runbook-freshness-gate",
+      "to": "ciw-autonomous-operating-system",
+      "relation": "guards",
+      "weight": 5
+    },
+    {
+      "from": "runbook-freshness-gate",
+      "to": "post-gate-reply-review",
+      "relation": "preserves",
+      "weight": 4
     }
   ],
   "views": {

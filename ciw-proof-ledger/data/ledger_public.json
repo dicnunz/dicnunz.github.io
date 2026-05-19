@@ -669,5 +669,16 @@
     "source_hash": "befccc304893539a37d7899bf1bb2bcbbca29ab94b7395efd6c2afa87a172e99",
     "prev_hash": "17e634e9618b6f25a3fe956a73a3c03206d15369d6134ae480490ebefc1480ab",
     "hash": "8731512523c66a59adb2867f0bad7205f761f5ffc01820b257bc38ffaad3966f"
+  },
+  {
+    "index": 61,
+    "timestamp": "2026-05-19T10:34:24+00:00",
+    "actor": "Codex",
+    "action": "added runbook freshness autonomy gate",
+    "details": "{\"behavior\":\"heartbeat fails if autonomy runbooks claim stale selected branch instead of live growth plan\",\"checks\":[\"python3 -m unittest tests/test_ciw_autonomy.py\",\"python3 scripts/verify_pack.py\",\"python3 tools/ciw_autonomy.py heartbeat\",\"originality_gate --profile instruction threshold 86\"],\"gate\":\"runbook_freshness\",\"graph_node\":\"runbook-freshness-gate\",\"hard_gates\":[\"no outbound before 2026-05-26\",\"no legal/payment/hiring/fundraising actions\",\"no OpenAI affiliation or clone claims\"]}",
+    "visibility": "public projection",
+    "source_hash": "9f26dd9045c9b8cf3c97b078f0c92ad7c4b146caf50ee1ee97a535242c2ffb13",
+    "prev_hash": "8731512523c66a59adb2867f0bad7205f761f5ffc01820b257bc38ffaad3966f",
+    "hash": "ca424df2072eead059d3a6405e9335f89a1cfa89aa412e1da5c3c860bee9dc1c"
   }
 ]

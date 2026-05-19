@@ -328,5 +328,16 @@
     "source_hash": "4df597dbba86cd0db5d895c7eb045b0b3c82dc0bc3d87afab5bd55e703f29e9b",
     "prev_hash": "f3ae508292fce3b633bbc0be0fba892809b0eadf2f2dc167410dcabd25347c67",
     "hash": "35de71d20a16d28f492dbe7b3c471e666e4632a765e622ff42df681b198fa261"
+  },
+  {
+    "index": 30,
+    "timestamp": "2026-05-19T04:57:30+00:00",
+    "actor": "Codex",
+    "action": "published public role-fit preset bundle",
+    "details": "Updated the public Proof Ledger inspector with role-fit preset URLs for reviewer digest, receipt fixtures, post-workshop handoff, and field-kit branch. Local Chrome verified all four preset URLs hydrated the expected node with 30 projected records verified. Pages commit 31f2588 deployed via run 26077100375 success, and live DOM checks confirmed each preset URL, active preset state, and target node.",
+    "visibility": "public projection",
+    "source_hash": "692f48671b63192aec23a465de2a5c5f947b7a59d07b793f8cd0a50e1cb12489",
+    "prev_hash": "35de71d20a16d28f492dbe7b3c471e666e4632a765e622ff42df681b198fa261",
+    "hash": "128b2f957d219f2ea0d31db3e4a668c9d50d3a0f4a6561f12bc5d2f893b95bb6"
   }
 ]

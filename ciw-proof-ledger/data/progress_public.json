@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T04:51:00Z",
+  "updated_at": "2026-05-19T04:57:25Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -545,6 +545,23 @@
       ],
       "next": [
         "Use handoff fixture to show how a Codex workshop becomes an inspectable follow-up packet instead of a transcript."
+      ]
+    },
+    {
+      "id": "public-role-fit-preset-bundle",
+      "title": "Public role-fit preset bundle",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Proof Ledger inspector now exposes role-fit preset URLs for reviewer digest, receipt fixtures, post-workshop handoff, and field-kit branch so reviewers can open the right graph proof directly.",
+      "evidence": [
+        "https://dicnunz.github.io/ciw-proof-ledger/?preset=reviewer-digest",
+        "commit:31f2588",
+        "pages-run:26077100375-success",
+        "https://dicnunz.github.io/ciw-proof-ledger/?preset=post-workshop-handoff"
+      ],
+      "next": [
+        "Use preset URLs in reviewer routes instead of asking a reader to manually search the graph."
       ]
     }
   ],
@@ -1412,6 +1429,42 @@
       "to": "warm-referral-route",
       "relation": "sharpens_followup",
       "weight": 3
+    },
+    {
+      "from": "public-inspector-node-deeplinks",
+      "to": "public-role-fit-preset-bundle",
+      "relation": "enables",
+      "weight": 5
+    },
+    {
+      "from": "public-role-fit-preset-bundle",
+      "to": "openai-reviewer-digest",
+      "relation": "opens",
+      "weight": 4
+    },
+    {
+      "from": "public-role-fit-preset-bundle",
+      "to": "deployment-feedback-receipt-fixtures",
+      "relation": "opens",
+      "weight": 4
+    },
+    {
+      "from": "public-role-fit-preset-bundle",
+      "to": "post-workshop-handoff-receipt-path",
+      "relation": "opens",
+      "weight": 4
+    },
+    {
+      "from": "public-role-fit-preset-bundle",
+      "to": "ai-coding-deployment-field-kit",
+      "relation": "opens",
+      "weight": 4
+    },
+    {
+      "from": "public-role-fit-preset-bundle",
+      "to": "warm-referral-route",
+      "relation": "sharpens_followup",
+      "weight": 3
     }
   ],
   "views": {
@@ -1435,6 +1488,7 @@
       "openai-interview-conversion-packet",
       "openai-reviewer-digest",
       "public-inspector-node-deeplinks",
+      "public-role-fit-preset-bundle",
       "warm-referral-route"
     ],
     "next_branches": [

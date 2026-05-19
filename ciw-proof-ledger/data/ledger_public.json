@@ -878,5 +878,16 @@
     "source_hash": "29caeff06ce380c22a86f35b15adbdd751f69fcac38bd158904fd0760208222a",
     "prev_hash": "7e72a7582c831c2ad9806cfbc3a13b9f0dfd8012aab8d9f9f2549d32b185108a",
     "hash": "d44eb35ab766e463bbfb77471e7a2a0923a81a15ce09f591ef87a6c257a0e8a7"
+  },
+  {
+    "index": 80,
+    "timestamp": "2026-05-19T13:04:50+00:00",
+    "actor": "Codex",
+    "action": "hardened OpenAI outcome evidence classifier",
+    "details": "Outcome watch now requires verified public-safe human-owned or target-company-owned evidence before reply, recruiter-owned-next-step, interview, collaboration, or offer classifications can affect the goal state. Added recruiter_owned_next_step_detected as an outcome classification, evidence validation tests, refreshed the outcome refresh runbook, and added openai-outcome-evidence-classifier as an autonomy guardrail.",
+    "visibility": "public projection",
+    "source_hash": "cc5ff01132a612e9b22327cf4a598bff37e0a1dcab754c38142c7ad6220c1058",
+    "prev_hash": "d44eb35ab766e463bbfb77471e7a2a0923a81a15ce09f591ef87a6c257a0e8a7",
+    "hash": "29233785e9bb8f8a47fdd6a59fd7fedace5ff2ff51ea04663f542ccbd045fff7"
   }
 ]

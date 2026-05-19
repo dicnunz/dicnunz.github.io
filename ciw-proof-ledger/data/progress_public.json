@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T12:56:25Z",
+  "updated_at": "2026-05-19T13:03:42Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1141,6 +1141,23 @@
       ],
       "next": [
         "Keep audit heartbeats running; run model-driven advance only after the selector reports advance_ready with a selected safe branch."
+      ]
+    },
+    {
+      "id": "openai-outcome-evidence-classifier",
+      "title": "OpenAI outcome evidence classifier",
+      "type": "outcome-gate",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Outcome watch now requires verified human-owned or target-company-owned evidence before reply, recruiter-next-step, interview, collaboration, or offer classifications can affect the goal state.",
+      "evidence": [
+        "tools/openai_outcome_watch.py",
+        "tests/test_openai_outcome_watch.py",
+        "ops/OPENAI_OUTCOME_REFRESH_RUNBOOK.md",
+        "ops/OPENAI_OUTCOME_WATCH.md"
+      ],
+      "next": [
+        "Use this classifier on every due-date or inbound-reply refresh before deciding whether the goal can complete or any reply path can open."
       ]
     }
   ],
@@ -2758,6 +2775,36 @@
       "to": "openai-reviewer-digest",
       "relation": "strengthens",
       "weight": 3
+    },
+    {
+      "from": "openai-outcome-watch",
+      "to": "openai-outcome-evidence-classifier",
+      "relation": "hardens",
+      "weight": 5
+    },
+    {
+      "from": "openai-outcome-evidence-classifier",
+      "to": "objective-completion-audit",
+      "relation": "guards_completion",
+      "weight": 5
+    },
+    {
+      "from": "openai-outcome-evidence-classifier",
+      "to": "post-gate-reply-review",
+      "relation": "gates",
+      "weight": 5
+    },
+    {
+      "from": "openai-outcome-evidence-classifier",
+      "to": "warm-referral-route",
+      "relation": "gates_outbound",
+      "weight": 4
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "openai-outcome-evidence-classifier",
+      "relation": "checks_outcome_evidence",
+      "weight": 5
     }
   ],
   "views": {

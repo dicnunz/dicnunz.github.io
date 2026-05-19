@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T07:10:16Z",
+  "updated_at": "2026-05-19T07:20:54Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -754,10 +754,13 @@
         "https://github.com/dicnunz/cleanroom-intelligence-works/commit/7110e46",
         "cleanroom-run:26082012084-success",
         "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/reviewer_time_to_understand_benchmark.json",
-        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-reviewer-time-to-understand-benchmark.md"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-reviewer-time-to-understand-benchmark.md",
+        "https://dicnunz.github.io/ai-coding-reviewer-time-benchmark/",
+        "commit:2a02b55780a28a4904f10e10f2eb78f7910a308a",
+        "pages-run:26082462305-success"
       ],
       "next": [
-        "Publish the benchmark as a public page and keep it as route-friction proof, not as a real reviewer test or outreach claim."
+        "Keep the benchmark as route-friction proof, not as a real reviewer test or outreach claim; next proof branch is interview-question objection routing."
       ]
     },
     {

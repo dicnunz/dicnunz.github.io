@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Deployment Workshop</title>
+    <meta
+      name="description"
+      content="A public workshop kit for turning one AI coding run into a scoped team enablement session, failure map, rollout gate, and proof receipt."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Deployment Workshop">
+    <meta
+      property="og:description"
+      content="A cleanroom deployment workshop artifact for AI coding adoption: scope card, live run, failure triage, rollout gate, and handoff receipt."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-deployment-workshop/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-deployment-workshop/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .workshop-hero {
+        padding-top: clamp(56px, 8vw, 88px);
+      }
+
+      .workshop-hero h1 {
+        max-width: 780px;
+        font-size: clamp(2.5rem, 6vw, 4.3rem);
+      }
+
+      .workshop-hero .claim {
+        max-width: 740px;
+      }
+
+      .run-list {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .run-list li {
+        display: grid;
+        grid-template-columns: minmax(94px, 0.28fr) minmax(0, 1fr);
+        gap: 18px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .run-list strong,
+      .artifact-grid strong,
+      .gate strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .run-list span,
+      .gate span {
+        display: block;
+      }
+
+      .run-list p,
+      .gate p {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+
+      .run-list p {
+        grid-column: 2;
+      }
+
+      .artifact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .artifact-grid div,
+      .gate,
+      .failure-strip {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        padding: 14px;
+      }
+
+      .artifact-grid span {
+        display: block;
+        margin-top: 8px;
+        color: var(--ink);
+        font-weight: 720;
+      }
+
+      .gate-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .failure-strip {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 18px;
+        margin: 0;
+        padding-left: 30px;
+        color: var(--muted);
+      }
+
+      .route-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .route-links a {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 11px;
+        color: var(--ink);
+        background: var(--accent-soft);
+        border: 1px solid #cbd8ce;
+        text-decoration: none;
+      }
+
+      @media (max-width: 760px) {
+        .run-list li,
+        .artifact-grid,
+        .failure-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .failure-strip {
+          padding-left: 1.1rem;
+        }
+
+        .run-list p {
+          grid-column: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-proof/">Proof brief</a>
+        <a href="../codex-deployment-memo/">Deployment memo</a>
+        <a href="../ciw-proof-ledger/">Ledger inspector</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom repo</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro workshop-hero" aria-labelledby="intro-title">
+        <p class="meta">AI coding deployment workshop · checked May 19, 2026</p>
+        <h1 id="intro-title">A workshop for turning one AI coding run into team adoption evidence.</h1>
+        <p class="claim">
+          This is the enablement layer of the OpenAI Codex proof packet: a cleanroom, public-safe session plan for
+          scoping a real repo task, running an AI coding pass, classifying failures, setting rollout gates, and handing
+          the team a receipt they can inspect after the demo ends.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="gets-title">
+        <div class="section-label">
+          <p class="meta">Output</p>
+          <h2 id="gets-title">What a team gets</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            A bounded task, a live run, a failure map, and a manager-readable receipt. The point is not to make AI coding
+            look magical. The point is to decide which task patterns are ready to repeat, which ones need better harnesses,
+            and which ones should stay human-owned for now.
+          </p>
+          <p>
+            The session is built for the adoption layer: engineering workflow, review quality, tool boundaries, customer
+            feedback, and proof artifacts.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="run-title">
+        <div class="section-label">
+          <p class="meta">90 minutes</p>
+          <h2 id="run-title">The run</h2>
+        </div>
+        <ol class="run-list">
+          <li>
+            <strong>0-10</strong>
+            <span>Scope card</span>
+            <p>Name the repo, task owner, acceptance criteria, disallowed actions, data boundary, rollback path, and verifier.</p>
+          </li>
+          <li>
+            <strong>10-25</strong>
+            <span>Context load</span>
+            <p>Read only the files, commands, dependencies, and product behavior needed to act correctly.</p>
+          </li>
+          <li>
+            <strong>25-50</strong>
+            <span>Live AI coding run</span>
+            <p>Run the agent visibly enough to capture what it inspected, changed, checked, guessed, or refused.</p>
+          </li>
+          <li>
+            <strong>50-65</strong>
+            <span>Failure map</span>
+            <p>Separate bad context, weak verifiers, missing env, permission limits, unclear requirements, and model/tool mismatch.</p>
+          </li>
+          <li>
+            <strong>65-80</strong>
+            <span>Rollout gate</span>
+            <p>Classify the task pattern as ready, needs work, or fail before it becomes a team habit.</p>
+          </li>
+          <li>
+            <strong>80-90</strong>
+            <span>Receipt and handoff</span>
+            <p>Package the diff, checks, proof, risks, replay instructions, and next owner.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="artifacts-title">
+        <div class="section-label">
+          <p class="meta">Receipts</p>
+          <h2 id="artifacts-title">Artifacts produced</h2>
+        </div>
+        <div class="artifact-grid">
+          <div>
+            <strong>Scope card</strong>
+            <span>The task boundary and verifier.</span>
+          </div>
+          <div>
+            <strong>Run receipt</strong>
+            <span>What changed, what ran, and what passed.</span>
+          </div>
+          <div>
+            <strong>Failure map</strong>
+            <span>Where the workflow, harness, context, or agent broke down.</span>
+          </div>
+          <div>
+            <strong>Rollout checklist</strong>
+            <span>The gate before repeating this pattern on a team.</span>
+          </div>
+          <div>
+            <strong>Handoff note</strong>
+            <span>A manager-readable summary with proof links and open risks.</span>
+          </div>
+          <div>
+            <strong>Adoption call</strong>
+            <span>Ready, needs work, or fail.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Rubric</p>
+          <h2 id="gates-title">Readiness gates</h2>
+        </div>
+        <div class="gate-list">
+          <div class="gate">
+            <strong>Ready</strong>
+            <span>The task is explainable, inspectable, reversible, and covered by a verifier that matches the claim.</span>
+            <p>The receipt makes the outcome legible to an engineer and a manager.</p>
+          </div>
+          <div class="gate">
+            <strong>Needs work</strong>
+            <span>The task is valuable, but the team lacks a test, fixture, preview, permission rule, or review convention.</span>
+            <p>The agent can help, but the workflow cannot yet compare runs honestly.</p>
+          </div>
+          <div class="gate">
+            <strong>Fail</strong>
+            <span>The task exposes secrets, has unknowable acceptance criteria, uses cosmetic proof, or gives the agent an authority it should not have.</span>
+            <p>A failed run would be hard to detect or roll back.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="failure-title">
+        <div class="section-label">
+          <p class="meta">Triage</p>
+          <h2 id="failure-title">Failure map</h2>
+        </div>
+        <ul class="failure-strip">
+          <li>Bad acceptance criteria</li>
+          <li>Stale repo context</li>
+          <li>Missing dependency or env var</li>
+          <li>Weak verifier</li>
+          <li>Model/tool mismatch</li>
+          <li>Sandbox or permission boundary</li>
+          <li>Unclear human review rule</li>
+          <li>Unwritten product requirement</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="fit-title">
+        <div class="section-label">
+          <p class="meta">Route</p>
+          <h2 id="fit-title">Where this fits</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            The submitted OpenAI application already has a build packet. This page adds the workshop/enablement proof
+            that a Codex deployment lane needs: customer-facing structure, technical content shape, product feedback
+            loops, safety boundaries, and repeatable adoption evidence.
+          </p>
+          <div class="route-links" aria-label="Related proof links">
+            <a href="../openai-codex-proof/">Proof brief</a>
+            <a href="../codex-deployment-memo/">Deployment memo</a>
+            <a href="../ciw-proof-ledger/">Proof Ledger inspector</a>
+            <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom repo</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Cleanroom line</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            This page is independent from OpenAI. It uses OpenAI and Codex only to name public target-role context. It
+            does not use OpenAI logos, product UI, private systems, screenshots, copied workshop material, or affiliation
+            language.
+          </p>
+          <p>
+            Sources: <a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">AI Deployment Engineer - Codex</a>,
+            <a href="https://openai.com/interview-guide/">OpenAI Interview Guide</a>, and
+            <a href="https://openai.com/brand/">OpenAI Brand</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

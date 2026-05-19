@@ -1,6 +1,6 @@
 const ZERO_HASH = "0".repeat(64);
 const STATUS_ORDER = ["active", "next", "watch", "done", "blocked", "idea"];
-const ROUTE = [
+const FALLBACK_ROUTE = [
   "goal-openai-role",
   "progress-web",
   "public-openai-codex-proof-brief",
@@ -8,12 +8,20 @@ const ROUTE = [
   "openai-application-receipt",
   "warm-referral-route",
 ];
+const GRAPH_FILTERS = [
+  ["all", "All"],
+  ["active-path", "Active path"],
+  ["next-branches", "Next branches"],
+  ["latest-proof", "Latest proof"],
+  ["blockers", "Blockers"],
+];
 
 const state = {
   summary: null,
   ledger: [],
   graph: null,
   mode: initialMode(),
+  graphFilter: "all",
   query: "",
   selectedNode: null,
 };
@@ -91,6 +99,24 @@ function formatTime(value) {
   }).format(date);
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function evidenceMarkup(value) {
+  const text = String(value || "");
+  if (/^https?:\/\//.test(text)) {
+    const safe = escapeHtml(text);
+    return `<a href="${safe}">${safe}</a>`;
+  }
+  return `<code>${escapeHtml(text)}</code>`;
+}
+
 function matchesQuery(text) {
   if (!state.query) {
     return true;
@@ -155,13 +181,13 @@ function renderLedger() {
         <article class="record">
           <div class="record-index">#${record.index}</div>
           <div>
-            <h3>${record.action}</h3>
-            <p>${record.details}</p>
+            <h3>${escapeHtml(record.action)}</h3>
+            <p>${escapeHtml(record.details)}</p>
           </div>
           <div class="record-meta">
-            <span>${formatTime(record.timestamp)} by ${record.actor}</span>
-            <span class="hash-line">hash ${shortHash(record.hash)}</span>
-            <span class="hash-line">source ${shortHash(record.source_hash)}</span>
+            <span>${escapeHtml(formatTime(record.timestamp))} by ${escapeHtml(record.actor)}</span>
+            <span class="hash-line">hash ${escapeHtml(shortHash(record.hash))}</span>
+            <span class="hash-line">source ${escapeHtml(shortHash(record.source_hash))}</span>
           </div>
         </article>
       `
@@ -177,6 +203,44 @@ function graphEdges() {
   return state.graph.edges || [];
 }
 
+function activePathIds() {
+  const path = state.graph?.views?.active_path;
+  return Array.isArray(path) && path.length ? path : FALLBACK_ROUTE;
+}
+
+function nextBranchIds() {
+  const branches = state.graph?.views?.next_branches;
+  return Array.isArray(branches) ? branches : [];
+}
+
+function latestProofIds() {
+  return graphNodes()
+    .filter((node) => node.status === "done" && (node.type.includes("proof") || node.type === "product" || node.type === "operating-system"))
+    .slice(-8)
+    .map((node) => node.id);
+}
+
+function filterIds() {
+  if (state.graphFilter === "active-path") {
+    return new Set(activePathIds());
+  }
+  if (state.graphFilter === "next-branches") {
+    return new Set(nextBranchIds());
+  }
+  if (state.graphFilter === "latest-proof") {
+    return new Set(latestProofIds());
+  }
+  if (state.graphFilter === "blockers") {
+    return new Set(graphNodes().filter((node) => node.status === "blocked" || node.status === "watch" || node.type === "blocker").map((node) => node.id));
+  }
+  return null;
+}
+
+function filteredGraphNodes() {
+  const ids = filterIds();
+  return graphNodes().filter((node) => matchesQuery(nodeText(node)) && (!ids || ids.has(node.id)));
+}
+
 function nodeText(node) {
   return [node.id, node.title, node.type, node.status, node.priority, node.summary, ...(node.evidence || []), ...(node.next || [])].join(" ");
 }
@@ -186,7 +250,8 @@ function neighborsFor(nodeId) {
 }
 
 function renderGraph() {
-  const visibleNodes = graphNodes().filter((node) => matchesQuery(nodeText(node)));
+  renderGraphFilters();
+  const visibleNodes = filteredGraphNodes();
   setText("#graph-count", `${visibleNodes.length} nodes`);
   const byStatus = new Map();
   for (const node of visibleNodes) {
@@ -206,13 +271,13 @@ function renderGraph() {
       const nodes = byStatus.get(status).sort((left, right) => left.priority.localeCompare(right.priority) || left.id.localeCompare(right.id));
       return `
         <section class="status-column">
-          <h3>${status} (${nodes.length})</h3>
+          <h3>${escapeHtml(status)} (${nodes.length})</h3>
           ${nodes
             .map(
               (node) => `
                 <button class="node-button ${node.id === state.selectedNode ? "is-selected" : ""}" type="button" data-node="${node.id}">
-                  <strong>${node.title}</strong>
-                  <span>${node.type} / ${node.priority}</span>
+                  <strong>${escapeHtml(node.title)}</strong>
+                  <span>${escapeHtml(node.type)} / ${escapeHtml(node.priority)}</span>
                 </button>
               `
             )
@@ -227,6 +292,23 @@ function renderGraph() {
   renderNodeDetail();
 }
 
+function renderGraphFilters() {
+  const counts = {
+    all: graphNodes().length,
+    "active-path": activePathIds().length,
+    "next-branches": nextBranchIds().length,
+    "latest-proof": latestProofIds().length,
+    blockers: graphNodes().filter((node) => node.status === "blocked" || node.status === "watch" || node.type === "blocker").length,
+  };
+  $("#graph-filters").innerHTML = GRAPH_FILTERS.map(
+    ([key, label]) => `
+      <button class="filter-button ${state.graphFilter === key ? "is-active" : ""}" type="button" data-filter="${key}">
+        ${label}<span>${counts[key] || 0}</span>
+      </button>
+    `
+  ).join("");
+}
+
 function renderNodeDetail() {
   const node = graphNodes().find((item) => item.id === state.selectedNode);
   if (!node) {
@@ -234,19 +316,42 @@ function renderNodeDetail() {
     return;
   }
   const neighbors = neighborsFor(node.id);
+  const evidence = (node.evidence || []).slice(0, 6);
+  const next = node.next || [];
   $("#node-detail").innerHTML = `
-    <h3>${node.title}</h3>
-    <p>${node.summary}</p>
-    <p><strong>Next:</strong> ${(node.next && node.next[0]) || "No next action recorded."}</p>
+    <div class="node-detail-head">
+      <div>
+        <span class="label">${escapeHtml(node.status)} / ${escapeHtml(node.type)} / ${escapeHtml(node.priority)}</span>
+        <h3>${escapeHtml(node.title)}</h3>
+      </div>
+      <code>${escapeHtml(node.id)}</code>
+    </div>
+    <p>${escapeHtml(node.summary)}</p>
+    <div class="node-lists">
+      <div>
+        <strong>Next</strong>
+        ${next.length ? `<ul>${next.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "<p>No next action recorded.</p>"}
+      </div>
+      <div>
+        <strong>Evidence</strong>
+        ${evidence.length ? `<ul>${evidence.map((item) => `<li>${evidenceMarkup(item)}</li>`).join("")}</ul>` : "<p>No public evidence listed.</p>"}
+      </div>
+    </div>
     <div class="neighbor-list">
-      ${neighbors.map((edge) => `<span>${edge.from === node.id ? "to" : "from"} ${edge.from === node.id ? edge.to : edge.from} / ${edge.relation}</span>`).join("")}
+      ${neighbors
+        .map((edge) => {
+          const target = edge.from === node.id ? edge.to : edge.from;
+          const direction = edge.from === node.id ? "to" : "from";
+          return `<button type="button" data-node="${escapeHtml(target)}">${direction} ${escapeHtml(target)} / ${escapeHtml(edge.relation)}</button>`;
+        })
+        .join("")}
     </div>
   `;
 }
 
 function renderRoute() {
   const nodesById = new Map(graphNodes().map((node) => [node.id, node]));
-  const steps = ROUTE.map((id) => nodesById.get(id)).filter(Boolean);
+  const steps = activePathIds().map((id) => nodesById.get(id)).filter(Boolean);
   setText("#route-count", `${steps.length} steps`);
   $("#route-list").innerHTML = steps
     .map(
@@ -254,9 +359,9 @@ function renderRoute() {
         <li class="route-step">
           <span class="step-number">${index + 1}</span>
           <div>
-            <h3>${node.title}</h3>
-            <p>${node.summary}</p>
-            <p><strong>Next:</strong> ${(node.next && node.next[0]) || "No next action recorded."}</p>
+            <h3>${escapeHtml(node.title)}</h3>
+            <p>${escapeHtml(node.summary)}</p>
+            <p><strong>Next:</strong> ${escapeHtml((node.next && node.next[0]) || "No next action recorded.")}</p>
           </div>
         </li>
       `
@@ -304,6 +409,26 @@ function bindEvents() {
     state.selectedNode = button.dataset.node;
     renderGraph();
   });
+  $("#node-detail").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-node]");
+    if (!button) {
+      return;
+    }
+    state.selectedNode = button.dataset.node;
+    state.graphFilter = "all";
+    state.mode = "graph";
+    renderAll();
+  });
+  $("#graph-filters").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-filter]");
+    if (!button) {
+      return;
+    }
+    state.graphFilter = button.dataset.filter;
+    const visible = filteredGraphNodes();
+    state.selectedNode = visible[0]?.id || null;
+    renderGraph();
+  });
 }
 
 async function loadJson(path) {
@@ -324,7 +449,8 @@ async function boot() {
     state.summary = summary;
     state.ledger = ledger;
     state.graph = graph;
-    state.selectedNode = ROUTE[ROUTE.length - 1];
+    const route = activePathIds();
+    state.selectedNode = route[route.length - 1] || graphNodes()[0]?.id || null;
     const verification = await verifyLedger(ledger);
     renderMetrics(verification);
     renderLinks();

@@ -323,6 +323,46 @@ code {
   margin-top: 14px;
 }
 
+.graph-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.filter-button {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  padding: 6px 10px;
+  font-weight: 760;
+}
+
+.filter-button span {
+  display: inline-grid;
+  min-width: 22px;
+  height: 22px;
+  margin-left: 7px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.filter-button.is-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.filter-button.is-active span {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
 .status-column {
   min-width: 0;
   border: 1px solid var(--line);
@@ -380,14 +420,50 @@ code {
 }
 
 .node-detail h3 {
-  margin: 0;
+  margin: 5px 0 0;
   font-size: 1rem;
+}
+
+.node-detail-head {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  justify-content: space-between;
 }
 
 .node-detail p {
   margin: 8px 0 0;
   color: var(--muted);
   line-height: 1.45;
+}
+
+.node-lists {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.node-lists strong {
+  color: var(--accent);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.node-lists ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.node-lists li + li {
+  margin-top: 5px;
+}
+
+.node-lists a {
+  color: var(--blue);
 }
 
 .neighbor-list {
@@ -397,13 +473,20 @@ code {
   margin-top: 10px;
 }
 
-.neighbor-list span {
+.neighbor-list button {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--panel-2);
   padding: 5px 8px;
   color: var(--muted);
   font-size: 0.78rem;
+}
+
+.neighbor-list button:hover,
+.neighbor-list button:focus-visible {
+  border-color: var(--blue);
+  color: var(--ink);
+  outline: none;
 }
 
 .route-list {
@@ -467,6 +550,10 @@ code {
 
   .graph-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .node-lists {
+    grid-template-columns: 1fr;
   }
 }
 

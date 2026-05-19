@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T15:43:26Z",
+  "updated_at": "2026-05-19T16:05:44Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1082,14 +1082,16 @@
     },
     {
       "id": "neutral-public-role-review-route",
-      "title": "Neutral public role-review route",
+      "title": "CIW executive role review route",
       "type": "public-proof",
       "status": "done",
       "priority": "P0",
-      "summary": "Protected-mark-light canonical entrypoint for future reviewer/referral packets; it uses a neutral CIW URL before routing into role-specific proof surfaces and hard boundaries.",
+      "summary": "Canonical protected-mark-light entrypoint now compresses the proof web into one screen and three decision links: brutal scorecard, Codex role portfolio, and proof ledger before the full route index.",
       "evidence": [
         "demo/role-review/index.html",
-        "https://dicnunz.github.io/ciw-role-review/"
+        "https://dicnunz.github.io/ciw-role-review/",
+        "applications/openai/OPENAI_EXECUTIVE_REVIEW_PATH.md",
+        "ops/executive_review_path.json"
       ],
       "next": [
         "Use this as the first public link in post-gate reviewer or referral packets instead of starting from role-specific legacy URLs."
@@ -3160,6 +3162,24 @@
       "from": "brutal-10-10-scorecard",
       "to": "company-launch-readiness-matrix",
       "relation": "guards",
+      "weight": 5
+    },
+    {
+      "from": "brutal-10-10-scorecard",
+      "to": "neutral-public-role-review-route",
+      "relation": "compresses_into",
+      "weight": 5
+    },
+    {
+      "from": "openai-codex-role-portfolio",
+      "to": "neutral-public-role-review-route",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "proof-ledger",
+      "to": "neutral-public-role-review-route",
+      "relation": "receipts",
       "weight": 5
     }
   ],

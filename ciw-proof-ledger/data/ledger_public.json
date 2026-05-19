@@ -999,5 +999,16 @@
     "source_hash": "e217f740975262716fb83ddc54c47859876e6e45253991385e6eb0d8e6aa1b5e",
     "prev_hash": "76d7ea51cafeaac5d8b011b68b9daa094757f148f77db7c4f568c6ccb32217b0",
     "hash": "d902e1ba21d912430430e894eaf701f5b42c28c9cb483509ce70f7e34c5ee83e"
+  },
+  {
+    "index": 91,
+    "timestamp": "2026-05-19T16:06:23+00:00",
+    "actor": "Codex",
+    "action": "compressed canonical role review route",
+    "details": "{\"artifact\":\"applications/openai/OPENAI_EXECUTIVE_REVIEW_PATH.md\",\"boundary\":\"canonical review surface only; no outbound, affiliation, employment, customer, revenue, legal company, or OpenAI-side outcome claim\",\"public_url\":\"https://dicnunz.github.io/ciw-role-review/\",\"three_links\":[\"https://dicnunz.github.io/ciw-brutal-scorecard/\",\"https://dicnunz.github.io/openai-codex-role-portfolio/\",\"https://dicnunz.github.io/ciw-proof-ledger/\"]}",
+    "visibility": "public projection",
+    "source_hash": "a0a12739ade2f35e7f2632a5b2b975f2975d19e5aea5e7e3244c21a6c5da768c",
+    "prev_hash": "d902e1ba21d912430430e894eaf701f5b42c28c9cb483509ce70f7e34c5ee83e",
+    "hash": "e3d286b7c7dd19d44f0d34d4b2836a56e205580465297c40709fcc408af1cc2c"
   }
 ]

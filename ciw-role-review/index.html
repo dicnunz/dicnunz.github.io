@@ -3,16 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CIW Role Review Route</title>
-    <meta
-      name="description"
-      content="Neutral public entrypoint for Cleanroom Intelligence Works role-review proof: reviewer digest, ledger, outcome watch, objective audit, no-send gate, source repo, and non-confusion boundary."
-    >
-    <meta property="og:title" content="CIW Role Review Route">
-    <meta
-      property="og:description"
-      content="One neutral URL for reviewing the Cleanroom Intelligence Works proof route before any post-gate referral or hiring review."
-    >
+    <title>CIW Executive Review Path</title>
+    <meta name="description" content="A one-screen, three-link public-safe executive review path for the Cleanroom Intelligence Works OpenAI Codex role proof surface.">
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="CIW Executive Review Path">
+    <meta property="og:description" content="Fit, truth, and proof in three links: scorecard, role portfolio, and ledger. No fake OpenAI outcome claim.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dicnunz.github.io/ciw-role-review/">
     <meta property="og:site_name" content="Nicholas Dunzelman">
@@ -20,146 +15,95 @@
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../styles.css">
     <style>
-      .review-hero h1 {
-        max-width: 820px;
-        font-size: clamp(2.5rem, 6vw, 4.8rem);
-      }
-
-      .review-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .review-card {
-        display: grid;
-        gap: 8px;
-        min-height: 150px;
-        border: 1px solid var(--line);
-        background: var(--panel);
-        padding: 16px;
-        text-decoration: none;
-      }
-
-      .review-card:hover,
-      .review-card:focus-visible {
-        border-color: var(--accent);
-      }
-
-      .review-card strong {
-        color: var(--accent);
-        font-size: 1.05rem;
-      }
-
-      .review-card span,
-      .compact-list,
-      .source-line {
-        color: var(--muted);
-      }
-
-      .compact-list {
-        display: grid;
-        gap: 8px;
-        margin: 0;
-        padding-left: 18px;
-      }
-
-      @media (max-width: 760px) {
-        .review-grid {
-          grid-template-columns: 1fr;
-        }
-      }
+      .exec-hero h1 { max-width: 980px; font-size: clamp(2.55rem, 6.8vw, 5.35rem); }
+      .exec-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+      .metric, .review-card, .claim-list li, .gate-list li { border: 1px solid var(--line); background: var(--panel); padding: 14px; }
+      .metric strong, .review-card strong, .claim-list strong { color: var(--accent); }
+      .metric span { display: block; margin-top: 8px; font-size: 1.5rem; font-weight: 760; }
+      .review-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+      .review-card { min-height: 250px; color: var(--ink); text-decoration: none; display: grid; align-content: start; gap: 12px; }
+      .review-card:hover, .review-card:focus-visible { border-color: var(--accent); }
+      .review-card span { color: var(--muted); font-size: .78rem; text-transform: uppercase; }
+      .review-card strong { font-size: 1.35rem; }
+      .review-card p, .review-card small, .claim-list span, .claim-list em, .gate-list li, .decision-list { color: var(--muted); }
+      .claim-list, .gate-list, .decision-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+      .claim-list li { display: grid; gap: 8px; }
+      .claim-list em { font-style: normal; }
+      @media (max-width: 860px) { .exec-strip, .review-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
     <a class="skip-link" href="#top">Skip to main content</a>
     <header class="topbar">
-      <a class="brand" href="https://dicnunz.github.io/">Nicholas Dunzelman</a>
+      <a class="brand" href="../">Nicholas Dunzelman</a>
       <nav aria-label="Primary links">
-        <a href="https://dicnunz.github.io/ciw-review-digest/">Digest</a>
-        <a href="https://dicnunz.github.io/ciw-proof-ledger/">Ledger</a>
-        <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Source</a>
+        <a href="../ciw-brutal-scorecard/">Scorecard</a>
+        <a href="../openai-codex-role-portfolio/">Role portfolio</a>
+        <a href="../ciw-proof-ledger/">Ledger</a>
+        <a href="../openai-codex-route-index/">Full route</a>
       </nav>
     </header>
-
     <main id="top" tabindex="-1">
-      <section class="intro review-hero" aria-labelledby="intro-title">
-        <p class="meta">Cleanroom Intelligence Works · neutral reviewer entrypoint</p>
-        <h1 id="intro-title">One safer public route before any hiring or referral review.</h1>
-        <p class="claim">
-          This page is the canonical public entrypoint for the role-review packet. It uses a neutral URL, then routes into the
-          source-backed proof surfaces: digest, ledger, outcome watch, objective audit, no-send gate, cleanroom source, and legal boundary.
-        </p>
+      <section class="intro exec-hero">
+        <p class="meta">Executive review path · generated 2026-05-19T15:59:39Z</p>
+        <h1>Three links before the full graph.</h1>
+        <p class="claim">This is the one-screen reviewer path. It does not claim an OpenAI outcome, company formation, customers, revenue, or legal clearance. It compresses the proof into three links a busy reviewer can inspect before deciding whether the deeper graph is worth opening.</p>
       </section>
-
-      <section class="section" aria-labelledby="route-title">
-        <div class="section-label">
-          <p class="meta">Inspect</p>
-          <h2 id="route-title">Open these first</h2>
-        </div>
-        <div class="review-grid">
-          <a class="review-card" href="https://dicnunz.github.io/ciw-review-digest/">
-            <strong>Reviewer digest</strong>
-            <span>Current role-fit map, latest receipt, strongest proof nodes, inspect-order list, and no-outbound gate.</span>
-          </a>
-          <a class="review-card" href="https://dicnunz.github.io/ciw-proof-ledger/">
-            <strong>Proof ledger inspector</strong>
-            <span>Public-safe graph and hash-chain projection with private inbox identifiers and local-only evidence withheld.</span>
-          </a>
-          <a class="review-card" href="https://dicnunz.github.io/openai-codex-outcome-watch/">
-            <strong>Outcome watch</strong>
-            <span>Read-only outcome state: application receipt only; no verified interview, offer, collaboration path, or recruiter-owned next step.</span>
-          </a>
-          <a class="review-card" href="https://dicnunz.github.io/openai-codex-objective-completion-audit/">
-            <strong>Completion audit</strong>
-            <span>Machine-readable gate that keeps proof-lab readiness separate from actual target-company outcome evidence.</span>
-          </a>
-          <a class="review-card" href="https://dicnunz.github.io/ai-coding-no-send-follow-up-decision-kit/">
-            <strong>No-send gate</strong>
-            <span>Send, hold, and do-not-send rules for any future post-gate note; this page itself does not authorize outbound.</span>
-          </a>
-          <a class="review-card" href="https://github.com/dicnunz/cleanroom-intelligence-works">
-            <strong>Cleanroom source</strong>
-            <span>Independent proof-lab source with non-confusion policy, receipt tooling, fixtures, tests, and verifier.</span>
-          </a>
+      <section class="section">
+        <div class="exec-strip">
+          <div class="metric"><strong>Primary role</strong><span>AI Deployment Engineer - Codex</span></div>
+          <div class="metric"><strong>Codex jobs checked</strong><span>28</span></div>
+          <div class="metric"><strong>Outcome evidence</strong><span>Application receipt only</span></div>
         </div>
       </section>
-
-      <section class="section" aria-labelledby="why-title">
-        <div class="section-label">
-          <p class="meta">Why this exists</p>
-          <h2 id="why-title">Protected-mark-light routing</h2>
-        </div>
-        <ul class="compact-list">
-          <li>The target role and official sources can be named nominatively when relevant.</li>
-          <li>The canonical public packet URL should not make a protected mark look like the product, company, or brand.</li>
-          <li>Legacy role-specific pages remain available for compatibility; future reviewer/referral packets should start here.</li>
-          <li>No OpenAI affiliation, endorsement, employment, customer deployment, revenue, incorporation, funding, or legal status is claimed.</li>
-        </ul>
+      <section class="section">
+        <div class="section-label"><p class="meta">Decision</p><h2>Read this first</h2></div>
+        <ul class="decision-list"><li>Fit: the proof maps strongest to AI Deployment Engineer - Codex and adjacent Codex deployment/product/agent roles.</li><li>Truth: the current outcome is application receipt only; no verified interview, offer, collaboration invite, recruiter next step, or human-owned OpenAI signal exists.</li><li>Ask after gate: if a verified reply or the 2026-05-26 refresh opens the lane, use this as the review surface before any message.</li></ul>
       </section>
-
-      <section class="section" aria-labelledby="sources-title">
-        <div class="section-label">
-          <p class="meta">Sources</p>
-          <h2 id="sources-title">Official role frame</h2>
-        </div>
-        <div class="note-list">
-          <p class="source-line">
-            Checked May 19, 2026:
-            <a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">target role page</a>
-            and <a href="https://openai.com/interview-guide/">interview guide</a>.
-          </p>
-          <p class="source-line">
-            This is an independent review route for Cleanroom Intelligence Works, not a target-company page or official status claim.
-          </p>
-        </div>
+      <section class="section">
+        <div class="section-label"><p class="meta">Three links</p><h2>Open in order</h2></div>
+        <div class="review-grid"><a class="review-card" href="https://dicnunz.github.io/ciw-brutal-scorecard/">
+          <span>honesty-first</span>
+          <strong>Brutal scorecard</strong>
+          <p>Shows the current 7.5/10 ceiling, the 2.0/10 OpenAI-side outcome score, and every hard blocker before anyone trusts the proof.</p>
+          <small>Inflated score means stop; the route is not ready for leverage.</small>
+        </a><a class="review-card" href="https://dicnunz.github.io/openai-codex-role-portfolio/">
+          <span>role-fit</span>
+          <strong>Codex role portfolio</strong>
+          <p>Maps 28 visible Codex jobs into one primary target, adjacent lanes, honest gaps, and proof nodes without inventing target-side interest.</p>
+          <small>Weak role fit demotes the proof to portfolio material only.</small>
+        </a><a class="review-card" href="https://dicnunz.github.io/ciw-proof-ledger/">
+          <span>receipts</span>
+          <strong>Proof ledger</strong>
+          <p>Projects 92 hash-chained records and 76 graph nodes so the reviewer can verify the work did not only exist in a chat transcript.</p>
+          <small>Stale projection means hold the route and regenerate the public proof state.</small>
+        </a></div>
+      </section>
+      <section class="section">
+        <div class="section-label"><p class="meta">Proof</p><h2>Allowed claims</h2></div>
+        <ul class="claim-list"><li>
+          <strong>Nic is operating the proof lab as CEO of a pre-incorporation venture concept.</strong>
+          <span>Evidence: company/CEO_OPERATING_SYSTEM.md</span>
+          <em>This is founder/operator positioning, not legal entity formation.</em>
+        </li><li>
+          <strong>The public proof route is inspectable without private inbox context.</strong>
+          <span>Evidence: https://dicnunz.github.io/ciw-role-review/</span>
+          <em>Inspectability is not the same as target-company traction.</em>
+        </li><li>
+          <strong>The Codex role cluster was checked on 2026-05-19 with 28 visible jobs.</strong>
+          <span>Evidence: ops/openai_role_portfolio.json</span>
+          <em>Role postings can change; rerun source checks before post-gate use.</em>
+        </li><li>
+          <strong>The current OpenAI-side outcome is not complete.</strong>
+          <span>Evidence: ops/OPENAI_OUTCOME_WATCH.md</span>
+          <em>Application receipt proves delivery only.</em>
+        </li></ul>
+      </section>
+      <section class="section">
+        <div class="section-label"><p class="meta">Stops</p><h2>Hard gates</h2></div>
+        <ul class="gate-list"><li>No outbound before 2026-05-26 unless a verified real reply or explicit fresh override changes the route.</li><li>No OpenAI affiliation, employment, endorsement, recruiter approval, official status, partner, customer, revenue, funding, incorporation, or outcome claim.</li><li>No legal, payment, banking, tax, trademark, contract, fundraising, hiring, compensation, customer, revenue, incorporation, or commercial action.</li><li>The page is a review surface, not a message, application, guarantee, legal filing, or company launch.</li></ul>
       </section>
     </main>
-
-    <footer class="footer">
-      <span>Nicholas Dunzelman</span>
-      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
-      <a href="https://x.com/nicdunz">@nicdunz</a>
-    </footer>
+    <footer class="footer"><span>Cleanroom Intelligence Works</span><a href="../ciw-autonomy-status/">Autonomy status</a></footer>
   </body>
 </html>

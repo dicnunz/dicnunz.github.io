@@ -1,26 +1,27 @@
 {
-  "generated_at": "2026-05-19T15:48:44Z",
+  "generated_at": "2026-05-19T16:08:18Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
-    "records": 91,
-    "latest_hash": "d902e1ba21d912430430e894eaf701f5b42c28c9cb483509ce70f7e34c5ee83e",
-    "latest_action": "built brutal 10/10 scorecard",
-    "source_latest_hash": "e217f740975262716fb83ddc54c47859876e6e45253991385e6eb0d8e6aa1b5e"
+    "records": 92,
+    "latest_hash": "e3d286b7c7dd19d44f0d34d4b2836a56e205580465297c40709fcc408af1cc2c",
+    "latest_action": "compressed canonical role review route",
+    "source_latest_hash": "a0a12739ade2f35e7f2632a5b2b975f2975d19e5aea5e7e3244c21a6c5da768c"
   },
   "graph": {
     "nodes": 76,
-    "edges": 309,
+    "edges": 312,
     "root": "goal-openai-role",
     "status_counts": {
       "active": 3,
       "done": 69,
       "watch": 4
     },
-    "updated_at": "2026-05-19T15:43:26Z"
+    "updated_at": "2026-05-19T16:05:44Z"
   },
   "public_urls": {
     "role_review": "https://dicnunz.github.io/ciw-role-review/",
+    "executive_review": "https://dicnunz.github.io/ciw-role-review/",
     "neutral_reviewer_digest": "https://dicnunz.github.io/ciw-review-digest/",
     "proof_brief": "https://dicnunz.github.io/openai-codex-proof/",
     "cleanroom_repo": "https://github.com/dicnunz/cleanroom-intelligence-works",

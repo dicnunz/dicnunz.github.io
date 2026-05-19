@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T09:51:10Z",
+  "updated_at": "2026-05-19T10:02:18Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -891,13 +891,16 @@
       "type": "hiring-route",
       "status": "done",
       "priority": "P0",
-      "summary": "Cleanroom source now validates and renders a public-safe proof-route renewal drill: seven public_sources, reviewer_digest, route_index, ledger_projection, graph_state, autonomy_status, and no_outbound_gate repair steps convert stale-route refusal into deterministic local repair before any contact path can reopen.",
+      "summary": "Cleanroom source and Pages now publish a public-safe proof-route renewal drill: seven public_sources, reviewer_digest, route_index, ledger_projection, graph_state, autonomy_status, and no_outbound_gate repair steps convert stale-route refusal into deterministic local repair before any contact path can reopen.",
       "evidence": [
         "planned-by:proof-route-staleness-sentinel",
         "cleanroom-run:26089607282-success",
         "https://github.com/dicnunz/cleanroom-intelligence-works/commit/b0f58793e064f9c17a1ac023fc30c87db0f251ea",
         "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_renewal_drill.json",
-        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-renewal-drill.md"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-renewal-drill.md",
+        "https://dicnunz.github.io/ai-coding-proof-route-renewal-drill/",
+        "pages-commit:ba3d79ce98831bd9186b87828c2a8ae43afad2a7",
+        "pages-run:26090153533-success"
       ],
       "next": [
         "Use as the local repair drill after stale-route refusal; the next safe branch is a route regression suite, not external outreach."

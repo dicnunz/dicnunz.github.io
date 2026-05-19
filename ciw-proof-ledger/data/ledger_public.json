@@ -427,5 +427,16 @@
     "source_hash": "3c0428644fa7149b92b656b0e45335411d6e73b82abd8e06dcd4c0a7771b71bb",
     "prev_hash": "166313ab7303135d4f451e0979e9515fd95f61cab423b69bdc680fe887de2af8",
     "hash": "fbf68982a517cd5c66bf0b7d70b6c2c19a57e9a7c37cb181d3caa5343c928267"
+  },
+  {
+    "index": 39,
+    "timestamp": "2026-05-19T06:08:59+00:00",
+    "actor": "Codex",
+    "action": "added autonomy scheduler health gate",
+    "details": "Autonomy heartbeat now verifies both the installed LaunchAgent plist and loaded launchctl runtime for com.nicdunz.ciw-autopilot, including expected command, workspace, and 21600-second interval. Unit tests cover config, plist rejection, and launchctl parsing; latest heartbeat passed launch_agent_plist and launch_agent_runtime with only the known unrelated Pages root index warning.",
+    "visibility": "public projection",
+    "source_hash": "a953b059280cf0e3d6d4e9e2efad4c61bb3c336d7b4d7bec0c4a6c4d9cc17c3c",
+    "prev_hash": "fbf68982a517cd5c66bf0b7d70b6c2c19a57e9a7c37cb181d3caa5343c928267",
+    "hash": "af6e7be5e6ef19dd49501c5811adc7a1e274c8e0d1b6b62e89ee662b56b3c24f"
   }
 ]

@@ -48,6 +48,12 @@ const ROLE_PRESETS = [
     filter: "active-path",
   },
   {
+    key: "autonomy",
+    label: "Autonomy",
+    node: "autonomy-scheduler-health",
+    filter: "active-path",
+  },
+  {
     key: "field-kit-branch",
     label: "Field-kit branch",
     node: "ai-coding-deployment-field-kit",

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CIW Autonomy Status</title>
+    <meta
+      name="description"
+      content="Public-safe autonomy status for Cleanroom Intelligence Works: scheduler health, scorecard gate, verifier heartbeat, and hard stops."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="CIW Autonomy Status">
+    <meta
+      property="og:description"
+      content="A public-safe status page showing that the proof lab checks its scheduler, scorecard, public pages, and safety gates."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ciw-autonomy-status/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ciw-autonomy-status/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .status-hero h1 {
+        max-width: 840px;
+        font-size: clamp(2.55rem, 6vw, 4.5rem);
+      }
+
+      .status-hero h1 span {
+        display: block;
+      }
+
+      .status-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .status-tile,
+      .check-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .status-tile {
+        padding: 14px;
+      }
+
+      .status-tile strong,
+      .check-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .status-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.45rem;
+        font-weight: 760;
+      }
+
+      .check-list,
+      .gate-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .check-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .check-list li {
+        padding: 14px;
+      }
+
+      .check-list span,
+      .gate-list span,
+      .proof-list {
+        color: var(--muted);
+      }
+
+      .gate-list li {
+        display: grid;
+        grid-template-columns: minmax(170px, 0.34fr) minmax(0, 1fr);
+        gap: 18px;
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .proof-list {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .status-hero h1 {
+          max-width: 100%;
+          font-size: clamp(2.05rem, 8.8vw, 2.35rem);
+          line-height: 1.04;
+        }
+
+        .status-hero .claim {
+          max-width: 31ch;
+          font-size: 1.08rem;
+        }
+
+        .status-strip,
+        .check-list,
+        .gate-list li {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../ciw-proof-ledger/?preset=autonomy">Autonomy graph</a>
+        <a href="../ai-coding-field-trial-scorecard/">Scorecard</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro status-hero" aria-labelledby="intro-title">
+        <p class="meta">Autonomy status · checked May 19, 2026</p>
+        <h1 id="intro-title"><span>The proof lab now</span><span>checks the scheduler</span><span>before it trusts</span><span>the loop.</span></h1>
+        <p class="claim">
+          This is the public-safe status layer for Cleanroom Intelligence Works: scheduler health, verifier heartbeat,
+          scorecard gate, public-page checks, and hard stops that prevent fake company claims or premature outreach.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="state-title">
+        <div class="section-label">
+          <p class="meta">Heartbeat</p>
+          <h2 id="state-title">Current state</h2>
+        </div>
+        <div class="status-strip">
+          <div class="status-tile">
+            <strong>Required checks</strong>
+            <span>Pass</span>
+          </div>
+          <div class="status-tile">
+            <strong>Scheduler</strong>
+            <span>Loaded</span>
+          </div>
+          <div class="status-tile">
+            <strong>Interval</strong>
+            <span>21600s</span>
+          </div>
+          <div class="status-tile">
+            <strong>Only warning</strong>
+            <span>Known dirty page</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="checks-title">
+        <div class="section-label">
+          <p class="meta">Checks</p>
+          <h2 id="checks-title">What passed</h2>
+        </div>
+        <ol class="check-list">
+          <li>
+            <strong>LaunchAgent plist</strong>
+            <span>Label, command, working directory, and six-hour interval match the autonomy config.</span>
+          </li>
+          <li>
+            <strong>Loaded runtime</strong>
+            <span>The scheduler label is loaded through `launchctl` with the expected program and interval.</span>
+          </li>
+          <li>
+            <strong>Scorecard gate</strong>
+            <span>The field-trial acceptance scorecard validates and renders successfully before growth work proceeds.</span>
+          </li>
+          <li>
+            <strong>Public safety</strong>
+            <span>Privacy and forbidden-claim scans passed across the public proof surfaces.</span>
+          </li>
+          <li>
+            <strong>Graph and ledger</strong>
+            <span>Progress graph validation passed and the hash-chained ledger verified 40 records.</span>
+          </li>
+          <li>
+            <strong>Public URLs</strong>
+            <span>Proof brief, ledger inspector, receipt reference, scorecard, reviewer digest, and route index returned HTTP 200.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="hard-stops-title">
+        <div class="section-label">
+          <p class="meta">Stops</p>
+          <h2 id="hard-stops-title">What autonomy cannot do</h2>
+        </div>
+        <ol class="gate-list">
+          <li>
+            <strong>No outbound before 2026-05-26</strong>
+            <span>No email, Slack, Teams, X, LinkedIn, recruiter note, form, or application message unless a real reply or explicit fresh override changes the gate.</span>
+          </li>
+          <li>
+            <strong>No legal or money actions</strong>
+            <span>No incorporation, trademark, tax, legal terms, contracts, bank, wallet, billing, trading, hiring, fundraising, or compensation promise.</span>
+          </li>
+          <li>
+            <strong>No target-company claims</strong>
+            <span>No affiliation, partnership, endorsement, employment, customer deployment, revenue, funding, official status, or clone language.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="proof-title">
+        <div class="section-label">
+          <p class="meta">Proof</p>
+          <h2 id="proof-title">Inspectable markers</h2>
+        </div>
+        <ul class="proof-list">
+          <li><a href="../ciw-proof-ledger/?preset=autonomy">Autonomy scheduler node in the public graph</a></li>
+          <li><a href="../ciw-proof-ledger/data/summary.json">Public ledger summary with 40 projected records</a></li>
+          <li><a href="../openai-codex-review-digest/">Reviewer digest with latest autonomy receipt</a></li>
+          <li><a href="../ai-coding-field-trial-scorecard/">Field-trial scorecard gate</a></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Status, not scale theater</h2>
+        </div>
+        <div class="note-list">
+          <p class="boundary-note">
+            This page proves scheduler and verifier health for an independent proof lab. It does not prove a legal
+            company, employees, customers, revenue, funding, production deployments, or target-company affiliation.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

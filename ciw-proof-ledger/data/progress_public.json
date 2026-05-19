@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T05:52:16Z",
+  "updated_at": "2026-05-19T06:10:00Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -456,7 +456,8 @@
         "ops/autonomy/autonomy_config.json",
         "local path withheld",
         "ops/autonomy/state/latest_report.md",
-        "scorecard-gate:test_ciw_autonomy.py"
+        "scorecard-gate:test_ciw_autonomy.py",
+        "scheduler-health:launch_agent_plist+launch_agent_runtime-pass"
       ],
       "next": [
         "Let the scheduled cycle keep auditing; use next_work_packet.md as the autonomous branch selector."
@@ -670,6 +671,24 @@
       ],
       "next": [
         "Keep the scorecard green as the autonomy gate; do not convert simulated readiness into customer rollout claims."
+      ]
+    },
+    {
+      "id": "autonomy-scheduler-health",
+      "title": "Autonomy scheduler health",
+      "type": "operating-system",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Heartbeat now verifies the installed LaunchAgent plist and loaded launchctl runtime, proving the autonomous proof lab scheduler still matches the expected command, workspace, and 21600-second interval before future growth work is trusted.",
+      "evidence": [
+        "ops/autonomy/state/latest_report.md",
+        "launch-agent:com.nicdunz.ciw-autopilot-loaded",
+        "tests/test_ciw_autonomy.py",
+        "public-url:https://dicnunz.github.io/ciw-autonomy-status/",
+        "https://dicnunz.github.io/ciw-autonomy-status/"
+      ],
+      "next": [
+        "Keep this scheduler check required; if it fails, repair automation before adding new proof artifacts."
       ]
     }
   ],
@@ -1729,6 +1748,24 @@
       "to": "field-trial-acceptance-scorecard",
       "relation": "uses_as_gate",
       "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "autonomy-scheduler-health",
+      "relation": "proves_scheduler",
+      "weight": 5
+    },
+    {
+      "from": "autonomy-scheduler-health",
+      "to": "field-trial-acceptance-scorecard",
+      "relation": "protects_gate",
+      "weight": 4
+    },
+    {
+      "from": "autonomy-scheduler-health",
+      "to": "openai-reviewer-digest",
+      "relation": "strengthens_digest",
+      "weight": 3
     }
   ],
   "views": {
@@ -1736,6 +1773,7 @@
       "goal-openai-role",
       "progress-web",
       "ciw-autonomous-operating-system",
+      "autonomy-scheduler-health",
       "public-proof-ledger-inspector",
       "public-ai-coding-workshop",
       "public-ai-coding-patterns",

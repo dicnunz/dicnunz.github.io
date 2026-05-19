@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex Deployment Memo</title>
+    <meta
+      name="description"
+      content="A public deployment memo showing how Nicholas Dunzelman would help engineering teams adopt Codex-style AI coding workflows with demos, receipts, and readiness gates."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="Codex Deployment Memo">
+    <meta
+      property="og:description"
+      content="A role-specific memo for Codex deployment work: demo paths, readiness gates, customer signals, and proof artifacts."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/codex-deployment-memo/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/codex-deployment-memo/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .memo-hero {
+        padding-top: clamp(56px, 8vw, 88px);
+      }
+
+      .memo-hero h1 {
+        max-width: 760px;
+        font-size: clamp(2.55rem, 6vw, 4.25rem);
+      }
+
+      .memo-hero .claim {
+        max-width: 720px;
+      }
+
+      .memo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .memo-card,
+      .demo-panel {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .memo-card {
+        padding: 15px;
+      }
+
+      .memo-card strong,
+      .memo-card span {
+        display: block;
+      }
+
+      .memo-card strong {
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .memo-card span {
+        margin-top: 8px;
+        color: var(--ink);
+        font-weight: 720;
+      }
+
+      .demo-panel {
+        display: grid;
+        gap: 16px;
+        padding: clamp(16px, 3vw, 24px);
+      }
+
+      .demo-panel h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .demo-panel p,
+      .demo-panel li {
+        color: var(--muted);
+      }
+
+      .demo-panel p,
+      .demo-panel ul {
+        margin: 0;
+      }
+
+      .demo-panel ul {
+        display: grid;
+        gap: 8px;
+        padding-left: 1.1rem;
+      }
+
+      .callout {
+        border-left: 4px solid var(--accent);
+        padding: 2px 0 2px 16px;
+      }
+
+      @media (max-width: 760px) {
+        .memo-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../">Home</a>
+        <a href="../agentproof-role-packet/">Role packet</a>
+        <a href="https://github.com/dicnunz/agentproof">AgentProof</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro memo-hero" aria-labelledby="intro-title">
+        <p class="meta">Codex deployment memo · checked May 19, 2026</p>
+        <h1 id="intro-title">Turn agent demos into team adoption evidence.</h1>
+        <p class="claim">
+          This is a role-specific field memo for Codex deployment work: how I would help an engineering team move from
+          individual AI coding wins to repeatable demos, readiness gates, and receipts a manager can trust.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="target-title">
+        <div class="section-label">
+          <p class="meta">Target</p>
+          <h2 id="target-title">Current role fit</h2>
+        </div>
+        <div class="memo-grid">
+          <div class="memo-card">
+            <strong>Role</strong>
+            <span>AI Deployment Engineer - Codex</span>
+          </div>
+          <div class="memo-card">
+            <strong>Route</strong>
+            <span>Remote - US, Technical Success</span>
+          </div>
+          <div class="memo-card">
+            <strong>Proof</strong>
+            <span>AgentProof plus Cleanroom Intelligence Works</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="thesis-title">
+        <div class="section-label">
+          <p class="meta">Thesis</p>
+          <h2 id="thesis-title">The adoption gap</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            Teams do not adopt AI coding systems just because one engineer has a strong transcript. They adopt when the
+            work becomes teachable: a scoped task, a repeatable demo, a failure map, a security boundary, and a receipt
+            showing what changed.
+          </p>
+          <p>
+            My wedge is that receipt layer. AgentProof packages browser checks, command output, screenshots, console
+            errors, accessibility basics, broken links, and handoff notes. Proof Ledger adds a hash-chained local record
+            for operator runs. Together they point at the missing customer-facing story: what happened, what passed, what
+            failed, and what a team should trust next.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="demos-title">
+        <div class="section-label">
+          <p class="meta">Demos</p>
+          <h2 id="demos-title">Three workshops I would run</h2>
+        </div>
+        <div class="demo-panel">
+          <div>
+            <h3>1. Repo to receipt</h3>
+            <p>
+              Pick a small internal tool, run an AI coding pass, then produce a receipt: diff summary, tests, browser
+              evidence, known gaps, and a manager-readable handoff.
+            </p>
+          </div>
+          <div>
+            <h3>2. Failure triage lab</h3>
+            <p>
+              Take broken agent output and classify the failure: bad context, bad tool call, missing dependency, weak
+              verifier, stale assumption, or unclear acceptance bar.
+            </p>
+          </div>
+          <div>
+            <h3>3. Deployment playbook</h3>
+            <p>
+              Turn one successful workflow into a team pattern: task intake, permissions, sandbox rule, review gate,
+              rollback path, and evidence bundle.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="readiness-title">
+        <div class="section-label">
+          <p class="meta">Readiness</p>
+          <h2 id="readiness-title">Signals I would look for</h2>
+        </div>
+        <ul class="signal-list">
+          <li>Engineers can name which tasks are safe for Codex, risky for Codex, or not worth delegating yet.</li>
+          <li>Every demo has a verifier that covers the claim instead of only showing a polished transcript.</li>
+          <li>Customer feedback separates model behavior, harness behavior, repo context, and user expectation.</li>
+          <li>Security review sees explicit boundaries around credentials, data access, package installs, and deploys.</li>
+          <li>Managers get adoption evidence they can compare across teams: cycle time, rerun friction, review quality, and failure rate.</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="packet-title">
+        <div class="section-label">
+          <p class="meta">Packet</p>
+          <h2 id="packet-title">Evidence bundle</h2>
+        </div>
+        <div class="note-list">
+          <p class="callout">
+            The claim is not that I have OpenAI tenure. The claim is narrower and checkable: I am already building the
+            proof surface around AI coding adoption.
+          </p>
+          <p>
+            Inspect: <a href="../agentproof-role-packet/">AgentProof role packet</a>,
+            <a href="https://dicnunz.github.io/agentproof/demo-report/">hosted demo report</a>,
+            <a href="https://github.com/dicnunz/agentproof">public repository</a>, and
+            <a href="https://github.com/dicnunz/agentproof/actions/workflows/agentproof.yml">GitHub Action proof</a>.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Cleanroom line</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            This page uses OpenAI and Codex only to name public target roles and source context. It is independent from
+            OpenAI and does not use OpenAI logos, product UI, private systems, or affiliation language.
+          </p>
+          <p>
+            Sources checked: <a href="https://jobs.ashbyhq.com/openai/4f4221ef-f2bc-4dc1-9086-69ba126e4903">AI Deployment Engineer - Codex posting</a>,
+            <a href="https://openai.com/careers/search/?c=engineering">OpenAI engineering roles</a>, and
+            <a href="https://openai.com/careers/">OpenAI Careers</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

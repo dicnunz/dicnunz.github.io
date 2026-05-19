@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T11:46:24Z",
+  "updated_at": "2026-05-19T11:57:42Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -984,10 +984,11 @@
       "evidence": [
         "ops/openai_outcome_watch.json",
         "ops/OPENAI_OUTCOME_WATCH.md",
-        "read-only-private receipt reference withheld-receipt-only"
+        "read-only-private receipt reference withheld-receipt-only",
+        "read-only-outcome-refresh:2026-05-19T11:56:39Z"
       ],
       "next": [
-        "Refresh outcome watch on 2026-05-26 or immediately if a real reply appears; keep goal active until outcome evidence is verified."
+        "Refresh again on 2026-05-26, immediately if a real OpenAI recruiter/hiring-manager/referral reply appears, and keep the active goal incomplete until OpenAI-side outcome evidence exists."
       ]
     },
     {

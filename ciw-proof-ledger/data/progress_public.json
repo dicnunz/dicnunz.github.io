@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T04:38:26Z",
+  "updated_at": "2026-05-19T04:44:33Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -511,6 +511,22 @@
       ],
       "next": [
         "Use after 2026-05-26 gate only if follow-up still improves recruiter signal."
+      ]
+    },
+    {
+      "id": "public-inspector-node-deeplinks",
+      "title": "Public inspector node deep links",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Proof Ledger inspector now opens selected graph nodes and filters from URL parameters and exposes copyable node links for reviewer routing.",
+      "evidence": [
+        "https://dicnunz.github.io/ciw-proof-ledger/?view=graph&filter=active-path&node=openai-reviewer-digest",
+        "commit:29822d8",
+        "pages-run:26076690996-success"
+      ],
+      "next": [
+        "Use node links in reviewer routes instead of asking someone to manually navigate the graph."
       ]
     }
   ],
@@ -1330,6 +1346,30 @@
       "to": "warm-referral-route",
       "relation": "gates_followup",
       "weight": 3
+    },
+    {
+      "from": "public-proof-ledger-inspector",
+      "to": "public-inspector-node-deeplinks",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "openai-reviewer-digest",
+      "to": "public-inspector-node-deeplinks",
+      "relation": "needs_direct_routes",
+      "weight": 3
+    },
+    {
+      "from": "public-inspector-traversal-filters",
+      "to": "public-inspector-node-deeplinks",
+      "relation": "extends",
+      "weight": 4
+    },
+    {
+      "from": "public-inspector-node-deeplinks",
+      "to": "warm-referral-route",
+      "relation": "sharpens_followup",
+      "weight": 3
     }
   ],
   "views": {
@@ -1351,6 +1391,7 @@
       "openai-30-day-field-trial-plan",
       "openai-interview-conversion-packet",
       "openai-reviewer-digest",
+      "public-inspector-node-deeplinks",
       "warm-referral-route"
     ],
     "next_branches": [

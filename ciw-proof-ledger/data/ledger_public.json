@@ -306,5 +306,16 @@
     "source_hash": "3d373005a7924c73ca85a20c2969929ffa3e27a95d8903630793a87f6146394b",
     "prev_hash": "ca8cdc7df40bed817c9b248d1cbf4927948c85aac1adaad44d952bf39abea031",
     "hash": "28dd6a1604633309170c8421b77944e76d0302649fc52cbe4c8b5564de8b750b"
+  },
+  {
+    "index": 28,
+    "timestamp": "2026-05-19T04:44:37+00:00",
+    "actor": "Codex",
+    "action": "published public inspector node deep links",
+    "details": "Updated the Proof Ledger inspector so URL parameters view=graph, filter, node, and q hydrate the public graph directly; node details now expose Open node link and Copy node link controls. Local Chrome verified active-path and node-only deep links with 28 projected records verified. Pages commit 29822d8 deployed via run 26076690996 success and live DOM checks confirmed openai-reviewer-digest and public-inspector-traversal-filters node links.",
+    "visibility": "public projection",
+    "source_hash": "af5b3e7aa32d924dd42f1a0a09c97462bf62cbd3a8b897855ddcc895fda472e5",
+    "prev_hash": "28dd6a1604633309170c8421b77944e76d0302649fc52cbe4c8b5564de8b750b",
+    "hash": "f3ae508292fce3b633bbc0be0fba892809b0eadf2f2dc167410dcabd25347c67"
   }
 ]

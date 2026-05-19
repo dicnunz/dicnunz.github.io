@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T10:56:33Z",
+  "updated_at": "2026-05-19T11:13:40Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -986,6 +986,23 @@
       ],
       "next": [
         "Refresh outcome watch on 2026-05-26 or immediately if a real reply appears; keep goal active until outcome evidence is verified."
+      ]
+    },
+    {
+      "id": "outcome-refresh-runbook",
+      "title": "Outcome watch refresh runbook",
+      "type": "autonomy",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Internal runbook and autonomy next-packet hook turn the May 26 expired outcome-watch failure into a concrete read-only refresh procedure, preserving no-outbound and no-completion gates.",
+      "evidence": [
+        "ops/OPENAI_OUTCOME_REFRESH_RUNBOOK.md",
+        "tools/openai_outcome_watch.py",
+        "tests/test_openai_outcome_watch.py",
+        "tests/test_ciw_autonomy.py"
+      ],
+      "next": [
+        "Use when openai_outcome_watch_validate fails on or after 2026-05-26, or immediately if a real reply appears before then."
       ]
     }
   ],
@@ -2350,6 +2367,24 @@
       "from": "openai-application-receipt",
       "to": "openai-outcome-watch",
       "relation": "evidence_for",
+      "weight": 4
+    },
+    {
+      "from": "openai-outcome-watch",
+      "to": "outcome-refresh-runbook",
+      "relation": "expires_into",
+      "weight": 5
+    },
+    {
+      "from": "outcome-refresh-runbook",
+      "to": "openai-outcome-watch",
+      "relation": "refreshes",
+      "weight": 5
+    },
+    {
+      "from": "outcome-refresh-runbook",
+      "to": "post-gate-reply-review",
+      "relation": "gates",
       "weight": 4
     }
   ],

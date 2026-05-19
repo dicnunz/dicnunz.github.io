@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T13:10:26Z",
+  "updated_at": "2026-05-19T13:24:06Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1160,6 +1160,22 @@
       ],
       "next": [
         "Use this classifier on every due-date or inbound-reply refresh before deciding whether the goal can complete or any reply path can open."
+      ]
+    },
+    {
+      "id": "openai-inbound-signal-router",
+      "title": "OpenAI inbound signal router",
+      "type": "outcome-gate",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public-safe router classifies future inbound signals before they can update the outcome watch, trigger reply review, or satisfy the OpenAI-side outcome gate.",
+      "evidence": [
+        "ops/openai_signal_router.json",
+        "ops/OPENAI_SIGNAL_ROUTER.md",
+        "https://dicnunz.github.io/openai-codex-signal-router/"
+      ],
+      "next": [
+        "Use this before any future inbox signal changes the outcome watch or post-gate reply path."
       ]
     }
   ],
@@ -2807,6 +2823,30 @@
       "to": "openai-outcome-evidence-classifier",
       "relation": "checks_outcome_evidence",
       "weight": 5
+    },
+    {
+      "from": "openai-outcome-evidence-classifier",
+      "to": "openai-inbound-signal-router",
+      "relation": "extends",
+      "weight": 5
+    },
+    {
+      "from": "openai-inbound-signal-router",
+      "to": "openai-outcome-watch",
+      "relation": "protects",
+      "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "openai-inbound-signal-router",
+      "relation": "validates",
+      "weight": 4
+    },
+    {
+      "from": "openai-inbound-signal-router",
+      "to": "post-gate-reply-review",
+      "relation": "routes",
+      "weight": 4
     }
   ],
   "views": {

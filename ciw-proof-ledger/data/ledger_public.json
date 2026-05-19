@@ -900,5 +900,27 @@
     "source_hash": "43f5f98ae9e9a9b011dd669c0e45ed70450ef59acd4674ed6eaff34b552365c8",
     "prev_hash": "29233785e9bb8f8a47fdd6a59fd7fedace5ff2ff51ea04663f542ccbd045fff7",
     "hash": "54e2a427b39d3a3a3d7e5e2671126bebab5cbc9dcd938ac946fc493463b2c7d8"
+  },
+  {
+    "index": 82,
+    "timestamp": "2026-05-19T13:24:20+00:00",
+    "actor": "Codex",
+    "action": "shipped OpenAI inbound signal router",
+    "details": "{\"gates\":\"no outbound, no legal or money action, no target-company claim\",\"graph\":\"68 nodes / 278 edges after router node\",\"source_hashes\":{\"ops/OPENAI_SIGNAL_ROUTER.md\":\"ab067e4a\",\"ops/openai_signal_router.json\":\"8793f3f5\",\"tools/openai_signal_router.py\":\"7abf0296\"},\"summary\":\"Added public-safe inbound signal router for future OpenAI-side signal intake; receipts, broadcasts, unrelated interviews, ambiguous mail, replies, recruiter next steps, interview loops, collaboration paths, and offers route before any outcome-watch or reply-review change.\"}",
+    "visibility": "public projection",
+    "source_hash": "d011f005bbbe670e02ac11ca0bf65145e172412d177716fd8b12c46abf6d8921",
+    "prev_hash": "54e2a427b39d3a3a3d7e5e2671126bebab5cbc9dcd938ac946fc493463b2c7d8",
+    "hash": "334571890d7a5ea994921979d06d97f5ec75177b537604942ddb8538b75de3a5"
+  },
+  {
+    "index": 83,
+    "timestamp": "2026-05-19T13:28:55+00:00",
+    "actor": "Codex",
+    "action": "hardened OpenAI signal router renderer",
+    "details": "{\"source_hashes\":{\"ops/OPENAI_SIGNAL_ROUTER.md\":\"95e72bda\",\"ops/openai_signal_router.json\":\"8793f3f5\",\"tools/openai_signal_router.py\":\"198ef8b3\"},\"summary\":\"Tightened signal-router renderer after originality gate flagged table repetition; rerendered public-safe Markdown with deterministic gate passing.\",\"verification\":\"originality_gate strict pass on ops/OPENAI_SIGNAL_ROUTER.md; router validation still required by verify_pack\"}",
+    "visibility": "public projection",
+    "source_hash": "c1f75a5da079387de75b5c011b4308a0df649235c7f338baf517037392930757",
+    "prev_hash": "334571890d7a5ea994921979d06d97f5ec75177b537604942ddb8538b75de3a5",
+    "hash": "d1ff9e86834ee86eaf63ef295614f654bcf23d2668d0432cbe43aeaa03786610"
   }
 ]

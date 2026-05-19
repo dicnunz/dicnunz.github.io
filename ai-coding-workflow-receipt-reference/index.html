@@ -6,13 +6,13 @@
     <title>AI Coding Workflow Receipt Reference</title>
     <meta
       name="description"
-      content="A runnable cleanroom reference implementation for validating ready/repair/reject AI coding deployment receipts and rendering product feedback packets."
+      content="A runnable cleanroom reference implementation for validating ready/repair/reject AI coding deployment receipts, handoffs, and simulated product feedback exports."
     >
     <meta name="theme-color" content="#f7f8f4">
     <meta property="og:title" content="AI Coding Workflow Receipt Reference">
     <meta
       property="og:description"
-      content="Structured input, validation, ready/repair/reject fixtures, receipt rendering, feedback packet rendering, tests, and CI for AI coding deployment handoffs."
+      content="Structured input, validation, ready/repair/reject fixtures, handoff rendering, product feedback export rendering, tests, and CI for AI coding deployment handoffs."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dicnunz.github.io/ai-coding-workflow-receipt-reference/">
@@ -144,7 +144,8 @@
           This is a cleanroom reference implementation: structured JSON goes through required-field validation and
           renders into a markdown deployment receipt, product-feedback packet, and post-workshop handoff with
           friction deltas, safety gates, model behavior, tool gaps, adoption notes, and ready-state lineage across a
-          second service surface.
+          second service surface. The latest path aggregates those fixtures into a simulated public-safe product
+          feedback export with routing, severity, release gates, and promotion rules.
         </p>
         <pre class="code-panel" aria-label="Receipt reference commands"><code>python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_input.json
 python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_repair_input.json
@@ -155,6 +156,8 @@ python3 tools/deployment_receipt.py validate-handoff --input examples/post_works
 python3 tools/deployment_receipt.py handoff --input examples/post_workshop_handoff_input.json
 python3 tools/deployment_receipt.py validate-handoff --input examples/post_workshop_handoff_ready_input.json
 python3 tools/deployment_receipt.py handoff --input examples/post_workshop_handoff_ready_input.json
+python3 tools/deployment_receipt.py validate-feedback-export --input examples/product_feedback_export_input.json
+python3 tools/deployment_receipt.py feedback-export --input examples/product_feedback_export_input.json
 python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py</code></pre>
       </section>
 
@@ -178,7 +181,9 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
               plus
               <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/post_workshop_handoff_input.json">repair handoff</a>
               and
-              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/post_workshop_handoff_ready_input.json">ready second-service handoff</a>
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/post_workshop_handoff_ready_input.json">ready second-service handoff</a>,
+              plus the
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/product_feedback_export_input.json">product feedback export</a>
             </span>
           </div>
           <div class="proof-card">
@@ -187,7 +192,7 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
           </div>
           <div class="proof-card">
             <strong>CI</strong>
-            <span>Cleanroom verifier passed at commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/3a418a100583039868130ed20c921760fca33bb3">3a418a1</a>.</span>
+            <span>Cleanroom verifier passed at commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/0f1478a">0f1478a</a>.</span>
           </div>
         </div>
       </section>
@@ -218,6 +223,10 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
             <strong>Handoff gaps</strong>
             <span>Missing SDLC friction deltas, safety gates, model/tool feedback buckets, next owner, next check, or handoff assets.</span>
           </li>
+          <li>
+            <strong>Export gaps</strong>
+            <span>Missing simulated/public-safe source boundary, routed signal buckets, severity, release gates, promotion rules, or no-customer-claim language.</span>
+          </li>
         </ol>
       </section>
 
@@ -232,10 +241,11 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
             feedback, safety, and operational readiness. This reference turns the receipt pattern into runnable source,
             turns the same validated run into a product-feedback packet, and adds a second handoff path for the end of a
             workshop. The handoff path now shows a repair-state first pass and a ready-state repeat on another
-            public-safe service surface.
+            public-safe service surface, then routes the fixture lineage into a simulated product-feedback export without
+            pretending it is real customer rollout evidence.
           </p>
           <p class="boundary-note">
-            This is not customer deployment history. It is a code-backed operating proof: a demo should produce
+            This is not real customer rollout evidence. It is a code-backed operating proof: a demo should produce
             structured evidence and a workshop should leave behind a friction delta a second engineering leader can
             validate without the presenter in the room.
           </p>

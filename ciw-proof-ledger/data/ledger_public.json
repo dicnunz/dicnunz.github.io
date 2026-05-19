@@ -383,5 +383,27 @@
     "source_hash": "25445d281ce7aefc13554e59a0437245145b80e947eb668ec4d9402906fcb700",
     "prev_hash": "5a5bb99b812fb55f3edbd9ce5628bfe2149473ea2c6562c7f7a29600d7ae5976",
     "hash": "0e0e81a0d15e64602561a3914f1cb911b3bdf1591826a025e2c67223295e56f7"
+  },
+  {
+    "index": 35,
+    "timestamp": "2026-05-19T05:34:16+00:00",
+    "actor": "Codex",
+    "action": "added product feedback export fixture",
+    "details": "Cleanroom commit 0f1478a adds validate-feedback-export and feedback-export commands, examples/product_feedback_export_input.json, docs/ai-coding-product-feedback-export.md, tests for private-evidence rejection plus routing/severity/gate validation, and verify_public_pack coverage. GitHub Actions run 26078339260 succeeded. Local progress graph now has product-feedback-export-fixture as a public-proof node with 39 nodes and 171 edges.",
+    "visibility": "public projection",
+    "source_hash": "bfb2dac1d1f018113c6b313572a65fcf1f940a616f4e4541b2dd520ae3f51fbe",
+    "prev_hash": "0e0e81a0d15e64602561a3914f1cb911b3bdf1591826a025e2c67223295e56f7",
+    "hash": "47662b3470b5919d23e2cc617a368c171cdd7d18aa3b452933ca2f385f235b8c"
+  },
+  {
+    "index": 36,
+    "timestamp": "2026-05-19T05:37:31+00:00",
+    "actor": "Codex",
+    "action": "tightened feedback export boundary wording",
+    "details": "Cleanroom commit e9fb1d4 removes customer-deployment-history phrasing in favor of real customer rollout evidence, preserving the simulated/public-safe boundary. GitHub Actions run 26078483369 succeeded. Local public pages and progress graph were refreshed to avoid contextual banned-claim exceptions.",
+    "visibility": "public projection",
+    "source_hash": "1f55d34b6a25b97c0db660863e4be7cc6a46184b0684e17b7a942084b22c3511",
+    "prev_hash": "47662b3470b5919d23e2cc617a368c171cdd7d18aa3b452933ca2f385f235b8c",
+    "hash": "55b596d26ffc58c62fde802e2f170cdf9b87466337a49a7e31a0093bae279a9c"
   }
 ]

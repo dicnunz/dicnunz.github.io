@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T05:26:28Z",
+  "updated_at": "2026-05-19T05:37:25Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -632,6 +632,25 @@
       ],
       "next": [
         "Next autonomous branch should create new verifier-backed deployment evidence or wait for the 2026-05-26 outreach gate."
+      ]
+    },
+    {
+      "id": "product-feedback-export-fixture",
+      "title": "Product feedback export fixture",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Cleanroom receipt tool now validates and renders a simulated public-safe product-feedback export that routes multi-fixture deployment signal by bucket, severity, release gate, source artifact, recommended action, and promotion rule without claiming real customers.",
+      "evidence": [
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/0f1478a",
+        "cleanroom-run:26078339260-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/product_feedback_export_input.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-product-feedback-export.md",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/e9fb1d4",
+        "cleanroom-run:26078483369-success"
+      ],
+      "next": [
+        "Expose the export on the public receipt-reference page and use it only as simulated product-signal proof, never real customer rollout evidence."
       ]
     }
   ],
@@ -1619,6 +1638,48 @@
       "to": "warm-referral-route",
       "relation": "gates-followup",
       "weight": 4
+    },
+    {
+      "from": "deployment-feedback-receipt-fixtures",
+      "to": "product-feedback-export-fixture",
+      "relation": "aggregates",
+      "weight": 5
+    },
+    {
+      "from": "ready-second-service-handoff-fixture",
+      "to": "product-feedback-export-fixture",
+      "relation": "feeds_signal",
+      "weight": 4
+    },
+    {
+      "from": "product-feedback-export-fixture",
+      "to": "openai-reviewer-digest",
+      "relation": "should_refresh",
+      "weight": 4
+    },
+    {
+      "from": "product-feedback-export-fixture",
+      "to": "ai-coding-workflow-receipt-reference",
+      "relation": "extends",
+      "weight": 5
+    },
+    {
+      "from": "product-feedback-export-fixture",
+      "to": "public-openai-codex-route-index",
+      "relation": "strengthens",
+      "weight": 3
+    },
+    {
+      "from": "product-feedback-export-fixture",
+      "to": "warm-referral-route",
+      "relation": "strengthens_followup",
+      "weight": 3
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "product-feedback-export-fixture",
+      "relation": "next-growth-target",
+      "weight": 4
     }
   ],
   "views": {
@@ -1646,6 +1707,7 @@
       "public-role-fit-preset-bundle",
       "public-openai-codex-route-index",
       "autonomy-public-surface-coverage",
+      "product-feedback-export-fixture",
       "warm-referral-route"
     ],
     "next_branches": [

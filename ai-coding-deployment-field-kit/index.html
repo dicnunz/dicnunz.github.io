@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Deployment Field Kit</title>
+    <meta
+      name="description"
+      content="A public-safe AI coding deployment field kit with intake rubric, scope card, demo receipt, failure taxonomy, workshop decision table, and product feedback packet."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Deployment Field Kit">
+    <meta
+      property="og:description"
+      content="Customer-neutral templates for turning AI coding demos into inspectable deployment evidence."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-deployment-field-kit/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-deployment-field-kit/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .kit-hero {
+        padding-top: clamp(56px, 8vw, 88px);
+      }
+
+      .kit-hero h1 {
+        max-width: 790px;
+        font-size: clamp(2.5rem, 6vw, 4.28rem);
+      }
+
+      .kit-hero .claim {
+        max-width: 760px;
+      }
+
+      .kit-list {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .kit-list > li {
+        display: grid;
+        grid-template-columns: minmax(118px, 0.3fr) minmax(0, 1fr);
+        gap: 18px;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .kit-list strong,
+      .template-block strong,
+      .field-label {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .kit-body {
+        display: grid;
+        gap: 10px;
+      }
+
+      .kit-body h3,
+      .kit-body p,
+      .kit-body ul {
+        margin: 0;
+      }
+
+      .kit-body h3 {
+        font-size: 1.18rem;
+        line-height: 1.2;
+      }
+
+      .kit-body p,
+      .kit-body li {
+        color: var(--muted);
+      }
+
+      .template-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .template-block {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        padding: 14px;
+      }
+
+      .template-block span {
+        display: block;
+        margin-top: 8px;
+        color: var(--ink);
+        font-weight: 720;
+      }
+
+      .route-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .route-links a {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 11px;
+        color: var(--ink);
+        background: var(--accent-soft);
+        border: 1px solid #cbd8ce;
+        text-decoration: none;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .kit-list > li,
+        .template-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-proof/">Proof brief</a>
+        <a href="../openai-codex-30-day-plan/">30-day plan</a>
+        <a href="../ai-coding-deployment-workshop/">Workshop kit</a>
+        <a href="../ai-coding-deployment-patterns/">Patterns</a>
+        <a href="../ciw-proof-ledger/">Ledger inspector</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro kit-hero" aria-labelledby="intro-title">
+        <p class="meta">AI coding deployment field kit · checked May 19, 2026</p>
+        <h1 id="intro-title">Templates for turning an AI coding demo into deployment evidence.</h1>
+        <p class="claim">
+          This is the operational layer behind the proof packet: intake, scope, receipt, failure taxonomy, decision
+          table, and product feedback. It is built so a second engineer can inspect the run after the call ends.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="templates-title">
+        <div class="section-label">
+          <p class="meta">Kit</p>
+          <h2 id="templates-title">Six artifacts</h2>
+        </div>
+        <div class="template-grid">
+          <div class="template-block">
+            <strong>Intake</strong>
+            <span>Five questions decide whether a task is safe enough and useful enough to demo.</span>
+          </div>
+          <div class="template-block">
+            <strong>Scope card</strong>
+            <span>Owner, task, verifier, data boundary, rollback, and human review rule before the agent runs.</span>
+          </div>
+          <div class="template-block">
+            <strong>Receipt</strong>
+            <span>Changed files, commands, visual proof, verifier result, failure, decision, and replay path.</span>
+          </div>
+          <div class="template-block">
+            <strong>Taxonomy</strong>
+            <span>Six buckets separate acceptance, context, harness, environment, tool, and review-boundary misses.</span>
+          </div>
+          <div class="template-block">
+            <strong>Decision table</strong>
+            <span>Ready, repair, or reject for each task pattern before it becomes a team habit.</span>
+          </div>
+          <div class="template-block">
+            <strong>Feedback packet</strong>
+            <span>Field misses become product signal instead of transcript residue.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="moves-title">
+        <div class="section-label">
+          <p class="meta">Runbook</p>
+          <h2 id="moves-title">How the kit is used</h2>
+        </div>
+        <ol class="kit-list">
+          <li>
+            <strong>01</strong>
+            <div class="kit-body">
+              <h3>Intake before demo</h3>
+              <p>Reject tasks with no owner, no falsifiable check, broad blast radius, hidden credentials, or ambiguous review rules.</p>
+            </div>
+          </li>
+          <li>
+            <strong>02</strong>
+            <div class="kit-body">
+              <h3>Scope card before prompt</h3>
+              <p>Name the repo, owner, acceptance check, verifier, rollback, data boundary, disallowed actions, and reviewer.</p>
+            </div>
+          </li>
+          <li>
+            <strong>03</strong>
+            <div class="kit-body">
+              <h3>Receipt after run</h3>
+              <p>Capture context loaded, files touched, command output, browser proof, failure observed, and replay command.</p>
+            </div>
+          </li>
+          <li>
+            <strong>04</strong>
+            <div class="kit-body">
+              <h3>Decision before rollout</h3>
+              <p>Classify each pattern as ready, repair, or reject. Do not scale from excitement alone.</p>
+            </div>
+          </li>
+          <li>
+            <strong>05</strong>
+            <div class="kit-body">
+              <h3>Feedback into product</h3>
+              <p>Translate misses into model behavior, tool harness, docs gap, repo context, permission boundary, or customer-readiness signal.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="fit-title">
+        <div class="section-label">
+          <p class="meta">Fit</p>
+          <h2 id="fit-title">Why this matters</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            The AI Deployment Engineer - Codex posting asks for customer workflow design, demos, reference implementations,
+            workshops, technical content, product insights, SDLC strategy, security considerations, and operational readiness.
+          </p>
+          <p class="boundary-note">
+            The field kit turns those nouns into artifacts a hiring manager can inspect. It does not claim customer
+            deployment history; it shows the operating shape Nic would bring into a deployment lane.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="links-title">
+        <div class="section-label">
+          <p class="meta">Proof stack</p>
+          <h2 id="links-title">Inspect next</h2>
+        </div>
+        <div class="route-links">
+          <a href="../openai-codex-proof/">Proof brief</a>
+          <a href="../openai-codex-30-day-plan/">30-day plan</a>
+          <a href="../ai-coding-deployment-workshop/">Workshop kit</a>
+          <a href="../ai-coding-deployment-patterns/">Patterns guide</a>
+          <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom repo</a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Cleanroom line</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            This page is independent from OpenAI. It uses OpenAI and Codex only to name public role context. It does
+            not use OpenAI logos, product UI, private systems, or affiliation language.
+          </p>
+          <p>
+            Sources checked: <a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">AI Deployment Engineer - Codex</a>
+            and <a href="https://openai.com/interview-guide/">OpenAI interview guide</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

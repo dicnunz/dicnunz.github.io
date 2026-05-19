@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T13:55:13Z",
+  "updated_at": "2026-05-19T14:17:04Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1193,6 +1193,53 @@
         "https://dicnunz.github.io/openai-codex-application-delta/"
       ],
       "next": []
+    },
+    {
+      "id": "company-launch-readiness-matrix",
+      "title": "Company launch-readiness matrix",
+      "type": "launch-readiness",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Four-band launch classifier separating public proof launch, autonomous proof-lab launch, OpenAI hiring leverage, and legal/commercial company launch without overclaiming.",
+      "evidence": [
+        "ops/company_launch_readiness.json",
+        "ops/COMPANY_LAUNCH_READINESS.md",
+        "tools/company_launch_readiness.py"
+      ],
+      "next": [
+        "Update after any launch claim, outcome refresh, public route change, or legal/commercial gate change."
+      ]
+    },
+    {
+      "id": "company-system-map",
+      "title": "Company system map",
+      "type": "system-map",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Updateable visualization of CIW internals: mission, CEO kernel, progress web, ledger, autonomy, claim boundary, readiness ratchet, product proof engine, public surface, outcome watch, hiring router, and formation backlog.",
+      "evidence": [
+        "ops/company_system_map.json",
+        "ops/COMPANY_SYSTEM_MAP.md",
+        "demo/company-system-map/index.html"
+      ],
+      "next": [
+        "Use this as the reference map before changing company architecture, launch posture, autonomy, or public proof routing."
+      ]
+    },
+    {
+      "id": "launch-claim-boundary-pack",
+      "title": "Launch claim-boundary pack",
+      "type": "legal-guardrail",
+      "status": "done",
+      "priority": "P1",
+      "summary": "Public-copy red-team and launch claim boundary that define allowed claims, banned claims, review checks, and escalation gates before outreach, legal formation, commerce, or protected-brand-sensitive copy.",
+      "evidence": [
+        "legal/LAUNCH_CLAIM_BOUNDARY.md",
+        "legal/PUBLIC_COPY_RED_TEAM.md"
+      ],
+      "next": [
+        "Run before any public copy, outreach draft, naming change, commercial claim, or post-gate leverage action."
+      ]
     }
   ],
   "edges": [
@@ -2898,6 +2945,42 @@
       "from": "post-application-delta-packet",
       "to": "post-gate-reply-review",
       "relation": "prepares",
+      "weight": 3
+    },
+    {
+      "from": "post-application-delta-packet",
+      "to": "company-launch-readiness-matrix",
+      "relation": "led_to",
+      "weight": 4
+    },
+    {
+      "from": "company-launch-readiness-matrix",
+      "to": "company-system-map",
+      "relation": "evidence_for",
+      "weight": 5
+    },
+    {
+      "from": "launch-claim-boundary-pack",
+      "to": "company-launch-readiness-matrix",
+      "relation": "guards",
+      "weight": 5
+    },
+    {
+      "from": "company-system-map",
+      "to": "progress-web",
+      "relation": "evidence_for",
+      "weight": 4
+    },
+    {
+      "from": "company-system-map",
+      "to": "ciw-autonomous-operating-system",
+      "relation": "guards",
+      "weight": 4
+    },
+    {
+      "from": "legal-entity-review",
+      "to": "launch-claim-boundary-pack",
+      "relation": "led_to",
       "weight": 3
     }
   ],

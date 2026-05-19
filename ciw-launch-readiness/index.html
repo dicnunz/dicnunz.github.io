@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CIW Launch Readiness</title>
+    <meta
+      name="description"
+      content="Public-safe launch-readiness map for Cleanroom Intelligence Works: public proof launch, autonomous proof-lab launch, OpenAI hiring leverage, and legal/commercial company launch."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="CIW Launch Readiness">
+    <meta
+      property="og:description"
+      content="Four-band readiness map separating public proof, autonomous proof-lab operation, OpenAI-role review leverage, and company launch boundaries."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ciw-launch-readiness/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ciw-launch-readiness/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .readiness-hero h1 {
+        max-width: 880px;
+        font-size: clamp(2.45rem, 6vw, 4.7rem);
+      }
+
+      .readiness-hero .claim {
+        max-width: 760px;
+      }
+
+      .gate-strip,
+      .band-grid,
+      .surface-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .gate-strip {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .gate,
+      .band-card,
+      .surface-card {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .gate {
+        padding: 14px;
+      }
+
+      .gate strong,
+      .band-card strong,
+      .surface-card strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .gate span,
+      .band-card p,
+      .band-card li,
+      .surface-card span,
+      .rule-list {
+        color: var(--muted);
+      }
+
+      .gate span {
+        display: block;
+        margin-top: 8px;
+      }
+
+      .band-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .band-card {
+        display: grid;
+        gap: 14px;
+        padding: 16px;
+      }
+
+      .band-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .band-head h3 {
+        margin: 6px 0 0;
+        font-size: 1.32rem;
+        line-height: 1.15;
+      }
+
+      .status-pill {
+        min-width: 96px;
+        padding: 6px 8px;
+        border: 1px solid var(--line-strong);
+        color: var(--accent);
+        background: var(--accent-soft);
+        font-size: 0.76rem;
+        font-weight: 800;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .band-card p,
+      .band-card ul,
+      .surface-card span {
+        margin: 0;
+      }
+
+      .band-card ul {
+        display: grid;
+        gap: 8px;
+        padding-left: 18px;
+      }
+
+      .proof-links,
+      .surface-grid {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .proof-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .proof-links a {
+        display: inline-flex;
+        min-height: 34px;
+        align-items: center;
+        padding: 6px 9px;
+        border: 1px solid #cbd8ce;
+        background: var(--accent-soft);
+        text-decoration: none;
+      }
+
+      .surface-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .surface-card {
+        display: grid;
+        gap: 8px;
+        min-height: 132px;
+        padding: 14px;
+        text-decoration: none;
+      }
+
+      .surface-card:hover,
+      .surface-card:focus-visible,
+      .proof-links a:hover,
+      .proof-links a:focus-visible {
+        border-color: var(--accent);
+      }
+
+      .rule-list {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      @media (max-width: 760px) {
+        .gate-strip,
+        .band-grid,
+        .surface-grid,
+        .band-head {
+          grid-template-columns: 1fr;
+        }
+
+        .status-pill {
+          width: fit-content;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../ciw-role-review/">Role review</a>
+        <a href="../openai-codex-route-index/">Route index</a>
+        <a href="../ciw-proof-ledger/">Ledger</a>
+        <a href="../ciw-autonomy-status/">Autonomy</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro readiness-hero" aria-labelledby="intro-title">
+        <p class="meta">Cleanroom Intelligence Works · launch readiness · checked May 19, 2026</p>
+        <h1 id="intro-title">Four launch bands, one public-safe control surface.</h1>
+        <p class="claim">
+          This page separates what can be shown now, what can keep checking itself, what may support an OpenAI-role review
+          after the date gate, and what is explicitly not ready for company launch.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Hard gates</p>
+          <h2 id="gates-title">Before any launch signal</h2>
+        </div>
+        <div class="gate-strip" aria-label="Launch-readiness gates">
+          <div class="gate">
+            <strong>Outbound</strong>
+            <span>Blocked before May 26, 2026 unless a verified real reply or explicit fresh override changes the route.</span>
+          </div>
+          <div class="gate">
+            <strong>Relationship claim</strong>
+            <span>Uses OpenAI and Codex only as nominative role/source context; no official relationship is claimed.</span>
+          </div>
+          <div class="gate">
+            <strong>Commercial action</strong>
+            <span>No organization-status, naming, accounting, transaction-rail, staffing, financing, or binding-term step is performed by this page.</span>
+          </div>
+          <div class="gate">
+            <strong>Evidence level</strong>
+            <span>Public links, verifier pages, and source repos only; private inbox details and local-only evidence stay out.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="bands-title">
+        <div class="section-label">
+          <p class="meta">Bands</p>
+          <h2 id="bands-title">Readiness map</h2>
+        </div>
+        <div class="band-grid">
+          <article class="band-card" data-readiness-band="public-proof-launch">
+            <div class="band-head">
+              <div>
+                <strong>Public proof</strong>
+                <h3>Public proof launch</h3>
+              </div>
+              <span class="status-pill">Ready</span>
+            </div>
+            <p>
+              The public packet can launch as an inspectable proof route: links first, receipts second, no claims beyond
+              what the pages and repos show.
+            </p>
+            <ul>
+              <li>Primary route: neutral role-review page into digest, ledger, outcome watch, and source.</li>
+              <li>Use case: recruiter, reviewer, or collaborator can inspect without needing private context.</li>
+              <li>Limit: this is proof publication, not outreach permission.</li>
+            </ul>
+            <ul class="proof-links" aria-label="Public proof launch links">
+              <li><a href="../ciw-role-review/">Role review</a></li>
+              <li><a href="../ciw-review-digest/">Reviewer digest</a></li>
+              <li><a href="../openai-codex-proof/">Proof brief</a></li>
+              <li><a href="../agentproof-role-packet/">AgentProof packet</a></li>
+            </ul>
+          </article>
+
+          <article class="band-card" data-readiness-band="autonomous-proof-lab-launch">
+            <div class="band-head">
+              <div>
+                <strong>Proof lab</strong>
+                <h3>Autonomous proof-lab launch</h3>
+              </div>
+              <span class="status-pill">Audit-only</span>
+            </div>
+            <p>
+              The lab can keep producing public-safe receipts and status checks, but the loop stays audit-only until the
+              current no-outbound gate expires or the route receives a verified trigger.
+            </p>
+            <ul>
+              <li>Healthy surfaces: ledger inspector, autonomy status, regression suite, and staleness sentinel.</li>
+              <li>Allowed work: refresh checks, source mapping, route repair, proof graph updates, and verifier receipts.</li>
+              <li>Blocked work: external messaging, commercial commitments, or target-company outcome assumptions.</li>
+            </ul>
+            <ul class="proof-links" aria-label="Autonomous proof-lab launch links">
+              <li><a href="../ciw-autonomy-status/">Autonomy status</a></li>
+              <li><a href="../ciw-proof-ledger/">Proof ledger</a></li>
+              <li><a href="../ai-coding-proof-route-regression-suite/">Regression suite</a></li>
+              <li><a href="../ai-coding-proof-route-staleness-sentinel/">Staleness sentinel</a></li>
+            </ul>
+          </article>
+
+          <article class="band-card" data-readiness-band="openai-hiring-leverage">
+            <div class="band-head">
+              <div>
+                <strong>Hiring route</strong>
+                <h3>OpenAI hiring leverage</h3>
+              </div>
+              <span class="status-pill">Conditional</span>
+            </div>
+            <p>
+              The proof web may support an OpenAI-role review only after the route passes freshness, source, draft-quality,
+              and no-outbound checks. Until then, it remains a local/public proof packet.
+            </p>
+            <ul>
+              <li>Strongest angle: Codex workflow adoption evidence, verifier thinking, field kits, and handoff artifacts.</li>
+              <li>Required before use: fresh role source, fresh outcome watch, no-send gate pass, and safe recipient fit.</li>
+              <li>Boundary: application receipt is not outcome evidence, and this page does not imply OpenAI response.</li>
+            </ul>
+            <ul class="proof-links" aria-label="OpenAI hiring leverage links">
+              <li><a href="../openai-codex-route-index/">Route index</a></li>
+              <li><a href="../openai-codex-outcome-watch/">Outcome watch</a></li>
+              <li><a href="../ai-coding-source-to-answer-index/">Source index</a></li>
+              <li><a href="../ai-coding-no-send-follow-up-decision-kit/">No-send gate</a></li>
+            </ul>
+          </article>
+
+          <article class="band-card" data-readiness-band="legal-commercial-company-launch">
+            <div class="band-head">
+              <div>
+                <strong>Company line</strong>
+                <h3>Legal/commercial company launch</h3>
+              </div>
+              <span class="status-pill">Not ready</span>
+            </div>
+            <p>
+              Cleanroom Intelligence Works is not launched here as a legal or commercial company. This band is a stop sign,
+              not a quiet go-ahead.
+            </p>
+            <ul>
+              <li>Allowed now: keep the concept public-safe, source-backed, and clear about boundaries.</li>
+              <li>Required later: explicit fresh authorization plus qualified review before formation, naming, accounting, transaction rails, staffing, capital, or binding terms.</li>
+              <li>Current public posture: proof lab and role-review packet only.</li>
+            </ul>
+            <ul class="proof-links" aria-label="Legal commercial company launch links">
+              <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom source</a></li>
+              <li><a href="../ai-coding-security-review-packet/">Security packet</a></li>
+              <li><a href="../openai-codex-objective-completion-audit/">Objective audit</a></li>
+              <li><a href="../ciw-proof-ledger/?preset=regression">Regression graph</a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="surfaces-title">
+        <div class="section-label">
+          <p class="meta">Existing surfaces</p>
+          <h2 id="surfaces-title">Public proof links</h2>
+        </div>
+        <div class="surface-grid">
+          <a class="surface-card" href="../ciw-role-review/">
+            <strong>Neutral entrypoint</strong>
+            <span>Role-review route that avoids making a target mark look like the product.</span>
+          </a>
+          <a class="surface-card" href="../openai-codex-review-digest/">
+            <strong>Reviewer digest</strong>
+            <span>Role-fit map, latest receipt, strongest graph nodes, and inspect-order list.</span>
+          </a>
+          <a class="surface-card" href="../ciw-proof-ledger/">
+            <strong>Ledger inspector</strong>
+            <span>Public-safe receipt chain and graph projection with private details withheld.</span>
+          </a>
+          <a class="surface-card" href="../openai-codex-outcome-watch/">
+            <strong>Outcome watch</strong>
+            <span>Current route state: receipt only, refresh required before post-gate movement.</span>
+          </a>
+          <a class="surface-card" href="../openai-codex-objective-completion-audit/">
+            <strong>Completion audit</strong>
+            <span>Machine-readable separation between proof readiness and actual target-side outcome.</span>
+          </a>
+          <a class="surface-card" href="https://github.com/dicnunz/agentproof">
+            <strong>AgentProof source</strong>
+            <span>Public verifier harness for AI-built apps, reports, checks, screenshots, and handoff notes.</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="rules-title">
+        <div class="section-label">
+          <p class="meta">Release rule</p>
+          <h2 id="rules-title">How to read this page</h2>
+        </div>
+        <ul class="rule-list">
+          <li>Green means a public proof surface can be linked without pretending it is an outcome.</li>
+          <li>Audit-only means the system can verify and improve itself, not contact people.</li>
+          <li>Conditional means the route needs a fresh gate pass before it can become hiring leverage.</li>
+          <li>Not ready means do not compress proof-lab credibility into company-launch theater.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

@@ -944,5 +944,16 @@
     "source_hash": "71f41ced8398f198371dc55688d8b727702700dec7ffadfa7a3d8f407e6f3ca9",
     "prev_hash": "99f8ee134126bc5d2791848b980862eeda551becb74d6759abb19d7b885c0a31",
     "hash": "807ceb36d9df049fc7bb2e9c4b83985880f47eb81c9ce7fbe34bc87456d175b2"
+  },
+  {
+    "index": 86,
+    "timestamp": "2026-05-19T14:18:16+00:00",
+    "actor": "Codex",
+    "action": "built company system map and launch readiness",
+    "details": "{\"artifacts\":[\"ops/COMPANY_SYSTEM_MAP.md\",\"demo/company-system-map/index.html\",\"ops/COMPANY_LAUNCH_READINESS.md\",\"company/LAUNCH_DECISION_MEMO.md\",\"legal/LAUNCH_CLAIM_BOUNDARY.md\"],\"proof\":\"validator-backed living map of CIW internals plus four-band launch readiness; no outbound/legal/commercial action taken\",\"verifiers\":[\"python3 scripts/verify_pack.py\",\"python3 -m unittest tests/test_ciw_autonomy.py tests/test_export_inspector_data.py tests/test_proof_ledger.py tests/test_progress_graph.py tests/test_reviewer_digest.py tests/test_objective_completion_audit.py tests/test_openai_outcome_watch.py tests/test_openai_signal_router.py tests/test_openai_application_delta.py tests/test_company_launch_readiness.py tests/test_company_system_map.py\",\"python3 tools/company_system_map.py validate --input ops/company_system_map.json\",\"python3 tools/company_launch_readiness.py validate --input ops/company_launch_readiness.json\"]}",
+    "visibility": "public projection",
+    "source_hash": "2997c455dc0dbf7cd3fdd2110e05c7d7d314822bd991716a568f98b05aa850a5",
+    "prev_hash": "807ceb36d9df049fc7bb2e9c4b83985880f47eb81c9ce7fbe34bc87456d175b2",
+    "hash": "b6a3bb00c6129a242b68e1fe51a8e23320e8c691730fb9aed7827534ef1f3395"
   }
 ]

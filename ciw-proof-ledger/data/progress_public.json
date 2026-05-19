@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T09:19:28Z",
+  "updated_at": "2026-05-19T09:32:13Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -868,14 +868,32 @@
       "id": "proof-route-staleness-sentinel",
       "title": "Proof-route staleness sentinel",
       "type": "hiring-route",
-      "status": "next",
+      "status": "done",
       "priority": "P0",
-      "summary": "Next safe autonomy branch: build an executable stale-proof refusal layer that checks role source freshness, reviewer digest currency, route-index coverage, public ledger projection, graph next branch, and no-outbound gates before any post-gate proof route can be used as leverage.",
+      "summary": "Cleanroom source now validates and renders a public-safe proof-route staleness sentinel: six role_source_freshness, reviewer_digest_currency, route_index_coverage, ledger_projection_current, graph_next_branch, and no_outbound_gate checks refuse stale route leverage before any post-gate proof can be used.",
       "evidence": [
-        "planned-by:follow-up-draft-eval-harness"
+        "planned-by:follow-up-draft-eval-harness",
+        "cleanroom-run:26088671422-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_staleness_sentinel.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/b67b9d7",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-staleness-sentinel.md"
       ],
       "next": [
-        "Build only as a local verifier; do not touch external accounts or send messages before the 2026-05-26 gate."
+        "Use as a stale-route refusal gate; the next safe branch is a proof-route renewal drill, not external outreach."
+      ]
+    },
+    {
+      "id": "proof-route-renewal-drill",
+      "title": "Proof-route renewal drill",
+      "type": "hiring-route",
+      "status": "next",
+      "priority": "P0",
+      "summary": "Next safe autonomy branch: build an executable renewal drill that takes a stale proof-route finding and regenerates the exact public sources, graph evidence, digest, route index, and ledger projection without sending outreach.",
+      "evidence": [
+        "planned-by:proof-route-staleness-sentinel"
+      ],
+      "next": [
+        "Build only as a local repair drill; do not touch external accounts or send messages before the 2026-05-26 gate."
       ]
     }
   ],
@@ -2151,6 +2169,18 @@
       "to": "warm-referral-route",
       "relation": "guards",
       "weight": 4
+    },
+    {
+      "from": "proof-route-staleness-sentinel",
+      "to": "proof-route-renewal-drill",
+      "relation": "next_path",
+      "weight": 5
+    },
+    {
+      "from": "proof-route-renewal-drill",
+      "to": "warm-referral-route",
+      "relation": "guards",
+      "weight": 4
     }
   ],
   "views": {
@@ -2191,11 +2221,12 @@
       "no-send-follow-up-decision-kit",
       "follow-up-draft-eval-harness",
       "proof-route-staleness-sentinel",
+      "proof-route-renewal-drill",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
-      "proof-route-staleness-sentinel",
+      "proof-route-renewal-drill",
       "warm-referral-route",
       "legal-entity-review"
     ]

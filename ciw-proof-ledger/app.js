@@ -105,6 +105,12 @@ const ROLE_PRESETS = [
     key: "staleness",
     label: "Staleness",
     node: "proof-route-staleness-sentinel",
+    filter: "active-path",
+  },
+  {
+    key: "renewal",
+    label: "Renewal",
+    node: "proof-route-renewal-drill",
     filter: "next-branches",
   },
   {

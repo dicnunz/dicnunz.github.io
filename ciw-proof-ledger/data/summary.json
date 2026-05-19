@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-05-19T09:19:33Z",
+  "generated_at": "2026-05-19T09:36:29Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
-    "records": 55,
-    "latest_hash": "427f5ffd0fe78dd674403a918ad5525ea3b2064b3060c9e9d2b47aaa0d49522a",
-    "latest_action": "published follow-up draft evaluation harness page",
-    "source_latest_hash": "712483ed0dcc5f8ec8d8d1009bc43a64914e48e9fda3bfb13b1ee5205d488e32"
+    "records": 56,
+    "latest_hash": "82f53ca21c375384a51997681d9531decf8491aaa016445be9839271b50c2c01",
+    "latest_action": "added proof-route staleness sentinel",
+    "source_latest_hash": "3bc739e9d107455a91f2faeb8a245f78209139fcdf103e61dfd964d40b97d4e1"
   },
   "graph": {
-    "nodes": 51,
-    "edges": 212,
+    "nodes": 52,
+    "edges": 214,
     "root": "goal-openai-role",
     "status_counts": {
       "active": 4,
-      "done": 45,
+      "done": 46,
       "next": 1,
       "watch": 1
     },
-    "updated_at": "2026-05-19T09:19:28Z"
+    "updated_at": "2026-05-19T09:32:13Z"
   },
   "public_urls": {
     "proof_brief": "https://dicnunz.github.io/openai-codex-proof/",
@@ -39,6 +39,7 @@
     "proof_route_cold_read": "https://dicnunz.github.io/ai-coding-proof-route-cold-read-simulation/",
     "no_send_follow_up_kit": "https://dicnunz.github.io/ai-coding-no-send-follow-up-decision-kit/",
     "follow_up_draft_eval": "https://dicnunz.github.io/ai-coding-follow-up-draft-evaluation-harness/",
+    "proof_route_staleness_sentinel": "https://dicnunz.github.io/ai-coding-proof-route-staleness-sentinel/",
     "autonomy_status": "https://dicnunz.github.io/ciw-autonomy-status/",
     "reviewer_digest": "https://dicnunz.github.io/openai-codex-review-digest/",
     "route_index": "https://dicnunz.github.io/openai-codex-route-index/"

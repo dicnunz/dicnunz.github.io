@@ -603,5 +603,16 @@
     "source_hash": "712483ed0dcc5f8ec8d8d1009bc43a64914e48e9fda3bfb13b1ee5205d488e32",
     "prev_hash": "fafd7321414656d3d2c287fecc6900a7306fc89be12d66f466205bb52200c485",
     "hash": "427f5ffd0fe78dd674403a918ad5525ea3b2064b3060c9e9d2b47aaa0d49522a"
+  },
+  {
+    "index": 55,
+    "timestamp": "2026-05-19T09:31:34+00:00",
+    "actor": "Codex",
+    "action": "added proof-route staleness sentinel",
+    "details": "Cleanroom source commit b67b9d7 and Actions run 26088671422 added a public-safe proof-route staleness sentinel with fixture examples/proof_route_staleness_sentinel.json, docs/ai-coding-proof-route-staleness-sentinel.md, CLI commands validate-staleness-sentinel and staleness-sentinel, tests for required freshness checks, private source rejection, official role URL enforcement, no-outbound gate preservation, blocked-check refusal, public-pack verification, and originality gate score 91.6. The sentinel refuses stale route leverage when role source, reviewer digest, route index, ledger projection, graph next branch, or no-outbound gates are stale.",
+    "visibility": "public projection",
+    "source_hash": "3bc739e9d107455a91f2faeb8a245f78209139fcdf103e61dfd964d40b97d4e1",
+    "prev_hash": "427f5ffd0fe78dd674403a918ad5525ea3b2064b3060c9e9d2b47aaa0d49522a",
+    "hash": "82f53ca21c375384a51997681d9531decf8491aaa016445be9839271b50c2c01"
   }
 ]

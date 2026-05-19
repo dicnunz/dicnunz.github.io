@@ -867,5 +867,16 @@
     "source_hash": "71e8151f1e053fde4a71e9baf4fdae744899b16647f3dd8492669193a6c660f0",
     "prev_hash": "b3db04b7d261772409fe5619ab384360632832711498ec9ef9d0f937bada3f69",
     "hash": "7e72a7582c831c2ad9806cfbc3a13b9f0dfd8012aab8d9f9f2549d32b185108a"
+  },
+  {
+    "index": 79,
+    "timestamp": "2026-05-19T12:57:29+00:00",
+    "actor": "Codex",
+    "action": "hardened audit-only advance gate",
+    "details": "Scheduled cycle and manual advance now skip model-driven Codex advance unless the deterministic growth selector reports advance_ready with a selected safe branch. Added audit-only-advance-gate as a growth guardrail, covered advance_permission_from_report tests, updated autonomy and CEO runbooks, and verified python3 tools/ciw_autonomy.py advance returns skip: growth selector is audit_only; no selected safe branch.",
+    "visibility": "public projection",
+    "source_hash": "29caeff06ce380c22a86f35b15adbdd751f69fcac38bd158904fd0760208222a",
+    "prev_hash": "7e72a7582c831c2ad9806cfbc3a13b9f0dfd8012aab8d9f9f2549d32b185108a",
+    "hash": "d44eb35ab766e463bbfb77471e7a2a0923a81a15ce09f591ef87a6c257a0e8a7"
   }
 ]

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T12:41:49Z",
+  "updated_at": "2026-05-19T12:56:25Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1123,6 +1123,24 @@
       ],
       "next": [
         "Keep the validator, public page, digest, and no-outbound boundary green; do not call this an OpenAI Cookbook submission or customer deployment evidence."
+      ]
+    },
+    {
+      "id": "audit-only-advance-gate",
+      "title": "Audit-only advance gate",
+      "type": "autonomy-gate",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Autonomy now skips the model-driven advance pass when the deterministic growth selector is audit-only or lacks a selected safe branch, preventing timer-driven fake progress before the outbound gate.",
+      "evidence": [
+        "tools/ciw_autonomy.py",
+        "tests/test_ciw_autonomy.py",
+        "ops/AUTONOMOUS_OPERATING_SYSTEM.md",
+        "company/CEO_OPERATING_SYSTEM.md",
+        "https://dicnunz.github.io/ciw-autonomy-status/"
+      ],
+      "next": [
+        "Keep audit heartbeats running; run model-driven advance only after the selector reports advance_ready with a selected safe branch."
       ]
     }
   ],
@@ -2704,6 +2722,42 @@
       "to": "post-gate-reply-review",
       "relation": "gates",
       "weight": 4
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "audit-only-advance-gate",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "audit-only-advance-gate",
+      "to": "autonomous-growth-readiness-selector",
+      "relation": "enforces",
+      "weight": 5
+    },
+    {
+      "from": "audit-only-advance-gate",
+      "to": "post-gate-reply-review",
+      "relation": "blocks_until_selected",
+      "weight": 5
+    },
+    {
+      "from": "audit-only-advance-gate",
+      "to": "openai-outcome-watch",
+      "relation": "preserves_gate",
+      "weight": 4
+    },
+    {
+      "from": "audit-only-advance-gate",
+      "to": "objective-completion-audit",
+      "relation": "prevents_false_completion",
+      "weight": 5
+    },
+    {
+      "from": "audit-only-advance-gate",
+      "to": "openai-reviewer-digest",
+      "relation": "strengthens",
+      "weight": 3
     }
   ],
   "views": {

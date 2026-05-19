@@ -922,5 +922,16 @@
     "source_hash": "c1f75a5da079387de75b5c011b4308a0df649235c7f338baf517037392930757",
     "prev_hash": "334571890d7a5ea994921979d06d97f5ec75177b537604942ddb8538b75de3a5",
     "hash": "d1ff9e86834ee86eaf63ef295614f654bcf23d2668d0432cbe43aeaa03786610"
+  },
+  {
+    "index": 84,
+    "timestamp": "2026-05-19T13:43:22+00:00",
+    "actor": "Codex",
+    "action": "built post-application evidence delta packet",
+    "details": "{\"artifact\":\"ops/OPENAI_APPLICATION_DELTA.md\",\"boundary\":\"no outbound, no affiliation, no target-side outcome claim\",\"data\":\"ops/openai_application_delta.json\",\"graph_node\":\"post-application-delta-packet\",\"public_url\":\"https://dicnunz.github.io/openai-codex-application-delta/\",\"tests\":\"python3 scripts/verify_pack.py && python3 -m unittest tests/test_openai_application_delta.py\"}",
+    "visibility": "public projection",
+    "source_hash": "6f323338f2a001af7849997a2fba019013a96f324cf471a3cdfd533024c2991d",
+    "prev_hash": "d1ff9e86834ee86eaf63ef295614f654bcf23d2668d0432cbe43aeaa03786610",
+    "hash": "99f8ee134126bc5d2791848b980862eeda551becb74d6759abb19d7b885c0a31"
   }
 ]

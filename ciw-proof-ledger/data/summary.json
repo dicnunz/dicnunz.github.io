@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-05-19T13:29:02Z",
+  "generated_at": "2026-05-19T13:43:28Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
-    "records": 84,
-    "latest_hash": "d1ff9e86834ee86eaf63ef295614f654bcf23d2668d0432cbe43aeaa03786610",
-    "latest_action": "hardened OpenAI signal router renderer",
-    "source_latest_hash": "c1f75a5da079387de75b5c011b4308a0df649235c7f338baf517037392930757"
+    "records": 85,
+    "latest_hash": "99f8ee134126bc5d2791848b980862eeda551becb74d6759abb19d7b885c0a31",
+    "latest_action": "built post-application evidence delta packet",
+    "source_latest_hash": "6f323338f2a001af7849997a2fba019013a96f324cf471a3cdfd533024c2991d"
   },
   "graph": {
-    "nodes": 68,
-    "edges": 278,
+    "nodes": 69,
+    "edges": 284,
     "root": "goal-openai-role",
     "status_counts": {
       "active": 4,
-      "done": 61,
+      "done": 62,
       "watch": 3
     },
-    "updated_at": "2026-05-19T13:24:06Z"
+    "updated_at": "2026-05-19T13:42:52Z"
   },
   "public_urls": {
     "role_review": "https://dicnunz.github.io/ciw-role-review/",
@@ -47,6 +47,7 @@
     "objective_completion_audit": "https://dicnunz.github.io/openai-codex-objective-completion-audit/",
     "openai_outcome_watch": "https://dicnunz.github.io/openai-codex-outcome-watch/",
     "openai_signal_router": "https://dicnunz.github.io/openai-codex-signal-router/",
+    "openai_application_delta": "https://dicnunz.github.io/openai-codex-application-delta/",
     "autonomy_status": "https://dicnunz.github.io/ciw-autonomy-status/",
     "reviewer_digest": "https://dicnunz.github.io/openai-codex-review-digest/",
     "route_index": "https://dicnunz.github.io/openai-codex-route-index/"

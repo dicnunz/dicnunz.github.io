@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T13:24:06Z",
+  "updated_at": "2026-05-19T13:42:52Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1177,6 +1177,20 @@
       "next": [
         "Use this before any future inbox signal changes the outcome watch or post-gate reply path."
       ]
+    },
+    {
+      "id": "post-application-delta-packet",
+      "title": "Post-application evidence delta packet",
+      "type": "reviewer-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public-safe packet that answers what changed after the application receipt while preserving receipt-only outcome state, no-outbound gate, and non-affiliation boundary.",
+      "evidence": [
+        "ops/openai_application_delta.json",
+        "ops/OPENAI_APPLICATION_DELTA.md",
+        "https://dicnunz.github.io/openai-codex-application-delta/"
+      ],
+      "next": []
     }
   ],
   "edges": [
@@ -2847,6 +2861,42 @@
       "to": "post-gate-reply-review",
       "relation": "routes",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "post-application-delta-packet",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "application-submit",
+      "to": "post-application-delta-packet",
+      "relation": "led_to",
+      "weight": 4
+    },
+    {
+      "from": "openai-application-receipt",
+      "to": "post-application-delta-packet",
+      "relation": "clocks",
+      "weight": 4
+    },
+    {
+      "from": "openai-inbound-signal-router",
+      "to": "post-application-delta-packet",
+      "relation": "supports",
+      "weight": 4
+    },
+    {
+      "from": "post-application-delta-packet",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 3
+    },
+    {
+      "from": "post-application-delta-packet",
+      "to": "post-gate-reply-review",
+      "relation": "prepares",
+      "weight": 3
     }
   ],
   "views": {

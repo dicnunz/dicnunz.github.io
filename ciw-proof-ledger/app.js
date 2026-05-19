@@ -258,6 +258,7 @@ function renderMetrics(verification) {
   setText("#metric-nodes", String(state.summary.graph.nodes));
   setText("#metric-edges", String(state.summary.graph.edges));
   setText("#metric-hash", shortHash(state.summary.ledger.latest_hash));
+  setText("#metric-action", state.summary.ledger.latest_action || "-");
 }
 
 function renderLinks() {

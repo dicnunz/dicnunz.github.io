@@ -127,7 +127,7 @@ h2 {
 
 .metric-strip {
   display: grid;
-  grid-template-columns: 0.9fr 0.9fr 0.9fr minmax(240px, 1.8fr);
+  grid-template-columns: 0.75fr 0.75fr 0.75fr minmax(220px, 1.4fr) minmax(260px, 1.7fr);
   gap: 1px;
   margin-top: 18px;
   background: var(--line);
@@ -145,6 +145,11 @@ h2 {
   margin-top: 8px;
   font-size: 1.35rem;
   font-weight: 800;
+}
+
+#metric-action {
+  font-size: 1rem;
+  line-height: 1.28;
 }
 
 code {

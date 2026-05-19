@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T04:04:49Z",
+  "updated_at": "2026-05-19T04:14:15Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -441,6 +441,24 @@
       ],
       "next": [
         "Use as runnable reference-implementation proof when a recruiter or interviewer asks for code behind the receipt pattern."
+      ]
+    },
+    {
+      "id": "ciw-autonomous-operating-system",
+      "title": "CIW autonomous operating system",
+      "type": "operating-system",
+      "status": "active",
+      "priority": "P0",
+      "summary": "Scheduled local manager for verifier heartbeats, public-safety scans, graph and ledger health, next-work packets, and bounded daily Codex proof-growth passes.",
+      "evidence": [
+        "ops/AUTONOMOUS_OPERATING_SYSTEM.md",
+        "tools/ciw_autonomy.py",
+        "ops/autonomy/autonomy_config.json",
+        "local path withheld",
+        "ops/autonomy/state/latest_report.md"
+      ],
+      "next": [
+        "Let the scheduled cycle keep auditing; use next_work_packet.md as the autonomous branch selector."
       ]
     }
   ],
@@ -1092,12 +1110,67 @@
       "to": "public-proof-ledger-inspector",
       "relation": "recorded-by",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "ciw-autonomous-operating-system",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "public-proof-ledger-inspector",
+      "relation": "refreshes-data",
+      "weight": 4
+    },
+    {
+      "from": "ciw-company-pack",
+      "to": "ciw-autonomous-operating-system",
+      "relation": "operated-by",
+      "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "public-cleanroom-repo",
+      "relation": "can-improve",
+      "weight": 4
+    },
+    {
+      "from": "legal-cleanroom-boundary",
+      "to": "ciw-autonomous-operating-system",
+      "relation": "constrains",
+      "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "warm-referral-route",
+      "relation": "gates-outbound",
+      "weight": 5
+    },
+    {
+      "from": "proof-ledger",
+      "to": "ciw-autonomous-operating-system",
+      "relation": "audited-by",
+      "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "ai-coding-workflow-receipt-reference",
+      "relation": "next-growth-target",
+      "weight": 4
+    },
+    {
+      "from": "progress-web",
+      "to": "ciw-autonomous-operating-system",
+      "relation": "managed-by",
+      "weight": 5
     }
   ],
   "views": {
     "active_path": [
       "goal-openai-role",
       "progress-web",
+      "ciw-autonomous-operating-system",
       "public-proof-ledger-inspector",
       "public-ai-coding-workshop",
       "public-ai-coding-patterns",
@@ -1113,6 +1186,7 @@
       "warm-referral-route"
     ],
     "next_branches": [
+      "ciw-autonomous-operating-system",
       "warm-referral-route",
       "legal-entity-review"
     ]

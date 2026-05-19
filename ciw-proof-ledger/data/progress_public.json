@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T04:27:28Z",
+  "updated_at": "2026-05-19T04:38:26Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -495,6 +495,22 @@
       "next": [
         "Use this as the public progress-web surface for traversing proof state instead of reading raw JSON.",
         "Keep this public inspector as the default traversal surface after graph or ledger changes."
+      ]
+    },
+    {
+      "id": "openai-reviewer-digest",
+      "title": "OpenAI Codex reviewer digest",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Generated reviewer route through proof links, latest receipt, role-fit map, active graph path, and no-send gate.",
+      "evidence": [
+        "https://dicnunz.github.io/openai-codex-review-digest/",
+        "commit:40f92d5",
+        "pages-run:26076503944-success"
+      ],
+      "next": [
+        "Use after 2026-05-26 gate only if follow-up still improves recruiter signal."
       ]
     }
   ],
@@ -1290,6 +1306,30 @@
       "to": "public-inspector-traversal-filters",
       "relation": "visible-in",
       "weight": 4
+    },
+    {
+      "from": "public-openai-codex-proof-brief",
+      "to": "openai-reviewer-digest",
+      "relation": "routes_to",
+      "weight": 4
+    },
+    {
+      "from": "public-inspector-traversal-filters",
+      "to": "openai-reviewer-digest",
+      "relation": "supplies_graph",
+      "weight": 4
+    },
+    {
+      "from": "deployment-feedback-receipt-fixtures",
+      "to": "openai-reviewer-digest",
+      "relation": "evidence_for",
+      "weight": 4
+    },
+    {
+      "from": "openai-reviewer-digest",
+      "to": "warm-referral-route",
+      "relation": "gates_followup",
+      "weight": 3
     }
   ],
   "views": {
@@ -1310,6 +1350,7 @@
       "deployment-feedback-receipt-fixtures",
       "openai-30-day-field-trial-plan",
       "openai-interview-conversion-packet",
+      "openai-reviewer-digest",
       "warm-referral-route"
     ],
     "next_branches": [

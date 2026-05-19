@@ -295,5 +295,16 @@
     "source_hash": "602c69c427cec09f73fc557baa8ee42d50d9c24498c30eb8d3e156546c7eb61c",
     "prev_hash": "4fac062172aedfdd11cbb991b5a6ffd8dcba243047c25cc9c391185d8d1e21af",
     "hash": "ca8cdc7df40bed817c9b248d1cbf4927948c85aac1adaad44d952bf39abea031"
+  },
+  {
+    "index": 27,
+    "timestamp": "2026-05-19T04:38:42+00:00",
+    "actor": "Codex",
+    "action": "published OpenAI Codex reviewer digest",
+    "details": "Generated applications/openai/OPENAI_RECRUITER_REVIEW_DIGEST.md and demo/reviewer-digest/index.html from the current graph and ledger, published https://dicnunz.github.io/openai-codex-review-digest/ at Pages commit 40f92d5 with Pages run 26076503944 success, linked it from the proof brief and sitemap, and verified live digest/proof/sitemap HTTP 200 with expected no-send gate and proof text.",
+    "visibility": "public projection",
+    "source_hash": "3d373005a7924c73ca85a20c2969929ffa3e27a95d8903630793a87f6146394b",
+    "prev_hash": "ca8cdc7df40bed817c9b248d1cbf4927948c85aac1adaad44d952bf39abea031",
+    "hash": "28dd6a1604633309170c8421b77944e76d0302649fc52cbe4c8b5564de8b750b"
   }
 ]

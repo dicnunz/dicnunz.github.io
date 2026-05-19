@@ -185,5 +185,16 @@
     "source_hash": "b33ae3ab3f3965d803c00ae370cef522c07dff5d32c488320f9de9c2521f65b1",
     "prev_hash": "430a62ce46c3cf0fee37b537141d2b58f2783fe1808b831afd991b3843a7eef9",
     "hash": "e9a2244dd9c7a1b3f965171ea74dc628272daaeed8b0a59cf51dfb0846d5820c"
+  },
+  {
+    "index": 17,
+    "timestamp": "2026-05-19T03:05:44+00:00",
+    "actor": "Codex",
+    "action": "updated public cleanroom repo with deployment guides",
+    "details": "Published cleanroom repo source update at https://github.com/dicnunz/cleanroom-intelligence-works with workshop and patterns docs. Commit d395dbb5353cb72feb382c2f4896e99274be27ed, GitHub Actions run 26073649280 success. Local public repo verifier, proof ledger tests, example ledger verification, and originality gate passed before push.",
+    "visibility": "public projection",
+    "source_hash": "996c212aa01282b1d11c82cb192b6a907adc404866ffa1aebfccb10ed8a9476a",
+    "prev_hash": "e9a2244dd9c7a1b3f965171ea74dc628272daaeed8b0a59cf51dfb0846d5820c",
+    "hash": "f73c74faa8a7684d066ac30c5ff3d09fb726fe4a3624c1c4ea39333b5a34c939"
   }
 ]

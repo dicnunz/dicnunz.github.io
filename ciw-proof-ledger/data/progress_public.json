@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T02:58:23Z",
+  "updated_at": "2026-05-19T03:05:44Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -139,7 +139,11 @@
         "local path withheld",
         "https://github.com/dicnunz/cleanroom-intelligence-works",
         "commit:63bae81c0c0b8bc9f34dbbe26a609913e4abde2a",
-        "workflow:26071408747 success"
+        "workflow:26071408747 success",
+        "commit:d395dbb5353cb72feb382c2f4896e99274be27ed",
+        "workflow:26073649280 success",
+        "docs/ai-coding-deployment-workshop.md",
+        "docs/ai-coding-deployment-patterns.md"
       ],
       "next": [
         "Keep the repo and verifier green if the proof packet is updated."
@@ -660,6 +664,18 @@
       "from": "public-ai-coding-patterns",
       "to": "warm-referral-route",
       "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "public-ai-coding-workshop",
+      "relation": "mirrors-source",
+      "weight": 4
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "public-ai-coding-patterns",
+      "relation": "mirrors-source",
       "weight": 4
     }
   ],

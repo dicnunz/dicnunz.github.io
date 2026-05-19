@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-05-19T02:58:40Z",
+  "generated_at": "2026-05-19T03:05:44Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
-    "records": 17,
-    "latest_hash": "e9a2244dd9c7a1b3f965171ea74dc628272daaeed8b0a59cf51dfb0846d5820c",
-    "latest_action": "published AI coding deployment patterns",
-    "source_latest_hash": "b33ae3ab3f3965d803c00ae370cef522c07dff5d32c488320f9de9c2521f65b1"
+    "records": 18,
+    "latest_hash": "f73c74faa8a7684d066ac30c5ff3d09fb726fe4a3624c1c4ea39333b5a34c939",
+    "latest_action": "updated public cleanroom repo with deployment guides",
+    "source_latest_hash": "996c212aa01282b1d11c82cb192b6a907adc404866ffa1aebfccb10ed8a9476a"
   },
   "graph": {
     "nodes": 21,
-    "edges": 55,
+    "edges": 57,
     "root": "goal-openai-role",
     "status_counts": {
       "active": 3,
       "done": 17,
       "watch": 1
     },
-    "updated_at": "2026-05-19T02:58:23Z"
+    "updated_at": "2026-05-19T03:05:44Z"
   },
   "public_urls": {
     "proof_brief": "https://dicnunz.github.io/openai-codex-proof/",

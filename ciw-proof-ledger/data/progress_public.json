@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T09:32:13Z",
+  "updated_at": "2026-05-19T09:39:37Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -870,13 +870,16 @@
       "type": "hiring-route",
       "status": "done",
       "priority": "P0",
-      "summary": "Cleanroom source now validates and renders a public-safe proof-route staleness sentinel: six role_source_freshness, reviewer_digest_currency, route_index_coverage, ledger_projection_current, graph_next_branch, and no_outbound_gate checks refuse stale route leverage before any post-gate proof can be used.",
+      "summary": "Cleanroom source and public Pages now validate, render, and publish a proof-route staleness sentinel: six role_source_freshness, reviewer_digest_currency, route_index_coverage, ledger_projection_current, graph_next_branch, and no_outbound_gate checks refuse stale route leverage before any post-gate proof can be used.",
       "evidence": [
         "planned-by:follow-up-draft-eval-harness",
         "cleanroom-run:26088671422-success",
         "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_staleness_sentinel.json",
         "https://github.com/dicnunz/cleanroom-intelligence-works/commit/b67b9d7",
-        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-staleness-sentinel.md"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-staleness-sentinel.md",
+        "https://dicnunz.github.io/ai-coding-proof-route-staleness-sentinel/",
+        "commit:a82d7912f69fbacd4486979984a3be66f4127bed",
+        "pages-run:26089036559-success"
       ],
       "next": [
         "Use as a stale-route refusal gate; the next safe branch is a proof-route renewal drill, not external outreach."

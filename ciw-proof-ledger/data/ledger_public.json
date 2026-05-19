@@ -614,5 +614,16 @@
     "source_hash": "3bc739e9d107455a91f2faeb8a245f78209139fcdf103e61dfd964d40b97d4e1",
     "prev_hash": "427f5ffd0fe78dd674403a918ad5525ea3b2064b3060c9e9d2b47aaa0d49522a",
     "hash": "82f53ca21c375384a51997681d9531decf8491aaa016445be9839271b50c2c01"
+  },
+  {
+    "index": 56,
+    "timestamp": "2026-05-19T09:39:23+00:00",
+    "actor": "Codex",
+    "action": "published proof-route staleness sentinel page",
+    "details": "{\"gates\":[\"no outbound before 2026-05-26\",\"no OpenAI affiliation or clone claims\",\"public privacy and banned-claim scans passed\",\"Pages QA passed\",\"live deployed URL checks passed\"],\"local_visual_qa\":[\"local path withheld\",\"local path withheld\",\"local path withheld\",\"local path withheld\"],\"pages_commit\":\"a82d7912f69fbacd4486979984a3be66f4127bed\",\"pages_run\":\"26089036559-success\",\"public_urls\":[\"https://dicnunz.github.io/ai-coding-proof-route-staleness-sentinel/\",\"https://dicnunz.github.io/openai-codex-route-index/\",\"https://dicnunz.github.io/ciw-proof-ledger/?preset=staleness\"],\"source_commit\":\"b67b9d71a1ee5b64c71c58be74927d9bb0d3d797\",\"source_run\":\"26088671422-success\"}",
+    "visibility": "public projection",
+    "source_hash": "df19c4a84b2abf9505bfa870a36449fbfa7f49a725452f747a25cf23c0d9d6fc",
+    "prev_hash": "82f53ca21c375384a51997681d9531decf8491aaa016445be9839271b50c2c01",
+    "hash": "d4cf95d8c51abb52c326a86000ae12ef19241cc61711b4c5dfd5ef94e78f23d0"
   }
 ]

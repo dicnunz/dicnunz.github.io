@@ -548,5 +548,16 @@
     "source_hash": "de3e77851357835aca585c8742e596062ee3c6addd8d50e1989c7923fb105299",
     "prev_hash": "3c725fef4baea3e2f1145fab08984422c09235e12507bc2283e5d473064a9912",
     "hash": "4df6844299bf8dc6d790f712ec26a741581faa374b732250c95ad3b24e981f54"
+  },
+  {
+    "index": 50,
+    "timestamp": "2026-05-19T08:26:05+00:00",
+    "actor": "Codex",
+    "action": "published proof-route cold-read page",
+    "details": "Published https://dicnunz.github.io/ai-coding-proof-route-cold-read-simulation/ from dicnunz.github.io commit ffa9003; Pages run 26085423679 completed success; live checks confirmed the cold-read page, thirteen-link route index, cold-read graph preset data, summary JSON, and reviewer digest projection. Local Playwright checks captured desktop and Pixel 5 mobile screenshots for the new page, and the graph evidence now carries the public URL, Pages commit, and Pages run while the autonomy selector remains on no-send-follow-up-decision-kit.",
+    "visibility": "public projection",
+    "source_hash": "1447a736959060ab8efec3e885207dce3c5c3b53afc50cb95e75a832a8fd1aa9",
+    "prev_hash": "4df6844299bf8dc6d790f712ec26a741581faa374b732250c95ad3b24e981f54",
+    "hash": "914856b7dc3b3d83c04ef84f5f2bd446a32a3cab6a64867a1ec05ad6d3f20553"
   }
 ]

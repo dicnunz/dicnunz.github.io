@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T08:13:30Z",
+  "updated_at": "2026-05-19T08:26:30Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -809,15 +809,18 @@
       "type": "verification",
       "status": "done",
       "priority": "P0",
-      "summary": "Cleanroom source now validates and renders a public-safe proof-route cold-read simulation: eight reviewer traversal tasks recover the route entry, technical depth, customer-adoption gap, workshop enablement, product judgment, safety boundary, operational readiness, and next step inside a ten-minute target without private context or outbound.",
+      "summary": "Cleanroom source and public Pages now validate, render, and publish a public-safe proof-route cold-read simulation: eight reviewer traversal tasks recover the route entry, technical depth, customer-adoption gap, workshop enablement, product judgment, safety boundary, operational readiness, and next step inside a ten-minute target without private context or outbound.",
       "evidence": [
         "https://github.com/dicnunz/cleanroom-intelligence-works/commit/a265fcb",
         "cleanroom-run:26084818713-success",
         "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_cold_read_simulation.json",
-        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-cold-read-simulation.md"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-cold-read-simulation.md",
+        "https://dicnunz.github.io/ai-coding-proof-route-cold-read-simulation/",
+        "commit:ffa9003",
+        "pages-run:26085423679-success"
       ],
       "next": [
-        "Publish the cold-read simulation page, graph preset, digest projection, and autonomy status surface before using it externally."
+        "Use the cold-read route as reviewer traversal proof only; the next safe branch is a no-send follow-up decision kit, not outbound."
       ]
     },
     {

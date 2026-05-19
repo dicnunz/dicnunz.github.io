@@ -724,5 +724,16 @@
     "source_hash": "675fa2ed0c943005a49443267c4bf568c2e4c42330c13ffce853d9c4976bb7e5",
     "prev_hash": "57637f5aa6ed3e6b4f2d528ee900639fb6a91d40ca80de2d55ccb6487215ab29",
     "hash": "8dd0874199711689fa07e7ff9e8d9b437856ff165e02f0262979a7b76313bcb2"
+  },
+  {
+    "index": 66,
+    "timestamp": "2026-05-19T11:03:27+00:00",
+    "actor": "Codex",
+    "action": "published OpenAI outcome watch page",
+    "details": "{\"classification\":\"application_received_only\",\"gate\":\"openai_outcome_watch\",\"goal_status\":\"active\",\"hard_gates\":[\"no outbound before 2026-05-26 unless real reply or explicit fresh override\",\"no legal/payment/hiring/fundraising/contract/compensation action\",\"no affiliation, endorsement, employment, customer, revenue, funding, official-status, or clone claim\"],\"live_checks\":[\"outcome page contains Application receipt is not outcome evidence\",\"outcome page contains unattended OpenAI hiring sender and outcome watch node\",\"route index contains Twenty links, one reviewer path and Outcome watch\",\"reviewer digest contains Outcome watch and record #65 checked OpenAI-side outcome watch\",\"autonomy status contains Outcome watch, 57 nodes, 227 edges, and 66 records\",\"summary json reports 66 records and latest action checked OpenAI-side outcome watch\",\"progress json reports openai-outcome-watch as watch node\"],\"pages_commit\":\"50b290eb44a4f5105bdb5eba8194126df558ec43\",\"pages_run_id\":26093037282,\"public_privacy\":\"no private Gmail IDs, local paths, temp paths, or email addresses in public projection scan\",\"public_urls\":[\"https://dicnunz.github.io/openai-codex-outcome-watch/\",\"https://dicnunz.github.io/openai-codex-route-index/\",\"https://dicnunz.github.io/openai-codex-review-digest/\",\"https://dicnunz.github.io/ciw-autonomy-status/\",\"https://dicnunz.github.io/ciw-proof-ledger/data/summary.json\"]}",
+    "visibility": "public projection",
+    "source_hash": "24e6a9f7444f96fa2df8844728e112f6621fd572febed191b9112f4042aa4292",
+    "prev_hash": "8dd0874199711689fa07e7ff9e8d9b437856ff165e02f0262979a7b76313bcb2",
+    "hash": "e04d5127021e78ce2fdfe27429d023d2230e9010554caf8b948a3c9fbc78da01"
   }
 ]

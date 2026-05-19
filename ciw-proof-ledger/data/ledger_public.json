@@ -757,5 +757,27 @@
     "source_hash": "572849e78cf3637c9bb3aabf09729c9036b784f1522fcbebb905d1e07a74c0d1",
     "prev_hash": "420424eae50a9da25a0955581952a29efacf81d2c939278af7d4e0d12f697bfd",
     "hash": "bfac2acad6710d97540df38bd65ffe51b52f492a29f836268a055c6b7550502f"
+  },
+  {
+    "index": 69,
+    "timestamp": "2026-05-19T11:22:38+00:00",
+    "actor": "Codex",
+    "action": "proved outcome date-gate simulation",
+    "details": "{\"changed\":\"Autonomy heartbeat now supports --today YYYY-MM-DD for outcome-watch date simulation and documents the expected May 26 repair state\",\"current_heartbeat_restore\":\"normal heartbeat rerun returned exit 0 and restored current-date report\",\"files\":[\"tools/ciw_autonomy.py\",\"tests/test_ciw_autonomy.py\",\"ops/AUTONOMOUS_OPERATING_SYSTEM.md\",\"company/CEO_OPERATING_SYSTEM.md\",\"tools/reviewer_digest.py\",\".ciw/progress_graph.json\",\"progress/PROGRESS_WEB.md\"],\"goal_status\":\"active\",\"graph_counts\":{\"edges\":233,\"nodes\":59},\"graph_node\":\"outcome-date-gate-simulation\",\"hard_gates\":[\"no outbound before 2026-05-26 unless real reply or explicit fresh override\",\"no legal/payment/hiring/fundraising/contract/compensation action\",\"no affiliation, endorsement, employment, customer, revenue, funding, official-status, or clone claim\"],\"simulated_heartbeat\":{\"command\":\"python3 tools/ciw_autonomy.py heartbeat --today 2026-05-26 --json\",\"exit_code\":1,\"passing_repair_checks\":[\"openai_outcome_refresh_runbook\",\"autonomous_growth_readiness\",\"runbook_freshness\"],\"required_failures\":[\"openai_outcome_watch_validate\",\"openai_outcome_watch_render\"],\"status\":\"fail\"},\"verified\":[\"python3 scripts/verify_pack.py pass\",\"58 unit tests pass\",\"py_compile pass\",\"originality gate pass\",\"simulated May 26 heartbeat has exact required failures\",\"normal heartbeat passes required checks afterward\"]}",
+    "visibility": "public projection",
+    "source_hash": "c792a030fb0c3f29010a352ba1a1ca6044ebd2df8d479cf5c95c2d46263517f2",
+    "prev_hash": "bfac2acad6710d97540df38bd65ffe51b52f492a29f836268a055c6b7550502f",
+    "hash": "e278b90bec57e8466b1dbc4b6323c0924b2cdb6675b7a5019450363ca3583015"
+  },
+  {
+    "index": 70,
+    "timestamp": "2026-05-19T11:27:58+00:00",
+    "actor": "Codex",
+    "action": "hardened progress graph next-step replacement",
+    "details": "{\"changed\":\"Added set-next graph command, tested replacement semantics, sanitized the date-gate simulation node, and linked a graph hardening node before public projection.\",\"files\":[\"tools/progress_graph.py\",\"tests/test_progress_graph.py\",\"tools/reviewer_digest.py\",\".ciw/progress_graph.json\",\"progress/PROGRESS_WEB.md\"],\"generated_data_note\":\"Broad originality scan intentionally fails generated JSON/HTML/progress output; generated projections are gated by schema, privacy, claim, and URL verifiers instead.\",\"goal_status\":\"active\",\"graph_counts\":{\"edges\":236,\"nodes\":60},\"graph_node\":\"progress-graph-next-replacement\",\"hard_gates\":[\"no outbound before 2026-05-26 unless real reply or explicit fresh override\",\"no legal/payment/hiring/fundraising/contract/compensation action\",\"no affiliation, endorsement, employment, customer, revenue, funding, official-status, or clone claim\"],\"verified\":[\"python3 scripts/verify_pack.py pass\",\"59 unit tests pass\",\"py_compile pass\",\"targeted originality gate pass score 91.8\",\"progress graph bad-output scan clean\",\"simulated May 26 heartbeat fails only outcome watch checks\",\"normal heartbeat restored current-date report\"]}",
+    "visibility": "public projection",
+    "source_hash": "dc1c37a04b4817a1dfd3e0e8bc2c336bc4d6dfb3e65060f07b2d1d33d9df4d17",
+    "prev_hash": "e278b90bec57e8466b1dbc4b6323c0924b2cdb6675b7a5019450363ca3583015",
+    "hash": "14cccab3b1f786cdc83ffe4dcce992c44344227645f56a35e8ef22f1c5daac39"
   }
 ]

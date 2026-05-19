@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T11:13:40Z",
+  "updated_at": "2026-05-19T11:26:00Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1003,6 +1003,40 @@
       ],
       "next": [
         "Use when openai_outcome_watch_validate fails on or after 2026-05-26, or immediately if a real reply appears before then."
+      ]
+    },
+    {
+      "id": "outcome-date-gate-simulation",
+      "title": "Outcome date-gate simulation",
+      "type": "autonomy",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Autonomy heartbeat now supports a simulated outcome-watch date; the May 26 dry run fails only the expired watch checks while the refresh runbook, growth selector, and runbook freshness pass, proving the future gate without sending outreach.",
+      "evidence": [
+        "tools/ciw_autonomy.py",
+        "tests/test_ciw_autonomy.py",
+        "ops/AUTONOMOUS_OPERATING_SYSTEM.md",
+        "company/CEO_OPERATING_SYSTEM.md"
+      ],
+      "next": [
+        "Use python3 tools/ciw_autonomy.py heartbeat --today 2026-05-26 --json to prove the expired-watch path, then rerun a normal heartbeat to restore current-date state."
+      ]
+    },
+    {
+      "id": "progress-graph-next-replacement",
+      "title": "Progress graph next-step replacement",
+      "type": "autonomy",
+      "status": "done",
+      "priority": "P1",
+      "summary": "Progress graph editing now has a set-next replacement command, and the date-gate node was sanitized before public projection so shell-output capture cannot survive as progress metadata.",
+      "evidence": [
+        "tools/progress_graph.py",
+        "tests/test_progress_graph.py",
+        ".ciw/progress_graph.json",
+        "progress/PROGRESS_WEB.md"
+      ],
+      "next": [
+        "Use set-next for corrections that replace a node next-step list; never rely on append-only graph edits or shell-substituted command text for metadata."
       ]
     }
   ],
@@ -2385,6 +2419,42 @@
       "from": "outcome-refresh-runbook",
       "to": "post-gate-reply-review",
       "relation": "gates",
+      "weight": 4
+    },
+    {
+      "from": "outcome-date-gate-simulation",
+      "to": "outcome-refresh-runbook",
+      "relation": "proves",
+      "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "outcome-date-gate-simulation",
+      "relation": "contains",
+      "weight": 4
+    },
+    {
+      "from": "outcome-date-gate-simulation",
+      "to": "post-gate-reply-review",
+      "relation": "gates",
+      "weight": 4
+    },
+    {
+      "from": "progress-graph-next-replacement",
+      "to": "outcome-date-gate-simulation",
+      "relation": "repairs",
+      "weight": 5
+    },
+    {
+      "from": "progress-web",
+      "to": "progress-graph-next-replacement",
+      "relation": "hardens",
+      "weight": 4
+    },
+    {
+      "from": "progress-graph-next-replacement",
+      "to": "public-proof-ledger-inspector",
+      "relation": "protects_projection",
       "weight": 4
     }
   ],

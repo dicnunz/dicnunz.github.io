@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T02:48:51Z",
+  "updated_at": "2026-05-19T02:58:23Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -312,6 +312,23 @@
       "next": [
         "Use as the enablement proof link when a recruiter, referral contact, or interviewer asks how Nic would run Codex adoption with a team."
       ]
+    },
+    {
+      "id": "public-ai-coding-patterns",
+      "title": "Public AI coding deployment patterns",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public technical-content guide for scope cards, context budgets, verifier-first demos, failure taxonomy, receipt handoffs, adoption gates, and product feedback loops.",
+      "evidence": [
+        "applications/openai/AI_CODING_DEPLOYMENT_PATTERNS.md",
+        "https://dicnunz.github.io/ai-coding-deployment-patterns/",
+        "commit:0f3332352c71997ff54f97b0ad910c0e68511add",
+        "pages-run:26073379456 success"
+      ],
+      "next": [
+        "Use as the technical-content proof link when a recruiter or interviewer asks for examples, guides, patterns, or customer-facing Codex adoption writing."
+      ]
     }
   ],
   "edges": [
@@ -602,6 +619,48 @@
       "to": "public-ai-coding-workshop",
       "relation": "expands-into",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "public-ai-coding-patterns",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "legal-cleanroom-boundary",
+      "to": "public-ai-coding-patterns",
+      "relation": "protects",
+      "weight": 5
+    },
+    {
+      "from": "target-role-ai-deployment-engineer-codex",
+      "to": "public-ai-coding-patterns",
+      "relation": "targets",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-workshop",
+      "to": "public-ai-coding-patterns",
+      "relation": "expands-into",
+      "weight": 4
+    },
+    {
+      "from": "public-ai-coding-patterns",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-patterns",
+      "to": "openai-review-window-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-patterns",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 4
     }
   ],
   "views": {
@@ -610,6 +669,7 @@
       "progress-web",
       "public-proof-ledger-inspector",
       "public-ai-coding-workshop",
+      "public-ai-coding-patterns",
       "public-openai-codex-proof-brief",
       "application-submit",
       "openai-application-receipt",

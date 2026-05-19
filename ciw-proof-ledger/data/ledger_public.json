@@ -273,5 +273,16 @@
     "source_hash": "46d84065fd5d29d41bad52fcea193f221735434578c91f7ae5fb226dca5ef135",
     "prev_hash": "213756d7c227f45123f33c373e55cdcf0b80a3446746be6f512b079cd2fb522a",
     "hash": "64d8dee671d4f638b4c5b4812aa1293b53127769ed238932e6b7760f07c47de3"
+  },
+  {
+    "index": 25,
+    "timestamp": "2026-05-19T04:21:37+00:00",
+    "actor": "Codex",
+    "action": "published deployment feedback receipt fixtures",
+    "details": "Cleanroom source commit a942841 adds ready/repair/reject deployment receipt fixtures, feedback packet rendering in tools/deployment_receipt.py, unit coverage, verifier checks, and public proof page commit aaa2e30 updates the workflow receipt reference and proof brief. Cleanroom run 26075916690 succeeded; Pages run 26075975233 pending/success checked separately.",
+    "visibility": "public projection",
+    "source_hash": "d551579092092b2d1ea42f44dbe384feb65b70a3f4c2e261026910b976ae8790",
+    "prev_hash": "64d8dee671d4f638b4c5b4812aa1293b53127769ed238932e6b7760f07c47de3",
+    "hash": "4fac062172aedfdd11cbb991b5a6ffd8dcba243047c25cc9c391185d8d1e21af"
   }
 ]

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T04:14:15Z",
+  "updated_at": "2026-05-19T04:21:23Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -459,6 +459,23 @@
       ],
       "next": [
         "Let the scheduled cycle keep auditing; use next_work_packet.md as the autonomous branch selector."
+      ]
+    },
+    {
+      "id": "deployment-feedback-receipt-fixtures",
+      "title": "Deployment feedback receipt fixtures",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Cleanroom receipt reference now validates ready, repair, and reject fixtures and renders product-feedback packets from the same structured deployment record.",
+      "evidence": [
+        "applications/openai/AI_CODING_WORKFLOW_RECEIPT_REFERENCE.md",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/a94284137a6f1bf2f705da23198aee8e5d91afbf",
+        "cleanroom-run:26075916690-success",
+        "https://dicnunz.github.io/ai-coding-workflow-receipt-reference/"
+      ],
+      "next": [
+        "Use this as code-backed proof when product feedback, repair states, or deployment handoff automation come up in review."
       ]
     }
   ],
@@ -1164,6 +1181,66 @@
       "to": "ciw-autonomous-operating-system",
       "relation": "managed-by",
       "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "deployment-feedback-receipt-fixtures",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "deployment-feedback-receipt-fixtures",
+      "to": "openai-interview-conversion-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-workflow-receipt-reference",
+      "to": "deployment-feedback-receipt-fixtures",
+      "relation": "strengthened-by",
+      "weight": 5
+    },
+    {
+      "from": "deployment-feedback-receipt-fixtures",
+      "to": "openai-review-window-packet",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-deployment-field-kit",
+      "to": "deployment-feedback-receipt-fixtures",
+      "relation": "implemented-by",
+      "weight": 5
+    },
+    {
+      "from": "deployment-feedback-receipt-fixtures",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-deployment-sample-run",
+      "to": "deployment-feedback-receipt-fixtures",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "deployment-feedback-receipt-fixtures",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "deployment-feedback-receipt-fixtures",
+      "relation": "mirrors-source",
+      "weight": 4
+    },
+    {
+      "from": "deployment-feedback-receipt-fixtures",
+      "to": "public-proof-ledger-inspector",
+      "relation": "recorded-by",
+      "weight": 4
     }
   ],
   "views": {
@@ -1181,6 +1258,7 @@
       "ai-coding-deployment-field-kit",
       "ai-coding-deployment-sample-run",
       "ai-coding-workflow-receipt-reference",
+      "deployment-feedback-receipt-fixtures",
       "openai-30-day-field-trial-plan",
       "openai-interview-conversion-packet",
       "warm-referral-route"

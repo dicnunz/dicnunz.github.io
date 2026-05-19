@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T02:34:27Z",
+  "updated_at": "2026-05-19T02:48:51Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -136,7 +136,7 @@
       "priority": "P0",
       "summary": "Public non-affiliated proof-lab repo with cleanroom policy, Proof Ledger, deployment-readiness rubric, tests, and passing GitHub Actions verifier.",
       "evidence": [
-        "local source path withheld",
+        "local path withheld",
         "https://github.com/dicnunz/cleanroom-intelligence-works",
         "commit:63bae81c0c0b8bc9f34dbbe26a609913e4abde2a",
         "workflow:26071408747 success"
@@ -294,6 +294,23 @@
       ],
       "next": [
         "Use after a recruiter reply, Cory reply, explicit Nic direction, or the 2026-05-26 no-reply gate."
+      ]
+    },
+    {
+      "id": "public-ai-coding-workshop",
+      "title": "Public AI coding deployment workshop",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public workshop kit that turns one AI coding run into a scoped team enablement session, failure map, rollout gate, and proof receipt.",
+      "evidence": [
+        "applications/openai/AI_CODING_DEPLOYMENT_WORKSHOP.md",
+        "https://dicnunz.github.io/ai-coding-deployment-workshop/",
+        "commit:88829982ab9bc05a5b5d06045e5bef0ed8cb8906",
+        "pages-run:26073060351 success"
+      ],
+      "next": [
+        "Use as the enablement proof link when a recruiter, referral contact, or interviewer asks how Nic would run Codex adoption with a team."
       ]
     }
   ],
@@ -543,6 +560,48 @@
       "to": "openai-review-window-packet",
       "relation": "contains",
       "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "public-ai-coding-workshop",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "legal-cleanroom-boundary",
+      "to": "public-ai-coding-workshop",
+      "relation": "protects",
+      "weight": 5
+    },
+    {
+      "from": "target-role-ai-deployment-engineer-codex",
+      "to": "public-ai-coding-workshop",
+      "relation": "targets",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-workshop",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-workshop",
+      "to": "openai-review-window-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-workshop",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "public-codex-deployment-memo",
+      "to": "public-ai-coding-workshop",
+      "relation": "expands-into",
+      "weight": 4
     }
   ],
   "views": {
@@ -550,6 +609,7 @@
       "goal-openai-role",
       "progress-web",
       "public-proof-ledger-inspector",
+      "public-ai-coding-workshop",
       "public-openai-codex-proof-brief",
       "application-submit",
       "openai-application-receipt",

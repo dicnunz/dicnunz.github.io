@@ -163,5 +163,16 @@
     "source_hash": "57bc51830b1d3c201bf2ece5c2495c1799e67a7cc94efa7ef90b97d603076d4e",
     "prev_hash": "06700423cfd0310776aa2501b858de48c0ccd31484ce15629882e0f704fe1529",
     "hash": "a9a49ed2ed847aa8eaead5147d39475a6adba2097b5aebbda3d3f8bca105321d"
+  },
+  {
+    "index": 15,
+    "timestamp": "2026-05-19T02:49:04+00:00",
+    "actor": "Codex",
+    "action": "published AI coding deployment workshop",
+    "details": "Public workshop kit was published at https://dicnunz.github.io/ai-coding-deployment-workshop/ and linked from the proof brief. Pages commit 88829982ab9bc05a5b5d06045e5bef0ed8cb8906, Pages run 26073060351 completed successfully, and live HTTP 200 plus Playwright render checks passed.",
+    "visibility": "public projection",
+    "source_hash": "64f5c77cd3865843e7a777694d77e1b2cf78a19b49c28792c5e8ff0743b73085",
+    "prev_hash": "a9a49ed2ed847aa8eaead5147d39475a6adba2097b5aebbda3d3f8bca105321d",
+    "hash": "430a62ce46c3cf0fee37b537141d2b58f2783fe1808b831afd991b3843a7eef9"
   }
 ]

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Deployment Patterns</title>
+    <meta
+      name="description"
+      content="A cleanroom technical field guide for AI coding adoption patterns: scope cards, context budgets, verifier-first demos, failure taxonomy, receipts, rollout gates, and product feedback."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Deployment Patterns">
+    <meta
+      property="og:description"
+      content="A public technical-content proof surface for AI coding deployment: patterns that turn demos into repeatable engineering workflows."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-deployment-patterns/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-deployment-patterns/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .patterns-hero {
+        padding-top: clamp(56px, 8vw, 88px);
+      }
+
+      .patterns-hero h1 {
+        max-width: 770px;
+        font-size: clamp(2.5rem, 6vw, 4.3rem);
+      }
+
+      .patterns-hero .claim {
+        max-width: 740px;
+      }
+
+      .pattern-list {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .pattern-list > li {
+        display: grid;
+        grid-template-columns: minmax(118px, 0.3fr) minmax(0, 1fr);
+        gap: 18px;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .pattern-list strong,
+      .field-label {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .pattern-body {
+        display: grid;
+        gap: 10px;
+      }
+
+      .pattern-body h3,
+      .pattern-body p,
+      .pattern-body ul {
+        margin: 0;
+      }
+
+      .pattern-body h3 {
+        font-size: 1.18rem;
+        line-height: 1.2;
+      }
+
+      .pattern-body p,
+      .pattern-body li {
+        color: var(--muted);
+      }
+
+      .pattern-body ul {
+        display: grid;
+        gap: 5px;
+        padding-left: 1.1rem;
+      }
+
+      .pattern-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      .proof-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .proof-links a {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 11px;
+        color: var(--ink);
+        background: var(--accent-soft);
+        border: 1px solid #cbd8ce;
+        text-decoration: none;
+      }
+
+      @media (max-width: 760px) {
+        .pattern-list > li {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-proof/">Proof brief</a>
+        <a href="../ai-coding-deployment-workshop/">Workshop kit</a>
+        <a href="../codex-deployment-memo/">Deployment memo</a>
+        <a href="../ciw-proof-ledger/">Ledger inspector</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro patterns-hero" aria-labelledby="intro-title">
+        <p class="meta">AI coding deployment patterns · checked May 19, 2026</p>
+        <h1 id="intro-title">A field guide for making AI coding adoption repeatable.</h1>
+        <p class="claim">
+          This is the technical-content layer of the proof packet: cleanroom patterns for scope cards, context budgets,
+          verifier-first demos, failure taxonomy, receipts, rollout gates, and product feedback loops.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="purpose-title">
+        <div class="section-label">
+          <p class="meta">Purpose</p>
+          <h2 id="purpose-title">Why this exists</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            The workshop kit shows the enablement session. This guide shows the written artifact a deployment engineer
+            can hand to a team before or after that session.
+          </p>
+          <p class="pattern-note">
+            The point is not to imitate OpenAI material. The point is to prove the same underlying motion: examples,
+            guides, patterns, and customer-readable technical framing for AI coding adoption.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="patterns-title">
+        <div class="section-label">
+          <p class="meta">Patterns</p>
+          <h2 id="patterns-title">Seven repeatable moves</h2>
+        </div>
+        <ol class="pattern-list">
+          <li>
+            <strong>01</strong>
+            <div class="pattern-body">
+              <h3>Scope card before prompt</h3>
+              <p>Start with a task contract: owner, repo, acceptance criteria, scope, disallowed actions, data boundary, rollback path, and verifier.</p>
+              <p>Failure signal: the team cannot name a check that would prove the agent's work.</p>
+            </div>
+          </li>
+          <li>
+            <strong>02</strong>
+            <div class="pattern-body">
+              <h3>Context budget</h3>
+              <p>Give the agent the files, command, product state, maintainer constraints, and hazards needed to act without flooding it with stale noise.</p>
+              <p>Failure signal: the agent edits around the problem instead of through the problem.</p>
+            </div>
+          </li>
+          <li>
+            <strong>03</strong>
+            <div class="pattern-body">
+              <h3>Verifier-first demo</h3>
+              <p>Build the demo around one claim, one visible state change, one command or browser proof, one failure path, and one rollback note.</p>
+              <p>Failure signal: the demo looks impressive but nobody can rerun or falsify it.</p>
+            </div>
+          </li>
+          <li>
+            <strong>04</strong>
+            <div class="pattern-body">
+              <h3>Failure taxonomy</h3>
+              <ul>
+                <li>ambiguous acceptance criteria;</li>
+                <li>stale repo context;</li>
+                <li>missing dependency or environment;</li>
+                <li>cosmetic verifier;</li>
+                <li>model/tool mismatch;</li>
+                <li>sandbox boundary;</li>
+                <li>unclear human review rule.</li>
+              </ul>
+              <p>Failure signal: every miss is described as a bad prompt or a bad model.</p>
+            </div>
+          </li>
+          <li>
+            <strong>05</strong>
+            <div class="pattern-body">
+              <h3>Receipt handoff</h3>
+              <p>End with changed files, checks, rendered proof, known gaps, decision, replay command, and owner.</p>
+              <p>Failure signal: the only artifact is a transcript.</p>
+            </div>
+          </li>
+          <li>
+            <strong>06</strong>
+            <div class="pattern-body">
+              <h3>Adoption gate</h3>
+              <p>Separate a good demo from a repeatable workflow: ready, needs repair, or reject.</p>
+              <p>Failure signal: the team scales from excitement instead of evidence.</p>
+            </div>
+          </li>
+          <li>
+            <strong>07</strong>
+            <div class="pattern-body">
+              <h3>Product feedback loop</h3>
+              <p>Capture the target workflow, representative task, blocker class, observed behavior, missing integration, and next experiment.</p>
+              <p>Failure signal: feedback becomes broad sentiment instead of a reproducible workflow gap.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="fit-title">
+        <div class="section-label">
+          <p class="meta">Fit</p>
+          <h2 id="fit-title">Where this maps</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            The current AI Deployment Engineer - Codex posting asks for demos, reference implementations, workflow
+            automations, workshops, technical content, product insights, customer strategy, security considerations, and
+            operational readiness. This guide is the technical-content proof surface inside that lane.
+          </p>
+          <div class="proof-links" aria-label="Related proof links">
+            <a href="../openai-codex-proof/">Proof brief</a>
+            <a href="../ai-coding-deployment-workshop/">Workshop kit</a>
+            <a href="../codex-deployment-memo/">Deployment memo</a>
+            <a href="../ciw-proof-ledger/">Proof Ledger inspector</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Cleanroom line</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            This guide is independent from OpenAI. It uses OpenAI and Codex only to name public target-role context. It
+            does not use OpenAI logos, product UI, private examples, customer material, copied Cookbook content, or
+            affiliation language.
+          </p>
+          <p>
+            Sources: <a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">AI Deployment Engineer - Codex</a>
+            and <a href="https://openai.com/interview-guide/">OpenAI Interview Guide</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

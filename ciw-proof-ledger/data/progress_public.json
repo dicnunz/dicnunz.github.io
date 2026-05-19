@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T11:57:42Z",
+  "updated_at": "2026-05-19T12:08:49Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -263,7 +263,7 @@
       "priority": "P0",
       "summary": "Gmail receipt from OpenAI Hiring Team confirms the target application was received on May 19, 2026.",
       "evidence": [
-        "private receipt reference withheld",
+        "private-gmail-receipt-reference",
         "subject: Thank you for applying to OpenAI"
       ],
       "next": [
@@ -1057,6 +1057,23 @@
       ],
       "next": [
         "Keep the validator, public page, digest, and no-outbound boundary green; do not treat this as legal review, customer proof, or target-company approval."
+      ]
+    },
+    {
+      "id": "public-gmail-id-privacy-hardening",
+      "title": "Public Gmail ID privacy hardening",
+      "type": "proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Scanner and public-export redaction now catch backticked Gmail receipt and thread references, not only gmail: and Gmail-message forms; local warm-route notes no longer carry raw Gmail IDs.",
+      "evidence": [
+        "tools/export_inspector_data.py",
+        "tools/ciw_autonomy.py",
+        "tests/test_export_inspector_data.py",
+        "applications/openai/WARM_REFERRAL_ROUTE.md"
+      ],
+      "next": [
+        "Keep private route evidence local and publish only redacted receipt/thread references."
       ]
     }
   ],
@@ -2518,6 +2535,24 @@
       "to": "ciw-autonomous-operating-system",
       "relation": "hardens",
       "weight": 4
+    },
+    {
+      "from": "public-gmail-id-privacy-hardening",
+      "to": "public-proof-ledger-inspector",
+      "relation": "protects",
+      "weight": 3
+    },
+    {
+      "from": "public-gmail-id-privacy-hardening",
+      "to": "ciw-autonomous-operating-system",
+      "relation": "strengthens",
+      "weight": 3
+    },
+    {
+      "from": "public-gmail-id-privacy-hardening",
+      "to": "warm-referral-route",
+      "relation": "protects",
+      "weight": 3
     }
   ],
   "views": {

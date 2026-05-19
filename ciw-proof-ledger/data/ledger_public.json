@@ -801,5 +801,16 @@
     "source_hash": "5351c00ece972cccd5b016739ef0e51f3efdaa9808d6fde7a613a1894232c207",
     "prev_hash": "9d7a8a19006e0a1573e5a33ad378cb8b394c194c3001a389a9f647199a211959",
     "hash": "c89e76c3504207fb92f065109f7c8a683577eecf648b8e2521395f2083a64563"
+  },
+  {
+    "index": 73,
+    "timestamp": "2026-05-19T12:08:41+00:00",
+    "actor": "Codex",
+    "action": "hardened public Gmail ID privacy gate",
+    "details": "{\"changed\":[\"expanded public redaction patterns for backticked Gmail receipt/thread references\",\"added export and autonomy scanner tests for the leaked formats\",\"removed raw Gmail IDs from warm referral route notes, source notes, and progress graph evidence\"],\"claim_boundary\":\"No OpenAI-side outcome, affiliation, customer, revenue, employment, legal-entity, or endorsement claim added\",\"no_outbound\":true,\"scope\":\"public proof privacy and warm-route route audit\",\"verification\":[\"python3 -m unittest tests/test_export_inspector_data.py tests/test_ciw_autonomy.py tests/test_openai_outcome_watch.py tests/test_objective_completion_audit.py\",\"python3 tools/export_inspector_data.py\"]}",
+    "visibility": "public projection",
+    "source_hash": "442266a516326ada650efd12d890556a94f7259a877258bb23aa0f11da062e72",
+    "prev_hash": "c89e76c3504207fb92f065109f7c8a683577eecf648b8e2521395f2083a64563",
+    "hash": "75ecc0c0a3b915288a61f6d615d21391f72890d42a76036fe2ccc2318918bf4e"
   }
 ]

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Proof-Route Cold-Read Simulation</title>
+    <meta
+      name="description"
+      content="A public-safe Cleanroom Intelligence Works cold-read simulation for checking whether a reviewer can recover the Codex deployment proof route without private context or outbound."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Proof-Route Cold-Read Simulation">
+    <meta
+      property="og:description"
+      content="Cold-read route for reviewer traversal: eight tasks, 9/10 minute route budget, source-backed answers, and explicit no-customer and no-outbound gates."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-proof-route-cold-read-simulation/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-proof-route-cold-read-simulation/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .cold-hero h1 {
+        max-width: min(900px, 100%);
+        font-size: clamp(2.45rem, 6.6vw, 4.8rem);
+        text-wrap: balance;
+      }
+
+      .cold-hero .claim {
+        width: min(690px, 100%);
+        max-width: min(690px, 100%);
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile,
+      .task-list li,
+      .gate-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .score-tile,
+      .task-list li,
+      .gate-list li {
+        padding: 14px;
+      }
+
+      .score-tile strong,
+      .task-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.45rem;
+        font-weight: 760;
+      }
+
+      .task-list,
+      .gate-list,
+      .command-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .task-list li {
+        display: grid;
+        grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
+        gap: 16px;
+      }
+
+      .task-list b {
+        display: block;
+        margin: 7px 0;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .task-list span,
+      .gate-list span,
+      .command-list,
+      .boundary-note {
+        color: var(--muted);
+      }
+
+      .task-list small {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 760;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .gate-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .command-list {
+        padding-left: 18px;
+        list-style: disc;
+      }
+
+      .command-list code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      .topbar,
+      nav,
+      .cold-hero,
+      .cold-hero .claim,
+      .task-list li > span {
+        min-width: 0;
+      }
+
+      nav {
+        max-width: 100%;
+      }
+
+      nav a,
+      .cold-hero .claim,
+      .task-list span,
+      .gate-list span {
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 760px) {
+        .topbar,
+        .intro,
+        .section,
+        .footer {
+          width: calc(100vw - 32px);
+          max-width: calc(100vw - 32px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+          padding: 12px 0;
+        }
+
+        nav {
+          justify-content: flex-start;
+          gap: 12px;
+        }
+
+        nav a {
+          font-size: 0.95rem;
+        }
+
+        .cold-hero h1 {
+          max-width: 12ch;
+          font-size: clamp(2.12rem, 10vw, 3rem);
+          line-height: 1;
+        }
+
+        .cold-hero .claim {
+          width: 100%;
+          font-size: 1rem;
+        }
+
+        .score-strip,
+        .task-list li,
+        .gate-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../ai-coding-source-to-answer-index/">Source index</a>
+        <a href="../ciw-proof-ledger/?preset=cold-read">Graph node</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_cold_read_simulation.json">Fixture</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro cold-hero" aria-labelledby="intro-title">
+        <p class="meta">Cold-read simulation · checked May 19, 2026</p>
+        <h1 id="intro-title">Can a stranger recover the route?</h1>
+        <p class="claim">
+          This fixture tests the proof web from zero private context: eight reviewer tasks, nine minutes used against a
+          ten-minute target, zero blocked tasks, one watch branch, and hard no-customer, no-affiliation, no-employment,
+          no-revenue, and no-outbound gates.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="score-title">
+        <div class="section-label">
+          <p class="meta">Result</p>
+          <h2 id="score-title">Current fixture</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Target time</strong>
+            <span>9/10 min</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average</strong>
+            <span>4.4/5</span>
+          </div>
+          <div class="score-tile">
+            <strong>Blocked</strong>
+            <span>0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="tasks-title">
+        <div class="section-label">
+          <p class="meta">Traversal</p>
+          <h2 id="tasks-title">Cold-read tasks</h2>
+        </div>
+        <ol class="task-list">
+          <li>
+            <span><strong>route_entry</strong><b>Start from zero context.</b>Choose the first public route a reviewer should open.</span>
+            <span>Checkpoint: route index plus reviewer digest. <small>Budget one minute · score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>technical_depth</strong><b>Prove it is runnable source.</b>Move from prose to validators, renderers, tests, and public-pack verification.</span>
+            <span>Proof target: <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/tools/deployment_receipt.py">deployment_receipt.py</a> plus <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/tests/test_deployment_receipt.py">unit tests</a>. <small>One minute · score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>customer_adoption_gap</strong><b>Name the honest missing piece.</b>Find the no-customer boundary before opening the field runway.</span>
+            <span>Recovered artifacts: <a href="../ai-coding-field-trial-scorecard/">field-trial scorecard</a> and <a href="../openai-codex-30-day-plan/">30-day plan</a>. <small>Sixty seconds · score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>workshop_enablement</strong><b>Check team transfer.</b>Look for workshop flow, friction deltas, safety gates, ownership, and follow-up.</span>
+            <span>Transfer proof: <a href="../ai-coding-deployment-workshop/">workshop kit</a> and handoff reference. <small>Budget one minute · score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>product_judgment</strong><b>Trace the product signal.</b>Look for buckets, severity, recommended action, and promotion rules.</span>
+            <span>Signal trail: feedback export plus <a href="../ai-coding-deployment-sample-run/">filled sample run</a>. <small>One-minute pass · score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>safety_boundary</strong><b>Find the trust boundary first.</b>Check for no copied brand surface, no private data, no customer claim, and no premature outreach.</span>
+            <span>Trust anchor: <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/legal/OPENAI_NONCONFUSION_POLICY.md">non-confusion policy</a> and verifier. <small>Single-minute check · score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>operational_readiness</strong><b>Verify the loop keeps running.</b>Open the ledger, autonomy status, graph counts, public URL checks, scheduler state, and next-work packet.</span>
+            <span>Operating surface: <a href="../ciw-proof-ledger/">proof ledger inspector</a> and <a href="../ciw-autonomy-status/">autonomy status</a>. <small>One minute · score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>current_next_step</strong><b>Do not invent outbound.</b>Identify the next branch while preserving the no-send gate.</span>
+            <span>Next-branch proof: <a href="../ciw-proof-ledger/?preset=cold-read">cold-read graph preset</a> and no-send follow-up decision kit. <small>Two minutes · watch · score 4/5</small></span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Gates</p>
+          <h2 id="gates-title">Release checks</h2>
+        </div>
+        <ul class="gate-list">
+          <li><strong>Public-safe data</strong><span>Public URLs, repository docs, and synthetic reviewer prompts only.</span></li>
+          <li><strong>No customer deployment</strong><span>The adoption task requires the no-customer boundary before the field runway.</span></li>
+          <li><strong>No affiliation or employment claim</strong><span>The frame excludes affiliation, endorsement, employment, revenue, incorporation, and production-impact claims.</span></li>
+          <li><strong>No outreach before 2026-05-26</strong><span>The simulation improves reviewer traversal only; outbound remains date-gated.</span></li>
+          <li><strong>Cold-read target time</strong><span>Eight tasks fit a nine-minute route against a ten-minute target.</span></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="commands-title">
+        <div class="section-label">
+          <p class="meta">Executable source</p>
+          <h2 id="commands-title">Verifier commands</h2>
+        </div>
+        <ul class="command-list">
+          <li><code>python3 tools/deployment_receipt.py validate-cold-read --input examples/proof_route_cold_read_simulation.json</code></li>
+          <li><code>python3 tools/deployment_receipt.py cold-read --input examples/proof_route_cold_read_simulation.json</code></li>
+          <li><code>python3 scripts/verify_public_pack.py</code></li>
+          <li><code>python3 -m unittest tests/test_deployment_receipt.py</code></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Simulation, not a live recruiter result</h2>
+        </div>
+        <p class="boundary-note">
+          This page does not claim OpenAI employment, affiliation, endorsement, customer deployment, revenue, incorporation,
+          funding, trademark ownership, legal status, production impact, or real third-party usability proof. It is a
+          public-safe traversal fixture for an independent cleanroom lab concept.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

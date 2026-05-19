@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T08:02:24Z",
+  "updated_at": "2026-05-19T08:13:30Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -807,15 +807,31 @@
       "id": "proof-route-cold-read-simulation",
       "title": "Proof-route cold-read simulation",
       "type": "verification",
-      "status": "next",
+      "status": "done",
       "priority": "P0",
-      "summary": "Next safe proof branch: simulate a fresh reviewer using the source-to-answer index and graph presets to answer core role-fit questions within a fixed time budget, without private context or outbound.",
+      "summary": "Cleanroom source now validates and renders a public-safe proof-route cold-read simulation: eight reviewer traversal tasks recover the route entry, technical depth, customer-adoption gap, workshop enablement, product judgment, safety boundary, operational readiness, and next step inside a ten-minute target without private context or outbound.",
       "evidence": [
-        "planned-by:source-to-answer-index",
-        "https://dicnunz.github.io/ai-coding-source-to-answer-index/"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/a265fcb",
+        "cleanroom-run:26084818713-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_cold_read_simulation.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-cold-read-simulation.md"
       ],
       "next": [
-        "Build only after the source-to-answer public page, graph data, route index, digest, and autonomy heartbeat are green."
+        "Publish the cold-read simulation page, graph preset, digest projection, and autonomy status surface before using it externally."
+      ]
+    },
+    {
+      "id": "no-send-follow-up-decision-kit",
+      "title": "No-send follow-up decision kit",
+      "type": "hiring-route",
+      "status": "next",
+      "priority": "P0",
+      "summary": "Next safe leverage branch: prebuild a local post-gate decision packet with send, hold, and do-not-send criteria so proof can be used after the no-outbound gate without rushed, generic, or repetitive outreach.",
+      "evidence": [
+        "planned-by:proof-route-cold-read-simulation"
+      ],
+      "next": [
+        "Build only as a local no-send artifact; do not touch external accounts or send messages before the 2026-05-26 gate."
       ]
     }
   ],
@@ -2049,6 +2065,24 @@
       "to": "warm-referral-route",
       "relation": "guards",
       "weight": 3
+    },
+    {
+      "from": "source-to-answer-index",
+      "to": "proof-route-cold-read-simulation",
+      "relation": "unblocks",
+      "weight": 5
+    },
+    {
+      "from": "proof-route-cold-read-simulation",
+      "to": "no-send-follow-up-decision-kit",
+      "relation": "next_path",
+      "weight": 5
+    },
+    {
+      "from": "no-send-follow-up-decision-kit",
+      "to": "warm-referral-route",
+      "relation": "guards",
+      "weight": 4
     }
   ],
   "views": {
@@ -2086,11 +2120,12 @@
       "interview-question-branching-drill",
       "source-to-answer-index",
       "proof-route-cold-read-simulation",
+      "no-send-follow-up-decision-kit",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
-      "proof-route-cold-read-simulation",
+      "no-send-follow-up-decision-kit",
       "warm-referral-route",
       "legal-entity-review"
     ]

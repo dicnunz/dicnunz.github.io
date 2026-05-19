@@ -537,5 +537,16 @@
     "source_hash": "f159b0e7e07bef09d5e33a40ad86e31f8e62817d9a7d7d286b3d87807cbe991d",
     "prev_hash": "30da322ae611712f43a3410ca41a370c0c30011b916c2a15536d64e5f53d7939",
     "hash": "3c725fef4baea3e2f1145fab08984422c09235e12507bc2283e5d473064a9912"
+  },
+  {
+    "index": 49,
+    "timestamp": "2026-05-19T08:13:40+00:00",
+    "actor": "Codex",
+    "action": "added proof-route cold-read simulation",
+    "details": "Cleanroom source commit a265fcb and Actions run 26084818713 added a public-safe proof-route cold-read simulation with fixture examples/proof_route_cold_read_simulation.json, docs/ai-coding-proof-route-cold-read-simulation.md, CLI commands validate-cold-read and cold-read, tests for route rendering, missing-answer-type rejection, private-start-url rejection, time-overrun rejection, public-pack verification, and originality gate score 86.8. Local progress graph marks proof-route-cold-read-simulation done and selects no-send-follow-up-decision-kit as the next safe no-outbound branch.",
+    "visibility": "public projection",
+    "source_hash": "de3e77851357835aca585c8742e596062ee3c6addd8d50e1989c7923fb105299",
+    "prev_hash": "3c725fef4baea3e2f1145fab08984422c09235e12507bc2283e5d473064a9912",
+    "hash": "4df6844299bf8dc6d790f712ec26a741581faa374b732250c95ad3b24e981f54"
   }
 ]

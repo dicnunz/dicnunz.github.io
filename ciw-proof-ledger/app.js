@@ -60,6 +60,12 @@ const ROLE_PRESETS = [
     filter: "active-path",
   },
   {
+    key: "growth",
+    label: "Growth plan",
+    node: "autonomous-growth-readiness-selector",
+    filter: "active-path",
+  },
+  {
     key: "role-source",
     label: "Role source",
     node: "live-codex-role-source-check",

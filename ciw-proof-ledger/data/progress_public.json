@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T06:36:17Z",
+  "updated_at": "2026-05-19T06:56:04Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -725,6 +725,36 @@
       ],
       "next": [
         "Use the drill for interview conversion and field-trial design only; do not claim interview status or customer deployment evidence."
+      ]
+    },
+    {
+      "id": "autonomous-growth-readiness-selector",
+      "title": "Autonomous growth-readiness selector",
+      "type": "operating-system",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Heartbeat now builds a machine-readable growth plan that verifies guardrail nodes, blocks required-gate failures, rejects already-shipped proof modes, preserves the no-outbound gate, and selects the next non-redundant safe proof move before model-driven advance work is trusted.",
+      "evidence": [
+        "tools/ciw_autonomy.py",
+        "tests/test_ciw_autonomy.py",
+        "ops/autonomy/state/latest_report.md"
+      ],
+      "next": [
+        "Keep the planner selecting a real next branch; do not let autonomous runs spin on shipped receipt, handoff, feedback, scorecard, assessment, or scheduler proof."
+      ]
+    },
+    {
+      "id": "reviewer-time-to-understand-benchmark",
+      "title": "Reviewer time-to-understand benchmark",
+      "type": "public-proof",
+      "status": "next",
+      "priority": "P0",
+      "summary": "Next safe proof branch: measure whether a recruiter, referral contact, or hiring manager can traverse the public Codex deployment packet quickly enough to understand the evidence, boundary, and strongest source links without extra explanation.",
+      "evidence": [
+        "planned-by:autonomous-growth-readiness-selector"
+      ],
+      "next": [
+        "Build this only as a verifier-backed local/public artifact; do not use it as outreach before the 2026-05-26 gate."
       ]
     }
   ],
@@ -1850,6 +1880,36 @@
       "to": "warm-referral-route",
       "relation": "strengthens_followup",
       "weight": 4
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "autonomous-growth-readiness-selector",
+      "relation": "selects_next_safe_move",
+      "weight": 5
+    },
+    {
+      "from": "autonomous-growth-readiness-selector",
+      "to": "reviewer-time-to-understand-benchmark",
+      "relation": "selects_next_branch",
+      "weight": 5
+    },
+    {
+      "from": "autonomous-growth-readiness-selector",
+      "to": "field-trial-acceptance-scorecard",
+      "relation": "protects_against_spin",
+      "weight": 4
+    },
+    {
+      "from": "reviewer-time-to-understand-benchmark",
+      "to": "openai-reviewer-digest",
+      "relation": "would_strengthen",
+      "weight": 4
+    },
+    {
+      "from": "reviewer-time-to-understand-benchmark",
+      "to": "warm-referral-route",
+      "relation": "would_sharpen",
+      "weight": 4
     }
   ],
   "views": {
@@ -1882,10 +1942,13 @@
       "product-feedback-export-fixture",
       "field-trial-acceptance-scorecard",
       "deployment-assessment-drill",
+      "autonomous-growth-readiness-selector",
+      "reviewer-time-to-understand-benchmark",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
+      "reviewer-time-to-understand-benchmark",
       "warm-referral-route",
       "legal-entity-review"
     ]

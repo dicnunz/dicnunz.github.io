@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T07:57:20Z",
+  "updated_at": "2026-05-19T08:02:24Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -789,15 +789,18 @@
       "type": "public-proof",
       "status": "done",
       "priority": "P0",
-      "summary": "Cleanroom source now validates and renders a public-safe source-to-answer proof index: eight common reviewer questions map to exact primary and supporting sources while preserving no-customer, no-affiliation, no-employment, no-revenue, and no-outbound boundaries.",
+      "summary": "Cleanroom source and public Pages now validate, render, and publish a source-to-answer proof index: eight common reviewer questions map to exact primary and supporting sources while preserving no-customer, no-affiliation, no-employment, no-revenue, and no-outbound boundaries.",
       "evidence": [
         "https://github.com/dicnunz/cleanroom-intelligence-works/commit/36e291f",
         "cleanroom-run:26084058125-success",
         "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/source_to_answer_index.json",
-        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-source-to-answer-index.md"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-source-to-answer-index.md",
+        "https://dicnunz.github.io/ai-coding-source-to-answer-index/",
+        "commit:c65187d",
+        "pages-run:26084358733-success"
       ],
       "next": [
-        "Publish the source-to-answer page, graph preset, digest projection, and autonomy status surface before using it externally."
+        "Use the index as a reviewer lookup layer only; the next safe branch is a cold-read traversal simulation, not outbound."
       ]
     },
     {
@@ -808,7 +811,8 @@
       "priority": "P0",
       "summary": "Next safe proof branch: simulate a fresh reviewer using the source-to-answer index and graph presets to answer core role-fit questions within a fixed time budget, without private context or outbound.",
       "evidence": [
-        "planned-by:source-to-answer-index"
+        "planned-by:source-to-answer-index",
+        "https://dicnunz.github.io/ai-coding-source-to-answer-index/"
       ],
       "next": [
         "Build only after the source-to-answer public page, graph data, route index, digest, and autonomy heartbeat are green."

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T10:34:19Z",
+  "updated_at": "2026-05-19T10:43:52Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -954,6 +954,22 @@
       ],
       "next": [
         "Keep runbook claims synchronized with tools/ciw_autonomy.py plan before any autonomous advance."
+      ]
+    },
+    {
+      "id": "objective-completion-audit",
+      "title": "Objective completion audit",
+      "type": "autonomy",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Machine-readable completion gate that keeps the active goal open until OpenAI-side outcome evidence exists, even though the company proof surface, scheduler, graph, and public route are proven.",
+      "evidence": [
+        "ops/objective_completion_audit.json",
+        "ops/OBJECTIVE_COMPLETION_AUDIT.md",
+        "heartbeat:objective_completion_audit_validate-pass"
+      ],
+      "next": [
+        "Do not call update_goal until OpenAI-side outcome evidence is verified and recorded."
       ]
     }
   ],
@@ -2282,6 +2298,24 @@
       "from": "runbook-freshness-gate",
       "to": "post-gate-reply-review",
       "relation": "preserves",
+      "weight": 4
+    },
+    {
+      "from": "objective-completion-audit",
+      "to": "goal-openai-role",
+      "relation": "audits",
+      "weight": 5
+    },
+    {
+      "from": "objective-completion-audit",
+      "to": "post-gate-reply-review",
+      "relation": "preserves",
+      "weight": 5
+    },
+    {
+      "from": "runbook-freshness-gate",
+      "to": "objective-completion-audit",
+      "relation": "hardens",
       "weight": 4
     }
   ],

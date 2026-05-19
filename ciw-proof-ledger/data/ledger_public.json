@@ -691,5 +691,16 @@
     "source_hash": "2387868479e8e997e459665230dd8ddd658d6cb860d7a8c7eb45c6b02025a128",
     "prev_hash": "ca424df2072eead059d3a6405e9335f89a1cfa89aa412e1da5c3c860bee9dc1c",
     "hash": "a481773d10565ac9739e601542712791c09a658464822a982e503b46c8c88206"
+  },
+  {
+    "index": 63,
+    "timestamp": "2026-05-19T10:43:57+00:00",
+    "actor": "Codex",
+    "action": "added objective completion audit gate",
+    "details": "{\"behavior\":\"keeps active goal incomplete until OpenAI-side outcome evidence exists\",\"checks\":[\"objective_completion_audit_validate pass\",\"objective_completion_audit_render pass\",\"python3 scripts/verify_pack.py pass\",\"heartbeat required checks pass\"],\"files\":[\"tools/objective_completion_audit.py\",\"ops/objective_completion_audit.json\",\"ops/OBJECTIVE_COMPLETION_AUDIT.md\",\"tests/test_objective_completion_audit.py\"],\"graph_node\":\"objective-completion-audit\",\"hard_gates\":[\"no outbound before 2026-05-26\",\"no legal/payment/hiring/fundraising actions\",\"no OpenAI affiliation or clone claims\"]}",
+    "visibility": "public projection",
+    "source_hash": "b18bd7049348c0ef81db1ded98221f3b5c0ce9e753d42ffeb34ba08bcff266de",
+    "prev_hash": "a481773d10565ac9739e601542712791c09a658464822a982e503b46c8c88206",
+    "hash": "19d674c024b8de500ea018a87e750d54f9d22a400a86ac594082544ec193ada8"
   }
 ]

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenAI Codex Objective Completion Audit</title>
+    <meta
+      name="description"
+      content="A public-safe completion audit that separates Cleanroom Intelligence Works proof strength from the still-missing OpenAI-side outcome."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="OpenAI Codex Objective Completion Audit">
+    <meta
+      property="og:description"
+      content="Goal stays active until the outcome is proven: public proof is leverage, not an offer, interview loop, or collaboration path by itself."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/openai-codex-objective-completion-audit/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/openai-codex-objective-completion-audit/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .audit-hero h1 {
+        max-width: 920px;
+        font-size: clamp(2.35rem, 6.5vw, 4.8rem);
+        text-wrap: balance;
+      }
+
+      .audit-hero .claim {
+        max-width: 760px;
+      }
+
+      .verdict-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .verdict-tile,
+      .matrix-list li,
+      .gate-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        padding: 14px;
+      }
+
+      .verdict-tile strong,
+      .matrix-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .verdict-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.35rem;
+        font-weight: 760;
+      }
+
+      .matrix-list,
+      .gate-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .matrix-list li {
+        display: grid;
+        grid-template-columns: minmax(170px, 0.28fr) minmax(0, 1fr);
+        gap: 16px;
+      }
+
+      .matrix-list span,
+      .gate-list span,
+      .boundary-note {
+        color: var(--muted);
+      }
+
+      .status {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 760;
+        text-transform: uppercase;
+      }
+
+      .gate-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .verdict-strip,
+        .matrix-list li,
+        .gate-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../openai-codex-route-index/">Route index</a>
+        <a href="../ciw-proof-ledger/?view=graph&node=objective-completion-audit">Audit graph</a>
+        <a href="../ciw-autonomy-status/">Autonomy</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro audit-hero" aria-labelledby="intro-title">
+        <p class="meta">Objective audit · checked May 19, 2026</p>
+        <h1 id="intro-title">Goal stays active until the outcome is proven.</h1>
+        <p class="claim">
+          This audit keeps the Cleanroom Intelligence Works route honest: the proof lab, public route, scheduler,
+          graph, ledger, and no-overclaim gates are real progress, but they are not the same as an offer,
+          interview loop, collaboration path, recruiter-owned next step, or equivalent target-company traction.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="verdict-title">
+        <div class="section-label">
+          <p class="meta">Verdict</p>
+          <h2 id="verdict-title">Not complete</h2>
+        </div>
+        <div class="verdict-strip">
+          <div class="verdict-tile">
+            <strong>Proof surface</strong>
+            <span>Proven</span>
+          </div>
+          <div class="verdict-tile">
+            <strong>Autonomy</strong>
+            <span>Proven</span>
+          </div>
+          <div class="verdict-tile">
+            <strong>Leverage</strong>
+            <span>Partial</span>
+          </div>
+          <div class="verdict-tile">
+            <strong>Outcome</strong>
+            <span>Missing</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="matrix-title">
+        <div class="section-label">
+          <p class="meta">Matrix</p>
+          <h2 id="matrix-title">Requirement audit</h2>
+        </div>
+        <ol class="matrix-list">
+          <li>
+            <strong>Legally distinct non-confusion surface</strong>
+            <span><span class="status">Evidence locked</span> Non-confusion policy, pack verifier, and public forbidden-claim scans guard the cleanroom boundary.</span>
+          </li>
+          <li>
+            <strong>Nic-as-CEO operating surface</strong>
+            <span><span class="status">Operator role locked</span> Charter, CEO operating system, and autonomy runbook define a proof-lab operating role without claiming legal formation.</span>
+          </li>
+          <li>
+            <strong>OpenAI-grade proof surface</strong>
+            <span><span class="status">Review route locked</span> Route index, public ledger, cleanroom source, regression suite, and reviewer digest create an inspectable proof path.</span>
+          </li>
+          <li>
+            <strong>Autonomous operation</strong>
+            <span><span class="status">Control plane locked</span> LaunchAgent runtime, heartbeat, runbook freshness, graph, ledger, and public URL checks run as the proof-lab control plane.</span>
+          </li>
+          <li>
+            <strong>Credible hiring or collaboration leverage</strong>
+            <span><span class="status">Leverage partial</span> The route is public and reviewer-readable, but new outbound remains blocked before May 26, 2026 unless a real reply or explicit override appears.</span>
+          </li>
+          <li>
+            <strong>OpenAI-side outcome evidence</strong>
+            <span><span class="status">Outcome absent</span> No verified offer, interview loop, collaboration path, recruiter-owned next step, or equivalent target-company traction is recorded in the current graph or ledger.</span>
+          </li>
+          <li>
+            <strong>Hard-gate compliance</strong>
+            <span><span class="status">Gate discipline locked</span> The autonomy config and latest heartbeat preserve no-outbound, no legal, no money, no hiring, and no target-company-claim boundaries.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Stops</p>
+          <h2 id="gates-title">What must stay blocked</h2>
+        </div>
+        <ol class="gate-list">
+          <li>
+            <strong>No early outbound</strong>
+            <span>No external message before May 26, 2026 unless a real reply or explicit fresh override changes the route.</span>
+          </li>
+          <li>
+            <strong>No legal or money action</strong>
+            <span>No incorporation, trademark, tax, contract, banking, payment, hiring, fundraising, or compensation action.</span>
+          </li>
+          <li>
+            <strong>No target-company claim</strong>
+            <span>No affiliation, endorsement, employment, customer, revenue, funding, official-status, or clone claim.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="proof-title">
+        <div class="section-label">
+          <p class="meta">Proof</p>
+          <h2 id="proof-title">Inspectable sources</h2>
+        </div>
+        <div class="note-list">
+          <p><a href="../ciw-proof-ledger/?view=graph&node=objective-completion-audit">Objective completion audit node</a></p>
+          <p><a href="../ciw-proof-ledger/data/summary.json">Public ledger summary</a></p>
+          <p><a href="../openai-codex-route-index/">Nineteen-link reviewer route</a></p>
+          <p><a href="../ciw-autonomy-status/">Autonomy status</a></p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Why this page exists</h2>
+        </div>
+        <p class="boundary-note">
+          This page is a no-overclaim layer. It is useful precisely because it refuses to let public proof,
+          automation, or reviewer readability become a false completion claim.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

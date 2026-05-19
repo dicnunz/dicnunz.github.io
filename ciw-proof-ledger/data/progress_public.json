@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T06:56:04Z",
+  "updated_at": "2026-05-19T07:10:16Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -747,14 +747,31 @@
       "id": "reviewer-time-to-understand-benchmark",
       "title": "Reviewer time-to-understand benchmark",
       "type": "public-proof",
-      "status": "next",
+      "status": "done",
       "priority": "P0",
-      "summary": "Next safe proof branch: measure whether a recruiter, referral contact, or hiring manager can traverse the public Codex deployment packet quickly enough to understand the evidence, boundary, and strongest source links without extra explanation.",
+      "summary": "Cleanroom source now validates and renders a public-safe reviewer time-to-understand benchmark that budgets the public proof route at 7 minutes against an 8-minute target, scores entry clarity, role-fit mapping, source verifiability, proof depth, legal boundary, next-action clarity, and route time, and blocks promotion when the no-outbound or no-affiliation boundary is lost.",
       "evidence": [
-        "planned-by:autonomous-growth-readiness-selector"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/7110e46",
+        "cleanroom-run:26082012084-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/reviewer_time_to_understand_benchmark.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-reviewer-time-to-understand-benchmark.md"
       ],
       "next": [
-        "Build this only as a verifier-backed local/public artifact; do not use it as outreach before the 2026-05-26 gate."
+        "Publish the benchmark as a public page and keep it as route-friction proof, not as a real reviewer test or outreach claim."
+      ]
+    },
+    {
+      "id": "interview-question-branching-drill",
+      "title": "Interview question branching drill",
+      "type": "public-proof",
+      "status": "next",
+      "priority": "P0",
+      "summary": "Next safe proof branch: route likely hiring-manager objections through source-backed answers without inflating customer, affiliation, revenue, or employment claims.",
+      "evidence": [
+        "planned-by:reviewer-time-to-understand-benchmark"
+      ],
+      "next": [
+        "Build a fixture-backed objection-routing drill before any post-2026-05-26 follow-up, unless a recruiter reply changes the branch."
       ]
     }
   ],
@@ -1902,14 +1919,38 @@
     {
       "from": "reviewer-time-to-understand-benchmark",
       "to": "openai-reviewer-digest",
-      "relation": "would_strengthen",
-      "weight": 4
+      "relation": "strengthens_digest",
+      "weight": 5
     },
     {
       "from": "reviewer-time-to-understand-benchmark",
       "to": "warm-referral-route",
-      "relation": "would_sharpen",
+      "relation": "sharpens_followup",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "interview-question-branching-drill",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "interview-question-branching-drill",
+      "relation": "next-growth-target",
+      "weight": 4
+    },
+    {
+      "from": "reviewer-time-to-understand-benchmark",
+      "to": "public-openai-codex-route-index",
+      "relation": "measures_route",
+      "weight": 5
+    },
+    {
+      "from": "reviewer-time-to-understand-benchmark",
+      "to": "interview-question-branching-drill",
+      "relation": "unlocks_objection_drill",
+      "weight": 5
     }
   ],
   "views": {
@@ -1944,11 +1985,12 @@
       "deployment-assessment-drill",
       "autonomous-growth-readiness-selector",
       "reviewer-time-to-understand-benchmark",
+      "interview-question-branching-drill",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
-      "reviewer-time-to-understand-benchmark",
+      "interview-question-branching-drill",
       "warm-referral-route",
       "legal-entity-review"
     ]

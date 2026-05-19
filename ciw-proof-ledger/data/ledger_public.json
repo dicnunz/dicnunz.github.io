@@ -471,5 +471,16 @@
     "source_hash": "d68f3fcbb35185779bcf117d0ccf5ae5e738cd4a0aed504fc29f92c8b12855d9",
     "prev_hash": "3caf5752460a7410932442a119a17862ceaed17b9807634e5fc0a7adca80d0e6",
     "hash": "4ffb06d00145c8f08708f42245ce37706c342e61c0cd16cec5ff82fe5e7447c9"
+  },
+  {
+    "index": 43,
+    "timestamp": "2026-05-19T07:11:11+00:00",
+    "actor": "Codex",
+    "action": "added reviewer time-to-understand benchmark",
+    "details": "Cleanroom source commit 7110e46 and Actions run 26082012084 added a public-safe reviewer time-to-understand benchmark with fixture examples/reviewer_time_to_understand_benchmark.json, docs/ai-coding-reviewer-time-to-understand-benchmark.md, CLI commands validate-reviewer-benchmark and reviewer-benchmark, tests for route budget rendering, missing-signal rejection, private-evidence rejection, route-time overrun rejection, and public-pack verification. Local progress graph now marks reviewer-time-to-understand-benchmark done and selects interview-question-branching-drill as the next safe branch while preserving the 2026-05-26 no-outbound gate.",
+    "visibility": "public projection",
+    "source_hash": "51c6a74366bab6c4dcd63fda6985c9e16e75c99d3f51325658dc434153059252",
+    "prev_hash": "4ffb06d00145c8f08708f42245ce37706c342e61c0cd16cec5ff82fe5e7447c9",
+    "hash": "d75bcef4cdf29c85e9dd4554be94aef83618e88b4ed704d0f26dfd65c0c00e1c"
   }
 ]

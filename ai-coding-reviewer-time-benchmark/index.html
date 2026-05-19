@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Reviewer Time-to-Understand Benchmark</title>
+    <meta
+      name="description"
+      content="A public-safe benchmark for checking whether a hiring reviewer can understand the Cleanroom Intelligence Works proof route inside an eight-minute budget."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Reviewer Time-to-Understand Benchmark">
+    <meta
+      property="og:description"
+      content="Cleanroom Intelligence Works benchmark for public proof route clarity, source verifiability, legal boundary, and next-action readiness."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-reviewer-time-benchmark/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-reviewer-time-benchmark/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .benchmark-hero h1 {
+        max-width: min(860px, 100%);
+        font-size: clamp(2.5rem, 6.6vw, 4.75rem);
+        text-wrap: balance;
+      }
+
+      .benchmark-hero .claim {
+        max-width: min(620px, 100%);
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile,
+      .route-list li,
+      .signal-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .score-tile {
+        padding: 14px;
+      }
+
+      .score-tile strong,
+      .route-list strong,
+      .signal-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.45rem;
+        font-weight: 760;
+      }
+
+      .route-list,
+      .signal-list,
+      .gate-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .route-list li {
+        display: grid;
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 14px;
+        padding: 14px;
+      }
+
+      .route-list b {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border: 1px solid var(--accent);
+        border-radius: 50%;
+        color: var(--accent);
+      }
+
+      .signal-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .signal-list li,
+      .gate-list li {
+        padding: 14px;
+      }
+
+      .route-list span,
+      .signal-list span,
+      .gate-list span,
+      .command-list {
+        color: var(--muted);
+      }
+
+      .command-list {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .command-list code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .topbar,
+        .intro,
+        .section,
+        .footer {
+          width: calc(100vw - 32px);
+          max-width: calc(100vw - 32px);
+        }
+
+        .benchmark-hero h1 {
+          max-width: 11ch;
+          font-size: clamp(2.18rem, 10.4vw, 3rem);
+          line-height: 1;
+        }
+
+        .benchmark-hero .claim {
+          font-size: 1rem;
+        }
+
+        .score-strip,
+        .route-list li,
+        .signal-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../openai-codex-route-index/">Route index</a>
+        <a href="../ciw-proof-ledger/?preset=reviewer-time">Benchmark graph</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/reviewer_time_to_understand_benchmark.json">Fixture</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro benchmark-hero" aria-labelledby="intro-title">
+        <p class="meta">Reviewer benchmark · checked May 19, 2026</p>
+        <h1 id="intro-title">A seven-minute proof route.</h1>
+        <p class="claim">
+          The benchmark converts reviewer friction into a verifier-backed fixture: five public stops, seven comprehension checks,
+          an eight-minute ceiling, and hard no-affiliation, no-customer, and no-outbound gates.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="score-title">
+        <div class="section-label">
+          <p class="meta">Result</p>
+          <h2 id="score-title">Current fixture</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Route budget</strong>
+            <span>7/8 min</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average</strong>
+            <span>4.4/5</span>
+          </div>
+          <div class="score-tile">
+            <strong>Signals</strong>
+            <span>7 covered</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="route-title">
+        <div class="section-label">
+          <p class="meta">Route</p>
+          <h2 id="route-title">Open in order</h2>
+        </div>
+        <ol class="route-list">
+          <li>
+            <b>0-2</b>
+            <span><strong>Route index</strong>The shortest public route through digest, scorecard, benchmark, assessment, autonomy, source, and proof brief.</span>
+          </li>
+          <li>
+            <b>2-4</b>
+            <span><strong>Reviewer digest</strong>Target role, latest receipt, role-fit map, strongest graph nodes, active path, and send gate.</span>
+          </li>
+          <li>
+            <b>4-5</b>
+            <span><strong>Assessment graph node</strong>Executable interview-signal proof connected to the source-backed receipt lineage.</span>
+          </li>
+          <li>
+            <b>5-6</b>
+            <span><strong>Proof brief</strong>Independent role evidence with the non-affiliation and no-customer boundary visible.</span>
+          </li>
+          <li>
+            <b>6-7</b>
+            <span><strong>Cleanroom source</strong>Validators, renderers, fixtures, tests, docs, and public-pack verifier behind the page.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="signals-title">
+        <div class="section-label">
+          <p class="meta">Signals</p>
+          <h2 id="signals-title">Comprehension checks</h2>
+        </div>
+        <ol class="signal-list">
+          <li>
+            <strong>Entry clarity</strong>
+            <span>The route index gives the first click and prevents a reviewer from starting in the wrong proof layer.</span>
+          </li>
+          <li>
+            <strong>Role-fit map</strong>
+            <span>The digest maps the Codex deployment role to specific public proof nodes and receipts.</span>
+          </li>
+          <li>
+            <strong>Source verifiability</strong>
+            <span>Every major claim points to a public URL, source repository, fixture, validator, or graph node.</span>
+          </li>
+          <li>
+            <strong>Proof depth</strong>
+            <span>Scorecard, assessment drill, handoff fixtures, and feedback export show more than a static portfolio page.</span>
+          </li>
+          <li>
+            <strong>Legal boundary</strong>
+            <span>The fixture blocks affiliation, customer deployment, employment, endorsement, revenue, and production-impact claims.</span>
+          </li>
+          <li>
+            <strong>Next-action clarity</strong>
+            <span>The autonomy selector now moves to an interview-question branching drill instead of redoing shipped proof.</span>
+          </li>
+          <li>
+            <strong>Reviewer time budget</strong>
+            <span>The benchmark stays inside the eight-minute target, with compression required if the route grows wider.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="commands-title">
+        <div class="section-label">
+          <p class="meta">Executable</p>
+          <h2 id="commands-title">Verifier commands</h2>
+        </div>
+        <ul class="command-list">
+          <li><code>python3 tools/deployment_receipt.py validate-reviewer-benchmark --input examples/reviewer_time_to_understand_benchmark.json</code></li>
+          <li><code>python3 tools/deployment_receipt.py reviewer-benchmark --input examples/reviewer_time_to_understand_benchmark.json</code></li>
+          <li><code>python3 scripts/verify_public_pack.py</code></li>
+          <li><code>python3 -m unittest tests/test_deployment_receipt.py</code></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="sources-title">
+        <div class="section-label">
+          <p class="meta">Source</p>
+          <h2 id="sources-title">Inspect the implementation</h2>
+        </div>
+        <ul class="command-list">
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/7110e46">Cleanroom commit 7110e46</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/actions/runs/26082012084">Cleanroom CI run 26082012084</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/reviewer_time_to_understand_benchmark.json">Benchmark fixture</a></li>
+          <li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-reviewer-time-to-understand-benchmark.md">Benchmark docs</a></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">What this does not claim</h2>
+        </div>
+        <div class="note-list">
+          <p class="boundary-note">
+            This benchmark is a route-friction fixture, not evidence that a real recruiter reviewed the page. It excludes
+            target-company affiliation, customer deployment, employment, endorsement, revenue, funding, incorporation, and production impact.
+          </p>
+          <p>No outreach before May 26, 2026 unless a recruiter/Cory reply appears or Nic explicitly overrides.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

@@ -284,5 +284,16 @@
     "source_hash": "d551579092092b2d1ea42f44dbe384feb65b70a3f4c2e261026910b976ae8790",
     "prev_hash": "64d8dee671d4f638b4c5b4812aa1293b53127769ed238932e6b7760f07c47de3",
     "hash": "4fac062172aedfdd11cbb991b5a6ffd8dcba243047c25cc9c391185d8d1e21af"
+  },
+  {
+    "index": 26,
+    "timestamp": "2026-05-19T04:27:28+00:00",
+    "actor": "Codex",
+    "action": "published public progress graph traversal filters",
+    "details": "Updated Proof Ledger inspector with graph filter pills for all nodes, active path, next branches, latest proof, and blockers; route view now reads graph.views.active_path; node detail exposes evidence and clickable neighbor traversal. Local Chrome headless rendered desktop and mobile screenshots. Pages commit c6ba801 deployed via run 26076162336.",
+    "visibility": "public projection",
+    "source_hash": "602c69c427cec09f73fc557baa8ee42d50d9c24498c30eb8d3e156546c7eb61c",
+    "prev_hash": "4fac062172aedfdd11cbb991b5a6ffd8dcba243047c25cc9c391185d8d1e21af",
+    "hash": "ca8cdc7df40bed817c9b248d1cbf4927948c85aac1adaad44d952bf39abea031"
   }
 ]

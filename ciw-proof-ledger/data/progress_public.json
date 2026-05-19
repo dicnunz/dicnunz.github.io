@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T04:21:23Z",
+  "updated_at": "2026-05-19T04:27:28Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -476,6 +476,25 @@
       ],
       "next": [
         "Use this as code-backed proof when product feedback, repair states, or deployment handoff automation come up in review."
+      ]
+    },
+    {
+      "id": "public-inspector-traversal-filters",
+      "title": "Public inspector traversal filters",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Proof Ledger inspector now exposes graph filters for all nodes, active path, next branches, latest proof, and blockers; route view is sourced from the live graph active_path.",
+      "evidence": [
+        "demo/proof-ledger-inspector/app.js",
+        "demo/proof-ledger-inspector/index.html",
+        "https://dicnunz.github.io/ciw-proof-ledger/",
+        "commit:c6ba801",
+        "pages-run:26076162336-success"
+      ],
+      "next": [
+        "Use this as the public progress-web surface for traversing proof state instead of reading raw JSON.",
+        "Keep this public inspector as the default traversal surface after graph or ledger changes."
       ]
     }
   ],
@@ -1240,6 +1259,36 @@
       "from": "deployment-feedback-receipt-fixtures",
       "to": "public-proof-ledger-inspector",
       "relation": "recorded-by",
+      "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "public-inspector-traversal-filters",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "progress-web",
+      "to": "public-inspector-traversal-filters",
+      "relation": "surfaced-by",
+      "weight": 5
+    },
+    {
+      "from": "proof-ledger",
+      "to": "public-inspector-traversal-filters",
+      "relation": "inspected-by",
+      "weight": 5
+    },
+    {
+      "from": "public-proof-ledger-inspector",
+      "to": "public-inspector-traversal-filters",
+      "relation": "strengthened-by",
+      "weight": 5
+    },
+    {
+      "from": "deployment-feedback-receipt-fixtures",
+      "to": "public-inspector-traversal-filters",
+      "relation": "visible-in",
       "weight": 4
     }
   ],

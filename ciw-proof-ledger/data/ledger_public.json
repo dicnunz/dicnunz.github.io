@@ -405,5 +405,16 @@
     "source_hash": "1f55d34b6a25b97c0db660863e4be7cc6a46184b0684e17b7a942084b22c3511",
     "prev_hash": "47662b3470b5919d23e2cc617a368c171cdd7d18aa3b452933ca2f385f235b8c",
     "hash": "55b596d26ffc58c62fde802e2f170cdf9b87466337a49a7e31a0093bae279a9c"
+  },
+  {
+    "index": 37,
+    "timestamp": "2026-05-19T05:41:29+00:00",
+    "actor": "Codex",
+    "action": "updated post-export autonomy branch selector",
+    "details": "Autonomy next-work packet now treats receipt, handoff, feedback-export, and route-index layers as shipped. Next safe branches are reviewer digest refresh only after state changes, a field-trial acceptance scorecard if verifier-backed, genuinely new executable deployment evidence, or the 2026-05-26 no-reply follow-up check. Heartbeat required checks passed; only known Pages index.html warning remains.",
+    "visibility": "public projection",
+    "source_hash": "052f168afa060fca7a9b1cd87df52daa4597c571b19b952c13ab0563cda51ff9",
+    "prev_hash": "55b596d26ffc58c62fde802e2f170cdf9b87466337a49a7e31a0093bae279a9c",
+    "hash": "166313ab7303135d4f451e0979e9515fd95f61cab423b69bdc680fe887de2af8"
   }
 ]

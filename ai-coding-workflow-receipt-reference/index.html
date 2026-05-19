@@ -6,13 +6,13 @@
     <title>AI Coding Workflow Receipt Reference</title>
     <meta
       name="description"
-      content="A runnable cleanroom reference implementation for validating and rendering AI coding deployment handoff receipts."
+      content="A runnable cleanroom reference implementation for validating ready/repair/reject AI coding deployment receipts and rendering product feedback packets."
     >
     <meta name="theme-color" content="#f7f8f4">
     <meta property="og:title" content="AI Coding Workflow Receipt Reference">
     <meta
       property="og:description"
-      content="Structured input, validation, markdown receipt rendering, fixture data, tests, and CI for AI coding deployment handoffs."
+      content="Structured input, validation, ready/repair/reject fixtures, receipt rendering, feedback packet rendering, tests, and CI for AI coding deployment handoffs."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dicnunz.github.io/ai-coding-workflow-receipt-reference/">
@@ -142,10 +142,14 @@
         <h1 id="intro-title">Runnable proof that the field kit can become a validated handoff.</h1>
         <p class="claim">
           This is a cleanroom reference implementation: structured JSON goes through required-field validation and
-          renders into a markdown deployment receipt with command results, decision, limits, and product feedback.
+          renders into a markdown deployment receipt plus a product-feedback packet with command results, decision,
+          limits, and adoption signal.
         </p>
         <pre class="code-panel" aria-label="Receipt reference commands"><code>python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_input.json
+python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_repair_input.json
+python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_reject_input.json
 python3 tools/deployment_receipt.py render --input examples/deployment_receipt_input.json
+python3 tools/deployment_receipt.py feedback --input examples/deployment_receipt_input.json
 python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py</code></pre>
       </section>
 
@@ -160,8 +164,13 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
             <span><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/tools/deployment_receipt.py">tools/deployment_receipt.py</a></span>
           </div>
           <div class="proof-card">
-            <strong>Fixture</strong>
-            <span><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_input.json">examples/deployment_receipt_input.json</a></span>
+            <strong>Fixtures</strong>
+            <span>
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_input.json">ready</a>,
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_repair_input.json">repair</a>,
+              and
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_reject_input.json">reject</a>
+            </span>
           </div>
           <div class="proof-card">
             <strong>Tests</strong>
@@ -169,7 +178,7 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
           </div>
           <div class="proof-card">
             <strong>CI</strong>
-            <span>Cleanroom verifier passed at commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/74683cf90729f6f0350e14248891bb9e785c068b">74683cf</a>.</span>
+            <span>Cleanroom verifier passed at commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/a94284137a6f1bf2f705da23198aee8e5d91afbf">a942841</a>.</span>
           </div>
         </div>
       </section>
@@ -190,11 +199,11 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
           </li>
           <li>
             <strong>Decision drift</strong>
-            <span>Any decision outside ready, repair, or reject.</span>
+            <span>Any decision outside ready, repair, or reject. All three states are represented as fixture files.</span>
           </li>
           <li>
             <strong>Feedback gaps</strong>
-            <span>Missing ready patterns, trust failures, or product implications.</span>
+            <span>Missing ready patterns, trust failures, product implications, or decision-specific follow-up.</span>
           </li>
         </ol>
       </section>
@@ -207,7 +216,8 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
         <div class="note-list">
           <p>
             The role asks for demos, reference implementations, workflow automations, technical content, product
-            feedback, safety, and operational readiness. This reference turns the receipt pattern into runnable source.
+            feedback, safety, and operational readiness. This reference turns the receipt pattern into runnable source,
+            then turns the same validated run into a product-feedback packet.
           </p>
           <p class="boundary-note">
             This is not customer deployment history. It is a code-backed operating proof: a demo should produce

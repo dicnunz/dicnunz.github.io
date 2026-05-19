@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding No-Send Follow-Up Decision Kit</title>
+    <meta
+      name="description"
+      content="A public-safe Cleanroom Intelligence Works decision kit for deciding whether a post-gate follow-up should be sent, held, or refused without touching external accounts before the no-outbound gate."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding No-Send Follow-Up Decision Kit">
+    <meta
+      property="og:description"
+      content="Six send, hold, and do-not-send rules for post-gate follow-up decisions, source freshness, repetition control, and claim safety."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-no-send-follow-up-decision-kit/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-no-send-follow-up-decision-kit/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .follow-hero h1 {
+        max-width: min(900px, 100%);
+        font-size: clamp(2.35rem, 6.4vw, 4.7rem);
+        text-wrap: balance;
+      }
+
+      .follow-hero .claim {
+        width: min(720px, 100%);
+        max-width: min(720px, 100%);
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile,
+      .lane-list li,
+      .gate-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .score-tile,
+      .lane-list li,
+      .gate-list li {
+        padding: 14px;
+      }
+
+      .score-tile strong,
+      .lane-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.45rem;
+        font-weight: 760;
+      }
+
+      .lane-list,
+      .gate-list,
+      .command-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .lane-list li {
+        display: grid;
+        grid-template-columns: minmax(0, 0.35fr) minmax(0, 0.65fr);
+        gap: 16px;
+      }
+
+      .lane-list b {
+        display: block;
+        margin: 7px 0;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .lane-list span,
+      .gate-list span,
+      .command-list,
+      .boundary-note {
+        color: var(--muted);
+      }
+
+      .lane-list small {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 760;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .gate-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .command-list {
+        padding-left: 18px;
+        list-style: disc;
+      }
+
+      .command-list code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      .topbar,
+      nav,
+      .follow-hero,
+      .follow-hero .claim,
+      .lane-list li > span {
+        min-width: 0;
+      }
+
+      nav {
+        max-width: 100%;
+      }
+
+      nav a,
+      .follow-hero .claim,
+      .lane-list span,
+      .gate-list span {
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 760px) {
+        .topbar,
+        .intro,
+        .section,
+        .footer {
+          width: calc(100vw - 32px);
+          max-width: calc(100vw - 32px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+          padding: 12px 0;
+        }
+
+        nav {
+          justify-content: flex-start;
+          gap: 12px;
+        }
+
+        nav a {
+          font-size: 0.95rem;
+        }
+
+        .follow-hero h1 {
+          max-width: 13ch;
+          font-size: clamp(2.12rem, 10vw, 3rem);
+          line-height: 1;
+        }
+
+        .follow-hero .claim {
+          width: 100%;
+          font-size: 1rem;
+        }
+
+        .score-strip,
+        .lane-list li,
+        .gate-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../ai-coding-proof-route-cold-read-simulation/">Cold-read</a>
+        <a href="../ciw-proof-ledger/?preset=no-send">Graph node</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/no_send_follow_up_decision_kit.json">Fixture</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro follow-hero" aria-labelledby="intro-title">
+        <p class="meta">No-send follow-up kit · checked May 19, 2026</p>
+        <h1 id="intro-title">Follow-up is a gate, not a reflex.</h1>
+        <p class="claim">
+          This fixture prebuilds post-gate follow-up judgment without sending anything: six source-backed rules cover
+          send, hold, and do-not-send lanes, with explicit date, claim, repetition, recipient-fit, and public-proof checks.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="score-title">
+        <div class="section-label">
+          <p class="meta">Result</p>
+          <h2 id="score-title">Current fixture</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Lanes</strong>
+            <span>3/3</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average</strong>
+            <span>4.7/5</span>
+          </div>
+          <div class="score-tile">
+            <strong>Blocked</strong>
+            <span>0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="lanes-title">
+        <div class="section-label">
+          <p class="meta">Rules</p>
+          <h2 id="lanes-title">Decision lanes</h2>
+        </div>
+        <ol class="lane-list">
+          <li>
+            <span><strong>send</strong><b>Inbound interest or gate date.</b>Role source live, digest current, ledger verified, cold-read page published, and one new proof path.</span>
+            <span>Action: prepare one short source-backed follow-up after the gate only. <small>Rule nf-001 · score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>send</strong><b>Warm referrer asks for a compact proof link.</b>Use the reviewer digest as the front door; do not attach private logs or unsourced claims.</span>
+            <span>Action: route the referrer to the digest when the gate opens. <small>Rule nf-002 · score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>hold</strong><b>Before May 26 with no reply.</b>No current override, no inbound reply, and no proof failure requiring correction.</span>
+            <span>Action: keep improving public proof, validators, graph evidence, and claim gates. <small>Rule nf-003 · score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>hold</strong><b>New proof is not verified.</b>Pack verifier, ledger verification, Pages QA, privacy scan, banned-claim scan, and live URLs must pass first.</span>
+            <span>Action: regenerate and hash-chain the evidence before it becomes leverage. <small>Rule nf-004 · score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>do_not_send</strong><b>The draft overclaims.</b>Affiliation, employment, endorsement, customer deployment, revenue, incorporation, funding, and production-result claims are hard stops.</span>
+            <span>Action: refuse the message and rewrite as independent fixture-backed role-fit evidence. <small>Rule nf-005 · score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>do_not_send</strong><b>The draft adds no signal.</b>Generic, repetitive, unsupported, wrong-recipient, or cold-read-failing messages spend attention without proof.</span>
+            <span>Action: build a stronger proof branch or wait for a real reply. <small>Rule nf-006 · score 4/5</small></span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Gates</p>
+          <h2 id="gates-title">Release checks</h2>
+        </div>
+        <ul class="gate-list">
+          <li><strong>Public-safe data</strong><span>Public URLs and synthetic decision rules only.</span></li>
+          <li><strong>No private recipient data</strong><span>No email addresses, private inbox IDs, local paths, credentials, or account-specific handles.</span></li>
+          <li><strong>Date-gated follow-up</strong><span>Send lanes stay inactive until May 26, 2026 unless a real reply or explicit fresh override appears.</span></li>
+          <li><strong>Claim safety</strong><span>Do-not-send criteria block target-company status, traction, legal-entity, and production-result overclaims.</span></li>
+          <li><strong>Repetition control</strong><span>A follow-up must add a specific new proof path; generic repetition is a do-not-send lane.</span></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="commands-title">
+        <div class="section-label">
+          <p class="meta">Executable source</p>
+          <h2 id="commands-title">Verifier commands</h2>
+        </div>
+        <ul class="command-list">
+          <li><code>python3 tools/deployment_receipt.py validate-follow-up-kit --input examples/no_send_follow_up_decision_kit.json</code></li>
+          <li><code>python3 tools/deployment_receipt.py follow-up-kit --input examples/no_send_follow_up_decision_kit.json</code></li>
+          <li><code>python3 scripts/verify_public_pack.py</code></li>
+          <li><code>python3 -m unittest tests/test_deployment_receipt.py</code></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Decision kit, not outreach</h2>
+        </div>
+        <p class="boundary-note">
+          This page does not send, schedule, draft to a recipient, contact OpenAI, contact a recruiter, claim employment,
+          claim affiliation, claim endorsement, claim customer deployment, or authorize legal/company formation. It is a
+          public-safe verifier for deciding what should happen after the no-outbound gate.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

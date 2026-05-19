@@ -90,6 +90,18 @@ const ROLE_PRESETS = [
     filter: "active-path",
   },
   {
+    key: "no-send",
+    label: "No-send",
+    node: "no-send-follow-up-decision-kit",
+    filter: "active-path",
+  },
+  {
+    key: "follow-up-eval",
+    label: "Follow-up eval",
+    node: "follow-up-draft-eval-harness",
+    filter: "next-branches",
+  },
+  {
     key: "role-source",
     label: "Role source",
     node: "live-codex-role-source-check",

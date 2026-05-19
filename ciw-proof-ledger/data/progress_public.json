@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T07:43:55Z",
+  "updated_at": "2026-05-19T07:57:20Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -787,14 +787,31 @@
       "id": "source-to-answer-index",
       "title": "Source-to-answer proof index",
       "type": "public-proof",
-      "status": "next",
+      "status": "done",
       "priority": "P0",
-      "summary": "Next safe proof branch: compress shipped evidence into a question-to-source index so a recruiter or hiring manager can jump from objection to exact public proof without new claims or outbound.",
+      "summary": "Cleanroom source now validates and renders a public-safe source-to-answer proof index: eight common reviewer questions map to exact primary and supporting sources while preserving no-customer, no-affiliation, no-employment, no-revenue, and no-outbound boundaries.",
       "evidence": [
-        "planned-by:interview-question-branching-drill"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/36e291f",
+        "cleanroom-run:26084058125-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/source_to_answer_index.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-source-to-answer-index.md"
       ],
       "next": [
-        "Build a public-safe answer index only after the branching page, graph, ledger, digest, and autonomy checks are green."
+        "Publish the source-to-answer page, graph preset, digest projection, and autonomy status surface before using it externally."
+      ]
+    },
+    {
+      "id": "proof-route-cold-read-simulation",
+      "title": "Proof-route cold-read simulation",
+      "type": "verification",
+      "status": "next",
+      "priority": "P0",
+      "summary": "Next safe proof branch: simulate a fresh reviewer using the source-to-answer index and graph presets to answer core role-fit questions within a fixed time budget, without private context or outbound.",
+      "evidence": [
+        "planned-by:source-to-answer-index"
+      ],
+      "next": [
+        "Build only after the source-to-answer public page, graph data, route index, digest, and autonomy heartbeat are green."
       ]
     }
   ],
@@ -2010,6 +2027,24 @@
       "to": "public-openai-codex-route-index",
       "relation": "adds_objection_route",
       "weight": 5
+    },
+    {
+      "from": "interview-question-branching-drill",
+      "to": "source-to-answer-index",
+      "relation": "unblocks",
+      "weight": 5
+    },
+    {
+      "from": "source-to-answer-index",
+      "to": "proof-route-cold-read-simulation",
+      "relation": "next_path",
+      "weight": 5
+    },
+    {
+      "from": "proof-route-cold-read-simulation",
+      "to": "warm-referral-route",
+      "relation": "guards",
+      "weight": 3
     }
   ],
   "views": {
@@ -2046,11 +2081,12 @@
       "reviewer-time-to-understand-benchmark",
       "interview-question-branching-drill",
       "source-to-answer-index",
+      "proof-route-cold-read-simulation",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
-      "source-to-answer-index",
+      "proof-route-cold-read-simulation",
       "warm-referral-route",
       "legal-entity-review"
     ]

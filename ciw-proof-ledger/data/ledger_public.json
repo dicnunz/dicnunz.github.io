@@ -515,5 +515,16 @@
     "source_hash": "93fa4f183a458c663cf8541ff4a533722e91ed765259bb4ddaec047c67d86cd3",
     "prev_hash": "8e8c4d1b65df2518feed8a88495a775eed2832b6506a1326aa50a3f0dc3b297d",
     "hash": "274cf5407fcd811ea3bf3992dce4c70a7ad9e3237abad073598b48194a1f8322"
+  },
+  {
+    "index": 47,
+    "timestamp": "2026-05-19T07:57:28+00:00",
+    "actor": "Codex",
+    "action": "added source-to-answer index",
+    "details": "Cleanroom source commit 36e291f and Actions run 26084058125 added a public-safe source-to-answer index with fixture examples/source_to_answer_index.json, docs/ai-coding-source-to-answer-index.md, CLI commands validate-source-index and source-index, tests for lookup rendering, missing-question-type rejection, private-evidence rejection, external-URL rejection, public-pack verification, and originality gate score 86.7. Local progress graph now marks source-to-answer-index done and selects proof-route-cold-read-simulation as the next safe no-outbound branch.",
+    "visibility": "public projection",
+    "source_hash": "3b67891ad26bfdd65f163b516bf749e50a5071ac1dc2395311ba6231eb2b7129",
+    "prev_hash": "274cf5407fcd811ea3bf3992dce4c70a7ad9e3237abad073598b48194a1f8322",
+    "hash": "30da322ae611712f43a3410ca41a370c0c30011b916c2a15536d64e5f53d7939"
   }
 ]

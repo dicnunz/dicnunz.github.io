@@ -78,6 +78,12 @@ const ROLE_PRESETS = [
     filter: "active-path",
   },
   {
+    key: "source-answer",
+    label: "Source-answer",
+    node: "source-to-answer-index",
+    filter: "active-path",
+  },
+  {
     key: "role-source",
     label: "Role source",
     node: "live-codex-role-source-check",

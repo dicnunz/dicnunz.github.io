@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Source-to-Answer Index</title>
+    <meta
+      name="description"
+      content="A public-safe Cleanroom Intelligence Works lookup that maps common reviewer questions to exact proof sources without customer, affiliation, revenue, or employment overclaim."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Source-to-Answer Index">
+    <meta
+      property="og:description"
+      content="Question-to-source lookup for Codex deployment review: eight answers, primary and supporting sources, and explicit no-customer and no-outbound gates."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-source-to-answer-index/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-source-to-answer-index/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .source-hero h1 {
+        max-width: min(900px, 100%);
+        font-size: clamp(2.45rem, 6.7vw, 4.9rem);
+        text-wrap: balance;
+      }
+
+      .source-hero .claim {
+        max-width: min(680px, 100%);
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile,
+      .answer-list li,
+      .gate-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .score-tile {
+        padding: 14px;
+      }
+
+      .score-tile strong,
+      .answer-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.45rem;
+        font-weight: 760;
+      }
+
+      .answer-list,
+      .gate-list,
+      .command-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .answer-list li {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.48fr) minmax(280px, 0.52fr);
+        gap: 16px;
+        padding: 14px;
+      }
+
+      .answer-list b {
+        display: block;
+        margin: 7px 0;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .answer-list span,
+      .gate-list span,
+      .command-list,
+      .boundary-note {
+        color: var(--muted);
+      }
+
+      .source-pair {
+        display: grid;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .source-pair a,
+      .source-pair code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .gate-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gate-list li {
+        padding: 14px;
+      }
+
+      .command-list {
+        padding-left: 18px;
+        list-style: disc;
+      }
+
+      .command-list code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .topbar,
+        .intro,
+        .section,
+        .footer {
+          width: calc(100vw - 32px);
+          max-width: calc(100vw - 32px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+          padding: 12px 0;
+        }
+
+        nav {
+          justify-content: flex-start;
+          gap: 12px;
+        }
+
+        .source-hero h1 {
+          max-width: 12ch;
+          font-size: clamp(2.1rem, 10vw, 3rem);
+          line-height: 1;
+        }
+
+        .source-hero .claim {
+          font-size: 1rem;
+        }
+
+        .score-strip,
+        .answer-list li,
+        .gate-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../openai-codex-route-index/">Route index</a>
+        <a href="../ciw-proof-ledger/?preset=source-answer">Graph node</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/source_to_answer_index.json">Fixture</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro source-hero" aria-labelledby="intro-title">
+        <p class="meta">Source-to-answer index · checked May 19, 2026</p>
+        <h1 id="intro-title">Question-to-source lookup.</h1>
+        <p class="claim">
+          Eight reviewer questions map to exact primary and supporting proof links: 35/40 score, zero blocked answers,
+          one watch branch for the next cold-read test, and hard no-customer, no-affiliation, no-employment, no-revenue, and no-outbound gates.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="score-title">
+        <div class="section-label">
+          <p class="meta">Result</p>
+          <h2 id="score-title">Current fixture</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average</strong>
+            <span>4.4/5</span>
+          </div>
+          <div class="score-tile">
+            <strong>Answers</strong>
+            <span>8</span>
+          </div>
+          <div class="score-tile">
+            <strong>Blocked</strong>
+            <span>0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="answers-title">
+        <div class="section-label">
+          <p class="meta">Lookup</p>
+          <h2 id="answers-title">Answers and sources</h2>
+        </div>
+        <ol class="answer-list">
+          <li>
+            <span><strong>start_here</strong><b>Where should a reviewer start?</b>Start at the route index, then use the digest for the shortest role-fit read.</span>
+            <span>
+              Navigation proof only; no interview invitation or hiring decision.
+              <span class="source-pair">
+                <a href="../openai-codex-route-index/">Primary: route index</a>
+                <a href="../openai-codex-review-digest/">Support: reviewer digest</a>
+              </span>
+            </span>
+          </li>
+          <li>
+            <span><strong>technical_depth</strong><b>What is the strongest technical-depth evidence?</b>Use the executable receipt system: validators, renderers, fixtures, unit tests, and public-pack verification.</span>
+            <span>
+              Cleanroom mechanics and test discipline; no production system access claim.
+              <span class="source-pair">
+                <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/tools/deployment_receipt.py">Primary: deployment_receipt.py</a>
+                <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/tests/test_deployment_receipt.py">Support: deployment receipt tests</a>
+              </span>
+            </span>
+          </li>
+          <li>
+            <span><strong>customer_adoption_gap</strong><b>How do you handle the customer-adoption gap?</b>State the gap directly, then show the 30-day field plan and acceptance scorecard as the adoption runway.</span>
+            <span>
+              No customer deployment exists in this fixture; readiness architecture is not adoption history.
+              <span class="source-pair">
+                <a href="../ai-coding-field-trial-scorecard/">Primary: field-trial scorecard</a>
+                <a href="../openai-codex-30-day-plan/">Support: 30-day plan</a>
+              </span>
+            </span>
+          </li>
+          <li>
+            <span><strong>workshop_enablement</strong><b>Can this support workshops or enablement?</b>Use the workshop kit and post-workshop handoff: session flow, friction deltas, safety gates, ownership, and follow-up.</span>
+            <span>
+              Enablement-system proof from a public-safe fixture; no external workshop delivery claim.
+              <span class="source-pair">
+                <a href="../ai-coding-deployment-workshop/">Primary: workshop kit</a>
+                <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-post-workshop-handoff.md">Support: post-workshop handoff</a>
+              </span>
+            </span>
+          </li>
+          <li>
+            <span><strong>product_judgment</strong><b>Where is product-judgment evidence?</b>Use the product-feedback export and sample run: buckets, severity, recommended action, and promotion rules.</span>
+            <span>
+              Simulated public-safe signals; no private customer telemetry or internal feedback.
+              <span class="source-pair">
+                <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-product-feedback-export.md">Primary: feedback export</a>
+                <a href="../ai-coding-deployment-sample-run/">Support: filled sample run</a>
+              </span>
+            </span>
+          </li>
+          <li>
+            <span><strong>safety_boundary</strong><b>How is legal and safety confusion avoided?</b>Start with the nonconfusion policy and verifier gates: no copied brand surface, private data, customer claim, employment claim, or premature outreach.</span>
+            <span>
+              Engineering safety and public-claim boundary; not legal advice or trademark clearance.
+              <span class="source-pair">
+                <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/legal/OPENAI_NONCONFUSION_POLICY.md">Primary: non-confusion policy</a>
+                <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/scripts/verify_public_pack.py">Support: verifier</a>
+              </span>
+            </span>
+          </li>
+          <li>
+            <span><strong>operational_readiness</strong><b>What proves operational readiness?</b>Use the public proof ledger inspector and autonomy status surface: hash-chain, graph state, URL checks, scheduler health, guardrails, and next-work packet.</span>
+            <span>
+              Inspectable cadence and public verification; no legal incorporation or external account authority.
+              <span class="source-pair">
+                <a href="../ciw-proof-ledger/">Primary: proof ledger inspector</a>
+                <a href="../ciw-autonomy-status/">Support: autonomy status</a>
+              </span>
+            </span>
+          </li>
+          <li>
+            <span><strong>current_next_step</strong><b>What is the current next step?</b>Show the graph node and autonomy selector. The next branch is a cold-read simulation for reviewer traversal.</span>
+            <span>
+              No outreach, hiring claim, autonomous external action, or customer claim before the date gate or a fresh override.
+              <span class="source-pair">
+                <a href="../ciw-proof-ledger/?preset=source-answer">Primary: source-answer graph preset</a>
+                <a href="../ciw-autonomy-status/">Support: autonomy status</a>
+              </span>
+            </span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Gates</p>
+          <h2 id="gates-title">Release checks</h2>
+        </div>
+        <ul class="gate-list">
+          <li><strong>Public-safe data</strong><span>Every answer points to a public URL or repository artifact and excludes private evidence.</span></li>
+          <li><strong>No customer deployment</strong><span>The adoption answer names the no-customer boundary before describing the readiness path.</span></li>
+          <li><strong>No affiliation or employment claim</strong><span>The claim boundary excludes affiliation, endorsement, employment, revenue, incorporation, and production-impact claims.</span></li>
+          <li><strong>No outreach before 2026-05-26</strong><span>The index improves reviewer navigation only; outbound remains date-gated.</span></li>
+          <li><strong>Reviewer lookup compression</strong><span>Eight common questions map to exact primary and supporting sources.</span></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="commands-title">
+        <div class="section-label">
+          <p class="meta">Executable source</p>
+          <h2 id="commands-title">Verifier commands</h2>
+        </div>
+        <ul class="command-list">
+          <li><code>python3 tools/deployment_receipt.py validate-source-index --input examples/source_to_answer_index.json</code></li>
+          <li><code>python3 tools/deployment_receipt.py source-index --input examples/source_to_answer_index.json</code></li>
+          <li><code>python3 scripts/verify_public_pack.py</code></li>
+          <li><code>python3 -m unittest tests/test_deployment_receipt.py</code></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">No soft claims</h2>
+        </div>
+        <p class="boundary-note">
+          This page does not claim OpenAI employment, affiliation, endorsement, customer deployment, revenue, incorporation,
+          funding, trademark ownership, legal status, or production impact. It is a source-backed reviewer lookup for an
+          independent cleanroom lab concept.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

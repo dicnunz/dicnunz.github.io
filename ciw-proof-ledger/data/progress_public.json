@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T03:51:38Z",
+  "updated_at": "2026-05-19T04:04:49Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -421,6 +421,26 @@
       ],
       "next": [
         "Keep this linked as the example when the field kit is challenged as template-only."
+      ]
+    },
+    {
+      "id": "ai-coding-workflow-receipt-reference",
+      "title": "AI Coding Workflow Receipt Reference",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Executable cleanroom reference implementation that validates structured AI coding deployment receipts and renders markdown handoffs from JSON fixture data.",
+      "evidence": [
+        "applications/openai/AI_CODING_WORKFLOW_RECEIPT_REFERENCE.md",
+        "https://dicnunz.github.io/ai-coding-workflow-receipt-reference/",
+        "local path withheld",
+        "commit:74683cf",
+        "cleanroom-run:26075312231-success",
+        "commit:53297a8",
+        "pages-run:26075465948-success"
+      ],
+      "next": [
+        "Use as runnable reference-implementation proof when a recruiter or interviewer asks for code behind the receipt pattern."
       ]
     }
   ],
@@ -1012,6 +1032,66 @@
       "to": "public-proof-ledger-inspector",
       "relation": "recorded-by",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "ai-coding-workflow-receipt-reference",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "target-role-ai-deployment-engineer-codex",
+      "to": "ai-coding-workflow-receipt-reference",
+      "relation": "targets",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-field-kit",
+      "to": "ai-coding-workflow-receipt-reference",
+      "relation": "implemented-by",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-sample-run",
+      "to": "ai-coding-workflow-receipt-reference",
+      "relation": "productized-by",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-workflow-receipt-reference",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-workflow-receipt-reference",
+      "to": "openai-interview-conversion-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-workflow-receipt-reference",
+      "to": "openai-review-window-packet",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-workflow-receipt-reference",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "ai-coding-workflow-receipt-reference",
+      "relation": "mirrors-source",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-workflow-receipt-reference",
+      "to": "public-proof-ledger-inspector",
+      "relation": "recorded-by",
+      "weight": 4
     }
   ],
   "views": {
@@ -1027,6 +1107,7 @@
       "openai-review-window-packet",
       "ai-coding-deployment-field-kit",
       "ai-coding-deployment-sample-run",
+      "ai-coding-workflow-receipt-reference",
       "openai-30-day-field-trial-plan",
       "openai-interview-conversion-packet",
       "warm-referral-route"

@@ -251,5 +251,16 @@
     "source_hash": "c8e41577daab1748faf0339ec491118e122f69ca59a3293250dc0dc6eae610e8",
     "prev_hash": "ff281b3ab6844b7b096af58048c73e59058564b51ff3d8cbd77c73bfcc4909d6",
     "hash": "8ec621f6fe938e03282d86de608e526eb4d0ed11c34321c8ab3e2dc15b41ef9c"
+  },
+  {
+    "index": 23,
+    "timestamp": "2026-05-19T04:05:03+00:00",
+    "actor": "codex",
+    "action": "published AI coding workflow receipt reference",
+    "details": "Added cleanroom reference implementation tools/deployment_receipt.py with fixture examples/deployment_receipt_input.json, tests/test_deployment_receipt.py, and docs/ai-coding-workflow-receipt-reference.md at commit 74683cf with GitHub Actions run 26075312231 success. Published https://dicnunz.github.io/ai-coding-workflow-receipt-reference/ at Pages commit 53297a8 with Pages run 26075465948 success and linked it from the proof brief, field kit, sample run, and 30-day plan.",
+    "visibility": "public projection",
+    "source_hash": "7ff9de26a2221e4afed27294b2027e1b2a175556613af7406473e5e90fdbda93",
+    "prev_hash": "8ec621f6fe938e03282d86de608e526eb4d0ed11c34321c8ab3e2dc15b41ef9c",
+    "hash": "213756d7c227f45123f33c373e55cdcf0b80a3446746be6f512b079cd2fb522a"
   }
 ]

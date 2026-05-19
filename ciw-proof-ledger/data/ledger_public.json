@@ -658,5 +658,16 @@
     "source_hash": "5955ce0cdbccb1f71d2a2bf6db0a8b827fe59769a5d276f27ae9a3d4a87d9cbf",
     "prev_hash": "86fe67f58eb72350cecaebef302e9ad4c5c4f5b99bdcdfb4a3abb2256ec2b320",
     "hash": "17e634e9618b6f25a3fe956a73a3c03206d15369d6134ae480490ebefc1480ab"
+  },
+  {
+    "index": 60,
+    "timestamp": "2026-05-19T10:23:21+00:00",
+    "actor": "Codex",
+    "action": "published proof-route regression suite page",
+    "details": "{\"gates\":[\"no outbound before 2026-05-26\",\"no OpenAI affiliation or clone claims\",\"public privacy scan passed\",\"positive-claim scan passed\",\"Pages QA passed\",\"live deployed URL checks passed\"],\"local_visual_qa\":[\"local path withheld\",\"local path withheld\",\"local path withheld\"],\"next_branch\":\"post-gate-reply-review blocked until gate or reply\",\"pages_commit\":\"140e0fc4c0bf48b1d443831ce60684f9e9b7426d\",\"pages_run\":\"26091165431-success\",\"public_urls\":[\"https://dicnunz.github.io/ai-coding-proof-route-regression-suite/\",\"https://dicnunz.github.io/openai-codex-route-index/\",\"https://dicnunz.github.io/ciw-proof-ledger/?preset=regression\"],\"source_commit\":\"15d0da762c08ef135f5316fc96a17eac92e4e7fe\",\"source_run\":\"26090770896-success\"}",
+    "visibility": "public projection",
+    "source_hash": "befccc304893539a37d7899bf1bb2bcbbca29ab94b7395efd6c2afa87a172e99",
+    "prev_hash": "17e634e9618b6f25a3fe956a73a3c03206d15369d6134ae480490ebefc1480ab",
+    "hash": "8731512523c66a59adb2867f0bad7205f761f5ffc01820b257bc38ffaad3966f"
   }
 ]

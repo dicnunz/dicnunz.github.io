@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T10:17:38Z",
+  "updated_at": "2026-05-19T10:23:38Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -912,13 +912,14 @@
       "type": "hiring-route",
       "status": "done",
       "priority": "P0",
-      "summary": "Cleanroom source now validates and renders a public-safe proof-route regression suite: role_source, staleness, renewal, draft_quality, route_index, ledger, public_url, privacy, and no_outbound checks run as one pre-leverage gate so a failed marker becomes local repair work instead of a message.",
+      "summary": "Cleanroom source and Pages now publish a public-safe proof-route regression suite: role_source, staleness, renewal, draft_quality, route_index, ledger, public_url, privacy, and no_outbound checks run as one pre-leverage gate so a failed marker becomes local repair work instead of a message.",
       "evidence": [
         "planned-by:proof-route-renewal-drill",
         "cleanroom-run:26090770896-success",
         "https://github.com/dicnunz/cleanroom-intelligence-works/commit/15d0da762c08ef135f5316fc96a17eac92e4e7fe",
         "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_regression_suite.json",
-        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-regression-suite.md"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-proof-route-regression-suite.md",
+        "pages-commit:140e0fc4c0bf48b1d443831ce60684f9e9b7426d"
       ],
       "next": [
         "Build only as a local/public verifier bundle; no external account or outreach action before the 2026-05-26 gate.",

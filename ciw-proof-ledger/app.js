@@ -15,15 +15,16 @@ const GRAPH_FILTERS = [
   ["latest-proof", "Latest proof"],
   ["blockers", "Blockers"],
 ];
+const GRAPH_FILTER_KEYS = new Set(GRAPH_FILTERS.map(([key]) => key));
 
 const state = {
   summary: null,
   ledger: [],
   graph: null,
   mode: initialMode(),
-  graphFilter: "all",
-  query: "",
-  selectedNode: null,
+  graphFilter: initialGraphFilter(),
+  query: initialQuery(),
+  selectedNode: initialNode(),
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -32,6 +33,19 @@ function initialMode() {
   const params = new URLSearchParams(window.location.search);
   const requested = params.get("view") || window.location.hash.replace("#", "");
   return ["chain", "graph", "route"].includes(requested) ? requested : "chain";
+}
+
+function initialGraphFilter() {
+  const requested = new URLSearchParams(window.location.search).get("filter");
+  return GRAPH_FILTER_KEYS.has(requested) ? requested : "all";
+}
+
+function initialQuery() {
+  return (new URLSearchParams(window.location.search).get("q") || "").trim().toLowerCase();
+}
+
+function initialNode() {
+  return (new URLSearchParams(window.location.search).get("node") || "").trim() || null;
 }
 
 function canonicalJson(value) {
@@ -129,6 +143,42 @@ function setText(selector, value) {
   if (element) {
     element.textContent = value;
   }
+}
+
+function inspectorUrl({ mode = state.mode, filter = state.graphFilter, node = state.selectedNode, query = state.query } = {}) {
+  const url = new URL(window.location.href);
+  url.hash = "";
+  url.searchParams.set("view", mode);
+  if (mode === "graph" && filter && filter !== "all") {
+    url.searchParams.set("filter", filter);
+  } else {
+    url.searchParams.delete("filter");
+  }
+  if (mode === "graph" && node) {
+    url.searchParams.set("node", node);
+  } else {
+    url.searchParams.delete("node");
+  }
+  if (query) {
+    url.searchParams.set("q", query);
+  } else {
+    url.searchParams.delete("q");
+  }
+  return url;
+}
+
+function syncUrl() {
+  window.history.replaceState(null, "", inspectorUrl());
+}
+
+function nodeUrl(nodeId) {
+  const visibleIds = new Set(filteredGraphNodes().map((node) => node.id));
+  return inspectorUrl({
+    mode: "graph",
+    filter: visibleIds.has(nodeId) ? state.graphFilter : "all",
+    node: nodeId,
+    query: state.query,
+  }).toString();
 }
 
 function renderMetrics(verification) {
@@ -253,6 +303,9 @@ function renderGraph() {
   renderGraphFilters();
   const visibleNodes = filteredGraphNodes();
   setText("#graph-count", `${visibleNodes.length} nodes`);
+  if (!state.selectedNode || !visibleNodes.some((node) => node.id === state.selectedNode)) {
+    state.selectedNode = visibleNodes[0]?.id || null;
+  }
   const byStatus = new Map();
   for (const node of visibleNodes) {
     if (!byStatus.has(node.status)) {
@@ -286,9 +339,6 @@ function renderGraph() {
       `;
     })
     .join("");
-  if (!state.selectedNode || !visibleNodes.some((node) => node.id === state.selectedNode)) {
-    state.selectedNode = visibleNodes[0].id;
-  }
   renderNodeDetail();
 }
 
@@ -318,6 +368,7 @@ function renderNodeDetail() {
   const neighbors = neighborsFor(node.id);
   const evidence = (node.evidence || []).slice(0, 6);
   const next = node.next || [];
+  const directLink = nodeUrl(node.id);
   $("#node-detail").innerHTML = `
     <div class="node-detail-head">
       <div>
@@ -325,6 +376,10 @@ function renderNodeDetail() {
         <h3>${escapeHtml(node.title)}</h3>
       </div>
       <code>${escapeHtml(node.id)}</code>
+    </div>
+    <div class="node-actions">
+      <a href="${escapeHtml(directLink)}">Open node link</a>
+      <button type="button" data-copy-node="${escapeHtml(node.id)}">Copy node link</button>
     </div>
     <p>${escapeHtml(node.summary)}</p>
     <div class="node-lists">
@@ -390,14 +445,13 @@ function renderAll() {
 function bindEvents() {
   $("#search").addEventListener("input", (event) => {
     state.query = event.target.value.trim().toLowerCase();
+    syncUrl();
     renderAll();
   });
   document.querySelectorAll(".mode-button").forEach((button) => {
     button.addEventListener("click", () => {
       state.mode = button.dataset.mode;
-      const url = new URL(window.location.href);
-      url.searchParams.set("view", state.mode);
-      window.history.replaceState(null, "", url);
+      syncUrl();
       renderMode();
     });
   });
@@ -407,9 +461,27 @@ function bindEvents() {
       return;
     }
     state.selectedNode = button.dataset.node;
+    state.mode = "graph";
+    syncUrl();
     renderGraph();
   });
   $("#node-detail").addEventListener("click", (event) => {
+    const copyButton = event.target.closest("[data-copy-node]");
+    if (copyButton) {
+      const link = nodeUrl(copyButton.dataset.copyNode);
+      navigator.clipboard?.writeText(link).then(
+        () => {
+          copyButton.textContent = "Copied";
+          window.setTimeout(() => {
+            copyButton.textContent = "Copy node link";
+          }, 1400);
+        },
+        () => {
+          window.prompt("Node link", link);
+        }
+      );
+      return;
+    }
     const button = event.target.closest("[data-node]");
     if (!button) {
       return;
@@ -417,6 +489,7 @@ function bindEvents() {
     state.selectedNode = button.dataset.node;
     state.graphFilter = "all";
     state.mode = "graph";
+    syncUrl();
     renderAll();
   });
   $("#graph-filters").addEventListener("click", (event) => {
@@ -427,6 +500,8 @@ function bindEvents() {
     state.graphFilter = button.dataset.filter;
     const visible = filteredGraphNodes();
     state.selectedNode = visible[0]?.id || null;
+    state.mode = "graph";
+    syncUrl();
     renderGraph();
   });
 }
@@ -450,11 +525,23 @@ async function boot() {
     state.ledger = ledger;
     state.graph = graph;
     const route = activePathIds();
-    state.selectedNode = route[route.length - 1] || graphNodes()[0]?.id || null;
+    if (state.query) {
+      $("#search").value = state.query;
+    }
+    const nodeExists = state.selectedNode && graphNodes().some((node) => node.id === state.selectedNode);
+    if (nodeExists) {
+      state.mode = "graph";
+      if (!filteredGraphNodes().some((node) => node.id === state.selectedNode)) {
+        state.graphFilter = "all";
+      }
+    } else {
+      state.selectedNode = route[route.length - 1] || graphNodes()[0]?.id || null;
+    }
     const verification = await verifyLedger(ledger);
     renderMetrics(verification);
     renderLinks();
     renderAll();
+    syncUrl();
     bindEvents();
   } catch (error) {
     setText("#verify-state", "Load failed");

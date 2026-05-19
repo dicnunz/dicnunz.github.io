@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T07:35:25Z",
+  "updated_at": "2026-05-19T07:43:55Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -769,13 +769,15 @@
       "type": "public-proof",
       "status": "done",
       "priority": "P0",
-      "summary": "Cleanroom source now validates and renders a public-safe interview question branching drill with seven source-backed objection routes: tenure gap, technical depth, workshop enablement, product judgment, safety boundary, customer-adoption readiness, and next-step clarity. It preserves no-customer, no-affiliation, no-revenue, no-employment, and no-outbound gates.",
+      "summary": "Cleanroom source and public Pages now validate, render, and publish a public-safe interview question branching drill with seven source-backed objection routes: tenure gap, technical depth, workshop enablement, product judgment, safety boundary, customer-adoption readiness, and next-step clarity. It preserves no-customer, no-affiliation, no-revenue, no-employment, and no-outbound gates.",
       "evidence": [
         "https://github.com/dicnunz/cleanroom-intelligence-works/commit/45b9e43",
         "cleanroom-run:26083011070-success",
         "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/interview_question_branching_drill.json",
         "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-interview-question-branching-drill.md",
-        "https://dicnunz.github.io/ai-coding-interview-question-branching-drill/"
+        "https://dicnunz.github.io/ai-coding-interview-question-branching-drill/",
+        "commit:7d78086",
+        "pages-run:26083510350-success"
       ],
       "next": [
         "Use the drill as an interview answer router only; do not treat it as real interview performance, customer deployment evidence, or permission to send outreach before the gate."

@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-19T07:35:43Z",
+  "generated_at": "2026-05-19T07:44:07Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
-    "records": 46,
-    "latest_hash": "8e8c4d1b65df2518feed8a88495a775eed2832b6506a1326aa50a3f0dc3b297d",
-    "latest_action": "added interview question branching drill",
-    "source_latest_hash": "21661febf3a72260d0fe2775195e34413a2aed13a41bf1b80923656430e2da9a"
+    "records": 47,
+    "latest_hash": "274cf5407fcd811ea3bf3992dce4c70a7ad9e3237abad073598b48194a1f8322",
+    "latest_action": "published interview branching proof page",
+    "source_latest_hash": "93fa4f183a458c663cf8541ff4a533722e91ed765259bb4ddaec047c67d86cd3"
   },
   "graph": {
     "nodes": 47,
@@ -18,7 +18,7 @@
       "next": 1,
       "watch": 1
     },
-    "updated_at": "2026-05-19T07:35:25Z"
+    "updated_at": "2026-05-19T07:43:55Z"
   },
   "public_urls": {
     "proof_brief": "https://dicnunz.github.io/openai-codex-proof/",

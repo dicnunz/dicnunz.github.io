@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T04:44:33Z",
+  "updated_at": "2026-05-19T04:51:00Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -527,6 +527,24 @@
       ],
       "next": [
         "Use node links in reviewer routes instead of asking someone to manually navigate the graph."
+      ]
+    },
+    {
+      "id": "post-workshop-handoff-receipt-path",
+      "title": "Post-workshop handoff receipt path",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Cleanroom receipt tool now validates and renders post-workshop handoffs with SDLC friction deltas, safety gates, model/tool feedback, next owner, and next check.",
+      "evidence": [
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/d4811e67a96a3d388640daeef12823d176f20297",
+        "cleanroom-run:26076874144-success",
+        "https://dicnunz.github.io/ai-coding-workflow-receipt-reference/",
+        "commit:7f1352e",
+        "pages-run:26076905697-success"
+      ],
+      "next": [
+        "Use handoff fixture to show how a Codex workshop becomes an inspectable follow-up packet instead of a transcript."
       ]
     }
   ],
@@ -1370,6 +1388,30 @@
       "to": "warm-referral-route",
       "relation": "sharpens_followup",
       "weight": 3
+    },
+    {
+      "from": "ai-coding-workflow-receipt-reference",
+      "to": "post-workshop-handoff-receipt-path",
+      "relation": "extends",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-workshop",
+      "to": "post-workshop-handoff-receipt-path",
+      "relation": "needs_handoff",
+      "weight": 4
+    },
+    {
+      "from": "post-workshop-handoff-receipt-path",
+      "to": "openai-reviewer-digest",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "post-workshop-handoff-receipt-path",
+      "to": "warm-referral-route",
+      "relation": "sharpens_followup",
+      "weight": 3
     }
   ],
   "views": {
@@ -1388,6 +1430,7 @@
       "ai-coding-deployment-sample-run",
       "ai-coding-workflow-receipt-reference",
       "deployment-feedback-receipt-fixtures",
+      "post-workshop-handoff-receipt-path",
       "openai-30-day-field-trial-plan",
       "openai-interview-conversion-packet",
       "openai-reviewer-digest",

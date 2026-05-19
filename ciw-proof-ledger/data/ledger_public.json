@@ -317,5 +317,16 @@
     "source_hash": "af5b3e7aa32d924dd42f1a0a09c97462bf62cbd3a8b897855ddcc895fda472e5",
     "prev_hash": "28dd6a1604633309170c8421b77944e76d0302649fc52cbe4c8b5564de8b750b",
     "hash": "f3ae508292fce3b633bbc0be0fba892809b0eadf2f2dc167410dcabd25347c67"
+  },
+  {
+    "index": 29,
+    "timestamp": "2026-05-19T04:51:05+00:00",
+    "actor": "Codex",
+    "action": "published post-workshop handoff receipt path",
+    "details": "Cleanroom source commit d4811e6 adds examples/post_workshop_handoff_input.json, docs/ai-coding-post-workshop-handoff.md, validate-handoff and handoff CLI commands, unit tests, and verify_public_pack coverage for SDLC friction deltas, safety gates, model/tool feedback, next owner, and next check. Cleanroom run 26076874144 succeeded. Pages commit 7f1352e updated the workflow receipt reference and proof brief, run 26076905697 succeeded, and live checks confirmed post-workshop handoff, validate-handoff, SDLC friction deltas, and d4811e6.",
+    "visibility": "public projection",
+    "source_hash": "4df597dbba86cd0db5d895c7eb045b0b3c82dc0bc3d87afab5bd55e703f29e9b",
+    "prev_hash": "f3ae508292fce3b633bbc0be0fba892809b0eadf2f2dc167410dcabd25347c67",
+    "hash": "35de71d20a16d28f492dbe7b3c471e666e4632a765e622ff42df681b198fa261"
   }
 ]

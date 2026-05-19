@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Interview Question Branching Drill</title>
+    <meta
+      name="description"
+      content="A public-safe Cleanroom Intelligence Works drill that routes likely hiring-manager objections to source-backed answers without customer, affiliation, revenue, or employment overclaim."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Interview Question Branching Drill">
+    <meta
+      property="og:description"
+      content="Seven hard questions, one source-backed answer route, and explicit no-customer, no-affiliation, no-outbound gates."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-interview-question-branching-drill/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-interview-question-branching-drill/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .branch-hero h1 {
+        max-width: min(880px, 100%);
+        font-size: clamp(2.45rem, 6.7vw, 4.9rem);
+        text-wrap: balance;
+      }
+
+      .branch-hero .claim {
+        max-width: min(650px, 100%);
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile,
+      .branch-list li,
+      .gate-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .score-tile {
+        padding: 14px;
+      }
+
+      .score-tile strong,
+      .branch-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.45rem;
+        font-weight: 760;
+      }
+
+      .branch-list,
+      .gate-list,
+      .command-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .branch-list li {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.62fr) minmax(220px, 0.38fr);
+        gap: 14px;
+        padding: 14px;
+      }
+
+      .branch-list b {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .branch-list span,
+      .gate-list span,
+      .command-list,
+      .boundary-note {
+        color: var(--muted);
+      }
+
+      .branch-list p,
+      .gate-list p {
+        margin: 6px 0 0;
+      }
+
+      .gate-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gate-list li {
+        padding: 14px;
+      }
+
+      .command-list {
+        padding-left: 18px;
+        list-style: disc;
+      }
+
+      .command-list code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .topbar,
+        .intro,
+        .section,
+        .footer {
+          width: calc(100vw - 32px);
+          max-width: calc(100vw - 32px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+          padding: 12px 0;
+        }
+
+        nav {
+          justify-content: flex-start;
+          gap: 12px;
+        }
+
+        .branch-hero h1 {
+          max-width: 12ch;
+          font-size: clamp(2.1rem, 10.2vw, 3rem);
+          line-height: 1;
+        }
+
+        .branch-hero .claim {
+          font-size: 1rem;
+        }
+
+        .score-strip,
+        .branch-list li,
+        .gate-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../openai-codex-route-index/">Route index</a>
+        <a href="../ciw-proof-ledger/?preset=interview-branching">Graph node</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/interview_question_branching_drill.json">Fixture</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro branch-hero" aria-labelledby="intro-title">
+        <p class="meta">Interview drill · checked May 19, 2026</p>
+        <h1 id="intro-title">Seven hard questions, no soft claims.</h1>
+        <p class="claim">
+          The drill routes likely hiring-manager objections to source-backed answers: 31/35 score, seven required role signals,
+          one watch branch for future work, and explicit no-customer, no-affiliation, no-employment, no-revenue, and no-outbound gates.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="score-title">
+        <div class="section-label">
+          <p class="meta">Result</p>
+          <h2 id="score-title">Current fixture</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average</strong>
+            <span>4.4/5</span>
+          </div>
+          <div class="score-tile">
+            <strong>Branches</strong>
+            <span>7</span>
+          </div>
+          <div class="score-tile">
+            <strong>Blocked</strong>
+            <span>0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="branches-title">
+        <div class="section-label">
+          <p class="meta">Router</p>
+          <h2 id="branches-title">Objection branches</h2>
+        </div>
+        <ol class="branch-list">
+          <li>
+            <span><strong>role_tenure_gap</strong><b>5+ year post-sales gap</b>Answer with the field plan, scorecard, handoff, receipt validators, and feedback export. Claim ramp speed and mechanism quality, not years of customer ownership.</span>
+            <span>Proof: <a href="../openai-codex-30-day-plan/">30-day field plan</a>. Limit: no customer deployment history or enterprise-ownership claim.</span>
+          </li>
+          <li>
+            <span><strong>technical_depth</strong><b>Copy or runnable code?</b>Start at the validator path: fixtures, deterministic checks, renderers, unit tests, ledger verification, and the public-pack verifier.</span>
+            <span>Proof: <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/tools/deployment_receipt.py">deployment_receipt.py</a>. Limit: no proprietary model, private internal, or production-impact claim.</span>
+          </li>
+          <li>
+            <span><strong>workshop_enablement</strong><b>Solo console or team enablement?</b>Use the post-workshop handoff: archetype, friction delta, safety gates, model/tool feedback, decision state, next owner, and assets.</span>
+            <span>Proof: <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-post-workshop-handoff.md">post-workshop handoff</a>. Limit: workshop-design proof, not a completed customer session.</span>
+          </li>
+          <li>
+            <span><strong>product_judgment</strong><b>Where is product sense?</b>Route to simulated deployment signals by bucket, severity, recommended action, and promotion rule.</span>
+            <span>Proof: <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-product-feedback-export.md">product feedback export</a>. Limit: simulated and public-safe, not customer feedback.</span>
+          </li>
+          <li>
+            <span><strong>safety_boundary</strong><b>How does it avoid confusion?</b>Start with the cleanroom policy and verifier gates: no copied brand surface, private data, customer claim, employment claim, or premature outreach.</span>
+            <span>Proof: <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/legal/OPENAI_NONCONFUSION_POLICY.md">non-confusion policy</a>. Limit: engineering boundary, not legal advice.</span>
+          </li>
+          <li>
+            <span><strong>customer_adoption_experience</strong><b>What if a real deployment appears?</b>Open the field plan and scorecard: intake, demo, workshop, receipt handoff, product-feedback export, and release gates.</span>
+            <span>Proof: <a href="../ai-coding-field-trial-scorecard/">field-trial scorecard</a>. Limit: readiness architecture, not real adoption evidence.</span>
+          </li>
+          <li>
+            <span><strong>current_next_step</strong><b>How does the system avoid random artifacts?</b>Show the autonomy selector and progress web. It chooses the next safe branch, blocks shipped modes, and preserves the no-outbound gate.</span>
+            <span>Proof: <a href="../ciw-proof-ledger/?preset=interview-branching">branching graph node</a>. Limit: no outreach or hiring claim before the gate changes.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="verify-title">
+        <div class="section-label">
+          <p class="meta">Source</p>
+          <h2 id="verify-title">Verifier path</h2>
+        </div>
+        <ul class="command-list">
+          <li><code>python3 tools/deployment_receipt.py validate-interview-branching --input examples/interview_question_branching_drill.json</code></li>
+          <li><code>python3 tools/deployment_receipt.py interview-branching --input examples/interview_question_branching_drill.json</code></li>
+          <li><code>python3 -m unittest tests/test_deployment_receipt.py</code></li>
+          <li><code>python3 scripts/verify_public_pack.py</code></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Gates</p>
+          <h2 id="gates-title">Release boundary</h2>
+        </div>
+        <ul class="gate-list">
+          <li>
+            <strong>Public-safe data</strong>
+            <p>All branches use public URLs, repository docs, or synthetic fixture text.</p>
+          </li>
+          <li>
+            <strong>No customer deployment</strong>
+            <p>The adoption answers stay readiness proof until separate field evidence exists.</p>
+          </li>
+          <li>
+            <strong>No affiliation or employment claim</strong>
+            <p>The page does not claim OpenAI affiliation, endorsement, employment, or interview status.</p>
+          </li>
+          <li>
+            <strong>No outreach before 2026-05-26</strong>
+            <p>The page improves readiness only; sending remains date-gated unless a real reply or explicit override appears.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">What this proves</h2>
+        </div>
+        <div class="boundary-note">
+          It proves source-backed answer routing under pressure. It does not prove real interview performance, customer deployment,
+          legal formation, revenue, OpenAI employment, endorsement, authorization, or official status.
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

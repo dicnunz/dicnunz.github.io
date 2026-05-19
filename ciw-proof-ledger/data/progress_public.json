@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T07:20:54Z",
+  "updated_at": "2026-05-19T07:35:25Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -767,14 +767,32 @@
       "id": "interview-question-branching-drill",
       "title": "Interview question branching drill",
       "type": "public-proof",
-      "status": "next",
+      "status": "done",
       "priority": "P0",
-      "summary": "Next safe proof branch: route likely hiring-manager objections through source-backed answers without inflating customer, affiliation, revenue, or employment claims.",
+      "summary": "Cleanroom source now validates and renders a public-safe interview question branching drill with seven source-backed objection routes: tenure gap, technical depth, workshop enablement, product judgment, safety boundary, customer-adoption readiness, and next-step clarity. It preserves no-customer, no-affiliation, no-revenue, no-employment, and no-outbound gates.",
       "evidence": [
-        "planned-by:reviewer-time-to-understand-benchmark"
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/45b9e43",
+        "cleanroom-run:26083011070-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/interview_question_branching_drill.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-interview-question-branching-drill.md",
+        "https://dicnunz.github.io/ai-coding-interview-question-branching-drill/"
       ],
       "next": [
-        "Build a fixture-backed objection-routing drill before any post-2026-05-26 follow-up, unless a recruiter reply changes the branch."
+        "Use the drill as an interview answer router only; do not treat it as real interview performance, customer deployment evidence, or permission to send outreach before the gate."
+      ]
+    },
+    {
+      "id": "source-to-answer-index",
+      "title": "Source-to-answer proof index",
+      "type": "public-proof",
+      "status": "next",
+      "priority": "P0",
+      "summary": "Next safe proof branch: compress shipped evidence into a question-to-source index so a recruiter or hiring manager can jump from objection to exact public proof without new claims or outbound.",
+      "evidence": [
+        "planned-by:interview-question-branching-drill"
+      ],
+      "next": [
+        "Build a public-safe answer index only after the branching page, graph, ledger, digest, and autonomy checks are green."
       ]
     }
   ],
@@ -1954,6 +1972,42 @@
       "to": "interview-question-branching-drill",
       "relation": "unlocks_objection_drill",
       "weight": 5
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "source-to-answer-index",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "source-to-answer-index",
+      "relation": "next-growth-target",
+      "weight": 4
+    },
+    {
+      "from": "interview-question-branching-drill",
+      "to": "source-to-answer-index",
+      "relation": "unlocks_answer_index",
+      "weight": 5
+    },
+    {
+      "from": "interview-question-branching-drill",
+      "to": "openai-reviewer-digest",
+      "relation": "strengthens_digest",
+      "weight": 5
+    },
+    {
+      "from": "interview-question-branching-drill",
+      "to": "warm-referral-route",
+      "relation": "sharpens_followup",
+      "weight": 4
+    },
+    {
+      "from": "interview-question-branching-drill",
+      "to": "public-openai-codex-route-index",
+      "relation": "adds_objection_route",
+      "weight": 5
     }
   ],
   "views": {
@@ -1989,11 +2043,12 @@
       "autonomous-growth-readiness-selector",
       "reviewer-time-to-understand-benchmark",
       "interview-question-branching-drill",
+      "source-to-answer-index",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
-      "interview-question-branching-drill",
+      "source-to-answer-index",
       "warm-referral-route",
       "legal-entity-review"
     ]

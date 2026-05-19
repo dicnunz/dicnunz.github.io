@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T03:29:16Z",
+  "updated_at": "2026-05-19T03:39:10Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -381,6 +381,25 @@
         "commit:9020efe",
         "pages-run:26074365289-success",
         "cleanroom-run:26074328426-success"
+      ],
+      "next": []
+    },
+    {
+      "id": "ai-coding-deployment-field-kit",
+      "title": "AI Coding Deployment Field Kit",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Reusable deployment templates for intake, scope cards, demo receipts, failure taxonomy, ready/repair/reject decisions, and product feedback packets.",
+      "evidence": [
+        "applications/openai/AI_CODING_DEPLOYMENT_FIELD_KIT.md",
+        "https://dicnunz.github.io/ai-coding-deployment-field-kit/",
+        "local path withheld",
+        "commit:b401f49",
+        "cleanroom-run:26074655244-success",
+        "https://openai.com/careers/ai-deployment-engineer-codex-remote-us/",
+        "commit:62708cb",
+        "pages-run:26074679474-success"
       ],
       "next": []
     }
@@ -853,6 +872,66 @@
       "to": "openai-30-day-field-trial-plan",
       "relation": "mirrors-source",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "ai-coding-deployment-field-kit",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "target-role-ai-deployment-engineer-codex",
+      "to": "ai-coding-deployment-field-kit",
+      "relation": "targets",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-workshop",
+      "to": "ai-coding-deployment-field-kit",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-patterns",
+      "to": "ai-coding-deployment-field-kit",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-field-kit",
+      "to": "openai-30-day-field-trial-plan",
+      "relation": "concretizes",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-field-kit",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-field-kit",
+      "to": "openai-interview-conversion-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "ai-coding-deployment-field-kit",
+      "to": "openai-review-window-packet",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "ai-coding-deployment-field-kit",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "ai-coding-deployment-field-kit",
+      "relation": "mirrors-source",
+      "weight": 4
     }
   ],
   "views": {
@@ -866,6 +945,7 @@
       "application-submit",
       "openai-application-receipt",
       "openai-review-window-packet",
+      "ai-coding-deployment-field-kit",
       "openai-30-day-field-trial-plan",
       "openai-interview-conversion-packet",
       "warm-referral-route"

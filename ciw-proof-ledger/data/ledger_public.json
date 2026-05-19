@@ -229,5 +229,16 @@
     "source_hash": "d6ea4747643882fb8648902e625fa4b892955139691616623a80db53ae8b84a1",
     "prev_hash": "615757e3c1e79d9dca5c2200a3eccd425fdd22ea138ff9975368ed4cb2bad737",
     "hash": "1a2148ebcd50b038de5a42e63ad438c0f4eae2385f8dfbf4ae7c819f9922a693"
+  },
+  {
+    "index": 21,
+    "timestamp": "2026-05-19T03:39:18+00:00",
+    "actor": "codex",
+    "action": "published AI coding deployment field kit",
+    "details": "Created applications/openai/AI_CODING_DEPLOYMENT_FIELD_KIT.md, published https://dicnunz.github.io/ai-coding-deployment-field-kit/ at Pages commit 62708cb with Pages run 26074679474 success, added cleanroom source doc docs/ai-coding-deployment-field-kit.md at commit b401f49 with GitHub Actions run 26074655244 success, linked the field kit from the proof brief and 30-day plan, and added graph node ai-coding-deployment-field-kit.",
+    "visibility": "public projection",
+    "source_hash": "62d7b0f867dc81b028b30d0ce3613145a677c9b1b7c4dd0825957e2ec5875de0",
+    "prev_hash": "1a2148ebcd50b038de5a42e63ad438c0f4eae2385f8dfbf4ae7c819f9922a693",
+    "hash": "ff281b3ab6844b7b096af58048c73e59058564b51ff3d8cbd77c73bfcc4909d6"
   }
 ]

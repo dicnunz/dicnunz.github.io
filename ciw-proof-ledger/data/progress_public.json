@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T02:14:10Z",
+  "updated_at": "2026-05-19T02:24:46Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -208,7 +208,7 @@
       "id": "product-demo-depth",
       "title": "Product demo depth",
       "type": "product",
-      "status": "next",
+      "status": "done",
       "priority": "P1",
       "summary": "Deepen Proof Ledger from receipt CLI into a fuller demo surface if the hiring route needs more product proof.",
       "evidence": [
@@ -262,6 +262,22 @@
       ],
       "next": [
         "Use the proof brief for referral or recruiter follow-up while the submitted application is under review."
+      ]
+    },
+    {
+      "id": "public-proof-ledger-inspector",
+      "title": "Public Proof Ledger inspector",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public GitHub Pages inspector for the CIW receipt chain and progress graph, with browser-side hash verification over a public-safe ledger projection.",
+      "evidence": [
+        "https://dicnunz.github.io/ciw-proof-ledger/",
+        "commit:86457beef10048eb6d86f896b08330b5a978a98d",
+        "pages-run:26072322150 success"
+      ],
+      "next": [
+        "Use as the product-depth proof link when a recruiter or referral contact needs more than the brief."
       ]
     }
   ],
@@ -445,12 +461,49 @@
       "to": "openai-application-receipt",
       "relation": "supports",
       "weight": 4
+    },
+    {
+      "from": "proof-ledger",
+      "to": "public-proof-ledger-inspector",
+      "relation": "powers",
+      "weight": 5
+    },
+    {
+      "from": "progress-web",
+      "to": "public-proof-ledger-inspector",
+      "relation": "maps",
+      "weight": 5
+    },
+    {
+      "from": "public-proof-ledger-inspector",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "public-proof-ledger-inspector",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "public-proof-ledger-inspector",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "product-demo-depth",
+      "to": "public-proof-ledger-inspector",
+      "relation": "produces",
+      "weight": 5
     }
   ],
   "views": {
     "active_path": [
       "goal-openai-role",
       "progress-web",
+      "public-proof-ledger-inspector",
       "public-openai-codex-proof-brief",
       "application-submit",
       "openai-application-receipt",
@@ -458,7 +511,6 @@
     ],
     "next_branches": [
       "warm-referral-route",
-      "product-demo-depth",
       "legal-entity-review"
     ]
   }

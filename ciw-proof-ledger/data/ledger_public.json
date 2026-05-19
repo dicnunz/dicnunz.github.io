@@ -350,5 +350,16 @@
     "source_hash": "48254fcb3fbb5033d67c562caaf503a52537f7b2f477ba72a198883a59560378",
     "prev_hash": "128b2f957d219f2ea0d31db3e4a668c9d50d3a0f4a6561f12bc5d2f893b95bb6",
     "hash": "4f5fe626852285939425de2c1a2541d5e68e87fdf0c39a792dfa90862bb777e8"
+  },
+  {
+    "index": 32,
+    "timestamp": "2026-05-19T05:12:45+00:00",
+    "actor": "Codex",
+    "action": "published ready second-service handoff fixture",
+    "details": "Added a ready-state second-service post-workshop handoff fixture to the cleanroom source repo, proving the earlier repair-state handoff can carry acceptance criteria into a repeated public-safe service surface. Cleanroom commit 3a418a1 adds examples/post_workshop_handoff_ready_input.json, verifier coverage, docs, and tests; Actions run 26077570626 succeeded. Pages commit e3e1b52 updated the workflow receipt reference and proof brief; Pages run 26077620174 succeeded. Live checks confirmed post_workshop_handoff_ready_input, ready second-service handoff, commit 3a418a1, repair-state first pass, ready-state repeat, and proof brief receipt text.",
+    "visibility": "public projection",
+    "source_hash": "7964ddf22d32a7252a300382c2a6464da72bcb2d25d73e93c86c1c78b7f13bed",
+    "prev_hash": "4f5fe626852285939425de2c1a2541d5e68e87fdf0c39a792dfa90862bb777e8",
+    "hash": "8682d12d0e5f573e4455227eacd2709756aa35e6a8628fa75d642e499de52ddd"
   }
 ]

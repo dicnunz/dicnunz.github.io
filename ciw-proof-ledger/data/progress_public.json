@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T05:03:54Z",
+  "updated_at": "2026-05-19T05:12:40Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -578,6 +578,24 @@
       ],
       "next": [
         "Use the preset URLs as reviewer entry points after the 2026-05-26 no-reply gate only if outreach is still useful."
+      ]
+    },
+    {
+      "id": "ready-second-service-handoff-fixture",
+      "title": "Ready second-service handoff fixture",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Cleanroom receipt tool now validates and renders a ready-state second-service post-workshop handoff, proving the repair-state handoff can carry acceptance criteria into a repeat service run.",
+      "evidence": [
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/3a418a100583039868130ed20c921760fca33bb3",
+        "cleanroom-run:26077570626-success",
+        "https://dicnunz.github.io/ai-coding-workflow-receipt-reference/?v=e3e1b52",
+        "commit:e3e1b52",
+        "pages-run:26077620174-success"
+      ],
+      "next": [
+        "Use this as the stronger post-workshop proof node in reviewer routes; do not send outreach before the 2026-05-26 gate."
       ]
     }
   ],
@@ -1493,6 +1511,30 @@
       "to": "warm-referral-route",
       "relation": "sharpens_followup",
       "weight": 3
+    },
+    {
+      "from": "post-workshop-handoff-receipt-path",
+      "to": "ready-second-service-handoff-fixture",
+      "relation": "advances_to",
+      "weight": 5
+    },
+    {
+      "from": "ready-second-service-handoff-fixture",
+      "to": "ai-coding-workflow-receipt-reference",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "ready-second-service-handoff-fixture",
+      "to": "openai-reviewer-digest",
+      "relation": "should_refresh",
+      "weight": 3
+    },
+    {
+      "from": "ready-second-service-handoff-fixture",
+      "to": "warm-referral-route",
+      "relation": "strengthens_followup",
+      "weight": 3
     }
   ],
   "views": {
@@ -1512,6 +1554,7 @@
       "ai-coding-workflow-receipt-reference",
       "deployment-feedback-receipt-fixtures",
       "post-workshop-handoff-receipt-path",
+      "ready-second-service-handoff-fixture",
       "openai-30-day-field-trial-plan",
       "openai-interview-conversion-packet",
       "openai-reviewer-digest",

@@ -834,5 +834,16 @@
     "source_hash": "06af4c79f1c8ded9a20831bd3b907139359630d518236887969ff0735a7ac35a",
     "prev_hash": "ee07abd2c723fb4e7e5076c6a5132d5d427e669bb256921208ddb0d342192556",
     "hash": "e9a6ef829645704446fd84157ad5c291693ebce987abe07d7275f9bcee298058"
+  },
+  {
+    "index": 76,
+    "timestamp": "2026-05-19T12:26:41+00:00",
+    "actor": "codex",
+    "action": "hardened autonomy status freshness gate",
+    "details": "Added an autonomy status freshness warning check that compares the public CIW autonomy status page against current public ledger and graph counts, latest action, and source hash prefix; added neutral role-review URLs to the public URL heartbeat set; refreshed README boundary toward the neutral date-gated route; no outbound or legal action was taken.",
+    "visibility": "public projection",
+    "source_hash": "f22d0f1cc86a4a2696bc048f465a2d286dc8ffe26146a57aa76da79d791b6317",
+    "prev_hash": "e9a6ef829645704446fd84157ad5c291693ebce987abe07d7275f9bcee298058",
+    "hash": "a80fbf7dd8259cdd350e0ae372c3572dd805ccb370853f5660c810918125bf2a"
   }
 ]

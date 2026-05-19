@@ -130,7 +130,8 @@
     <header class="topbar">
       <a class="brand" href="../">Nicholas Dunzelman</a>
       <nav aria-label="Primary links">
-        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../ciw-role-review/">Role review</a>
+        <a href="../ciw-review-digest/">Reviewer digest</a>
         <a href="../ciw-proof-ledger/?preset=autonomy">Autonomy graph</a>
         <a href="../ai-coding-source-to-answer-index/">Source index</a>
         <a href="../ai-coding-interview-question-branching-drill/">Branching drill</a>
@@ -144,7 +145,7 @@
         <h1 id="intro-title"><span>The proof lab now</span><span>checks the scheduler</span><span>before it trusts</span><span>the loop.</span></h1>
         <p class="claim">
           This is the public-safe status layer for Cleanroom Intelligence Works: scheduler health, verifier heartbeat,
-          live role-source checks, scorecard gate, interview-branching gate, source-to-answer gate, public-page checks,
+          live role-source checks, scorecard gate, interview-branching gate, source-to-answer gate, autonomy status freshness, public-page checks,
           proof-route cold-read gate, no-send follow-up gate, draft-evaluation gate, staleness sentinel, renewal drill,
           regression suite, security review packet, outcome watch, objective completion audit, and hard stops that prevent fake company claims or premature outreach.
         </p>
@@ -246,6 +247,10 @@
             <span>The heartbeat now fails if the operating runbooks claim a stale selected branch instead of the live audit-only growth plan.</span>
           </li>
           <li>
+            <strong>Autonomy status freshness</strong>
+            <span>The heartbeat compares this page to the current inspector summary, so stale public graph and ledger counts become a visible warning.</span>
+          </li>
+          <li>
             <strong>Completion audit</strong>
             <span>The objective audit validates and renders successfully, keeping the active goal incomplete until OpenAI-side outcome evidence exists.</span>
           </li>
@@ -263,11 +268,11 @@
           </li>
           <li>
             <strong>Graph and ledger</strong>
-            <span>Progress graph validation passed with 60 nodes and 236 edges; the hash-chained ledger verified 71 records.</span>
+            <span>Progress graph validation passed with 64 nodes and 254 edges; the hash-chained ledger verified 77 records.</span>
           </li>
           <li>
             <strong>Public URLs</strong>
-            <span>Proof brief, ledger inspector, receipt reference, scorecard, assessment drill, reviewer benchmark, branching drill, source index, cold-read route, no-send kit, draft evaluator, staleness sentinel, renewal drill, regression suite, reviewer digest, and route index are in the public check set.</span>
+            <span>Neutral role review route, neutral reviewer digest, proof brief, ledger inspector, receipt reference, scorecard, assessment drill, reviewer benchmark, branching drill, source index, cold-read route, no-send kit, draft evaluator, staleness sentinel, renewal drill, regression suite, legacy reviewer digest, and route index are in the public check set.</span>
           </li>
         </ol>
       </section>
@@ -318,6 +323,9 @@
           <li><a href="../ciw-proof-ledger/?view=graph&node=outcome-refresh-runbook">Outcome refresh runbook in the public graph</a></li>
           <li><a href="../ciw-proof-ledger/?view=graph&node=outcome-date-gate-simulation">Outcome date-gate simulation in the public graph</a></li>
           <li><a href="../ciw-proof-ledger/?view=graph&node=progress-graph-next-replacement">Progress graph next-step replacement in the public graph</a></li>
+          <li><a href="../ciw-proof-ledger/?view=graph&node=autonomy-status-freshness-gate">Autonomy status freshness gate in the public graph</a></li>
+          <li><a href="../ciw-role-review/">Neutral role-review route</a></li>
+          <li><a href="../ciw-review-digest/">Neutral reviewer digest</a></li>
           <li><a href="../openai-codex-objective-completion-audit/">Objective completion audit page</a></li>
           <li><a href="../openai-codex-outcome-watch/">OpenAI-side outcome watch page</a></li>
           <li><a href="../ai-coding-proof-route-staleness-sentinel/">Proof-route staleness sentinel</a></li>
@@ -325,8 +333,9 @@
           <li><a href="../ai-coding-proof-route-regression-suite/">Proof-route regression suite</a></li>
           <li><a href="../ai-coding-follow-up-draft-evaluation-harness/">Follow-up draft evaluation harness</a></li>
           <li><a href="../ai-coding-no-send-follow-up-decision-kit/">No-send follow-up decision kit</a></li>
-          <li><a href="../ciw-proof-ledger/data/summary.json">Public ledger summary with 71 projected records</a></li>
-          <li><a href="../openai-codex-review-digest/">Reviewer digest with latest graph-hardening receipt</a></li>
+          <li><a href="../ciw-proof-ledger/data/summary.json">Public ledger summary with 77 projected records</a></li>
+          <li>Latest public-source receipt: hardened autonomy status freshness gate (<code>f22d0f1c</code> source hash prefix).</li>
+          <li><a href="../ciw-review-digest/">Reviewer digest with latest autonomy-status freshness receipt</a></li>
           <li><a href="../ai-coding-proof-route-cold-read-simulation/">Proof-route cold-read simulation</a></li>
           <li><a href="../ai-coding-source-to-answer-index/">Source-to-answer index</a></li>
           <li><a href="../ai-coding-interview-question-branching-drill/">Interview question branching drill</a></li>

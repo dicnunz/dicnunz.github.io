@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T12:14:56Z",
+  "updated_at": "2026-05-19T12:26:31Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1089,6 +1089,22 @@
       ],
       "next": [
         "Use this as the first public link in post-gate reviewer or referral packets instead of starting from role-specific legacy URLs."
+      ]
+    },
+    {
+      "id": "autonomy-status-freshness-gate",
+      "title": "Autonomy status freshness gate",
+      "type": "proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Autonomy heartbeat now compares the public status page against current graph and ledger counts, latest action, and source hash prefix so stale autonomy claims become a visible warning instead of quiet drift.",
+      "evidence": [
+        "tools/ciw_autonomy.py",
+        "tests/test_ciw_autonomy.py",
+        "https://dicnunz.github.io/ciw-autonomy-status/"
+      ],
+      "next": [
+        "Refresh and republish the autonomy status page after any graph or ledger change that changes public counts or latest receipt."
       ]
     }
   ],
@@ -2591,6 +2607,30 @@
       "from": "neutral-public-role-review-route",
       "to": "public-openai-codex-route-index",
       "relation": "supersedes_entrypoint",
+      "weight": 3
+    },
+    {
+      "from": "autonomy-status-freshness-gate",
+      "to": "autonomy-scheduler-health",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "autonomy-status-freshness-gate",
+      "to": "public-proof-ledger-inspector",
+      "relation": "verifies_projection",
+      "weight": 4
+    },
+    {
+      "from": "autonomy-status-freshness-gate",
+      "to": "neutral-public-role-review-route",
+      "relation": "protects_route",
+      "weight": 3
+    },
+    {
+      "from": "autonomy-status-freshness-gate",
+      "to": "proof-route-regression-suite",
+      "relation": "strengthens",
       "weight": 3
     }
   ],

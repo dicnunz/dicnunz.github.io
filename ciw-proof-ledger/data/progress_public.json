@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T03:16:33Z",
+  "updated_at": "2026-05-19T03:29:16Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -290,7 +290,7 @@
       "type": "hiring-route",
       "status": "done",
       "priority": "P0",
-      "summary": "No-spam recruiter/referral packet for the post-submission review window, refreshed against official OpenAI role pages, Gmail state, and the new Proof Ledger inspector.",
+      "summary": "No-spam recruiter/referral packet for the post-submission review window, refreshed against OpenAI public role pages, Gmail state, and the new Proof Ledger inspector.",
       "evidence": [
         "applications/openai/OPENAI_REVIEW_WINDOW_PACKET.md",
         "https://openai.com/careers/ai-deployment-engineer-codex-remote-us/",
@@ -361,6 +361,26 @@
         "applications/openai/OPENAI_INTERVIEW_CONVERSION_PACKET.md",
         "scripts/verify_pack.py",
         "local path withheld"
+      ],
+      "next": []
+    },
+    {
+      "id": "openai-30-day-field-trial-plan",
+      "title": "OpenAI Codex 30-Day Field Trial Plan",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "First-month field plan that turns the target role into concrete intake, reference demos, workshop, receipt handoff, and product feedback deliverables.",
+      "evidence": [
+        "applications/openai/OPENAI_30_DAY_FIELD_TRIAL_PLAN.md",
+        "https://dicnunz.github.io/openai-codex-30-day-plan/",
+        "local path withheld",
+        "commit:6cda58a",
+        "https://openai.com/careers/ai-deployment-engineer-codex-remote-us/",
+        "https://openai.com/interview-guide/",
+        "commit:9020efe",
+        "pages-run:26074365289-success",
+        "cleanroom-run:26074328426-success"
       ],
       "next": []
     }
@@ -779,6 +799,60 @@
       "to": "warm-referral-route",
       "relation": "strengthens",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "openai-30-day-field-trial-plan",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "target-role-ai-deployment-engineer-codex",
+      "to": "openai-30-day-field-trial-plan",
+      "relation": "targets",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-workshop",
+      "to": "openai-30-day-field-trial-plan",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-patterns",
+      "to": "openai-30-day-field-trial-plan",
+      "relation": "feeds",
+      "weight": 4
+    },
+    {
+      "from": "openai-30-day-field-trial-plan",
+      "to": "public-openai-codex-proof-brief",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "openai-30-day-field-trial-plan",
+      "to": "openai-interview-conversion-packet",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "openai-30-day-field-trial-plan",
+      "to": "openai-review-window-packet",
+      "relation": "strengthens",
+      "weight": 4
+    },
+    {
+      "from": "openai-30-day-field-trial-plan",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 5
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "openai-30-day-field-trial-plan",
+      "relation": "mirrors-source",
+      "weight": 4
     }
   ],
   "views": {
@@ -792,6 +866,7 @@
       "application-submit",
       "openai-application-receipt",
       "openai-review-window-packet",
+      "openai-30-day-field-trial-plan",
       "openai-interview-conversion-packet",
       "warm-referral-route"
     ],

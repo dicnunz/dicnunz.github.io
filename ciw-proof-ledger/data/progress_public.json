@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T12:08:49Z",
+  "updated_at": "2026-05-19T12:14:56Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1074,6 +1074,21 @@
       ],
       "next": [
         "Keep private route evidence local and publish only redacted receipt/thread references."
+      ]
+    },
+    {
+      "id": "neutral-public-role-review-route",
+      "title": "Neutral public role-review route",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Protected-mark-light canonical entrypoint for future reviewer/referral packets; it uses a neutral CIW URL before routing into role-specific proof surfaces and hard boundaries.",
+      "evidence": [
+        "demo/role-review/index.html",
+        "https://dicnunz.github.io/ciw-role-review/"
+      ],
+      "next": [
+        "Use this as the first public link in post-gate reviewer or referral packets instead of starting from role-specific legacy URLs."
       ]
     }
   ],
@@ -2552,6 +2567,30 @@
       "from": "public-gmail-id-privacy-hardening",
       "to": "warm-referral-route",
       "relation": "protects",
+      "weight": 3
+    },
+    {
+      "from": "neutral-public-role-review-route",
+      "to": "legal-cleanroom-boundary",
+      "relation": "strengthens",
+      "weight": 3
+    },
+    {
+      "from": "neutral-public-role-review-route",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 3
+    },
+    {
+      "from": "neutral-public-role-review-route",
+      "to": "openai-reviewer-digest",
+      "relation": "routes_to",
+      "weight": 3
+    },
+    {
+      "from": "neutral-public-role-review-route",
+      "to": "public-openai-codex-route-index",
+      "relation": "supersedes_entrypoint",
       "weight": 3
     }
   ],

@@ -812,5 +812,16 @@
     "source_hash": "442266a516326ada650efd12d890556a94f7259a877258bb23aa0f11da062e72",
     "prev_hash": "c89e76c3504207fb92f065109f7c8a683577eecf648b8e2521395f2083a64563",
     "hash": "75ecc0c0a3b915288a61f6d615d21391f72890d42a76036fe2ccc2318918bf4e"
+  },
+  {
+    "index": 74,
+    "timestamp": "2026-05-19T12:14:48+00:00",
+    "actor": "Codex",
+    "action": "added neutral CIW role review route",
+    "details": "{\"changed\":[\"added demo/role-review/index.html as the neutral canonical public entrypoint\",\"changed reviewer digest canonical URL to ciw-review-digest\",\"added ciw-role-review as first inspect link\",\"updated warm referral route draft and blurb to use the neutral role-review URL first\",\"documented neutral URL preference in non-confusion policy\"],\"claim_boundary\":\"Nominative target-role references only; no affiliation, endorsement, employment, legal entity, customer, revenue, or OpenAI-side outcome claim\",\"no_outbound\":true,\"scope\":\"legal non-confusion and future reviewer leverage\"}",
+    "visibility": "public projection",
+    "source_hash": "a2c8886f860813d3aefec04e39dd42a5e49f78f9981ee17bbbaa11ed079fe7db",
+    "prev_hash": "75ecc0c0a3b915288a61f6d615d21391f72890d42a76036fe2ccc2318918bf4e",
+    "hash": "ee07abd2c723fb4e7e5076c6a5132d5d427e669bb256921208ddb0d342192556"
   }
 ]

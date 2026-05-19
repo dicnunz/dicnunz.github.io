@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-05-19T12:08:58Z",
+  "generated_at": "2026-05-19T12:15:04Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
-    "records": 74,
-    "latest_hash": "75ecc0c0a3b915288a61f6d615d21391f72890d42a76036fe2ccc2318918bf4e",
-    "latest_action": "hardened public Gmail ID privacy gate",
-    "source_latest_hash": "442266a516326ada650efd12d890556a94f7259a877258bb23aa0f11da062e72"
+    "records": 75,
+    "latest_hash": "ee07abd2c723fb4e7e5076c6a5132d5d427e669bb256921208ddb0d342192556",
+    "latest_action": "added neutral CIW role review route",
+    "source_latest_hash": "a2c8886f860813d3aefec04e39dd42a5e49f78f9981ee17bbbaa11ed079fe7db"
   },
   "graph": {
-    "nodes": 62,
-    "edges": 246,
+    "nodes": 63,
+    "edges": 250,
     "root": "goal-openai-role",
     "status_counts": {
       "active": 4,
-      "done": 55,
+      "done": 56,
       "watch": 3
     },
-    "updated_at": "2026-05-19T12:08:49Z"
+    "updated_at": "2026-05-19T12:14:56Z"
   },
   "public_urls": {
     "proof_brief": "https://dicnunz.github.io/openai-codex-proof/",

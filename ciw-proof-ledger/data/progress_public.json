@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T05:12:40Z",
+  "updated_at": "2026-05-19T05:19:22Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -596,6 +596,25 @@
       ],
       "next": [
         "Use this as the stronger post-workshop proof node in reviewer routes; do not send outreach before the 2026-05-26 gate."
+      ]
+    },
+    {
+      "id": "public-openai-codex-route-index",
+      "title": "Public OpenAI Codex route index",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public route index now gives reviewers the shortest safe path through the proof web: digest, ready handoff graph, runnable receipt reference, cleanroom source, and proof brief.",
+      "evidence": [
+        "https://dicnunz.github.io/openai-codex-route-index/?v=70df832",
+        "commit:70df832",
+        "pages-run:26077832031-success",
+        "https://dicnunz.github.io/ciw-proof-ledger/?v=70df832&preset=ready-handoff",
+        "https://openai.com/careers/ai-deployment-engineer-codex-remote-us/",
+        "https://openai.com/interview-guide/"
+      ],
+      "next": [
+        "Use this route only after the 2026-05-26 no-reply gate unless a recruiter/Cory reply appears or Nic explicitly overrides."
       ]
     }
   ],
@@ -1535,6 +1554,30 @@
       "to": "warm-referral-route",
       "relation": "strengthens_followup",
       "weight": 3
+    },
+    {
+      "from": "public-role-fit-preset-bundle",
+      "to": "public-openai-codex-route-index",
+      "relation": "enables",
+      "weight": 4
+    },
+    {
+      "from": "ready-second-service-handoff-fixture",
+      "to": "public-openai-codex-route-index",
+      "relation": "anchors",
+      "weight": 4
+    },
+    {
+      "from": "public-openai-codex-route-index",
+      "to": "openai-reviewer-digest",
+      "relation": "summarizes",
+      "weight": 3
+    },
+    {
+      "from": "public-openai-codex-route-index",
+      "to": "warm-referral-route",
+      "relation": "prepares_followup",
+      "weight": 3
     }
   ],
   "views": {
@@ -1560,6 +1603,7 @@
       "openai-reviewer-digest",
       "public-inspector-node-deeplinks",
       "public-role-fit-preset-bundle",
+      "public-openai-codex-route-index",
       "warm-referral-route"
     ],
     "next_branches": [

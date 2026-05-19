@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-05-19T05:13:05Z",
+  "generated_at": "2026-05-19T05:21:00Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
-    "records": 33,
-    "latest_hash": "8682d12d0e5f573e4455227eacd2709756aa35e6a8628fa75d642e499de52ddd",
-    "latest_action": "published ready second-service handoff fixture",
-    "source_latest_hash": "7964ddf22d32a7252a300382c2a6464da72bcb2d25d73e93c86c1c78b7f13bed"
+    "records": 34,
+    "latest_hash": "5a5bb99b812fb55f3edbd9ce5628bfe2149473ea2c6562c7f7a29600d7ae5976",
+    "latest_action": "published OpenAI Codex route index",
+    "source_latest_hash": "37a64951e0183e1f3203935966d9af0a604e903e499dd8f193b76fc009e5a6aa"
   },
   "graph": {
-    "nodes": 36,
-    "edges": 156,
+    "nodes": 37,
+    "edges": 160,
     "root": "goal-openai-role",
     "status_counts": {
       "active": 4,
-      "done": 31,
+      "done": 32,
       "watch": 1
     },
-    "updated_at": "2026-05-19T05:12:40Z"
+    "updated_at": "2026-05-19T05:19:22Z"
   },
   "public_urls": {
     "proof_brief": "https://dicnunz.github.io/openai-codex-proof/",
@@ -30,6 +30,7 @@
     "sample_run": "https://dicnunz.github.io/ai-coding-deployment-sample-run/",
     "workflow_receipt_reference": "https://dicnunz.github.io/ai-coding-workflow-receipt-reference/",
     "field_trial_plan": "https://dicnunz.github.io/openai-codex-30-day-plan/",
-    "reviewer_digest": "https://dicnunz.github.io/openai-codex-review-digest/"
+    "reviewer_digest": "https://dicnunz.github.io/openai-codex-review-digest/",
+    "route_index": "https://dicnunz.github.io/openai-codex-route-index/"
   }
 }

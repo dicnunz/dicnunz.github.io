@@ -361,5 +361,16 @@
     "source_hash": "7964ddf22d32a7252a300382c2a6464da72bcb2d25d73e93c86c1c78b7f13bed",
     "prev_hash": "4f5fe626852285939425de2c1a2541d5e68e87fdf0c39a792dfa90862bb777e8",
     "hash": "8682d12d0e5f573e4455227eacd2709756aa35e6a8628fa75d642e499de52ddd"
+  },
+  {
+    "index": 33,
+    "timestamp": "2026-05-19T05:19:28+00:00",
+    "actor": "Codex",
+    "action": "published OpenAI Codex route index",
+    "details": "Published https://dicnunz.github.io/openai-codex-route-index/ as a compact public route through reviewer digest, ready handoff graph, runnable receipt reference, cleanroom source, and proof brief. Pages commit 70df832 deployed via run 26077832031 success. OpenAI public role page and interview guide were refreshed before writing copy. Live checks confirmed Five links, one reviewer path, Ready handoff graph, no-outreach gate, official source links, proof brief link, sitemap entry, route_index public link label, and preset=ready-handoff browser hydration to ready-second-service-handoff-fixture with 33 projected records verified.",
+    "visibility": "public projection",
+    "source_hash": "37a64951e0183e1f3203935966d9af0a604e903e499dd8f193b76fc009e5a6aa",
+    "prev_hash": "8682d12d0e5f573e4455227eacd2709756aa35e6a8628fa75d642e499de52ddd",
+    "hash": "5a5bb99b812fb55f3edbd9ce5628bfe2149473ea2c6562c7f7a29600d7ae5976"
   }
 ]

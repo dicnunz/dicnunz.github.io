@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenAI Codex 30-Day Field Trial Plan</title>
+    <meta
+      name="description"
+      content="A 30-day field trial plan for proving OpenAI Codex deployment fit through intake, demos, workshops, verifier receipts, and product feedback."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="OpenAI Codex 30-Day Field Trial Plan">
+    <meta
+      property="og:description"
+      content="A public-safe first-month plan for turning AI coding adoption into measurable deployment evidence."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/openai-codex-30-day-plan/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/openai-codex-30-day-plan/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .trial-hero {
+        padding-top: clamp(56px, 8vw, 88px);
+      }
+
+      .trial-hero h1 {
+        max-width: 790px;
+        font-size: clamp(2.45rem, 6vw, 4.25rem);
+      }
+
+      .trial-hero .claim {
+        max-width: 760px;
+      }
+
+      .proof-shot {
+        margin-top: 18px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        padding: 12px;
+      }
+
+      .proof-shot img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center top;
+        border: 1px solid var(--line);
+      }
+
+      .week-list,
+      .artifact-list {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .week-list > li,
+      .artifact-list > li {
+        display: grid;
+        grid-template-columns: minmax(112px, 0.28fr) minmax(0, 1fr);
+        gap: 18px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .week-list strong,
+      .artifact-list strong,
+      .field-label {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .week-body {
+        display: grid;
+        gap: 8px;
+      }
+
+      .week-body h3,
+      .week-body p,
+      .week-body ul {
+        margin: 0;
+      }
+
+      .week-body h3 {
+        font-size: 1.18rem;
+        line-height: 1.2;
+      }
+
+      .week-body p,
+      .week-body li,
+      .artifact-list span {
+        color: var(--muted);
+      }
+
+      .week-body ul {
+        display: grid;
+        gap: 4px;
+        padding-left: 1.1rem;
+      }
+
+      .route-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .route-links a {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 11px;
+        color: var(--ink);
+        background: var(--accent-soft);
+        border: 1px solid #cbd8ce;
+        text-decoration: none;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .week-list > li,
+        .artifact-list > li {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-proof/">Proof brief</a>
+        <a href="../ai-coding-deployment-workshop/">Workshop kit</a>
+        <a href="../ai-coding-deployment-patterns/">Patterns</a>
+        <a href="../ciw-proof-ledger/">Ledger inspector</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom repo</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro trial-hero" aria-labelledby="intro-title">
+        <p class="meta">30-day field trial plan · checked May 19, 2026</p>
+        <h1 id="intro-title">What I would prove in the first month on Codex deployment.</h1>
+        <p class="claim">
+          This page answers the hiring-manager version of the question: not whether I can talk about AI coding, but
+          what evidence I would produce if given a narrow field lane for 30 days.
+        </p>
+        <div class="proof-shot">
+          <img
+            src="https://dicnunz.github.io/agentproof/demo-report/screenshots/home.png"
+            alt="AgentProof demo report showing browser evidence from a tested web app"
+          >
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="deliverable-title">
+        <div class="section-label">
+          <p class="meta">Deliverable</p>
+          <h2 id="deliverable-title">One instrumented deployment loop</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            By day 30, the team should have one reusable field kit: customer-neutral intake, scope card, two reference
+            demos, 90-minute workshop script, verifier-backed handoff receipt, and a product feedback packet.
+          </p>
+          <p class="boundary-note">
+            This is deliberately smaller than owning a portfolio. It is the fastest truthful path from high-potential
+            candidate to measurable Codex deployment asset.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="weeks-title">
+        <div class="section-label">
+          <p class="meta">30 days</p>
+          <h2 id="weeks-title">The run</h2>
+        </div>
+        <ol class="week-list">
+          <li>
+            <strong>Week 1</strong>
+            <div class="week-body">
+              <h3>Field map and intake</h3>
+              <p>Learn the customer motion before building theater.</p>
+              <ul>
+                <li>task-selection rubric;</li>
+                <li>scope card with owner, data boundary, rollback path, acceptance criteria, and verifier;</li>
+                <li>reject list for unsafe or unclear demo candidates.</li>
+              </ul>
+              <p>Proof: one reviewer can mark a proposed demo ready, repair, or reject.</p>
+            </div>
+          </li>
+          <li>
+            <strong>Week 2</strong>
+            <div class="week-body">
+              <h3>Reference demos</h3>
+              <p>Produce demos that are falsifiable, not merely impressive.</p>
+              <ul>
+                <li>repo maintenance demo with changed files, command proof, limitation, and rollback note;</li>
+                <li>team adoption demo with business context, user, verifier, failure mode, and receipt.</li>
+              </ul>
+              <p>Proof: two demos can be rerun or critiqued by an engineer without the presenter in the room.</p>
+            </div>
+          </li>
+          <li>
+            <strong>Week 3</strong>
+            <div class="week-body">
+              <h3>Workshop and failure taxonomy</h3>
+              <p>Turn demos into team behavior.</p>
+              <ul>
+                <li>scope card, context load, live run, failure map, rollout gate, handoff receipt;</li>
+                <li>failure buckets for criteria, repo context, environment, verifier, tool mismatch, and review boundary.</li>
+              </ul>
+              <p>Proof: a decision table separates ready, repair, and human-owned task patterns.</p>
+            </div>
+          </li>
+          <li>
+            <strong>Week 4</strong>
+            <div class="week-body">
+              <h3>Product feedback packet</h3>
+              <p>Feed field signal back to product and applied teams cleanly.</p>
+              <ul>
+                <li>adoption blockers, ready patterns, trust failures, missing affordances, and model observations;</li>
+                <li>documentation gaps, proposed guide additions, and one prioritized product proposal with evidence.</li>
+              </ul>
+              <p>Proof: a product partner can tell which issue is model, tool, docs, or customer readiness.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="map-title">
+        <div class="section-label">
+          <p class="meta">Role map</p>
+          <h2 id="map-title">How it matches the posting</h2>
+        </div>
+        <ol class="artifact-list">
+          <li>
+            <strong>Customers</strong>
+            <span>Intake, task selection, and workshop gates turn customer workflow design into a repeatable artifact.</span>
+          </li>
+          <li>
+            <strong>Demos</strong>
+            <span>Two reference demos include context, action, verifier, reviewer decision, and rollback note.</span>
+          </li>
+          <li>
+            <strong>Workshops</strong>
+            <span>The 90-minute run is built around failure triage and adoption gates, not prompt education.</span>
+          </li>
+          <li>
+            <strong>Content</strong>
+            <span>The field kit yields guide additions, customer templates, and Cookbook-shaped examples.</span>
+          </li>
+          <li>
+            <strong>Product</strong>
+            <span>The feedback packet separates model behavior, tool harness, docs gaps, and readiness blockers.</span>
+          </li>
+          <li>
+            <strong>Safety</strong>
+            <span>Every demo carries a data boundary, disallowed action list, verifier, rollback path, and human review rule.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="links-title">
+        <div class="section-label">
+          <p class="meta">Proof stack</p>
+          <h2 id="links-title">Inspect next</h2>
+        </div>
+        <div class="route-links">
+          <a href="../openai-codex-proof/">Proof brief</a>
+          <a href="../ai-coding-deployment-workshop/">Workshop kit</a>
+          <a href="../ai-coding-deployment-patterns/">Patterns guide</a>
+          <a href="../ciw-proof-ledger/">Ledger inspector</a>
+          <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom repo</a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Cleanroom line</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            This page is independent from OpenAI. It uses OpenAI and Codex only to name public role context. It does
+            not use OpenAI logos, product UI, private systems, or affiliation language.
+          </p>
+          <p>
+            Sources checked: <a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">AI Deployment Engineer - Codex</a>
+            and <a href="https://openai.com/interview-guide/">OpenAI interview guide</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

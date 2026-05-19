@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T15:07:27Z",
+  "updated_at": "2026-05-19T15:43:26Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -198,16 +198,16 @@
     },
     {
       "id": "warm-referral-route",
-      "title": "Warm referral route",
+      "title": "Date-gated warm referral route",
       "type": "hiring-route",
-      "status": "active",
+      "status": "watch",
       "priority": "P1",
-      "summary": "Active leverage path: use the submitted application receipt plus proof brief to seek a high-fit warm pass to Codex deployment or Technical Success without spamming stale contacts.",
+      "summary": "Date-gated leverage route: do not use the application receipt or proof brief for warm outreach before 2026-05-26 unless a verified real reply or explicit fresh override changes the state.",
       "evidence": [
         "applications/openai/AI_DEPLOYMENT_ENGINEER_CODEX_PACKET.md"
       ],
       "next": [
-        "Search for a high-fit warm route only when there is a real contact path or explicit outreach push."
+        "Hold until outcome evidence is refreshed on or after 2026-05-26 or a verified real reply appears."
       ]
     },
     {
@@ -1275,6 +1275,36 @@
       "next": [
         "Keep benchmark patterns as mechanisms only; use the scale engine for safe future growth selection and update it after any new frontier-lab, chatbot-product, legal/design, or public-proof signal."
       ]
+    },
+    {
+      "id": "openai-codex-role-portfolio",
+      "title": "OpenAI Codex role portfolio",
+      "type": "hiring-route",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Verifier-backed router mapping the current visible OpenAI Codex hiring cluster into one primary AI Deployment Engineer route, adjacent role lanes, honest gaps, proof-node routing, and no-send use rules.",
+      "evidence": [
+        "applications/openai/OPENAI_CODEX_ROLE_PORTFOLIO.md",
+        "ops/openai_role_portfolio.json",
+        "demo/openai-role-portfolio/index.html",
+        "https://dicnunz.github.io/openai-codex-role-portfolio/"
+      ],
+      "next": []
+    },
+    {
+      "id": "brutal-10-10-scorecard",
+      "title": "Brutal 10/10 Scorecard",
+      "type": "scorecard",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Public blunt-rating gate that scores CIW by current proof, names why it is not 10/10, and caps OpenAI-side outcome and company-launch claims until evidence changes.",
+      "evidence": [
+        "ops/brutal_scorecard.json",
+        "ops/BRUTAL_SCORECARD.md",
+        "demo/brutal-scorecard/index.html",
+        "https://dicnunz.github.io/ciw-brutal-scorecard/"
+      ],
+      "next": []
     }
   ],
   "edges": [
@@ -3065,6 +3095,72 @@
       "to": "launch-claim-boundary-pack",
       "relation": "guarded_by",
       "weight": 3
+    },
+    {
+      "from": "openai-codex-role-portfolio",
+      "to": "goal-openai-role",
+      "relation": "evidence_for",
+      "weight": 5
+    },
+    {
+      "from": "live-codex-role-source-check",
+      "to": "openai-codex-role-portfolio",
+      "relation": "source_for",
+      "weight": 4
+    },
+    {
+      "from": "openai-codex-role-portfolio",
+      "to": "warm-referral-route",
+      "relation": "informs",
+      "weight": 4
+    },
+    {
+      "from": "openai-codex-role-portfolio",
+      "to": "post-gate-reply-review",
+      "relation": "prepares",
+      "weight": 4
+    },
+    {
+      "from": "openai-codex-role-portfolio",
+      "to": "openai-collaboration-path-packet",
+      "relation": "routes_to",
+      "weight": 3
+    },
+    {
+      "from": "openai-codex-role-portfolio",
+      "to": "public-openai-codex-route-index",
+      "relation": "appears_in",
+      "weight": 4
+    },
+    {
+      "from": "brutal-10-10-scorecard",
+      "to": "goal-openai-role",
+      "relation": "evidence_for",
+      "weight": 5
+    },
+    {
+      "from": "objective-completion-audit",
+      "to": "brutal-10-10-scorecard",
+      "relation": "bounds",
+      "weight": 5
+    },
+    {
+      "from": "openai-outcome-watch",
+      "to": "brutal-10-10-scorecard",
+      "relation": "caps",
+      "weight": 5
+    },
+    {
+      "from": "brutal-10-10-scorecard",
+      "to": "public-openai-codex-route-index",
+      "relation": "guards",
+      "weight": 5
+    },
+    {
+      "from": "brutal-10-10-scorecard",
+      "to": "company-launch-readiness-matrix",
+      "relation": "guards",
+      "weight": 5
     }
   ],
   "views": {
@@ -3109,12 +3205,12 @@
       "proof-route-regression-suite",
       "ai-coding-security-review-packet",
       "cookbook-style-codex-example",
-      "post-gate-reply-review",
-      "warm-referral-route"
+      "post-gate-reply-review"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
       "post-gate-reply-review",
+      "brutal-10-10-scorecard",
       "warm-referral-route",
       "legal-entity-review"
     ]

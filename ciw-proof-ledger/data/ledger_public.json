@@ -933,5 +933,16 @@
     "source_hash": "6f323338f2a001af7849997a2fba019013a96f324cf471a3cdfd533024c2991d",
     "prev_hash": "d1ff9e86834ee86eaf63ef295614f654bcf23d2668d0432cbe43aeaa03786610",
     "hash": "99f8ee134126bc5d2791848b980862eeda551becb74d6759abb19d7b885c0a31"
+  },
+  {
+    "index": 85,
+    "timestamp": "2026-05-19T13:55:29+00:00",
+    "actor": "Codex",
+    "action": "refreshed OpenAI-side outcome watch",
+    "details": "{\"checked_at\":\"2026-05-19T13:54:26Z\",\"classification\":\"application_received_only\",\"goal_status\":\"active\",\"next_gate\":\"2026-05-26 refresh/post-gate review\",\"public_boundary\":\"no outbound, no affiliation, no target-side outcome claim\",\"search_summary\":\"OpenAI-domain search after application date found only the existing receipt; targeted recruiter/interview search found no OpenAI-side next step\"}",
+    "visibility": "public projection",
+    "source_hash": "71f41ced8398f198371dc55688d8b727702700dec7ffadfa7a3d8f407e6f3ca9",
+    "prev_hash": "99f8ee134126bc5d2791848b980862eeda551becb74d6759abb19d7b885c0a31",
+    "hash": "807ceb36d9df049fc7bb2e9c4b83985880f47eb81c9ce7fbe34bc87456d175b2"
   }
 ]

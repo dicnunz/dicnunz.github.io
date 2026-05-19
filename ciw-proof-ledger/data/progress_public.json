@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T13:42:52Z",
+  "updated_at": "2026-05-19T13:55:13Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -987,7 +987,9 @@
         "read-only-private receipt reference withheld-receipt-only",
         "read-only-outcome-refresh:2026-05-19T11:56:39Z",
         "read-only-outcome-refresh:2026-05-19T13:09:30Z",
-        "read-only-private receipt reference withheld-application-receipt-only"
+        "read-only-private receipt reference withheld-application-receipt-only",
+        "outcome-refresh:2026-05-19T13:54:26Z receipt-only no-target-side-traction",
+        "gmail-search-scope: OpenAI-domain after application date found receipt only"
       ],
       "next": [
         "Refresh again on 2026-05-26, immediately if a real OpenAI recruiter/hiring-manager/referral reply appears, and keep the active goal incomplete until OpenAI-side outcome evidence exists."

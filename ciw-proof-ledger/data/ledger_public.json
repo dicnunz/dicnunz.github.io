@@ -152,5 +152,16 @@
     "source_hash": "fa1724408d898b45e6788548b32f06765c3115156080221ea14e425cb7070403",
     "prev_hash": "7780684bdcb1c972a1d64d2fcc3115a50156c21cc544fa0b7d789cb768bf3169",
     "hash": "06700423cfd0310776aa2501b858de48c0ccd31484ce15629882e0f704fe1529"
+  },
+  {
+    "index": 14,
+    "timestamp": "2026-05-19T02:38:54+00:00",
+    "actor": "Codex",
+    "action": "hardened OpenAI review-window packet",
+    "details": "Compressed applications/openai/OPENAI_REVIEW_WINDOW_PACKET.md into a stricter no-spam gate and raised it above the strict originality threshold at 90.9.",
+    "visibility": "public projection",
+    "source_hash": "57bc51830b1d3c201bf2ece5c2495c1799e67a7cc94efa7ef90b97d603076d4e",
+    "prev_hash": "06700423cfd0310776aa2501b858de48c0ccd31484ce15629882e0f704fe1529",
+    "hash": "a9a49ed2ed847aa8eaead5147d39475a6adba2097b5aebbda3d3f8bca105321d"
   }
 ]

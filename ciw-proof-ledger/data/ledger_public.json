@@ -1010,5 +1010,16 @@
     "source_hash": "a0a12739ade2f35e7f2632a5b2b975f2975d19e5aea5e7e3244c21a6c5da768c",
     "prev_hash": "d902e1ba21d912430430e894eaf701f5b42c28c9cb483509ce70f7e34c5ee83e",
     "hash": "e3d286b7c7dd19d44f0d34d4b2836a56e205580465297c40709fcc408af1cc2c"
+  },
+  {
+    "index": 92,
+    "timestamp": "2026-05-19T16:24:12+00:00",
+    "actor": "Codex",
+    "action": "built external reviewer validation harness",
+    "details": "{\"boundary\":\"No external feedback has been collected; non-Nic feedback is not OpenAI-side outcome evidence unless separately target-company-owned and classified.\",\"files\":[\"ops/external_reviewer_feedback_protocol.json\",\"applications/openai/OPENAI_EXTERNAL_REVIEWER_FEEDBACK_PROTOCOL.md\",\"tools/external_reviewer_feedback.py\",\"tests/test_external_reviewer_feedback.py\"],\"public_url\":\"https://dicnunz.github.io/ciw-external-reviewer-validation/\"}",
+    "visibility": "public projection",
+    "source_hash": "a7df2d535d3946011e6b6e38270b79e2aaf1e257cddc66d7d84d346e19c9f9ad",
+    "prev_hash": "e3d286b7c7dd19d44f0d34d4b2836a56e205580465297c40709fcc408af1cc2c",
+    "hash": "d931ac33e77f6d3632fd73ec47884b827dba2954e80cef97176dca57d260b8ae"
   }
 ]

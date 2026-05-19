@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T16:05:44Z",
+  "updated_at": "2026-05-19T16:34:44Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -1305,6 +1305,20 @@
         "ops/BRUTAL_SCORECARD.md",
         "demo/brutal-scorecard/index.html",
         "https://dicnunz.github.io/ciw-brutal-scorecard/"
+      ],
+      "next": []
+    },
+    {
+      "id": "external-reviewer-validation-harness",
+      "title": "External reviewer validation harness",
+      "type": "proof-gate",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Verifier-backed harness for recording whether a non-Nic reviewer can understand CIW, role fit, proof mechanism, hard boundaries, and missing evidence without turning feedback into OpenAI-side outcome evidence.",
+      "evidence": [
+        "ops/external_reviewer_feedback_protocol.json",
+        "applications/openai/OPENAI_EXTERNAL_REVIEWER_FEEDBACK_PROTOCOL.md",
+        "https://dicnunz.github.io/ciw-external-reviewer-validation/"
       ],
       "next": []
     }
@@ -3181,6 +3195,30 @@
       "to": "neutral-public-role-review-route",
       "relation": "receipts",
       "weight": 5
+    },
+    {
+      "from": "neutral-public-role-review-route",
+      "to": "external-reviewer-validation-harness",
+      "relation": "requires_external_validation",
+      "weight": 5
+    },
+    {
+      "from": "brutal-10-10-scorecard",
+      "to": "external-reviewer-validation-harness",
+      "relation": "names_gap",
+      "weight": 5
+    },
+    {
+      "from": "external-reviewer-validation-harness",
+      "to": "post-gate-reply-review",
+      "relation": "informs",
+      "weight": 4
+    },
+    {
+      "from": "external-reviewer-validation-harness",
+      "to": "openai-outcome-watch",
+      "relation": "preserves_boundary",
+      "weight": 5
     }
   ],
   "views": {
@@ -3225,12 +3263,12 @@
       "proof-route-regression-suite",
       "ai-coding-security-review-packet",
       "cookbook-style-codex-example",
+      "external-reviewer-validation-harness",
       "post-gate-reply-review"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
       "post-gate-reply-review",
-      "brutal-10-10-scorecard",
       "warm-referral-route",
       "legal-entity-review"
     ]

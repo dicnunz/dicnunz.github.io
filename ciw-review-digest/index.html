@@ -14,255 +14,111 @@
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../styles.css">
     <style>
-      .digest-hero h1 { max-width: 780px; font-size: clamp(2.6rem, 6vw, 4.7rem); }
-      .digest-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-      .digest-card { border: 1px solid var(--line); background: var(--panel); padding: 14px; }
-      .digest-card strong { display: block; color: var(--accent); }
-      .digest-card p { margin: 8px 0 0; color: var(--muted); }
-      .digest-card ul, .path-list { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
-      .path-list li + li, .digest-card li + li { margin-top: 6px; }
-      .link-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
-      .link-list a { display: block; border: 1px solid var(--line); background: var(--panel); padding: 10px; text-decoration: none; }
-      .receipt-box { border-left: 4px solid var(--accent); padding-left: 14px; }
-      .fit-line { max-width: 760px; color: var(--muted); font-size: 1.05rem; }
-      .role-map { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
-      .role-map li { display: grid; grid-template-columns: minmax(130px, .3fr) minmax(0, 1fr); gap: 16px; border-top: 1px solid var(--line); padding-top: 10px; }
-      .role-map li:first-child { border-top: 0; padding-top: 0; }
-      .role-map strong { color: var(--accent); }
-      .role-map span { color: var(--muted); }
-      @media (max-width: 760px) { .digest-grid { grid-template-columns: 1fr; } }
-      @media (max-width: 760px) { .role-map li { grid-template-columns: 1fr; gap: 4px; } }
+      .digest-shell { max-width: 1080px; }
+      .digest-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .32fr); gap: 28px; padding-top: 58px; padding-bottom: 30px; }
+      .digest-hero h1 { max-width: 780px; margin-bottom: 16px; font-size: clamp(2.35rem, 5.6vw, 4.35rem); line-height: .96; }
+      .claim, .fit-line { max-width: 700px; }
+      .fit-line { color: var(--muted); }
+      .receipt-panel { align-self: end; border: 1px solid var(--ink); background: #fff; }
+      .receipt-row { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 12px; padding: 12px 14px; border-top: 1px solid var(--line); }
+      .receipt-row:first-child { border-top: 0; }
+      .receipt-row dt { margin: 0; color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+      .receipt-row dd { margin: 0; font-weight: 760; }
+      .digest-section { max-width: 1080px; grid-template-columns: 170px minmax(0, 1fr); }
+      .digest-links { display: grid; border-top: 1px solid var(--line); }
+      .digest-link { display: grid; grid-template-columns: minmax(180px, .3fr) minmax(0, 1fr); gap: 18px; padding: 15px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+      .digest-link span { font-weight: 780; }
+      .digest-link strong { color: var(--muted); font-size: .86rem; font-weight: 560; overflow-wrap: anywhere; }
+      .role-map, .proof-list, .boundary-list, .proof-links { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+      .role-map li, .proof-list li, .boundary-list li, .proof-links li { border-bottom: 1px solid var(--line); padding: 12px 0; }
+      .role-map li, .proof-list li { display: grid; grid-template-columns: minmax(160px, .28fr) minmax(0, 1fr); gap: 18px; }
+      .role-map strong, .proof-list strong { color: var(--ink); }
+      .role-map span, .proof-list span, .boundary-list, .proof-links { color: var(--muted); }
+      .proof-links a { color: var(--ink); }
+      @media (max-width: 820px) {
+        .digest-hero, .digest-section, .digest-link, .role-map li, .proof-list li { grid-template-columns: 1fr; }
+        .digest-link, .role-map li, .proof-list li { gap: 6px; }
+      }
     </style>
   </head>
   <body>
     <a class="skip-link" href="#top">Skip to main content</a>
-    <header class="topbar">
-      <a class="brand" href="../">Nicholas Dunzelman</a>
+    <header class="topbar digest-shell">
+      <a class="brand" href="../">Cleanroom Intelligence Works</a>
       <nav aria-label="Primary links">
-        <a href="../openai-codex-proof/">Proof brief</a>
-        <a href="../ciw-proof-ledger/">Inspector</a>
+        <a href="../ciw-role-review/">Role review</a>
+        <a href="../ciw-brutal-scorecard/">Score</a>
+        <a href="../ciw-proof-ledger/">Ledger</a>
         <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Source</a>
       </nav>
     </header>
     <main id="top" tabindex="-1">
-      <section class="intro digest-hero">
-        <p class="meta">Reviewer digest · generated 2026-05-19T16:35:10Z</p>
+      <section class="intro digest-hero digest-shell">
+        <div>
+        <p class="meta">Reviewer digest · checked 2026-05-19</p>
         <h1>One route through the current Codex deployment proof web.</h1>
-        <p class="claim">This page is a public-safe review path: what to inspect first, what changed most recently, how it maps to the live role, and where the send gate stops outreach.</p>
-        <p class="fit-line"><strong>AI Deployment Engineer - Codex, Remote - US:</strong> Nic is a rising senior with an unusually deep Codex/operator stack, public receipt-bearing artifacts, and a deployer mindset; the honest gap is conventional 5+ year post-sales tenure, so the proof must carry that objection.</p>
-      </section>
-      <section class="section">
-        <div class="section-label"><p class="meta">Gate</p><h2>Before outreach</h2></div>
-        <div class="note-list"><p>No outbound before 2026-05-26 unless a recruiter/Cory reply appears or Nic explicitly overrides in the current thread.</p></div>
-      </section>
-      <section class="section">
-        <div class="section-label"><p class="meta">Role fit</p><h2>Source facts</h2></div>
-        <div class="note-list"><ul><li>The live AI Deployment Engineer - Codex role is Technical Success / Remote - US.</li><li>The role asks for customer SDLC design, demos, reference implementations, workshops, Cookbook-style examples, deployment signal, security, and operational readiness.</li><li>The official Codex search page currently exposes a broader Codex cluster including AI Deployment Engineer, AI Systems Engineer, Applied AI Engineer, Deployed Product Manager, Product Marketing, and multiple Software Engineer lanes.</li><li>The interview guide says OpenAI is not credential-driven and looks for unique background, fast ramping, results, collaboration, communication, feedback openness, and mission alignment.</li></ul><p>Sources: <a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">role page</a> · <a href="https://openai.com/interview-guide/">interview guide</a></p></div>
-      </section>
-      <section class="section">
-        <div class="section-label"><p class="meta">Map</p><h2>Need to proof</h2></div>
-        <ul class="role-map"><li><strong>Source freshness</strong><span>Autonomy heartbeat checks the official target role page and Codex search cluster before future proof-building is trusted</span></li><li><strong>Executive path</strong><span>One-screen review path gives a busy reviewer three links first: scorecard for truth, role portfolio for fit, and ledger for receipts</span></li><li><strong>Blunt rating gate</strong><span>Brutal scorecard keeps the stack below 10/10 until proof exists for OpenAI-side outcome, company launch, customer deployment, revenue, and legal review</span></li><li><strong>Role portfolio</strong><span>Codex role portfolio maps the visible OpenAI Codex hiring cluster into one primary target, adjacent lanes, honest gaps, and proof-node routes before any post-gate conversation</span></li><li><strong>Regression gate</strong><span>Proof-route regression suite runs role-source, staleness, renewal, draft-quality, route-index, ledger, public-URL, privacy, and no-outbound checks before leverage</span></li><li><strong>Inbound signal routing</strong><span>Public-safe router separates receipts, broadcasts, unrelated opportunities, ambiguous mail, human replies, recruiter next steps, interviews, collaborations, and offers before the outcome watch can move</span></li><li><strong>Collaboration preparation</strong><span>No-send collaboration path packet maps public developer, Cookbook, docs-feedback, and maintenance surfaces into a verified-interest session contract without claiming affiliation</span></li><li><strong>Scale operating system</strong><span>Frontier benchmark scan converts OpenAI, Anthropic, DeepMind/Gemini, and chatbot product patterns into CIW-owned flywheels, agent lanes, stage gates, and legal/design refusal rules</span></li><li><strong>Application delta</strong><span>Post-application evidence packet answers what changed after the application receipt without treating the receipt as target-side traction</span></li><li><strong>Security review cadence</strong><span>Security review packet covers data boundaries, secrets, tool permissions, human approval, audit receipts, rollback containment, and security communication before proof promotion</span></li><li><strong>Stale-route refusal</strong><span>Proof-route staleness sentinel refuses route leverage when role source, digest, route index, ledger projection, graph next branch, or no-outbound gate is stale</span></li><li><strong>Stale-route repair</strong><span>Proof-route renewal drill turns a stale finding into source, digest, route-index, ledger, graph, autonomy-status, and gate repair before external use</span></li><li><strong>Follow-up judgment</strong><span>No-send decision kit separates send, hold, and do-not-send criteria before any post-gate contact is considered</span></li><li><strong>Draft judgment</strong><span>Follow-up draft evaluator scores source freshness, recipient fit, new proof signal, claim safety, repetition, proof-link economy, and gate compliance before use</span></li><li><strong>Cold-read traversal</strong><span>Cold-read simulation checks whether a fresh reviewer can recover the proof path from public links inside a fixed time budget</span></li><li><strong>Source lookup</strong><span>Source-to-answer index maps common reviewer questions to exact primary and supporting proof links</span></li><li><strong>Objection routing</strong><span>Interview branching drill maps likely hiring-manager questions to source-backed answers without customer, affiliation, revenue, or employment overclaim</span></li><li><strong>Interview assessment</strong><span>Deployment assessment drill scores a candidate-style response across engineering and deployment signals</span></li><li><strong>SDLC route design</strong><span>30-day field plan plus field kit intake/scope templates</span></li><li><strong>Field-trial acceptance</strong><span>Scorecard covering role needs, release gates, verifier evidence, and the no-outbound boundary</span></li><li><strong>Demos and reference implementations</strong><span>Receipt validator with ready/repair/reject fixtures, repair handoff, ready second-service handoff, and tests</span></li><li><strong>Workshops and enablement</strong><span>90-minute AI coding deployment workshop kit plus executable post-workshop handoff lineage</span></li><li><strong>Cookbook-style examples</strong><span>Executable recipe packet plus deployment patterns guide, with public-safe input, commands, verifier markers, and role-signal coverage</span></li><li><strong>Deployment signal</strong><span>Feedback packet renderer, simulated feedback export, and filled sample-run failure taxonomy</span></li><li><strong>Operational readiness</strong><span>Public inspector, hash-chain verification, CI checks, LaunchAgent scheduler health, and autonomy heartbeat</span></li></ul>
-      </section>
-      <section class="section">
-        <div class="section-label"><p class="meta">Route</p><h2>Inspect first</h2></div>
-        <ul class="link-list"><li><a href="https://dicnunz.github.io/ciw-role-review/">Executive role review route</a></li><li><a href="https://dicnunz.github.io/openai-codex-proof/">Proof brief</a></li><li><a href="https://dicnunz.github.io/openai-codex-route-index/">Route index</a></li><li><a href="https://dicnunz.github.io/ciw-brutal-scorecard/">Brutal scorecard</a></li><li><a href="https://dicnunz.github.io/ciw-external-reviewer-validation/">External reviewer validation</a></li><li><a href="https://dicnunz.github.io/openai-codex-objective-completion-audit/">Objective audit</a></li><li><a href="https://dicnunz.github.io/openai-codex-outcome-watch/">Outcome watch</a></li><li><a href="https://dicnunz.github.io/openai-codex-signal-router/">Signal router</a></li><li><a href="https://dicnunz.github.io/openai-codex-role-portfolio/">Codex role portfolio</a></li><li><a href="https://dicnunz.github.io/ciw-collaboration-path/">Collaboration path</a></li><li><a href="https://dicnunz.github.io/openai-codex-application-delta/">Application delta</a></li><li><a href="https://dicnunz.github.io/ciw-launch-readiness/">Launch readiness</a></li><li><a href="https://dicnunz.github.io/ciw-company-system-map/">Company system map</a></li><li><a href="https://dicnunz.github.io/ciw-scale-engine/">Scale engine</a></li><li><a href="https://dicnunz.github.io/ai-coding-cookbook-style-example/">Cookbook-style example</a></li><li><a href="https://dicnunz.github.io/ai-coding-security-review-packet/">Security review packet</a></li><li><a href="https://dicnunz.github.io/ai-coding-proof-route-regression-suite/">Regression suite</a></li><li><a href="https://dicnunz.github.io/ai-coding-proof-route-staleness-sentinel/">Staleness sentinel</a></li><li><a href="https://dicnunz.github.io/ai-coding-proof-route-renewal-drill/">Renewal drill</a></li><li><a href="https://dicnunz.github.io/ai-coding-follow-up-draft-evaluation-harness/">Follow-up draft evaluator</a></li><li><a href="https://dicnunz.github.io/ai-coding-no-send-follow-up-decision-kit/">No-send follow-up kit</a></li><li><a href="https://dicnunz.github.io/ai-coding-proof-route-cold-read-simulation/">Cold-read simulation</a></li><li><a href="https://dicnunz.github.io/ai-coding-source-to-answer-index/">Source-to-answer index</a></li><li><a href="https://dicnunz.github.io/ai-coding-interview-question-branching-drill/">Interview branching drill</a></li><li><a href="https://dicnunz.github.io/ai-coding-reviewer-time-benchmark/">Reviewer time benchmark</a></li><li><a href="https://dicnunz.github.io/ai-coding-deployment-assessment-drill/">Assessment drill</a></li><li><a href="https://dicnunz.github.io/ai-coding-field-trial-scorecard/">Field-trial scorecard</a></li><li><a href="https://dicnunz.github.io/ciw-autonomy-status/">Autonomy status</a></li><li><a href="https://dicnunz.github.io/ai-coding-workflow-receipt-reference/">Receipt reference</a></li><li><a href="https://dicnunz.github.io/ciw-proof-ledger/?view=graph">Progress inspector</a></li><li><a href="https://dicnunz.github.io/openai-codex-30-day-plan/">30-day field plan</a></li><li><a href="https://dicnunz.github.io/ai-coding-deployment-field-kit/">Deployment field kit</a></li><li><a href="https://dicnunz.github.io/ai-coding-deployment-sample-run/">Filled sample run</a></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom source</a></li></ul>
-      </section>
-      <section class="section">
-        <div class="section-label"><p class="meta">Latest</p><h2>Receipt</h2></div>
-        <div class="receipt-box">
-          <p><strong>#92</strong> built external reviewer validation harness</p>
-          <p><code>a7df2d535d3946011e6b6e38270b79e2aaf1e257cddc66d7d84d346e19c9f9ad</code></p>
+        <p class="claim">This digest is not the product. It is the shortest public-safe route through the proof: truth gate, role fit, receipt chain, and the exact place where outreach stops.</p>
+        <p class="fit-line"><strong>AI Deployment Engineer - Codex, Remote - US:</strong> strong Codex/operator proof; conventional post-sales tenure is the honest gap.</p>
         </div>
+        <dl class="receipt-panel" aria-label="Latest proof receipt">
+          <div class="receipt-row"><dt>Gate</dt><dd>No outbound before 2026-05-26.</dd></div>
+          <div class="receipt-row"><dt>Latest</dt><dd>#92 built external reviewer validation harness</dd></div>
+          <div class="receipt-row"><dt>Hash</dt><dd><code>a7df2d535d39</code></dd></div>
+          <div class="receipt-row"><dt>Path</dt><dd>active: 3, done: 38, watch: 1</dd></div>
+        </dl>
       </section>
-      <section class="section">
-        <div class="section-label"><p class="meta">Proof</p><h2>Current strongest nodes</h2></div>
-        <div class="digest-grid"><article class="digest-card">
-              <strong>OpenAI outcome evidence classifier</strong>
-              <p>The outcome watch now rejects raw observation text as OpenAI-side traction unless it has verified public-safe evidence with a human-owned or target-company-owned source and an actionable next step.</p>
-              <ul></ul>
-            </article><article class="digest-card">
-              <strong>OpenAI inbound signal router</strong>
-              <p>The inbound signal router classifies receipts, broadcasts, unrelated interviews, ambiguous mail, human replies, referral replies, recruiter next steps, interview loops, collaboration paths, and offers before any outcome-watch update or reply review can run.</p>
-              <ul><li><a href="https://dicnunz.github.io/openai-codex-signal-router/">dicnunz.github.io/openai-codex-signal-router</a></li></ul>
-            </article><article class="digest-card">
-              <strong>CIW executive role review route</strong>
-              <p>The canonical role-review route now acts as the executive screen: three decision links first, then the full graph only if the scorecard, role portfolio, and ledger are worth deeper inspection.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-role-review/">dicnunz.github.io/ciw-role-review</a></li></ul>
-            </article><article class="digest-card">
-              <strong>External reviewer validation harness</strong>
-              <p>The external reviewer harness makes the weakest remaining controllable gap falsifiable: a non-Nic reviewer must be able to explain CIW, role fit, proof mechanism, missing evidence, and claim boundaries without a walkthrough before reviewer validation can be claimed.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-external-reviewer-validation/">dicnunz.github.io/ciw-external-reviewer-validation</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Brutal 10/10 scorecard</strong>
-              <p>The scorecard makes the proof stack blunt on purpose: current category scores, hard ceilings, missing OpenAI-side outcome evidence, launch blockers, and exact gates before anything can be called 10/10.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-brutal-scorecard/">dicnunz.github.io/ciw-brutal-scorecard</a></li></ul>
-            </article><article class="digest-card">
-              <strong>OpenAI Codex role portfolio</strong>
-              <p>The role portfolio maps the current visible OpenAI Codex hiring cluster into one primary route, adjacent role lanes, honest gaps, source links, and no-send rules so proof can be reused in a recruiter conversation without inventing target-side interest.</p>
-              <ul><li><a href="https://dicnunz.github.io/openai-codex-role-portfolio/">dicnunz.github.io/openai-codex-role-portfolio</a></li></ul>
-            </article><article class="digest-card">
-              <strong>OpenAI collaboration path packet</strong>
-              <p>The collaboration path packet turns verified interest into a bounded first working session: source basis, input contract, output receipt, candidate lanes, and refusal gates, while preserving no outbound and no affiliation claims.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-collaboration-path/">dicnunz.github.io/ciw-collaboration-path</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Frontier-scale company engine</strong>
-              <p>The scale engine turns OpenAI, Anthropic, DeepMind/Gemini, and chatbot benchmark research into CIW-owned flywheels, agent lanes, stage gates, and legal/design adaptation rules without copying brands, trade dress, or customer claims.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-scale-engine/">dicnunz.github.io/ciw-scale-engine</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Post-application evidence delta</strong>
-              <p>The post-application delta packet compresses what became stronger after the application receipt, while keeping the receipt classified as non-outcome evidence and preserving the no-outbound date gate.</p>
-              <ul><li><a href="https://dicnunz.github.io/openai-codex-application-delta/">dicnunz.github.io/openai-codex-application-delta</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Company launch-readiness matrix</strong>
-              <p>The launch-readiness matrix separates proof-lab launch, autonomous proof-lab operation, target-role leverage, and legal/commercial company formation so the company can look launchable without inventing customers, revenue, incorporation, or affiliation.</p>
-              <ul></ul>
-            </article><article class="digest-card">
-              <strong>Company system map</strong>
-              <p>The company stack map turns the lab into an updateable operating diagram: objective, CEO kernel, progress web, ledger, autonomy, claim boundary, readiness ratchet, product proof engine, public surface, outcome watch, hiring router, and formation backlog.</p>
-              <ul></ul>
-            </article><article class="digest-card">
-              <strong>Launch claim-boundary pack</strong>
-              <p>The claim-boundary pack defines allowed claims, banned claims, public-copy probes, and escalation gates before any protected-brand-sensitive copy, outreach, commerce, incorporation, customer, or payment claim can move.</p>
-              <ul></ul>
-            </article><article class="digest-card">
-              <strong>Audit-only advance gate</strong>
-              <p>The scheduled cycle now skips model-driven advance when the deterministic growth plan is audit-only or has no selected safe branch, so a due timer cannot turn into invented work before the date gate.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-autonomy-status/">dicnunz.github.io/ciw-autonomy-status</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Autonomy status freshness gate</strong>
-              <p>The autonomy heartbeat now compares the public status page against current ledger and graph counts, latest action, and source hash prefix, so stale public autonomy claims become warnings before the route is trusted.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-autonomy-status/">dicnunz.github.io/ciw-autonomy-status</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Progress graph next-step replacement</strong>
-              <p>The progress graph now has a replace-not-append set-next command, and the date-gate node was sanitized before projection so accidental command output cannot become public progress metadata.</p>
-              <ul></ul>
-            </article><article class="digest-card">
-              <strong>Outcome date-gate simulation</strong>
-              <p>The autonomy heartbeat now accepts a simulated outcome-watch date, so the 2026-05-26 gate can be dry-run: expired watch checks fail, the refresh runbook stays available, and no outbound or completion claim is authorized.</p>
-              <ul></ul>
-            </article><article class="digest-card">
-              <strong>OpenAI-side outcome watch</strong>
-              <p>The read-only inbox/outcome watch found application receipt only on 2026-05-19 and expires on 2026-05-26 so the route cannot use stale reply assumptions after the no-outbound gate opens.</p>
-              <ul></ul>
-            </article><article class="digest-card">
-              <strong>Objective completion audit</strong>
-              <p>The local audit keeps the active goal open until OpenAI-side outcome evidence exists, separating proven proof-lab strength from an actual offer, interview loop, collaboration path, or recruiter-owned next step.</p>
-              <ul></ul>
-            </article><article class="digest-card">
-              <strong>Cookbook-style Codex example</strong>
-              <p>The cleanroom command validates and renders a public-safe Cookbook-style example with problem statement, minimal input, recipe steps, verifier markers, role-signal coverage, and extension gates without claiming OpenAI Cookbook submission, customer rollout, affiliation, or outbound authorization.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/e120ef15885fee4623dc01352141a956f1edc8dd">cleanroom commit e120ef1</a></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-cookbook-style-example.md">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-cookbook-style-example.md</a></li><li><a href="https://dicnunz.github.io/ai-coding-cookbook-style-example/">dicnunz.github.io/ai-coding-cookbook-style-example</a></li></ul>
-            </article><article class="digest-card">
-              <strong>AI coding security review packet</strong>
-              <p>The cleanroom command validates and renders a seven-area pre-deployment security review across data boundaries, secrets, tool permissions, human approval, audit receipts, rollback containment, and security communication without claiming a customer rollout or target-company approval.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-security-review-packet.md">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-security-review-packet.md</a></li><li><a href="https://dicnunz.github.io/ai-coding-security-review-packet/">dicnunz.github.io/ai-coding-security-review-packet</a></li><li><code>cleanroom run 26094909944-success</code></li></ul>
-            </article><article class="digest-card">
-              <strong>Proof-route regression suite</strong>
-              <p>The cleanroom command validates and renders one pre-leverage route gate across role_source, staleness, renewal, draft_quality, route_index, ledger, public_url, privacy, and no_outbound checks so a failed marker becomes local repair work instead of a message.</p>
-              <ul><li><code>cleanroom run 26090770896-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/15d0da762c08ef135f5316fc96a17eac92e4e7fe">cleanroom commit 15d0da7</a></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_regression_suite.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_regression_suite.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Proof-route renewal drill</strong>
-              <p>The cleanroom command validates and renders seven public_sources, reviewer_digest, route_index, ledger_projection, graph_state, autonomy_status, and no_outbound_gate repair steps so stale-route refusal becomes deterministic local repair before any contact path can reopen.</p>
-              <ul><li><code>cleanroom run 26089607282-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/b0f58793e064f9c17a1ac023fc30c87db0f251ea">cleanroom commit b0f5879</a></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_renewal_drill.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_renewal_drill.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Proof-route staleness sentinel</strong>
-              <p>The cleanroom command validates and renders six role_source_freshness, reviewer_digest_currency, route_index_coverage, ledger_projection_current, graph_next_branch, and no_outbound_gate checks so stale proof cannot be used as hiring leverage.</p>
-              <ul><li><code>cleanroom run 26088671422-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_staleness_sentinel.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_staleness_sentinel.json</a></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/b67b9d7">cleanroom commit b67b9d7</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Follow-up draft evaluation harness</strong>
-              <p>The cleanroom command validates and renders seven source_freshness, recipient_fit, new_proof_signal, claim_safety, repetition_control, proof_link_economy, and no_outbound_gate signals so any future post-gate note can be scored before use.</p>
-              <ul><li><code>cleanroom run 26087529516-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/follow_up_draft_evaluation_harness.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/follow_up_draft_evaluation_harness.json</a></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/00e1601">cleanroom commit 00e1601</a></li></ul>
-            </article><article class="digest-card">
-              <strong>No-send follow-up decision kit</strong>
-              <p>The cleanroom command validates and renders six send, hold, and do_not_send rules so post-gate follow-up can be used, held, or refused without touching external accounts or overclaiming the proof.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/23870ce">cleanroom commit 23870ce</a></li><li><code>cleanroom run 26086116602-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/no_send_follow_up_decision_kit.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/no_send_follow_up_decision_kit.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Proof-route cold-read simulation</strong>
-              <p>The cleanroom command validates and renders an eight-task cold-read traversal: route entry, technical depth, customer-adoption gap, workshop enablement, product judgment, safety boundary, operational readiness, and next step inside a 10-minute target.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/a265fcb">cleanroom commit a265fcb</a></li><li><code>cleanroom run 26084818713-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_cold_read_simulation.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/proof_route_cold_read_simulation.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Source-to-answer proof index</strong>
-              <p>The cleanroom command validates and renders an eight-answer lookup: start-here, technical depth, customer-adoption gap, workshop enablement, product judgment, safety boundary, operational readiness, and current next step, each tied to primary and supporting sources.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/36e291f">cleanroom commit 36e291f</a></li><li><code>cleanroom run 26084058125-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/source_to_answer_index.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/source_to_answer_index.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Interview question branching drill</strong>
-              <p>The cleanroom command validates and renders a seven-branch objection router for customer adoption, technical depth, workshop enablement, product judgment, safety, tenure gap, and next-step questions.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/45b9e43">cleanroom commit 45b9e43</a></li><li><code>cleanroom run 26083011070-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/interview_question_branching_drill.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/interview_question_branching_drill.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Reviewer time-to-understand benchmark</strong>
-              <p>The cleanroom command validates and renders a route-friction benchmark: a 7-minute public proof path against an 8-minute target, with explicit legal boundary and no-outbound gates.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/7110e46">cleanroom commit 7110e46</a></li><li><code>cleanroom run 26082012084-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/reviewer_time_to_understand_benchmark.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/reviewer_time_to_understand_benchmark.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Autonomous growth-readiness selector</strong>
-              <p>The autonomy heartbeat now builds a machine-readable growth plan, rejects shipped proof modes, preserves the no-outbound boundary, and selects the next safe evidence branch.</p>
-              <ul></ul>
-            </article><article class="digest-card">
-              <strong>Deployment assessment drill</strong>
-              <p>The cleanroom command validates and renders an interview-style deployment drill across architecture, maintainability, runtime behavior, verifier coverage, communication, deployment judgment, and operational safety.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/10987eb">cleanroom commit 10987eb</a></li><li><code>cleanroom run 26080549824-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_assessment_drill.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_assessment_drill.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Live Codex role source check</strong>
-              <p>The autonomy heartbeat now checks the official target role page and the wider Codex hiring cluster before treating the route as current.</p>
-              <ul><li><a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">role source</a></li><li><a href="https://openai.com/careers/search/?q=codex">role source</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Autonomy scheduler health</strong>
-              <p>The local scheduler is verified at the plist and loaded-runtime layers, so the six-hour proof loop is inspectable instead of assumed.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-autonomy-status/">dicnunz.github.io/ciw-autonomy-status</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Field-trial acceptance scorecard</strong>
-              <p>The scorecard converts the target role into release gates: role-need coverage, verifier evidence, public safety, and no premature outreach.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/83e52e7">cleanroom commit 83e52e7</a></li><li><code>cleanroom run 26078967712-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/field_trial_acceptance_scorecard.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/field_trial_acceptance_scorecard.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Product feedback export</strong>
-              <p>The feedback export turns simulated deployment signal into buckets, severity, recommended action, and promotion rules without claiming real customers.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/0f1478a">cleanroom commit 0f1478a</a></li><li><code>cleanroom run 26078339260-success</code></li><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/product_feedback_export_input.json">https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/product_feedback_export_input.json</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Ready second-service handoff</strong>
-              <p>The ready-state handoff proves a second service run can carry acceptance criteria forward after the repair-state path.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/3a418a100583039868130ed20c921760fca33bb3">cleanroom commit 3a418a1</a></li><li><code>cleanroom run 26077570626-success</code></li><li><a href="https://dicnunz.github.io/ai-coding-workflow-receipt-reference/?v=e3e1b52">dicnunz.github.io/ai-coding-workflow-receipt-reference/?v=e3e1b52</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Ready/repair/reject receipts</strong>
-              <p>Ready, repair, and reject receipts exercise the same structured record so adoption outcomes are not only prose.</p>
-              <ul><li><a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/a94284137a6f1bf2f705da23198aee8e5d91afbf">cleanroom commit a942841</a></li><li><code>cleanroom run 26075916690-success</code></li><li><a href="https://dicnunz.github.io/ai-coding-workflow-receipt-reference/">dicnunz.github.io/ai-coding-workflow-receipt-reference</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Traversable public ledger</strong>
-              <p>The public inspector lets a reviewer traverse active path, blockers, newest proof, and role-fit branches from the graph itself.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-proof-ledger/">dicnunz.github.io/ciw-proof-ledger</a></li><li><code>Pages commit c6ba801</code></li><li><code>Pages run 26076162336-success</code></li></ul>
-            </article><article class="digest-card">
-              <strong>Executable receipt validator</strong>
-              <p>The reference implementation validates deployment receipts and renders handoffs from JSON fixtures.</p>
-              <ul><li><a href="https://dicnunz.github.io/ai-coding-workflow-receipt-reference/">dicnunz.github.io/ai-coding-workflow-receipt-reference</a></li><li><code>Pages commit 74683cf</code></li><li><code>cleanroom run 26075312231-success</code></li></ul>
-            </article><article class="digest-card">
-              <strong>Filled deployment sample</strong>
-              <p>The filled sample run shows the field kit applied to a proof-publication task with scope, decision table, and failure taxonomy.</p>
-              <ul><li><a href="https://dicnunz.github.io/ai-coding-deployment-sample-run/">dicnunz.github.io/ai-coding-deployment-sample-run</a></li><li><code>Pages commit 480fdf1</code></li><li><code>cleanroom run 26075041640-success</code></li></ul>
-            </article><article class="digest-card">
-              <strong>Field templates</strong>
-              <p>The field kit gives intake, scope, demo receipt, taxonomy, decision, and feedback templates for an AI coding rollout.</p>
-              <ul><li><a href="https://dicnunz.github.io/ai-coding-deployment-field-kit/">dicnunz.github.io/ai-coding-deployment-field-kit</a></li><li><code>Pages commit b401f49</code></li><li><code>cleanroom run 26074655244-success</code></li></ul>
-            </article><article class="digest-card">
-              <strong>First-month Codex field trial</strong>
-              <p>The first-month plan translates the deployment role into intake, demos, workshop, receipt handoff, and feedback deliverables.</p>
-              <ul><li><a href="https://dicnunz.github.io/openai-codex-30-day-plan/">dicnunz.github.io/openai-codex-30-day-plan</a></li><li><code>Pages commit 6cda58a</code></li><li><a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">role source</a></li></ul>
-            </article><article class="digest-card">
-              <strong>Browser-verifiable ledger</strong>
-              <p>The browser verifier checks the projected ledger hash chain and graph counts without exposing private local evidence.</p>
-              <ul><li><a href="https://dicnunz.github.io/ciw-proof-ledger/">dicnunz.github.io/ciw-proof-ledger</a></li><li><code>Pages commit 86457beef10048eb6d86f896b08330b5a978a98d</code></li><li><code>Pages run 26072322150 success</code></li></ul>
-            </article><article class="digest-card">
-              <strong>Recruiter proof brief</strong>
-              <p>The proof brief gives a recruiter one safe entry point into the packet, source repo, memo, and deployment lane.</p>
-              <ul><li><a href="https://dicnunz.github.io/openai-codex-proof/">dicnunz.github.io/openai-codex-proof</a></li><li><code>Pages commit 354199f7468a056285302762a7b5c20d6ddefcd3</code></li><li><code>Pages run 26071624083 success</code></li></ul>
-            </article></div>
+      <section class="section digest-section">
+        <div class="section-label"><p class="meta">Role fit</p><h2>Source facts</h2></div>
+        <div class="note-list"><ul><li>The live AI Deployment Engineer - Codex role is Technical Success / Remote - US.</li><li>The role asks for customer SDLC design, demos, reference implementations, workshops, Cookbook-style examples, deployment signal, security, and operational readiness.</li></ul><p>Sources: <a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">role page</a> · <a href="https://openai.com/interview-guide/">interview guide</a></p></div>
       </section>
-      <section class="section">
-        <div class="section-label"><p class="meta">Path</p><h2>Active graph</h2></div>
-        <ol class="path-list"><li><code>goal-openai-role</code><span>OpenAI role through cleanroom proof [active]</span></li><li><code>progress-web</code><span>Progress web [active]</span></li><li><code>ciw-autonomous-operating-system</code><span>CIW autonomous operating system [active]</span></li><li><code>autonomy-scheduler-health</code><span>Autonomy scheduler health [done]</span></li><li><code>live-codex-role-source-check</code><span>Live Codex role source check [done]</span></li><li><code>public-proof-ledger-inspector</code><span>Public Proof Ledger inspector [done]</span></li><li><code>public-ai-coding-workshop</code><span>Public AI coding deployment workshop [done]</span></li><li><code>public-ai-coding-patterns</code><span>Public AI coding deployment patterns [done]</span></li><li><code>public-openai-codex-proof-brief</code><span>Public OpenAI Codex proof brief [done]</span></li><li><code>application-submit</code><span>Submit target OpenAI application [done]</span></li><li><code>openai-application-receipt</code><span>OpenAI application receipt [done]</span></li><li><code>openai-review-window-packet</code><span>OpenAI review-window packet [done]</span></li><li><code>ai-coding-deployment-field-kit</code><span>AI Coding Deployment Field Kit [done]</span></li><li><code>ai-coding-deployment-sample-run</code><span>AI Coding Deployment Sample Run [done]</span></li><li><code>ai-coding-workflow-receipt-reference</code><span>AI Coding Workflow Receipt Reference [done]</span></li><li><code>deployment-feedback-receipt-fixtures</code><span>Deployment feedback receipt fixtures [done]</span></li><li><code>post-workshop-handoff-receipt-path</code><span>Post-workshop handoff receipt path [done]</span></li><li><code>ready-second-service-handoff-fixture</code><span>Ready second-service handoff fixture [done]</span></li><li><code>openai-30-day-field-trial-plan</code><span>OpenAI Codex 30-Day Field Trial Plan [done]</span></li><li><code>openai-interview-conversion-packet</code><span>OpenAI interview conversion packet [done]</span></li><li><code>openai-reviewer-digest</code><span>OpenAI Codex reviewer digest [done]</span></li><li><code>public-inspector-node-deeplinks</code><span>Public inspector node deep links [done]</span></li><li><code>public-role-fit-preset-bundle</code><span>Public role-fit preset bundle [done]</span></li><li><code>public-openai-codex-route-index</code><span>Public OpenAI Codex route index [done]</span></li><li><code>autonomy-public-surface-coverage</code><span>Autonomy public-surface coverage [done]</span></li><li><code>product-feedback-export-fixture</code><span>Product feedback export fixture [done]</span></li><li><code>field-trial-acceptance-scorecard</code><span>Field-trial acceptance scorecard [done]</span></li><li><code>deployment-assessment-drill</code><span>Deployment assessment drill [done]</span></li><li><code>autonomous-growth-readiness-selector</code><span>Autonomous growth-readiness selector [done]</span></li><li><code>reviewer-time-to-understand-benchmark</code><span>Reviewer time-to-understand benchmark [done]</span></li><li><code>interview-question-branching-drill</code><span>Interview question branching drill [done]</span></li><li><code>source-to-answer-index</code><span>Source-to-answer proof index [done]</span></li><li><code>proof-route-cold-read-simulation</code><span>Proof-route cold-read simulation [done]</span></li><li><code>no-send-follow-up-decision-kit</code><span>No-send follow-up decision kit [done]</span></li><li><code>follow-up-draft-eval-harness</code><span>Follow-up draft evaluation harness [done]</span></li><li><code>proof-route-staleness-sentinel</code><span>Proof-route staleness sentinel [done]</span></li><li><code>proof-route-renewal-drill</code><span>Proof-route renewal drill [done]</span></li><li><code>proof-route-regression-suite</code><span>Proof-route regression suite [done]</span></li><li><code>ai-coding-security-review-packet</code><span>AI coding security review packet [done]</span></li><li><code>cookbook-style-codex-example</code><span>Cookbook-style Codex example [done]</span></li><li><code>external-reviewer-validation-harness</code><span>External reviewer validation harness [done]</span></li><li><code>post-gate-reply-review</code><span>Post-gate reply review [watch]</span></li></ol>
+      <section class="section digest-section">
+        <div class="section-label"><p class="meta">Map</p><h2>Need to proof</h2></div>
+        <ul class="role-map"><li><strong>Source freshness</strong><span>Autonomy heartbeat checks the official target role page and Codex search cluster before future proof-building is trusted</span></li><li><strong>Executive path</strong><span>One-screen review path gives a busy reviewer three links first: scorecard for truth, role portfolio for fit, and ledger for receipts</span></li><li><strong>Blunt rating gate</strong><span>Brutal scorecard keeps the stack below 10/10 until proof exists for OpenAI-side outcome, company launch, customer deployment, revenue, and legal review</span></li><li><strong>Role portfolio</strong><span>Codex role portfolio maps the visible OpenAI Codex hiring cluster into one primary target, adjacent lanes, honest gaps, and proof-node routes before any post-gate conversation</span></li><li><strong>Regression gate</strong><span>Proof-route regression suite runs role-source, staleness, renewal, draft-quality, route-index, ledger, public-URL, privacy, and no-outbound checks before leverage</span></li></ul>
       </section>
-      <section class="section">
+      <section class="section digest-section">
+        <div class="section-label"><p class="meta">Route</p><h2>Inspect first</h2></div>
+        <div class="digest-links"><a class="digest-link" href="https://dicnunz.github.io/ciw-role-review/">
+          <span>Executive role review route</span>
+          <strong>ciw-role-review/</strong>
+        </a><a class="digest-link" href="https://dicnunz.github.io/ciw-brutal-scorecard/">
+          <span>Brutal scorecard</span>
+          <strong>ciw-brutal-scorecard/</strong>
+        </a><a class="digest-link" href="https://dicnunz.github.io/openai-codex-role-portfolio/">
+          <span>Codex role portfolio</span>
+          <strong>openai-codex-role-portfolio/</strong>
+        </a><a class="digest-link" href="https://dicnunz.github.io/ciw-proof-ledger/?view=graph">
+          <span>Progress inspector</span>
+          <strong>ciw-proof-ledger/?view=graph</strong>
+        </a><a class="digest-link" href="https://github.com/dicnunz/cleanroom-intelligence-works">
+          <span>Cleanroom source</span>
+          <strong>github:cleanroom-intelligence-works</strong>
+        </a></div>
+      </section>
+      <section class="section digest-section">
+        <div class="section-label"><p class="meta">Proof</p><h2>What survives review</h2></div>
+        <ol class="proof-list"><li>
+          <strong>OpenAI outcome evidence classifier</strong>
+          <span>The outcome watch now rejects raw observation text as OpenAI-side traction unless it has verified public-safe evidence with a human-owned or target-company-owned source and an actionable next step.</span>
+        </li><li>
+          <strong>OpenAI inbound signal router</strong>
+          <span>The inbound signal router classifies receipts, broadcasts, unrelated interviews, ambiguous mail, human replies, referral replies, recruiter next steps, interview loops, collaboration paths, and offers before any outcome-watch update or reply review can run.</span>
+        </li><li>
+          <strong>CIW executive role review route</strong>
+          <span>The canonical role-review route now acts as the executive screen: three decision links first, then the full graph only if the scorecard, role portfolio, and ledger are worth deeper inspection.</span>
+        </li><li>
+          <strong>External reviewer validation harness</strong>
+          <span>The external reviewer harness makes the weakest remaining controllable gap falsifiable: a non-Nic reviewer must be able to explain CIW, role fit, proof mechanism, missing evidence, and claim boundaries without a walkthrough before reviewer validation can be claimed.</span>
+        </li></ol>
+      </section>
+      <section class="section digest-section">
+        <div class="section-label"><p class="meta">Evidence</p><h2>Supporting links</h2></div>
+        <ul class="proof-links"><li><a href="https://dicnunz.github.io/openai-codex-proof/">Proof brief</a></li><li><a href="https://dicnunz.github.io/openai-codex-application-delta/">Application delta</a></li><li><a href="https://dicnunz.github.io/ai-coding-cookbook-style-example/">Cookbook-style example</a></li><li><a href="https://dicnunz.github.io/ai-coding-security-review-packet/">Security review packet</a></li><li><a href="https://dicnunz.github.io/ciw-external-reviewer-validation/">External reviewer validation</a></li></ul>
+      </section>
+      <section class="section digest-section">
         <div class="section-label"><p class="meta">Boundary</p><h2>Do not claim</h2></div>
-        <div class="note-list"><ul><li>Independent proof lab, not legal incorporation.</li><li>No OpenAI affiliation, partnership, endorsement, employment, customer deployment, revenue, or official status claim.</li><li>No private inbox IDs, local machine paths, legal/work-eligibility values, credentials, or customer material in public projection.</li><li>No outbound message before the gate without a current reply or explicit override.</li></ul></div>
+        <ul class="boundary-list"><li>Independent proof lab, not legal incorporation.</li><li>No OpenAI affiliation, partnership, endorsement, employment, customer deployment, revenue, or official status claim.</li><li>No private inbox IDs, local machine paths, legal/work-eligibility values, credentials, or customer material in public projection.</li><li>No outbound message before the gate without a current reply or explicit override.</li></ul>
       </section>
     </main>
-    <footer class="footer"><span>Nicholas Dunzelman</span><a href="https://github.com/dicnunz">github.com/dicnunz</a></footer>
+    <footer class="footer digest-shell"><span>Cleanroom Intelligence Works</span><a href="../openai-codex-route-index/">Route index</a></footer>
   </body>
 </html>

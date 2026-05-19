@@ -142,14 +142,16 @@
         <h1 id="intro-title">Runnable proof that the field kit can become a validated handoff.</h1>
         <p class="claim">
           This is a cleanroom reference implementation: structured JSON goes through required-field validation and
-          renders into a markdown deployment receipt plus a product-feedback packet with command results, decision,
-          limits, and adoption signal.
+          renders into a markdown deployment receipt, product-feedback packet, and post-workshop handoff with
+          friction deltas, safety gates, model behavior, tool gaps, and adoption notes.
         </p>
         <pre class="code-panel" aria-label="Receipt reference commands"><code>python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_input.json
 python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_repair_input.json
 python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_reject_input.json
 python3 tools/deployment_receipt.py render --input examples/deployment_receipt_input.json
 python3 tools/deployment_receipt.py feedback --input examples/deployment_receipt_input.json
+python3 tools/deployment_receipt.py validate-handoff --input examples/post_workshop_handoff_input.json
+python3 tools/deployment_receipt.py handoff --input examples/post_workshop_handoff_input.json
 python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py</code></pre>
       </section>
 
@@ -169,7 +171,9 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
               <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_input.json">ready</a>,
               <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_repair_input.json">repair</a>,
               and
-              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_reject_input.json">reject</a>
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_reject_input.json">reject</a>,
+              plus
+              <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/post_workshop_handoff_input.json">post-workshop handoff</a>
             </span>
           </div>
           <div class="proof-card">
@@ -178,7 +182,7 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
           </div>
           <div class="proof-card">
             <strong>CI</strong>
-            <span>Cleanroom verifier passed at commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/a94284137a6f1bf2f705da23198aee8e5d91afbf">a942841</a>.</span>
+            <span>Cleanroom verifier passed at commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/d4811e67a96a3d388640daeef12823d176f20297">d4811e6</a>.</span>
           </div>
         </div>
       </section>
@@ -205,6 +209,10 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
             <strong>Feedback gaps</strong>
             <span>Missing ready patterns, trust failures, product implications, or decision-specific follow-up.</span>
           </li>
+          <li>
+            <strong>Handoff gaps</strong>
+            <span>Missing SDLC friction deltas, safety gates, model/tool feedback buckets, next owner, next check, or handoff assets.</span>
+          </li>
         </ol>
       </section>
 
@@ -217,11 +225,13 @@ python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py<
           <p>
             The role asks for demos, reference implementations, workflow automations, technical content, product
             feedback, safety, and operational readiness. This reference turns the receipt pattern into runnable source,
-            then turns the same validated run into a product-feedback packet.
+            turns the same validated run into a product-feedback packet, and adds a second handoff path for the end of a
+            workshop.
           </p>
           <p class="boundary-note">
             This is not customer deployment history. It is a code-backed operating proof: a demo should produce
-            structured evidence a second engineer can validate without the presenter in the room.
+            structured evidence and a workshop should leave behind a friction delta a second engineering leader can
+            validate without the presenter in the room.
           </p>
         </div>
       </section>

@@ -16,6 +16,33 @@ const GRAPH_FILTERS = [
   ["blockers", "Blockers"],
 ];
 const GRAPH_FILTER_KEYS = new Set(GRAPH_FILTERS.map(([key]) => key));
+const ROLE_PRESETS = [
+  {
+    key: "reviewer-digest",
+    label: "Reviewer digest",
+    node: "openai-reviewer-digest",
+    filter: "active-path",
+  },
+  {
+    key: "receipt-fixtures",
+    label: "Receipt fixtures",
+    node: "deployment-feedback-receipt-fixtures",
+    filter: "active-path",
+  },
+  {
+    key: "post-workshop-handoff",
+    label: "Post-workshop handoff",
+    node: "post-workshop-handoff-receipt-path",
+    filter: "active-path",
+  },
+  {
+    key: "field-kit-branch",
+    label: "Field-kit branch",
+    node: "ai-coding-deployment-field-kit",
+    filter: "active-path",
+  },
+];
+const ROLE_PRESET_MAP = new Map(ROLE_PRESETS.map((preset) => [preset.key, preset]));
 
 const state = {
   summary: null,
@@ -25,6 +52,7 @@ const state = {
   graphFilter: initialGraphFilter(),
   query: initialQuery(),
   selectedNode: initialNode(),
+  activePreset: initialPreset(),
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -46,6 +74,11 @@ function initialQuery() {
 
 function initialNode() {
   return (new URLSearchParams(window.location.search).get("node") || "").trim() || null;
+}
+
+function initialPreset() {
+  const requested = (new URLSearchParams(window.location.search).get("preset") || "").trim();
+  return ROLE_PRESET_MAP.has(requested) ? requested : null;
 }
 
 function canonicalJson(value) {
@@ -145,7 +178,7 @@ function setText(selector, value) {
   }
 }
 
-function inspectorUrl({ mode = state.mode, filter = state.graphFilter, node = state.selectedNode, query = state.query } = {}) {
+function inspectorUrl({ mode = state.mode, filter = state.graphFilter, node = state.selectedNode, query = state.query, preset = state.activePreset } = {}) {
   const url = new URL(window.location.href);
   url.hash = "";
   url.searchParams.set("view", mode);
@@ -164,6 +197,11 @@ function inspectorUrl({ mode = state.mode, filter = state.graphFilter, node = st
   } else {
     url.searchParams.delete("q");
   }
+  if (mode === "graph" && preset) {
+    url.searchParams.set("preset", preset);
+  } else {
+    url.searchParams.delete("preset");
+  }
   return url;
 }
 
@@ -178,7 +216,36 @@ function nodeUrl(nodeId) {
     filter: visibleIds.has(nodeId) ? state.graphFilter : "all",
     node: nodeId,
     query: state.query,
+    preset: null,
   }).toString();
+}
+
+function presetUrl(preset) {
+  return inspectorUrl({
+    mode: "graph",
+    filter: preset.filter,
+    node: preset.node,
+    query: "",
+    preset: preset.key,
+  }).toString();
+}
+
+function applyPreset(presetKey) {
+  const preset = ROLE_PRESET_MAP.get(presetKey);
+  if (!preset) {
+    return false;
+  }
+  state.mode = "graph";
+  state.graphFilter = GRAPH_FILTER_KEYS.has(preset.filter) ? preset.filter : "all";
+  state.query = "";
+  const route = activePathIds();
+  state.selectedNode = graphNodes().some((node) => node.id === preset.node) ? preset.node : route[route.length - 1];
+  state.activePreset = preset.key;
+  const search = $("#search");
+  if (search) {
+    search.value = "";
+  }
+  return true;
 }
 
 function renderMetrics(verification) {
@@ -200,9 +267,22 @@ function renderLinks() {
     role_packet: "Role packet",
     deployment_memo: "Deployment memo",
   };
-  $("#public-links").innerHTML = Object.entries(state.summary.public_urls)
+  const publicLinks = Object.entries(state.summary.public_urls)
     .map(([key, href]) => `<a href="${href}">${labels[key] || key}</a>`)
     .join("");
+  const presets = `
+    <div class="preset-group" aria-label="Role-fit presets">
+      <span class="label">Role-fit presets</span>
+      ${ROLE_PRESETS.map(
+        (preset) => `
+          <a class="preset-link ${state.activePreset === preset.key ? "is-active" : ""}" href="${escapeHtml(presetUrl(preset))}" data-preset="${escapeHtml(preset.key)}">
+            ${escapeHtml(preset.label)}
+          </a>
+        `
+      ).join("")}
+    </div>
+  `;
+  $("#public-links").innerHTML = publicLinks + presets;
 }
 
 function recordText(record) {
@@ -437,6 +517,7 @@ function renderMode() {
 
 function renderAll() {
   renderMode();
+  renderLinks();
   renderLedger();
   renderGraph();
   renderRoute();
@@ -445,15 +526,28 @@ function renderAll() {
 function bindEvents() {
   $("#search").addEventListener("input", (event) => {
     state.query = event.target.value.trim().toLowerCase();
+    state.activePreset = null;
     syncUrl();
     renderAll();
   });
   document.querySelectorAll(".mode-button").forEach((button) => {
     button.addEventListener("click", () => {
       state.mode = button.dataset.mode;
+      state.activePreset = null;
       syncUrl();
       renderMode();
     });
+  });
+  $("#public-links").addEventListener("click", (event) => {
+    const link = event.target.closest("[data-preset]");
+    if (!link) {
+      return;
+    }
+    event.preventDefault();
+    if (applyPreset(link.dataset.preset)) {
+      syncUrl();
+      renderAll();
+    }
   });
   $("#graph-grid").addEventListener("click", (event) => {
     const button = event.target.closest("[data-node]");
@@ -462,6 +556,7 @@ function bindEvents() {
     }
     state.selectedNode = button.dataset.node;
     state.mode = "graph";
+    state.activePreset = null;
     syncUrl();
     renderGraph();
   });
@@ -489,6 +584,7 @@ function bindEvents() {
     state.selectedNode = button.dataset.node;
     state.graphFilter = "all";
     state.mode = "graph";
+    state.activePreset = null;
     syncUrl();
     renderAll();
   });
@@ -501,6 +597,7 @@ function bindEvents() {
     const visible = filteredGraphNodes();
     state.selectedNode = visible[0]?.id || null;
     state.mode = "graph";
+    state.activePreset = null;
     syncUrl();
     renderGraph();
   });
@@ -528,18 +625,22 @@ async function boot() {
     if (state.query) {
       $("#search").value = state.query;
     }
+    if (state.activePreset && applyPreset(state.activePreset)) {
+      // Preset applied.
+    } else {
+      state.activePreset = null;
+    }
     const nodeExists = state.selectedNode && graphNodes().some((node) => node.id === state.selectedNode);
-    if (nodeExists) {
+    if (!state.activePreset && nodeExists) {
       state.mode = "graph";
       if (!filteredGraphNodes().some((node) => node.id === state.selectedNode)) {
         state.graphFilter = "all";
       }
-    } else {
+    } else if (!state.activePreset) {
       state.selectedNode = route[route.length - 1] || graphNodes()[0]?.id || null;
     }
     const verification = await verifyLedger(ledger);
     renderMetrics(verification);
-    renderLinks();
     renderAll();
     syncUrl();
     bindEvents();

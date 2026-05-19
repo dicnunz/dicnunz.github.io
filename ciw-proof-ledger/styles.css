@@ -237,6 +237,25 @@ code {
   outline: none;
 }
 
+.preset-group {
+  display: grid;
+  gap: 7px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.link-stack .preset-link {
+  border-style: dashed;
+  background: #fff;
+}
+
+.link-stack .preset-link.is-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
 .surface {
   min-height: 640px;
   padding: 16px;

@@ -36,6 +36,12 @@ const ROLE_PRESETS = [
     filter: "active-path",
   },
   {
+    key: "ready-handoff",
+    label: "Ready handoff",
+    node: "ready-second-service-handoff-fixture",
+    filter: "active-path",
+  },
+  {
     key: "field-kit-branch",
     label: "Field-kit branch",
     node: "ai-coding-deployment-field-kit",
@@ -267,6 +273,7 @@ function renderLinks() {
     cleanroom_repo: "Cleanroom repo",
     role_packet: "Role packet",
     deployment_memo: "Deployment memo",
+    route_index: "Route index",
   };
   const publicLinks = Object.entries(state.summary.public_urls)
     .map(([key, href]) => `<a href="${href}">${labels[key] || key}</a>`)

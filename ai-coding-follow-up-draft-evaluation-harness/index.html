@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Follow-Up Draft Evaluation Harness</title>
+    <meta
+      name="description"
+      content="A public-safe Cleanroom Intelligence Works harness that scores a future post-gate follow-up draft before use, without sending, scheduling, or authorizing outreach."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Follow-Up Draft Evaluation Harness">
+    <meta
+      property="og:description"
+      content="Seven draft-quality signals check source freshness, recipient fit, new proof, claim safety, repetition, proof-link economy, and the no-outbound gate."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-follow-up-draft-evaluation-harness/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-follow-up-draft-evaluation-harness/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .draft-hero h1 {
+        max-width: min(940px, 100%);
+        font-size: clamp(2.25rem, 6.2vw, 4.75rem);
+        text-wrap: balance;
+      }
+
+      .draft-hero .claim {
+        width: min(760px, 100%);
+        max-width: min(760px, 100%);
+      }
+
+      .score-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .score-tile,
+      .signal-list li,
+      .gate-list li {
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .score-tile,
+      .signal-list li,
+      .gate-list li {
+        padding: 14px;
+      }
+
+      .score-tile strong,
+      .signal-list strong,
+      .gate-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .score-tile span {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.45rem;
+        font-weight: 760;
+      }
+
+      .signal-list,
+      .gate-list,
+      .command-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .signal-list li {
+        display: grid;
+        grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+        gap: 16px;
+      }
+
+      .signal-list b {
+        display: block;
+        margin: 7px 0;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .signal-list span,
+      .gate-list span,
+      .command-list,
+      .boundary-note {
+        color: var(--muted);
+      }
+
+      .signal-list small {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 760;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .gate-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .command-list {
+        padding-left: 18px;
+        list-style: disc;
+      }
+
+      .command-list code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      .topbar,
+      nav,
+      .draft-hero,
+      .draft-hero .claim,
+      .signal-list li > span {
+        min-width: 0;
+      }
+
+      nav {
+        max-width: 100%;
+      }
+
+      nav a,
+      .draft-hero .claim,
+      .signal-list span,
+      .gate-list span {
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 760px) {
+        .topbar,
+        .intro,
+        .section,
+        .footer {
+          width: calc(100vw - 32px);
+          max-width: calc(100vw - 32px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+          padding: 12px 0;
+        }
+
+        nav {
+          justify-content: flex-start;
+          gap: 12px;
+        }
+
+        nav a {
+          font-size: 0.95rem;
+        }
+
+        .draft-hero h1 {
+          max-width: 13ch;
+          font-size: clamp(2.05rem, 9.4vw, 2.9rem);
+          line-height: 1;
+        }
+
+        .draft-hero .claim {
+          width: 100%;
+          font-size: 1rem;
+        }
+
+        .score-strip,
+        .signal-list li,
+        .gate-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-review-digest/">Reviewer digest</a>
+        <a href="../ai-coding-no-send-follow-up-decision-kit/">No-send kit</a>
+        <a href="../ciw-proof-ledger/?preset=follow-up-eval">Graph node</a>
+        <a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/follow_up_draft_evaluation_harness.json">Fixture</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro draft-hero" aria-labelledby="intro-title">
+        <p class="meta">Follow-up draft evaluator · checked May 19, 2026</p>
+        <h1 id="intro-title">Future follow-up gets scored before it gets used.</h1>
+        <p class="claim">
+          This harness evaluates a possible post-gate follow-up draft without contacting anyone: seven source-backed
+          signals score freshness, recipient fit, new proof, claim safety, repetition, link economy, and the
+          May 26, 2026 no-outbound gate.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="score-title">
+        <div class="section-label">
+          <p class="meta">Result</p>
+          <h2 id="score-title">Current fixture</h2>
+        </div>
+        <div class="score-strip">
+          <div class="score-tile">
+            <strong>Decision</strong>
+            <span>Ready</span>
+          </div>
+          <div class="score-tile">
+            <strong>Signals</strong>
+            <span>7/7</span>
+          </div>
+          <div class="score-tile">
+            <strong>Average</strong>
+            <span>4.6/5</span>
+          </div>
+          <div class="score-tile">
+            <strong>Links</strong>
+            <span>2 max</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="signals-title">
+        <div class="section-label">
+          <p class="meta">Signals</p>
+          <h2 id="signals-title">Draft checks</h2>
+        </div>
+        <ol class="signal-list">
+          <li>
+            <span><strong>source_freshness</strong><b>Role source and proof pages are current.</b>Official role source, reviewer digest, route index, and ledger projection have to be checked before use.</span>
+            <span>Failure mode: stale role framing or stale public proof. <small>Score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>recipient_fit</strong><b>The draft has a real reason to reach this person.</b>It must match the known route and avoid broad or wrong-recipient messaging.</span>
+            <span>Failure mode: generic attention spend. <small>Score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>new_proof_signal</strong><b>The note adds a new verified receipt.</b>Re-sending the same route is not enough; the proof must change the reason to reopen attention.</span>
+            <span>Failure mode: no new information. <small>Score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>claim_safety</strong><b>The draft stays inside the cleanroom boundary.</b>No affiliation, employment, endorsement, customer deployment, revenue, funding, legal-entity, or production-result claim.</span>
+            <span>Failure mode: a single overclaim kills the message. <small>Score 5/5</small></span>
+          </li>
+          <li>
+            <span><strong>repetition_control</strong><b>The route refuses low-signal repetition.</b>One concise proof update beats another long recap.</span>
+            <span>Failure mode: activity theater after the gate. <small>Score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>proof_link_economy</strong><b>The draft uses at most two proof links.</b>The reviewer digest is the front door; extra links need a specific job.</span>
+            <span>Failure mode: link dump instead of judgment. <small>Score 4/5</small></span>
+          </li>
+          <li>
+            <span><strong>no_outbound_gate</strong><b>The May 26, 2026 gate remains active.</b>The harness scores draft quality only; it cannot send, schedule, address, or authorize contact.</span>
+            <span>Failure mode: using a verifier as permission. <small>Score 5/5</small></span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="gates-title">
+        <div class="section-label">
+          <p class="meta">Gates</p>
+          <h2 id="gates-title">Release checks</h2>
+        </div>
+        <ul class="gate-list">
+          <li><strong>Public-safe data</strong><span>Uses public URLs and synthetic draft-review signals only.</span></li>
+          <li><strong>No private routing data</strong><span>No email addresses, private inbox IDs, local paths, credentials, or account-specific handles.</span></li>
+          <li><strong>No-outbound preserved</strong><span>The harness does not contact anyone before May 26, 2026 unless a real reply or explicit fresh override appears.</span></li>
+          <li><strong>Claim boundary</strong><span>Rejects target-company status, legal-entity, traction, customer, funding, and production-result overclaims.</span></li>
+          <li><strong>Proof economy</strong><span>Rejects drafts with more than two proof links.</span></li>
+          <li><strong>Judgment only</strong><span>Scores the draft; it does not write to a recipient or move an external account.</span></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="commands-title">
+        <div class="section-label">
+          <p class="meta">Executable source</p>
+          <h2 id="commands-title">Verifier commands</h2>
+        </div>
+        <ul class="command-list">
+          <li><code>python3 tools/deployment_receipt.py validate-follow-up-draft-eval --input examples/follow_up_draft_evaluation_harness.json</code></li>
+          <li><code>python3 tools/deployment_receipt.py follow-up-draft-eval --input examples/follow_up_draft_evaluation_harness.json</code></li>
+          <li><code>python3 scripts/verify_public_pack.py</code></li>
+          <li><code>python3 -m unittest tests/test_deployment_receipt.py</code></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Evaluator, not outreach</h2>
+        </div>
+        <p class="boundary-note">
+          This page does not send, schedule, address, draft to a private recipient, contact OpenAI, contact a recruiter,
+          claim employment, claim affiliation, claim endorsement, claim customer deployment, claim revenue, claim funding,
+          claim incorporation, or authorize legal/company formation. It is a public-safe verifier for draft judgment only.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

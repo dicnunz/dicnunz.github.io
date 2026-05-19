@@ -99,6 +99,12 @@ const ROLE_PRESETS = [
     key: "follow-up-eval",
     label: "Follow-up eval",
     node: "follow-up-draft-eval-harness",
+    filter: "active-path",
+  },
+  {
+    key: "staleness",
+    label: "Staleness",
+    node: "proof-route-staleness-sentinel",
     filter: "next-branches",
   },
   {

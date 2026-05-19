@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T08:49:06Z",
+  "updated_at": "2026-05-19T09:10:42Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -847,11 +847,29 @@
       "id": "follow-up-draft-eval-harness",
       "title": "Follow-up draft evaluation harness",
       "type": "hiring-route",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Cleanroom source now validates and renders a public-safe follow-up draft evaluation harness: seven source_freshness, recipient_fit, new_proof_signal, claim_safety, repetition_control, proof_link_economy, and no_outbound_gate signals score a future post-gate note before it can be used, while preserving the 2026-05-26 no-outbound boundary and refusing private proof links, overclaims, stale-route use, or bloated link dumps.",
+      "evidence": [
+        "planned-by:no-send-follow-up-decision-kit",
+        "cleanroom-run:26087529516-success",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/follow_up_draft_evaluation_harness.json",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/commit/00e1601",
+        "https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/docs/ai-coding-follow-up-draft-evaluation-harness.md"
+      ],
+      "next": [
+        "Use only as a draft-quality gate; the next safe branch is a proof-route staleness sentinel, not external outreach."
+      ]
+    },
+    {
+      "id": "proof-route-staleness-sentinel",
+      "title": "Proof-route staleness sentinel",
+      "type": "hiring-route",
       "status": "next",
       "priority": "P0",
-      "summary": "Next safe leverage branch: build a local evaluator that scores any future post-gate follow-up draft for source freshness, recipient fit, repetition, claim safety, and proof-link economy before it can be used.",
+      "summary": "Next safe autonomy branch: build an executable stale-proof refusal layer that checks role source freshness, reviewer digest currency, route-index coverage, public ledger projection, graph next branch, and no-outbound gates before any post-gate proof route can be used as leverage.",
       "evidence": [
-        "planned-by:no-send-follow-up-decision-kit"
+        "planned-by:follow-up-draft-eval-harness"
       ],
       "next": [
         "Build only as a local verifier; do not touch external accounts or send messages before the 2026-05-26 gate."
@@ -2118,6 +2136,18 @@
       "to": "warm-referral-route",
       "relation": "guards",
       "weight": 4
+    },
+    {
+      "from": "follow-up-draft-eval-harness",
+      "to": "proof-route-staleness-sentinel",
+      "relation": "next_path",
+      "weight": 5
+    },
+    {
+      "from": "proof-route-staleness-sentinel",
+      "to": "warm-referral-route",
+      "relation": "guards",
+      "weight": 4
     }
   ],
   "views": {
@@ -2157,11 +2187,12 @@
       "proof-route-cold-read-simulation",
       "no-send-follow-up-decision-kit",
       "follow-up-draft-eval-harness",
+      "proof-route-staleness-sentinel",
       "warm-referral-route"
     ],
     "next_branches": [
       "ciw-autonomous-operating-system",
-      "follow-up-draft-eval-harness",
+      "proof-route-staleness-sentinel",
       "warm-referral-route",
       "legal-entity-review"
     ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T17:41:52Z",
+  "generated_at": "2026-05-19T17:45:39Z",
   "title": "Cleanroom Intelligence Works Proof Ledger Inspector",
   "notice": "This is a public-safe projection of the local proof ledger. It verifies the projected hash chain in-browser and withholds private inbox identifiers and local-only evidence.",
   "ledger": {
@@ -52,6 +52,7 @@
     "openai_role_portfolio": "https://dicnunz.github.io/openai-codex-role-portfolio/",
     "brutal_scorecard": "https://dicnunz.github.io/ciw-brutal-scorecard/",
     "external_reviewer_validation": "https://dicnunz.github.io/ciw-external-reviewer-validation/",
+    "review_route_audit": "https://dicnunz.github.io/ciw-review-route-audit/",
     "collaboration_path": "https://dicnunz.github.io/ciw-collaboration-path/",
     "company_launch_readiness": "https://dicnunz.github.io/ciw-launch-readiness/",
     "company_system_map": "https://dicnunz.github.io/ciw-company-system-map/",

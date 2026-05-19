@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T05:19:22Z",
+  "updated_at": "2026-05-19T05:26:28Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -615,6 +615,23 @@
       ],
       "next": [
         "Use this route only after the 2026-05-26 no-reply gate unless a recruiter/Cory reply appears or Nic explicitly overrides."
+      ]
+    },
+    {
+      "id": "autonomy-public-surface-coverage",
+      "title": "Autonomy public-surface coverage",
+      "type": "operating-system",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Autonomy heartbeat now tests the reviewer digest and route index as first-class public surfaces, includes the reviewer digest unit test, and points future autonomous work away from the completed route-index branch.",
+      "evidence": [
+        "tools/ciw_autonomy.py",
+        "ops/autonomy/autonomy_config.json",
+        "ops/autonomy/state/latest_report.md",
+        "ops/autonomy/state/next_work_packet.md"
+      ],
+      "next": [
+        "Next autonomous branch should create new verifier-backed deployment evidence or wait for the 2026-05-26 outreach gate."
       ]
     }
   ],
@@ -1578,6 +1595,30 @@
       "to": "warm-referral-route",
       "relation": "prepares_followup",
       "weight": 3
+    },
+    {
+      "from": "ciw-autonomous-operating-system",
+      "to": "autonomy-public-surface-coverage",
+      "relation": "extends-checks",
+      "weight": 5
+    },
+    {
+      "from": "public-openai-codex-route-index",
+      "to": "autonomy-public-surface-coverage",
+      "relation": "covered-by",
+      "weight": 4
+    },
+    {
+      "from": "openai-reviewer-digest",
+      "to": "autonomy-public-surface-coverage",
+      "relation": "covered-by",
+      "weight": 4
+    },
+    {
+      "from": "autonomy-public-surface-coverage",
+      "to": "warm-referral-route",
+      "relation": "gates-followup",
+      "weight": 4
     }
   ],
   "views": {
@@ -1604,6 +1645,7 @@
       "public-inspector-node-deeplinks",
       "public-role-fit-preset-bundle",
       "public-openai-codex-route-index",
+      "autonomy-public-surface-coverage",
       "warm-referral-route"
     ],
     "next_branches": [

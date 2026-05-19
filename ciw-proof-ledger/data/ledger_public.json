@@ -372,5 +372,16 @@
     "source_hash": "37a64951e0183e1f3203935966d9af0a604e903e499dd8f193b76fc009e5a6aa",
     "prev_hash": "8682d12d0e5f573e4455227eacd2709756aa35e6a8628fa75d642e499de52ddd",
     "hash": "5a5bb99b812fb55f3edbd9ce5628bfe2149473ea2c6562c7f7a29600d7ae5976"
+  },
+  {
+    "index": 34,
+    "timestamp": "2026-05-19T05:26:39+00:00",
+    "actor": "codex",
+    "action": "hardened autonomy public-surface coverage",
+    "details": "{\"files\":[\"tools/ciw_autonomy.py\",\"ops/autonomy/autonomy_config.json\",\"ops/autonomy/state/latest_report.md\",\"ops/autonomy/state/next_work_packet.md\"],\"verification\":[\"python3 -m unittest tests/test_ciw_autonomy.py tests/test_reviewer_digest.py\",\"python3 tools/ciw_autonomy.py heartbeat\",\"python3 tools/progress_graph.py validate\",\"python3 tools/proof_ledger.py verify --ledger .ciw/ledger.jsonl\"],\"public_surfaces_added_to_heartbeat\":[\"openai-codex-route-index\",\"openai-codex-review-digest\"],\"gate\":\"no outbound before 2026-05-26 unless reply or explicit override\"}",
+    "visibility": "public projection",
+    "source_hash": "25445d281ce7aefc13554e59a0437245145b80e947eb668ec4d9402906fcb700",
+    "prev_hash": "5a5bb99b812fb55f3edbd9ce5628bfe2149473ea2c6562c7f7a29600d7ae5976",
+    "hash": "0e0e81a0d15e64602561a3914f1cb911b3bdf1591826a025e2c67223295e56f7"
   }
 ]

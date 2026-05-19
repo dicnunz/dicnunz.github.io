@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Coding Workflow Receipt Reference</title>
+    <meta
+      name="description"
+      content="A runnable cleanroom reference implementation for validating and rendering AI coding deployment handoff receipts."
+    >
+    <meta name="theme-color" content="#f7f8f4">
+    <meta property="og:title" content="AI Coding Workflow Receipt Reference">
+    <meta
+      property="og:description"
+      content="Structured input, validation, markdown receipt rendering, fixture data, tests, and CI for AI coding deployment handoffs."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicnunz.github.io/ai-coding-workflow-receipt-reference/">
+    <meta property="og:site_name" content="Nicholas Dunzelman">
+    <link rel="canonical" href="https://dicnunz.github.io/ai-coding-workflow-receipt-reference/">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .receipt-hero {
+        padding-top: clamp(56px, 8vw, 88px);
+      }
+
+      .receipt-hero h1 {
+        max-width: 800px;
+        font-size: clamp(2.45rem, 6vw, 4.2rem);
+      }
+
+      .receipt-hero .claim {
+        max-width: 780px;
+      }
+
+      .code-panel {
+        margin-top: 18px;
+        border: 1px solid var(--line);
+        background: #151812;
+        color: #f4f1e8;
+        padding: 16px;
+        overflow-x: auto;
+      }
+
+      .code-panel code {
+        font: 0.9rem/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
+      .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .proof-card {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        padding: 14px;
+      }
+
+      .proof-card strong,
+      .receipt-list strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .proof-card span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+      }
+
+      .receipt-list {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .receipt-list > li {
+        display: grid;
+        grid-template-columns: minmax(128px, 0.3fr) minmax(0, 1fr);
+        gap: 18px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .receipt-list span {
+        color: var(--muted);
+      }
+
+      .route-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .route-links a {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 11px;
+        color: var(--ink);
+        background: var(--accent-soft);
+        border: 1px solid #cbd8ce;
+        text-decoration: none;
+      }
+
+      .boundary-note {
+        border-left: 4px solid var(--accent);
+        padding-left: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .proof-grid,
+        .receipt-list > li {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="../">Nicholas Dunzelman</a>
+      <nav aria-label="Primary links">
+        <a href="../openai-codex-proof/">Proof brief</a>
+        <a href="../ai-coding-deployment-field-kit/">Field kit</a>
+        <a href="../ai-coding-deployment-sample-run/">Sample run</a>
+        <a href="../ciw-proof-ledger/">Ledger inspector</a>
+      </nav>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="intro receipt-hero" aria-labelledby="intro-title">
+        <p class="meta">Workflow receipt reference · checked May 19, 2026</p>
+        <h1 id="intro-title">Runnable proof that the field kit can become a validated handoff.</h1>
+        <p class="claim">
+          This is a cleanroom reference implementation: structured JSON goes through required-field validation and
+          renders into a markdown deployment receipt with command results, decision, limits, and product feedback.
+        </p>
+        <pre class="code-panel" aria-label="Receipt reference commands"><code>python3 tools/deployment_receipt.py validate --input examples/deployment_receipt_input.json
+python3 tools/deployment_receipt.py render --input examples/deployment_receipt_input.json
+python3 -m unittest tests/test_deployment_receipt.py tests/test_proof_ledger.py</code></pre>
+      </section>
+
+      <section class="section" aria-labelledby="proof-title">
+        <div class="section-label">
+          <p class="meta">Reference</p>
+          <h2 id="proof-title">What exists</h2>
+        </div>
+        <div class="proof-grid">
+          <div class="proof-card">
+            <strong>Source</strong>
+            <span><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/tools/deployment_receipt.py">tools/deployment_receipt.py</a></span>
+          </div>
+          <div class="proof-card">
+            <strong>Fixture</strong>
+            <span><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/examples/deployment_receipt_input.json">examples/deployment_receipt_input.json</a></span>
+          </div>
+          <div class="proof-card">
+            <strong>Tests</strong>
+            <span><a href="https://github.com/dicnunz/cleanroom-intelligence-works/blob/main/tests/test_deployment_receipt.py">tests/test_deployment_receipt.py</a></span>
+          </div>
+          <div class="proof-card">
+            <strong>CI</strong>
+            <span>Cleanroom verifier passed at commit <a href="https://github.com/dicnunz/cleanroom-intelligence-works/commit/74683cf90729f6f0350e14248891bb9e785c068b">74683cf</a>.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="checks-title">
+        <div class="section-label">
+          <p class="meta">Validation</p>
+          <h2 id="checks-title">What the tool rejects</h2>
+        </div>
+        <ol class="receipt-list">
+          <li>
+            <strong>Scope gaps</strong>
+            <span>Missing owner, task, verifier, data boundary, rollback path, human review rule, or decision owner.</span>
+          </li>
+          <li>
+            <strong>Receipt gaps</strong>
+            <span>Missing context loaded, files changed, command result, security boundary, decision, or known limits.</span>
+          </li>
+          <li>
+            <strong>Decision drift</strong>
+            <span>Any decision outside ready, repair, or reject.</span>
+          </li>
+          <li>
+            <strong>Feedback gaps</strong>
+            <span>Missing ready patterns, trust failures, or product implications.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="fit-title">
+        <div class="section-label">
+          <p class="meta">Fit</p>
+          <h2 id="fit-title">Why this matters</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            The role asks for demos, reference implementations, workflow automations, technical content, product
+            feedback, safety, and operational readiness. This reference turns the receipt pattern into runnable source.
+          </p>
+          <p class="boundary-note">
+            This is not customer deployment history. It is a code-backed operating proof: a demo should produce
+            structured evidence a second engineer can validate without the presenter in the room.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="links-title">
+        <div class="section-label">
+          <p class="meta">Proof stack</p>
+          <h2 id="links-title">Inspect next</h2>
+        </div>
+        <div class="route-links">
+          <a href="../openai-codex-proof/">Proof brief</a>
+          <a href="../ai-coding-deployment-field-kit/">Field kit</a>
+          <a href="../ai-coding-deployment-sample-run/">Sample run</a>
+          <a href="../openai-codex-30-day-plan/">30-day plan</a>
+          <a href="https://github.com/dicnunz/cleanroom-intelligence-works">Cleanroom repo</a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="section-label">
+          <p class="meta">Boundary</p>
+          <h2 id="boundary-title">Cleanroom line</h2>
+        </div>
+        <div class="note-list">
+          <p>
+            This page is independent from OpenAI. It uses OpenAI and Codex only to name public role context. It does
+            not use OpenAI logos, product UI, private systems, or affiliation language.
+          </p>
+          <p>
+            Sources checked: <a href="https://openai.com/careers/ai-deployment-engineer-codex-remote-us/">AI Deployment Engineer - Codex</a>
+            and <a href="https://openai.com/interview-guide/">OpenAI interview guide</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Nicholas Dunzelman</span>
+      <a href="https://github.com/dicnunz">github.com/dicnunz</a>
+      <a href="https://x.com/nicdunz">@nicdunz</a>
+    </footer>
+  </body>
+</html>

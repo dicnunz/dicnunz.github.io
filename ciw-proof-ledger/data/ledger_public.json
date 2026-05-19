@@ -339,5 +339,16 @@
     "source_hash": "692f48671b63192aec23a465de2a5c5f947b7a59d07b793f8cd0a50e1cb12489",
     "prev_hash": "35de71d20a16d28f492dbe7b3c471e666e4632a765e622ff42df681b198fa261",
     "hash": "128b2f957d219f2ea0d31db3e4a668c9d50d3a0f4a6561f12bc5d2f893b95bb6"
+  },
+  {
+    "index": 31,
+    "timestamp": "2026-05-19T05:03:58+00:00",
+    "actor": "Codex",
+    "action": "published latest-action inspector metric",
+    "details": "Updated the public Proof Ledger inspector to display the latest public ledger action alongside the hash metric, making role-fit preset pages prove both the selected graph node and newest receipt. Pages commit 91a2255 deployed via run 26077317534 success. Live Chrome CDP verification on https://dicnunz.github.io/ciw-proof-ledger/?v=91a2255&preset=post-workshop-handoff confirmed ROLE-FIT PRESETS, Post-workshop handoff receipt path, LATEST ACTION, published public role-fit preset bundle, Verified, and 31 projected records verified.",
+    "visibility": "public projection",
+    "source_hash": "48254fcb3fbb5033d67c562caaf503a52537f7b2f477ba72a198883a59560378",
+    "prev_hash": "128b2f957d219f2ea0d31db3e4a668c9d50d3a0f4a6561f12bc5d2f893b95bb6",
+    "hash": "4f5fe626852285939425de2c1a2541d5e68e87fdf0c39a792dfa90862bb777e8"
   }
 ]

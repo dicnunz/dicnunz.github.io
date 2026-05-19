@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T04:57:25Z",
+  "updated_at": "2026-05-19T05:03:54Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -562,6 +562,22 @@
       ],
       "next": [
         "Use preset URLs in reviewer routes instead of asking a reader to manually search the graph."
+      ]
+    },
+    {
+      "id": "public-inspector-latest-action-metric",
+      "title": "Public inspector latest-action metric",
+      "type": "public-proof",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Proof Ledger inspector now exposes the latest public ledger action beside the hash, so a role-fit preset URL proves the selected graph route and newest receipt in one live page.",
+      "evidence": [
+        "https://dicnunz.github.io/ciw-proof-ledger/?v=91a2255&preset=post-workshop-handoff",
+        "commit:91a2255",
+        "pages-run:26077317534-success"
+      ],
+      "next": [
+        "Use the preset URLs as reviewer entry points after the 2026-05-26 no-reply gate only if outreach is still useful."
       ]
     }
   ],
@@ -1462,6 +1478,18 @@
     },
     {
       "from": "public-role-fit-preset-bundle",
+      "to": "warm-referral-route",
+      "relation": "sharpens_followup",
+      "weight": 3
+    },
+    {
+      "from": "public-role-fit-preset-bundle",
+      "to": "public-inspector-latest-action-metric",
+      "relation": "sharpens",
+      "weight": 4
+    },
+    {
+      "from": "public-inspector-latest-action-metric",
       "to": "warm-referral-route",
       "relation": "sharpens_followup",
       "weight": 3

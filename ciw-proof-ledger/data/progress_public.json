@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "OpenAI Role Cleanroom Progress Web",
-  "updated_at": "2026-05-19T03:05:44Z",
+  "updated_at": "2026-05-19T03:10:40Z",
   "root": "goal-openai-role",
   "nodes": [
     {
@@ -332,6 +332,22 @@
       ],
       "next": [
         "Use as the technical-content proof link when a recruiter or interviewer asks for examples, guides, patterns, or customer-facing Codex adoption writing."
+      ]
+    },
+    {
+      "id": "openai-interview-conversion-packet",
+      "title": "OpenAI interview conversion packet",
+      "type": "interview-route",
+      "status": "done",
+      "priority": "P0",
+      "summary": "Recruiter and hiring-manager answer bank that maps public proof surfaces to role evidence, objections, story bank, questions, and pre-call checklist.",
+      "evidence": [
+        "applications/openai/OPENAI_INTERVIEW_CONVERSION_PACKET.md",
+        "https://openai.com/careers/ai-deployment-engineer-codex-remote-us/",
+        "https://openai.com/interview-guide/"
+      ],
+      "next": [
+        "Use only after recruiter, hiring-manager, referral, or explicit Nic prompt; do not send cold before the 2026-05-26 gate."
       ]
     }
   ],
@@ -677,6 +693,54 @@
       "to": "public-ai-coding-patterns",
       "relation": "mirrors-source",
       "weight": 4
+    },
+    {
+      "from": "goal-openai-role",
+      "to": "openai-interview-conversion-packet",
+      "relation": "contains",
+      "weight": 5
+    },
+    {
+      "from": "openai-review-window-packet",
+      "to": "openai-interview-conversion-packet",
+      "relation": "prepares",
+      "weight": 5
+    },
+    {
+      "from": "public-openai-codex-proof-brief",
+      "to": "openai-interview-conversion-packet",
+      "relation": "feeds",
+      "weight": 5
+    },
+    {
+      "from": "public-ai-coding-workshop",
+      "to": "openai-interview-conversion-packet",
+      "relation": "feeds",
+      "weight": 4
+    },
+    {
+      "from": "public-ai-coding-patterns",
+      "to": "openai-interview-conversion-packet",
+      "relation": "feeds",
+      "weight": 4
+    },
+    {
+      "from": "public-proof-ledger-inspector",
+      "to": "openai-interview-conversion-packet",
+      "relation": "feeds",
+      "weight": 4
+    },
+    {
+      "from": "public-cleanroom-repo",
+      "to": "openai-interview-conversion-packet",
+      "relation": "feeds",
+      "weight": 4
+    },
+    {
+      "from": "openai-interview-conversion-packet",
+      "to": "warm-referral-route",
+      "relation": "strengthens",
+      "weight": 5
     }
   ],
   "views": {
@@ -690,6 +754,7 @@
       "application-submit",
       "openai-application-receipt",
       "openai-review-window-packet",
+      "openai-interview-conversion-packet",
       "warm-referral-route"
     ],
     "next_branches": [

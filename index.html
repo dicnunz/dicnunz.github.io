@@ -230,13 +230,19 @@
             <a href="https://github.com/dicnunz/folio/blob/main/docs/documents/first-semester/project-plan/project-plan-2026-08-30.pdf">Project plan</a>
           </nav>
         </section>
-        <section aria-labelledby="experiments">
-          <h2 id="experiments">Experiments</h2>
-          <h3 id="pixelmelt"><a href="https://github.com/dicnunz/pixelmelt">PixelMelt</a></h3>
-          <p>An image-to-particle simulation using Canvas and a Web Worker, with WebM export.</p>
-          <h3 id="trolley-tracker"><a href="https://github.com/dicnunz/trolley-tracker">Panther Trolley Tracker</a></h3>
-          <p>A React transit prototype with mock arrivals and schedule fallback.</p>
-          <p class="status">AI-assisted personal projects. The repositories document their setup and limitations.</p>
+        <section aria-labelledby="contributions">
+          <h2 id="contributions">Selected contributions</h2>
+          <h3><a href="https://github.com/maximhq/bifrost/pull/3640">Bifrost: streaming stop reasons</a></h3>
+          <p>Preserved tool-call stop reasons during response conversion and added streaming regression tests. Merged upstream.</p>
+          <h3><a href="https://github.com/Mozzo1000/booklogr/pull/95">Booklogr: equivalent ISBN lookup</a></h3>
+          <p>Added ISBN normalization, conversion and check-digit validation so existing books can be found using equivalent identifiers. Merged upstream.</p>
+        </section>
+        <section aria-labelledby="experiment">
+          <h2 id="experiment">Asyncio thread cancellation</h2>
+          <p>A small Python experiment showing why cancelling an awaiter does not stop its running thread, and how a dedicated worker pool limits simultaneous blocking calls.</p>
+          <nav aria-label="Experiment links">
+            <a href="https://github.com/dicnunz/asyncio-thread-timeout-lab">Code, demo and six tests</a>
+          </nav>
         </section>
       </article>
     </main>

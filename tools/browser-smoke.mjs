@@ -173,6 +173,37 @@ async function pixelmelt(page) {
   await textEquals(page.locator(".simulation-state"), "Paused");
   await page.getByRole("button", { name: "Step", exact: true }).click();
   await textEquals(page.getByTestId("tick-count"), "2");
+
+  const save = async () => {
+    const downloaded = page.waitForEvent("download");
+    await page.getByRole("button", { name: "Save scene", exact: true }).click();
+    const file = await downloaded;
+    assert.match(file.suggestedFilename(), /^pixelmelt-.+\.pixelmelt$/);
+    const filePath = await file.path();
+    assert.ok(filePath, "Scene export must produce a downloadable file");
+    return { filePath, scene: JSON.parse(await readFile(filePath, "utf8")) };
+  };
+  const saved = await save();
+  assert.equal(saved.scene.snapshot.tick, 2);
+  const painted = await canvas.evaluate((element) => element.toDataURL());
+  await page.getByRole("button", { name: "Reset", exact: true }).click();
+  await textEquals(page.getByTestId("tick-count"), "0");
+  await page.getByLabel("Open saved scene", { exact: true }).setInputFiles(saved.filePath);
+  await page.getByRole("status").filter({ hasText: "Scene restored at tick 2." }).waitFor({ state: "visible" });
+  await textEquals(page.getByTestId("tick-count"), "2");
+  await textEquals(page.locator(".simulation-state"), "Paused");
+  await eventually(async () => assert.equal(await canvas.evaluate((element) => element.toDataURL()), painted, "Restoring a scene must restore the rendered materials"));
+  assert.deepEqual((await save()).scene, saved.scene, "Export after restore must preserve the complete scene, base image, seed and settings");
+
+  await page.getByLabel("Open saved scene", { exact: true }).setInputFiles({
+    name: "broken.pixelmelt", mimeType: "application/json", buffer: Buffer.from("{broken"),
+  });
+  await page.getByRole("alert").filter({ hasText: "This file is not valid scene JSON." }).waitFor({ state: "visible" });
+  await textEquals(page.getByTestId("tick-count"), "2");
+  await textEquals(page.locator(".simulation-state"), "Paused");
+  assert.deepEqual((await save()).scene, saved.scene, "A rejected file must leave the previous scene intact");
+  await page.getByRole("button", { name: "Step", exact: true }).click();
+  await textEquals(page.getByTestId("tick-count"), "3");
 }
 
 async function mission(page) {

@@ -179,6 +179,11 @@ if (cssFiles.length === 0) {
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");
+  // Search Console expects an exact verification token, not a document head.
+  if (html.trim() === `google-site-verification: ${path.basename(file)}`
+      && /^google[0-9a-f]+\.html$/.test(path.basename(file))) {
+    continue;
+  }
   const tags = parseTags(html);
   const ids = new Map();
 

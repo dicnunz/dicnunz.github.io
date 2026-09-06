@@ -159,7 +159,12 @@ td code { font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
 .demo-sidebar p { margin-top: 12px; font-size: 13px; color: var(--muted); } .demo-sidebar h2 { font-size: 17px; } .demo-sidebar pre { font-size: 11px; margin: 16px 0; } .demo-sidebar .button { margin-top: 20px; text-decoration: none; width: 100%; } .demo-label { font-size: 12px; color: var(--muted); } .topbar .button, .report-heading .button { text-decoration: none; } .demo-source { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); } .demo-source p { color: var(--muted); margin-top: 8px; font-size: 12px; } @media(max-width:800px) { .demo-sidebar { display: none; } }
-</style></head><body><header class="topbar"><a class="brand" href="https://github.com/dicnunz/counterexample-studio"><span class="brand-mark" aria-hidden="true">[ ]</span><span>Counterexample Studio</span></a><a class="button" href="https://github.com/dicnunz/counterexample-studio">View source</a></header>
+</style>
+<meta property="og:title" content="Counterexample Studio — saved failure">
+<meta property="og:description" content="A real recorded property-test failure with its input, seed, accepted shrinks, and rerun command.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dicnunz.github.io/demos/counterexample/">
+</head><body><header class="topbar"><a class="brand" href="https://github.com/dicnunz/counterexample-studio"><span class="brand-mark" aria-hidden="true">[ ]</span><span>Counterexample Studio</span></a><a class="button" href="https://github.com/dicnunz/counterexample-studio">View source</a></header>
 <div class="workspace"><aside class="sidebar demo-sidebar"><h2>A real failure, reduced.</h2><p>The chunk function drops the final partial chunk. The property engine found the failing input below and shrank it to one value.</p><div class="sidebar-footnote"><h2>Run it locally</h2><pre>npm install
 npm run build
 npm run studio -- ui --open</pre><p>Pure synchronous JS / TS. The CLI and browser share one deterministic, local engine.</p><a class="button" href="https://github.com/dicnunz/counterexample-studio#quickstart">Open the quickstart</a></div></aside>

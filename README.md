@@ -2,7 +2,7 @@
 
 Source for [dicnunz.github.io](https://dicnunz.github.io/), my personal website.
 
-The homepage introduces my background, Folio senior project, and two personal experiments. It uses plain HTML and CSS with no build step.
+The homepage introduces my background, Folio senior project, selected upstream contributions, and an asyncio experiment. It uses plain HTML and CSS with no build step.
 
 ## Preview
 

@@ -233,9 +233,9 @@
         <section aria-labelledby="contributions">
           <h2 id="contributions">Selected contributions</h2>
           <h3><a href="https://github.com/maximhq/bifrost/pull/3640">Bifrost: streaming stop reasons</a></h3>
-          <p>Preserved tool-call stop reasons during response conversion and added streaming regression tests. Merged upstream.</p>
+          <p>Tool-call completion information could be lost when converting chat responses through the Responses API format to Anthropic's format. The fix preserves that information and adds regression tests, including streams with both text and tool calls. Merged upstream.</p>
           <h3><a href="https://github.com/Mozzo1000/booklogr/pull/95">Booklogr: equivalent ISBN lookup</a></h3>
-          <p>Added ISBN normalization, conversion and check-digit validation so existing books can be found using equivalent identifiers. Merged upstream.</p>
+          <p>A book saved under an ISBN-10 should also be found using its equivalent ISBN-13. The change normalizes and validates identifiers, converts equivalent ISBNs, and checks both forms within the current user's books. Merged upstream.</p>
         </section>
         <section aria-labelledby="experiment">
           <h2 id="experiment">Asyncio thread cancellation</h2>

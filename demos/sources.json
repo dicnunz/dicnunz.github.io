@@ -1,0 +1,38 @@
+[
+  {
+    "demo": "pixelmelt",
+    "repository": "https://github.com/dicnunz/pixelmelt",
+    "source_commit": "71f8e280044fb8ca9d06c22f4d2a12690b311ef1",
+    "kind": "interactive app"
+  },
+  {
+    "demo": "boundary-atlas",
+    "repository": "https://github.com/dicnunz/boundary-atlas",
+    "source_commit": "0538aef6c21f6a3ec89dcba39727532477d55bf7",
+    "kind": "interactive app"
+  },
+  {
+    "demo": "counterexample",
+    "repository": "https://github.com/dicnunz/counterexample-studio",
+    "source_commit": "53a7e326441cad0d21bd6ec78714dcc4759589a5",
+    "kind": "saved example report"
+  },
+  {
+    "demo": "asyncio",
+    "repository": "https://github.com/dicnunz/asyncio-thread-timeout-lab",
+    "source_commit": "1e9f5188660d757a744e9e68767e0ef57e985578",
+    "kind": "saved example report"
+  },
+  {
+    "demo": "crumby",
+    "repository": "https://github.com/dicnunz/crumby-minimum-18",
+    "source_commit": "8010a83670a1a860f0a32f09407ac9d397912961",
+    "kind": "saved example report"
+  },
+  {
+    "demo": "mission-control",
+    "repository": "https://github.com/dicnunz/codex-mission-control",
+    "source_commit": "604dd5836e3eea2b03bf21daf856d0ceee55a82d",
+    "kind": "saved example report"
+  }
+]

@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-06T18:47:39.038531+00:00",
+  "runtime": {
+    "implementation": "CPython",
+    "version": "3.12.13",
+    "system": "Linux"
+  },
+  "clock": "time.perf_counter_ns",
+  "time_unit": "ns",
+  "scenarios": [
+    {
+      "id": "semaphore",
+      "label": "Semaphore(1) + to_thread",
+      "peak_active_calls": 2,
+      "events": [
+        {
+          "sequence": 1,
+          "elapsed_ns": 0,
+          "kind": "scenario_started",
+          "call": null,
+          "active_calls": 0
+        },
+        {
+          "sequence": 2,
+          "elapsed_ns": 83626,
+          "kind": "awaiter_started",
+          "call": 1,
+          "active_calls": 0
+        },
+        {
+          "sequence": 3,
+          "elapsed_ns": 328492,
+          "kind": "worker_started",
+          "call": 1,
+          "active_calls": 1
+        },
+        {
+          "sequence": 4,
+          "elapsed_ns": 454598,
+          "kind": "cancellation_requested",
+          "call": 1,
+          "active_calls": 1
+        },
+        {
+          "sequence": 5,
+          "elapsed_ns": 487137,
+          "kind": "awaiter_cancelled",
+          "call": 1,
+          "active_calls": 1
+        },
+        {
+          "sequence": 6,
+          "elapsed_ns": 583874,
+          "kind": "awaiter_started",
+          "call": 2,
+          "active_calls": 1
+        },
+        {
+          "sequence": 7,
+          "elapsed_ns": 831328,
+          "kind": "worker_started",
+          "call": 2,
+          "active_calls": 2
+        },
+        {
+          "sequence": 8,
+          "elapsed_ns": 989428,
+          "kind": "workers_released",
+          "call": null,
+          "active_calls": 2
+        },
+        {
+          "sequence": 9,
+          "elapsed_ns": 1111998,
+          "kind": "worker_finished",
+          "call": 1,
+          "active_calls": 1
+        },
+        {
+          "sequence": 10,
+          "elapsed_ns": 1378587,
+          "kind": "worker_finished",
+          "call": 2,
+          "active_calls": 0
+        },
+        {
+          "sequence": 11,
+          "elapsed_ns": 1547833,
+          "kind": "awaiter_completed",
+          "call": 2,
+          "active_calls": 0
+        },
+        {
+          "sequence": 12,
+          "elapsed_ns": 1572190,
+          "kind": "scenario_finished",
+          "call": null,
+          "active_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "dedicated_pool",
+      "label": "ThreadPoolExecutor(1)",
+      "peak_active_calls": 1,
+      "events": [
+        {
+          "sequence": 1,
+          "elapsed_ns": 0,
+          "kind": "scenario_started",
+          "call": null,
+          "active_calls": 0
+        },
+        {
+          "sequence": 2,
+          "elapsed_ns": 22384,
+          "kind": "awaiter_started",
+          "call": 1,
+          "active_calls": 0
+        },
+        {
+          "sequence": 3,
+          "elapsed_ns": 219277,
+          "kind": "worker_started",
+          "call": 1,
+          "active_calls": 1
+        },
+        {
+          "sequence": 4,
+          "elapsed_ns": 327035,
+          "kind": "cancellation_requested",
+          "call": 1,
+          "active_calls": 1
+        },
+        {
+          "sequence": 5,
+          "elapsed_ns": 344201,
+          "kind": "awaiter_cancelled",
+          "call": 1,
+          "active_calls": 1
+        },
+        {
+          "sequence": 6,
+          "elapsed_ns": 363971,
+          "kind": "awaiter_started",
+          "call": 2,
+          "active_calls": 1
+        },
+        {
+          "sequence": 7,
+          "elapsed_ns": 389229,
+          "kind": "workers_released",
+          "call": null,
+          "active_calls": 1
+        },
+        {
+          "sequence": 8,
+          "elapsed_ns": 483477,
+          "kind": "worker_finished",
+          "call": 1,
+          "active_calls": 0
+        },
+        {
+          "sequence": 9,
+          "elapsed_ns": 527113,
+          "kind": "worker_started",
+          "call": 2,
+          "active_calls": 1
+        },
+        {
+          "sequence": 10,
+          "elapsed_ns": 540233,
+          "kind": "worker_finished",
+          "call": 2,
+          "active_calls": 0
+        },
+        {
+          "sequence": 11,
+          "elapsed_ns": 638677,
+          "kind": "awaiter_completed",
+          "call": 2,
+          "active_calls": 0
+        },
+        {
+          "sequence": 12,
+          "elapsed_ns": 736495,
+          "kind": "scenario_finished",
+          "call": null,
+          "active_calls": 0
+        }
+      ]
+    }
+  ]
+}

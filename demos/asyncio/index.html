@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cancellation &amp; worker lifetime · Asyncio lab</title><style>
+:root{color-scheme:light;--ink:#142f3a;--muted:#52636b;--paper:#f6f3ec;--line:#d8ddd7;--await:#387c75;--work:#254c69;--after:#b85723}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.shell{max-width:1320px;margin:auto;padding:36px 40px 28px}.masthead{display:flex;gap:20px;align-items:center;justify-content:space-between;padding-bottom:25px;border-bottom:1px solid var(--line)}
+.brand{font-weight:750;letter-spacing:-.02em}.brand span{color:var(--after);padding-right:10px}.run-tag{font:12px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--muted);text-align:right}
+header{max-width:920px;padding:50px 0 26px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:750;color:var(--muted)}
+h1{font-size:clamp(32px,4.4vw,56px);line-height:1.1;letter-spacing:-.04em;margin:14px 0 20px;max-width:820px;font-weight:750}h1 em{font-style:normal;color:var(--after)}
+.intro{font-size:18px;line-height:1.6;max-width:750px;color:var(--muted);margin:0}.reading-guide{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin:8px 0 22px;font-size:12px;color:var(--muted)}
+.key{display:inline-flex;gap:8px;align-items:center}.swatch{width:20px;height:8px;border-radius:2px;background:var(--work)}.swatch.awaiting{background:var(--await)}.swatch.continued{background:var(--after)}
+.comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.scenario{background:#fffefa;border:1px solid var(--line);border-radius:12px;padding:25px 24px 0;overflow:hidden;min-width:0}
+.scenario-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.peak{font-size:11px;border-radius:5px;padding:5px 8px;white-space:nowrap}.peak strong{font-size:16px;padding-right:4px}.overlap{background:#fbebdf;color:#8d431d}.bounded{background:#e8f2eb;color:#225f4e}
+h2{font-size:22px;line-height:1.3;letter-spacing:-.035em;margin:22px 0 10px;overflow-wrap:anywhere}.scenario-description{color:var(--muted);font-size:14px;margin:0;min-height:66px;max-width:420px}
+.timeline{padding:12px 0 16px}.axis{margin-left:111px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));font:10px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--muted);padding-bottom:9px;white-space:nowrap}.axis span:nth-child(2){text-align:center}.axis span:last-child{text-align:right}
+.lane{display:grid;grid-template-columns:111px minmax(0,1fr);min-height:53px}.lane-label{font-size:12px;font-weight:650;padding-top:9px;line-height:1.4}.lane-label small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.track{position:relative;background:linear-gradient(to right,var(--line) 1px,transparent 1px) left/50% 100%;border-right:1px solid var(--line);border-bottom:1px dashed #e4e6df;min-width:0}.bar{position:absolute;top:16px;height:14px;border-radius:2px;background:var(--work)}.bar.awaiting{background:var(--await)}.bar.continued{background:var(--after);border-radius:0 2px 2px 0}
+.finding{display:flex;gap:11px;align-items:flex-start;border-top:1px solid var(--line);padding:17px 0 20px}.finding-mark{font-size:25px;color:var(--after);line-height:1.25}.finding p{margin:0;color:var(--muted);font-size:13px}.finding strong{color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+details{border-top:1px solid var(--line);margin:0 -24px}summary{cursor:pointer;padding:16px 24px;font-size:12px;font-weight:650}summary:hover{background:#f3f4ee}summary:focus-visible,.event-scroll:focus-visible{outline:3px solid var(--after);outline-offset:-3px}
+.event-scroll{overflow-x:auto;padding:0 12px 12px}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}caption{text-align:left;font-size:12px;font-weight:650;padding:4px 8px 10px}th,td{padding:8px;border-top:1px solid #e5e7e1}th{color:var(--muted);font-weight:650}td:nth-child(2){font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.method{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:24px 0 30px;border-bottom:1px solid var(--line)}.method h2{font-size:14px;letter-spacing:0;margin:0 0 9px}.method p{color:var(--muted);font-size:13px;margin:0;max-width:540px}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.93em}footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted);padding-top:20px}footer time{overflow-wrap:anywhere}
+@media(max-width:980px){.comparison{grid-template-columns:1fr}.scenario-description{min-height:0;max-width:none}.timeline{margin-top:10px}.shell{max-width:760px;padding:28px 24px}header{padding-top:35px}.method{gap:24px}}
+@media(max-width:540px){.shell{padding:20px 16px}.masthead{align-items:flex-start;gap:12px;padding-bottom:20px}.brand{font-size:13px}.run-tag{font-size:10px;max-width:145px}header{padding-top:28px}.intro{font-size:15px}.reading-guide{gap:9px 14px;font-size:11px}.scenario{padding:20px 16px 0}.scenario-top{gap:8px}.eyebrow{font-size:10px}.peak{font-size:10px;padding:3px 6px}h2{font-size:20px}.lane{grid-template-columns:91px minmax(0,1fr)}.axis{margin-left:91px}.lane-label{font-size:11px}.lane-label small{font-size:10px}.method{grid-template-columns:1fr;gap:22px}details{margin:0 -16px}summary{padding:15px 16px}.finding p{font-size:12px}}
+@media print{body{background:white}.shell{max-width:none;padding:0}header{padding-top:25px}h1{font-size:34px}.scenario{break-inside:avoid}.comparison{grid-template-columns:1fr 1fr;gap:12px}.run-tag{font-size:10px}.method{margin-top:15px}details{display:none}}
+</style></head>
+<body><main class="shell">
+  <div class="masthead"><div class="brand"><span aria-hidden="true">◈</span> Asyncio / thread timeout lab</div>
+    <div class="run-tag">MEASURED RUN<br>CPython 3.12.13 · Linux</div></div>
+  <header><div class="eyebrow">Cancellation, observed</div>
+    <h1>The awaiter stops.<br><em>The worker keeps going.</em></h1>
+    <p class="intro">A semaphore follows the awaiting coroutine. A shared executor limits concurrent blocking calls.
+    These two experiments show where their lifetimes separate.</p></header>
+  <div class="reading-guide" aria-label="Timeline legend">
+    <span class="key"><span class="swatch awaiting" aria-hidden="true"></span>Awaiting</span>
+    <span class="key"><span class="swatch" aria-hidden="true"></span>Blocking call</span>
+    <span class="key"><span class="swatch continued" aria-hidden="true"></span>Running after cancellation</span>
+  </div>
+  <div class="comparison">
+    <section class="scenario" aria-labelledby="scenario-1">
+      <div class="scenario-top"><span class="eyebrow">Scenario 01</span>
+        <span class="peak overlap"><strong>2</strong> peak active calls</span></div>
+      <h2 id="scenario-1">Semaphore(1) + to_thread</h2>
+      <p class="scenario-description">Call 2 starts while call 1 is still running. The cancelled awaiter has released the permit.</p>
+      <div class="timeline" role="img" aria-label="Measured timeline for Semaphore(1) + to_thread. Call 1&#x27;s awaiter cancelled at 0.487 ms; its blocking call ran from 0.328 to 1.112 ms. Call 2&#x27;s awaiter completed at 1.548 ms; its blocking call ran from 0.831 to 1.379 ms. Peak active blocking calls: 2.">
+        <div class="axis" aria-hidden="true"><span>0</span><span>0.786</span><span>1.572 ms</span></div>
+        <div class="lanes" aria-hidden="true"><div class="lane"><div class="lane-label">Call 1 awaiter<small>cancelled</small></div><div class="track"><span class="bar awaiting" style="left:5.319077%;width:25.665537%" title="Call 1 awaiter: 0.084–0.487 ms"></span></div></div><div class="lane"><div class="lane-label">Call 1 worker<small>blocking call</small></div><div class="track"><span class="bar working" style="left:20.893912%;width:49.835325%" title="Call 1 worker: 0.328–1.112 ms"></span><span class="bar continued" style="left:30.984614%;width:39.744624%" title="Still running after cancellation"></span></div></div><div class="lane"><div class="lane-label">Call 2 awaiter<small>completed</small></div><div class="track"><span class="bar awaiting" style="left:37.137623%;width:61.313136%" title="Call 2 awaiter: 0.584–1.548 ms"></span></div></div><div class="lane"><div class="lane-label">Call 2 worker<small>blocking call</small></div><div class="track"><span class="bar working" style="left:52.877070%;width:34.808706%" title="Call 2 worker: 0.831–1.379 ms"></span></div></div></div>
+      </div>
+      <div class="finding"><span class="finding-mark" aria-hidden="true">↳</span><p>Call 1 kept running for
+        <strong>0.625 ms</strong> after its awaiter was cancelled.</p></div>
+      <details><summary>Inspect 12 recorded events</summary>
+        <div class="event-scroll" tabindex="0" role="region" aria-label="Scrollable event ledger for Semaphore(1) + to_thread">
+          <table><caption>Semaphore(1) + to_thread: measured event ledger</caption>
+            <thead><tr><th scope="col">#</th><th scope="col">Time (ms)</th><th scope="col">Event</th><th scope="col">Call</th><th scope="col">Active</th></tr></thead>
+            <tbody><tr><td>1</td><td>0.000000</td><td>Scenario started</td><td>—</td><td>0</td></tr><tr><td>2</td><td>0.083626</td><td>Awaiter started</td><td>1</td><td>0</td></tr><tr><td>3</td><td>0.328492</td><td>Blocking call started</td><td>1</td><td>1</td></tr><tr><td>4</td><td>0.454598</td><td>Cancellation requested</td><td>1</td><td>1</td></tr><tr><td>5</td><td>0.487137</td><td>Awaiter cancelled</td><td>1</td><td>1</td></tr><tr><td>6</td><td>0.583874</td><td>Awaiter started</td><td>2</td><td>1</td></tr><tr><td>7</td><td>0.831328</td><td>Blocking call started</td><td>2</td><td>2</td></tr><tr><td>8</td><td>0.989428</td><td>Release gate opened</td><td>—</td><td>2</td></tr><tr><td>9</td><td>1.111998</td><td>Blocking call finished</td><td>1</td><td>1</td></tr><tr><td>10</td><td>1.378587</td><td>Blocking call finished</td><td>2</td><td>0</td></tr><tr><td>11</td><td>1.547833</td><td>Awaiter completed</td><td>2</td><td>0</td></tr><tr><td>12</td><td>1.572190</td><td>Scenario finished</td><td>—</td><td>0</td></tr></tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+    <section class="scenario" aria-labelledby="scenario-2">
+      <div class="scenario-top"><span class="eyebrow">Scenario 02</span>
+        <span class="peak bounded"><strong>1</strong> peak active calls</span></div>
+      <h2 id="scenario-2">ThreadPoolExecutor(1)</h2>
+      <p class="scenario-description">Call 2 waits for the occupied worker. It starts after call 1's blocking function finishes.</p>
+      <div class="timeline" role="img" aria-label="Measured timeline for ThreadPoolExecutor(1). Call 1&#x27;s awaiter cancelled at 0.344 ms; its blocking call ran from 0.219 to 0.483 ms. Call 2&#x27;s awaiter completed at 0.639 ms; its blocking call ran from 0.527 to 0.540 ms. Peak active blocking calls: 1.">
+        <div class="axis" aria-hidden="true"><span>0</span><span>0.786</span><span>1.572 ms</span></div>
+        <div class="lanes" aria-hidden="true"><div class="lane"><div class="lane-label">Call 1 awaiter<small>cancelled</small></div><div class="track"><span class="bar awaiting" style="left:1.423746%;width:20.469345%" title="Call 1 awaiter: 0.022–0.344 ms"></span></div></div><div class="lane"><div class="lane-label">Call 1 worker<small>blocking call</small></div><div class="track"><span class="bar working" style="left:13.947233%;width:16.804585%" title="Call 1 worker: 0.219–0.483 ms"></span><span class="bar continued" style="left:21.893092%;width:8.858726%" title="Still running after cancellation"></span></div></div><div class="lane"><div class="lane-label">Call 2 awaiter<small>completed</small></div><div class="track"><span class="bar awaiting" style="left:23.150573%;width:17.472825%" title="Call 2 awaiter: 0.364–0.639 ms"></span></div></div><div class="lane"><div class="lane-label">Call 2 worker<small>blocking call</small></div><div class="track"><span class="bar working" style="left:33.527309%;width:0.834505%" title="Call 2 worker: 0.527–0.540 ms"></span></div></div></div>
+      </div>
+      <div class="finding"><span class="finding-mark" aria-hidden="true">↳</span><p>Call 1 kept running for
+        <strong>0.139 ms</strong> after its awaiter was cancelled.</p></div>
+      <details><summary>Inspect 12 recorded events</summary>
+        <div class="event-scroll" tabindex="0" role="region" aria-label="Scrollable event ledger for ThreadPoolExecutor(1)">
+          <table><caption>ThreadPoolExecutor(1): measured event ledger</caption>
+            <thead><tr><th scope="col">#</th><th scope="col">Time (ms)</th><th scope="col">Event</th><th scope="col">Call</th><th scope="col">Active</th></tr></thead>
+            <tbody><tr><td>1</td><td>0.000000</td><td>Scenario started</td><td>—</td><td>0</td></tr><tr><td>2</td><td>0.022384</td><td>Awaiter started</td><td>1</td><td>0</td></tr><tr><td>3</td><td>0.219277</td><td>Blocking call started</td><td>1</td><td>1</td></tr><tr><td>4</td><td>0.327035</td><td>Cancellation requested</td><td>1</td><td>1</td></tr><tr><td>5</td><td>0.344201</td><td>Awaiter cancelled</td><td>1</td><td>1</td></tr><tr><td>6</td><td>0.363971</td><td>Awaiter started</td><td>2</td><td>1</td></tr><tr><td>7</td><td>0.389229</td><td>Release gate opened</td><td>—</td><td>1</td></tr><tr><td>8</td><td>0.483477</td><td>Blocking call finished</td><td>1</td><td>0</td></tr><tr><td>9</td><td>0.527113</td><td>Blocking call started</td><td>2</td><td>1</td></tr><tr><td>10</td><td>0.540233</td><td>Blocking call finished</td><td>2</td><td>0</td></tr><tr><td>11</td><td>0.638677</td><td>Awaiter completed</td><td>2</td><td>0</td></tr><tr><td>12</td><td>0.736495</td><td>Scenario finished</td><td>—</td><td>0</td></tr></tbody>
+          </table>
+        </div>
+      </details>
+    </section></div>
+  <section class="method" aria-label="How to read this experiment">
+    <div><h2>Real events, a shared scale</h2><p>Each scenario runs separately, starting at zero on the same millisecond scale.
+    Bar positions come from <code>time.perf_counter_ns()</code>. The ledgers show the recorded nanoseconds as milliseconds.
+    Durations include scheduling and tracing overhead; this is a lifecycle demonstration, not a benchmark.</p></div>
+    <div><h2>What the worker lane means</h2><p>The lane shows a blocking function's execution, not the lifetime of its executor thread.
+    A start signal precedes cancellation. A release gate holds the work open, and finish signals let the demo drain it.
+    Cancelling the awaiter does not stop a running blocking function.</p></div>
+  </section>
+  <footer><span>Event coordinated · Python standard library · No external assets</span>
+    <span>Recorded <time datetime="2026-09-06T18:47:39.038531+00:00">2026-09-06T18:47:39.038531+00:00</time></span></footer>
+</main></body></html>

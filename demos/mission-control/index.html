@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><link rel="icon" href="data:,">
+<title>Mission Control · Example workspace</title><style>:root { --paper:#f3f3ee; --surface:#fff; --ink:#172a24; --muted:#64716a; --line:#e1e5de; --green:#18734c; --green-soft:#e8f4ec; --amber:#96530d; --amber-soft:#fff2d9; --mono:ui-monospace,"SFMono-Regular",Consolas,monospace; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:24px; }
+body { margin:0; color:var(--ink); background:var(--paper); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:14px; line-height:1.5; }
+a { color:inherit; }
+button,input,select,textarea { font:inherit; }
+button,a,input,select,textarea,summary { -webkit-tap-highlight-color:transparent; }
+button,summary { cursor:pointer; }
+button { border:1px solid var(--line); border-radius:7px; background:white; color:var(--ink); padding:9px 12px; font-size:12px; font-weight:600; }
+button:hover { border-color:#9bb3a5; background:#f6f9f6; }
+button:disabled { cursor:not-allowed; opacity:.45; }
+:focus-visible { outline:3px solid #288b5e; outline-offset:3px; }
+h1,h2,h3,p { margin:0; }
+h2 { font-size:19px; font-weight:650; letter-spacing:-.5px; }
+h3 { font-size:14px; }
+small { font-size:11px; }
+code,pre,textarea { font-family:var(--mono); }
+code { overflow-wrap:anywhere; }
+[hidden] { display:none!important; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.skip-link { position:fixed; top:-70px; left:230px; z-index:10; padding:12px; background:white; }
+.skip-link:focus { top:12px; }
+.sidebar { position:fixed; inset:0 auto 0 0; width:208px; background:#182c25; color:#e2e9e3; padding:34px 22px; display:flex; flex-direction:column; }
+.brand { display:flex; align-items:center; gap:12px; font-size:12px; font-weight:720; letter-spacing:1.5px; line-height:1.45; text-decoration:none; }
+.brand-mark { display:grid; place-items:center; width:40px; height:40px; color:#c8f098; border:1px solid #576b50; border-radius:10px; font-size:30px; font-weight:400; }
+.workspace-label { font:9px var(--mono); letter-spacing:1.3px; color:#a0b3a6; margin:58px 8px 15px; }
+nav { display:flex; flex-direction:column; gap:6px; }
+nav a { text-decoration:none; padding:12px 10px; font-size:12px; border-radius:6px; color:#b8c8bd; }
+nav a span { font:10px var(--mono); margin-right:12px; opacity:.65; }
+nav a.current,nav a:hover { background:#30463a; color:#f4ffe6; }
+.sidebar-bottom { margin-top:auto; padding:26px 4px 0; font-size:11px; color:#d0dccf; }
+.sidebar-bottom p { color:#9fb1a2; margin:10px 0 27px; font:10px/1.8 var(--mono); overflow-wrap:anywhere; }
+.local-dot,.snapshot-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#bcdf95; margin-right:7px; vertical-align:middle; }
+.version { font:9px var(--mono); letter-spacing:1px; color:#95aa99; }
+main { margin-left:208px; padding:0 38px 22px; max-width:1740px; }
+.topbar { display:flex; justify-content:space-between; align-items:center; min-height:73px; border-bottom:1px solid #dce2d8; color:#627168; font:10px var(--mono); letter-spacing:1px; }
+.snapshot-label { letter-spacing:0; }
+.snapshot-dot { background:#8ba494; }
+.intro { display:flex; align-items:flex-end; justify-content:space-between; gap:36px; padding:38px 0 29px; }
+.eyebrow { color:#6b7b70; font:9px var(--mono); font-weight:600; letter-spacing:1.6px; margin-bottom:10px; }
+h1 { font-size:clamp(28px,2.8vw,42px); font-weight:570; line-height:1.13; letter-spacing:-1.5px; }
+.intro-description { color:var(--muted); margin-top:12px; max-width:560px; font-size:13px; }
+.snapshot { text-align:right; flex:0 0 220px; }
+.snapshot time { display:block; color:var(--muted); font:10px var(--mono); margin-bottom:12px; }
+.snapshot small { display:block; color:var(--muted); margin-top:8px; max-width:220px; }
+.quiet { background:transparent; }
+.metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin-bottom:28px; background:#e8ece3; border:1px solid #dce3d5; border-radius:10px; overflow:hidden; }
+.metrics>div { padding:18px 24px; border-right:1px solid #d8dfd2; }
+.metrics>div:last-child { border:0; }
+.metrics .metric-label { font-size:11px; color:#46594b; font-weight:550; display:block; }
+.metrics strong { font:44px/1.25 var(--mono); font-weight:450; letter-spacing:-3px; display:block; margin:7px 0 3px; }
+.metrics>div>span:last-child { color:#65745f; font-size:10px; }
+.metrics .metric-alert { background:#f4ecd8; }
+.metric-alert strong { color:#906011; }
+.green-text { color:#22713f; }
+.workspace-grid { display:grid; grid-template-columns:minmax(0,1fr) 315px; gap:22px; align-items:start; }
+.panel { background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+.section-heading { padding:23px 24px 19px; display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.section-heading .eyebrow { margin-bottom:4px; }
+.count { font:11px var(--mono); color:#758273; background:#eff2ec; border-radius:4px; padding:3px 6px; margin-left:6px; vertical-align:middle; }
+.section-note { color:#7a877b; font-size:10px; }
+.filters { display:flex; gap:3px; align-items:center; padding:0 22px 17px; border-bottom:1px solid var(--line); }
+.filters button { padding:6px 10px; font-size:10px; border:1px solid transparent; background:transparent; color:#6d7b70; }
+.filters button[aria-pressed=true] { background:#edf3ed; color:#285d40; border-color:#e3eae0; }
+#lane-count { margin-left:auto; font:9px var(--mono); color:#819080; }
+.lane { border-bottom:1px solid #edf0e9; }
+.lane summary { display:grid; grid-template-columns:32px minmax(97px,.9fr) minmax(105px,1.25fr) 95px 10px; align-items:center; gap:12px; padding:19px 22px; list-style:none; }
+.lane summary::-webkit-details-marker { display:none; }
+.lane summary:hover { background:#f8faf7; }
+.lane-symbol { display:grid; place-items:center; width:32px; height:32px; border:1px solid #e3e8df; border-radius:7px; color:#5b7160; background:#f4f7f1; font:10px var(--mono); }
+.lane-name { font-size:11px; font-weight:650; line-height:1.45; }
+.lane small { display:block; font-size:9px; color:#7b887a; margin-top:4px; line-height:1.5; overflow-wrap:anywhere; }
+.lane-name small { font:8px var(--mono); letter-spacing:.4px; }
+.lane-owner { font-size:11px; overflow-wrap:anywhere; min-width:0; }
+.lane-owner small { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.lane[data-lane-state=clear] .lane-owner { color:#7d8a7d; }
+.lane-state { text-align:right; }
+.badge { font-size:9px; font-weight:600; display:inline-flex; align-items:center; gap:5px; padding:3px 7px; border-radius:4px; white-space:nowrap; }
+.badge:before { content:""; width:4px; height:4px; border-radius:50%; background:currentColor; }
+.badge.clear { background:var(--green-soft); color:#267245; }
+.badge.held { background:#edf0f9; color:#536b9c; }
+.badge.stale,.badge.unknown { background:var(--amber-soft); color:var(--amber); }
+.expand { font-size:15px; color:#84937f; }
+.lane[open] .expand { transform:rotate(45deg); }
+.lane-detail { padding:0 22px 20px 66px; color:var(--muted); font-size:11px; }
+.command-line { margin-top:12px; background:#f4f6f1; border:1px solid var(--line); border-radius:7px; padding:12px; }
+.command-line code { display:block; font-size:10px; margin-bottom:12px; color:#465a49; }
+.panel-footnote { padding:17px 22px; color:#7a8679; font-size:10px; line-height:1.65; background:#fbfcf9; }
+.action-column { display:grid; gap:18px; }
+.composer { padding:22px; border-top:3px solid #477349; }
+.composer h2 { font-size:20px; }
+.panel-description { color:var(--muted); font-size:11px; margin:8px 0 18px; }
+label { display:block; font-size:10px; font-weight:600; margin:12px 0 6px; }
+input,select,textarea { width:100%; min-width:0; border:1px solid #dce4d9; border-radius:6px; padding:9px 10px; background:#fff; color:var(--ink); font-size:11px; }
+select { height:36px; }
+.form-row { display:grid; grid-template-columns:minmax(0,1fr) 104px; gap:10px; }
+.field-help { color:#788676; font-size:9px; line-height:1.6; margin:9px 0 10px; }
+textarea { resize:vertical; overflow-wrap:anywhere; font-size:10px; line-height:1.65; background:#f4f6f1; min-height:85px; }
+.primary-button { display:flex; align-items:center; justify-content:space-between; width:100%; background:#204c34; color:white; border-color:#204c34; margin-top:10px; padding:11px 12px; font-size:11px; }
+.primary-button:hover { background:#326246; color:white; border-color:#326246; }
+#claim-help:empty { display:none; }
+.health { padding:19px 22px; }
+.health-title { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:8px; }
+.health h2 { font-size:14px; }
+.health p { color:var(--muted); font-size:10px; }
+.relay-line { border-top:1px solid var(--line); margin:15px 0; padding-top:12px; display:flex; gap:10px; justify-content:space-between; font-size:9px; color:var(--muted); }
+.relay-line strong { color:#55644f; text-align:right; font-weight:500; }
+.health .copy { font-size:10px; }
+.missions-panel { margin-top:24px; }
+.mission-tools { display:flex; align-items:center; gap:10px; }
+.mission-tools input { width:190px; font-size:11px; }
+.mission-tools button { font-size:10px; white-space:nowrap; }
+.mission { display:grid; grid-template-columns:56px minmax(0,1fr) auto; gap:17px; align-items:center; border-top:1px solid #edf0e9; padding:18px 24px; }
+.call-sign { font:11px var(--mono); color:#3d694c; text-align:center; background:#edf3e9; padding:9px 4px; border-radius:6px; overflow-wrap:anywhere; }
+.mission-name { min-width:0; }
+.mission-name h3 { font-size:12px; font-weight:600; }
+.mission-name p { color:#7c877b; font:9px/1.6 var(--mono); margin-top:5px; overflow-wrap:anywhere; }
+.mission-meta { display:flex; align-items:center; gap:22px; font-size:10px; color:#7a8776; }
+.mission-meta button { font-size:10px; }
+.attention-text { color:var(--amber); }
+.empty { text-align:center; padding:28px; color:var(--muted); font-size:12px; }
+.empty h3 { color:var(--ink); margin-bottom:6px; }
+.empty button { margin-top:14px; }
+.reference { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin:22px 0; }
+.reference details { border-top:1px solid #d8e0d2; padding:15px 0; font-size:11px; min-width:0; }
+.reference summary { font-size:11px; font-weight:600; }
+.reference summary span { color:#7f8a79; font-size:10px; margin-left:10px; font-weight:400; }
+.reference pre { white-space:pre-wrap; font-size:10px; color:#667660; max-height:300px; overflow:auto; margin:16px 0; }
+.reference p { color:var(--muted); margin:15px 0; }
+.reference code { display:block; color:var(--muted); font-size:10px; margin-bottom:16px; }
+footer { display:flex; justify-content:space-between; gap:16px; color:#86917e; font-size:9px; padding:5px 0 12px; }
+dialog { border:1px solid var(--line); border-radius:12px; padding:26px; width:min(500px,calc(100% - 32px)); color:var(--ink); box-shadow:0 24px 90px #14241933; }
+dialog::backdrop { background:#10271966; }
+dialog p { margin:12px 0; color:var(--muted); }
+dialog button { margin-top:12px; }
+.toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); padding:10px 20px; background:#244632; color:white; border-radius:8px; font-size:12px; box-shadow:0 5px 20px #14241922; z-index:20; }
+.toast:empty { display:none; }
+@media(min-width:1500px) { main { padding-left:50px; padding-right:50px; } .workspace-grid { grid-template-columns:minmax(0,1fr) 350px; } .lane summary { padding-top:21px; padding-bottom:21px; } }
+@media(max-width:1200px) { .sidebar { width:180px; padding:30px 16px; } main { margin-left:180px; padding:0 25px 20px; } .workspace-grid { grid-template-columns:minmax(0,1fr) 285px; gap:16px; } .lane summary { grid-template-columns:26px minmax(80px,.9fr) minmax(70px,1fr) 85px 9px; gap:9px; padding:17px 15px; } .lane-symbol { width:26px; height:28px; } .section-heading { padding:20px 17px; } .section-note { display:none; } .filters { padding-left:15px; padding-right:15px; } .composer { padding:18px; } .mission-meta { gap:12px; } .snapshot { flex-basis:190px; } }
+@media(max-width:1000px) { .sidebar { width:156px; padding:28px 13px; } .brand { font-size:10px; gap:8px; } .brand-mark { width:32px; height:34px; font-size:26px; } nav a { padding-left:6px; font-size:11px; } nav a span { margin-right:6px; } main { margin-left:156px; padding:0 24px; } .workspace-grid { grid-template-columns:1fr; } .action-column { grid-template-columns:1fr 1fr; align-items:start; } .lane summary { grid-template-columns:32px minmax(100px,1fr) minmax(120px,1.4fr) 100px 10px; padding:17px 20px; gap:12px; } .intro { flex-wrap:wrap; gap:18px; } .snapshot { display:flex; text-align:left; flex-basis:100%; align-items:center; flex-wrap:wrap; gap:10px; } .snapshot time { margin:0; } .snapshot small { max-width:none; margin:0; } .metrics>div { padding:15px; } .metrics strong { font-size:36px; } .mission-tools { flex-wrap:wrap; justify-content:flex-end; } .mission-meta { flex-direction:column; gap:6px; align-items:flex-end; } .reference summary span { display:block; margin:5px 0 0 15px; } }
+@media(max-width:700px) { html { scroll-padding-top:18px; } .sidebar { position:static; width:auto; padding:17px 20px 14px; display:block; } .brand { font-size:10px; } .brand br { display:none; } .brand span:last-child { display:flex; gap:5px; } .brand-mark { height:28px; width:28px; font-size:23px; border-radius:7px; } .workspace-label,.sidebar-bottom { display:none; } nav { flex-direction:row; gap:4px; margin-top:17px; } nav a { font-size:10px; padding:8px 10px; } nav a span { display:none; } main { margin:0; padding:0 18px; } .topbar { min-height:53px; font-size:8px; letter-spacing:.6px; } .intro { padding:27px 0 24px; } h1 { font-size:32px; letter-spacing:-1px; } .intro-description { font-size:12px; } .metrics { grid-template-columns:repeat(2,1fr); margin-bottom:22px; } .metrics>div:nth-child(2) { border-right:0; } .metrics>div:nth-child(-n+2) { border-bottom:1px solid #d8dfd2; } .metrics>div { padding:16px 20px; } .metrics strong { font-size:39px; } .section-heading { padding:19px 17px 16px; } .lane summary { grid-template-columns:26px minmax(95px,1fr) 94px 10px; gap:10px; padding:16px; } .lane-owner { grid-column:2; grid-row:2; margin-top:-7px; } .lane-owner small { white-space:normal; } .lane-state { grid-column:3; grid-row:1 / span 2; } .expand { grid-column:4; grid-row:1 / span 2; } .lane-name small { display:none; } .lane-name { font-size:12px; } .lane-symbol { grid-row:1 / span 2; } .lane-detail { padding-left:16px; } .action-column { grid-template-columns:1fr; } .composer { padding:22px; } .form-row { grid-template-columns:minmax(0,1fr) 120px; } label { font-size:11px; } input,select { font-size:16px; min-height:42px; } .field-help { font-size:10px; } .primary-button { font-size:12px; min-height:43px; } .missions-panel .section-heading { align-items:flex-start; flex-direction:column; } .mission-tools { width:100%; flex-wrap:nowrap; } .mission-tools input { width:100%; min-width:0; font-size:14px; } .mission-tools button { font-size:9px; white-space:normal; max-width:105px; min-height:42px; } .mission { grid-template-columns:42px minmax(0,1fr); padding:18px 16px; gap:12px; } .mission-meta { grid-column:2; flex-direction:row; align-items:center; justify-content:space-between; } .mission-name p { font-size:10px; } .reference { grid-template-columns:1fr; gap:0; } footer { flex-direction:column; gap:6px; padding-bottom:25px; } .skip-link { left:20px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style></head><body>
+<a class="skip-link" href="#overview">Skip to workspace</a>
+<aside class="sidebar"><a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true">⌘</span><span>MISSION<br>CONTROL</span></a>
+<div class="workspace-label">LOCAL WORKSPACE</div><nav aria-label="Workspace"><a href="#overview" class="current"><span>01</span> Overview</a><a href="#lanes"><span>02</span> Surface lanes</a><a href="#missions"><span>03</span> Missions</a><a href="#commands"><span>04</span> Commands</a></nav>
+<div class="sidebar-bottom"><span class="local-dot"></span> Example hub<p>/Users/example/Codex Mission Control</p><span class="version">CMC / 0.2.6</span></div></aside>
+<main id="overview"><header class="topbar"><span>EXAMPLE WORKSPACE / SYNTHETIC DATA</span><span class="snapshot-label"><span class="snapshot-dot"></span> Example snapshot</span></header>
+<section class="intro"><div><p class="eyebrow">YOUR CONTROL ROOM</p><h1>Check the handoff.</h1><p class="intro-description">1 lane needs a review. Confirm the previous session has stopped before reclaiming.</p></div><div class="snapshot"><time>06 Sep 2026 · 15:03 EDT</time><button type="button" class="copy quiet" data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; dashboard">Copy refresh command</button><small>Run in your terminal to take a new snapshot.</small></div></section>
+<section class="metrics" aria-label="Workspace totals"><div><span class="metric-label">Lanes in use</span><strong>02</strong><span>Owned by a session</span></div><div><span class="metric-label">Clear lanes</span><strong class="green-text">04</strong><span>Available to claim</span></div><div class="metric-alert"><span class="metric-label">Need review</span><strong>01</strong><span>1 stale · 0 unknown</span></div><div><span class="metric-label">Missions</span><strong>04</strong><span>Projects in this hub</span></div></section>
+<div class="workspace-grid"><section class="panel lane-panel" id="lanes"><div class="section-heading"><div><p class="eyebrow">COORDINATION</p><h2>Surface lanes <span class="count">07</span></h2></div><span class="section-note">One owner per surface</span></div>
+<div class="filters" role="group" aria-label="Filter lanes"><button data-filter="all" aria-pressed="true">All lanes</button><button data-filter="held" aria-pressed="false">In use</button><button data-filter="review" aria-pressed="false">Needs review</button><span id="lane-count" role="status">7 lanes</span></div>
+<div class="lane-list"><details class="lane" data-lane-state="held">
+          <summary><span class="lane-symbol">BR</span>
+            <span class="lane-name">Browser<small>BROWSER</small></span>
+            <span class="lane-owner">DESIGN SESSION<small>Reviewing the settings flow</small></span>
+            <span class="lane-state"><span class="badge held">In use</span><small>13m left</small></span>
+            <span class="expand" aria-hidden="true">+</span></summary><div class="lane-detail"><p>Coordinate with the current owner. Release only when that session has finished.</p><div class="command-line"><code>/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release BROWSER &#x27;DESIGN SESSION&#x27;</code><button type="button" class="copy " data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release BROWSER &#x27;DESIGN SESSION&#x27;">Copy release</button></div></div></details><details class="lane" data-lane-state="stale">
+          <summary><span class="lane-symbol">GH</span>
+            <span class="lane-name">Github<small>GITHUB</small></span>
+            <span class="lane-owner">RELEASE CHECK<small>Checking the next release</small></span>
+            <span class="lane-state"><span class="badge stale">Stale</span><small>Expired 23m ago</small></span>
+            <span class="expand" aria-hidden="true">+</span></summary><div class="lane-detail"><p>The lease expired. Check that the previous session has stopped before claiming again.</p><div class="command-line"><code>/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release GITHUB &#x27;RELEASE CHECK&#x27;</code><button type="button" class="copy " data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release GITHUB &#x27;RELEASE CHECK&#x27;">Copy release</button></div></div></details><details class="lane" data-lane-state="held">
+          <summary><span class="lane-symbol">EM</span>
+            <span class="lane-name">Email<small>EMAIL</small></span>
+            <span class="lane-owner">COMMS<small>Preparing project updates</small></span>
+            <span class="lane-state"><span class="badge held">In use</span><small>No expiry</small></span>
+            <span class="expand" aria-hidden="true">+</span></summary><div class="lane-detail"><p>Coordinate with the current owner. Release only when that session has finished.</p><div class="command-line"><code>/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release EMAIL COMMS</code><button type="button" class="copy " data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release EMAIL COMMS">Copy release</button></div></div></details><details class="lane" data-lane-state="clear">
+          <summary><span class="lane-symbol">SO</span>
+            <span class="lane-name">Public Social<small>PUBLIC_SOCIAL</small></span>
+            <span class="lane-owner">Available<small>Ready for a new session</small></span>
+            <span class="lane-state"><span class="badge clear">Clear</span><small>—</small></span>
+            <span class="expand" aria-hidden="true">+</span></summary><div class="lane-detail"><p>Choose this lane in the command composer. Use a unique owner for this session.</p></div></details><details class="lane" data-lane-state="clear">
+          <summary><span class="lane-symbol">CO</span>
+            <span class="lane-name">Commerce<small>COMMERCE</small></span>
+            <span class="lane-owner">Available<small>Ready for a new session</small></span>
+            <span class="lane-state"><span class="badge clear">Clear</span><small>—</small></span>
+            <span class="expand" aria-hidden="true">+</span></summary><div class="lane-detail"><p>Choose this lane in the command composer. Use a unique owner for this session.</p></div></details><details class="lane" data-lane-state="clear">
+          <summary><span class="lane-symbol">DT</span>
+            <span class="lane-name">Desktop<small>DESKTOP</small></span>
+            <span class="lane-owner">Available<small>Ready for a new session</small></span>
+            <span class="lane-state"><span class="badge clear">Clear</span><small>—</small></span>
+            <span class="expand" aria-hidden="true">+</span></summary><div class="lane-detail"><p>Choose this lane in the command composer. Use a unique owner for this session.</p></div></details><details class="lane" data-lane-state="clear">
+          <summary><span class="lane-symbol">GW</span>
+            <span class="lane-name">Global Write<small>GLOBAL_WRITE</small></span>
+            <span class="lane-owner">Available<small>Ready for a new session</small></span>
+            <span class="lane-state"><span class="badge clear">Clear</span><small>—</small></span>
+            <span class="expand" aria-hidden="true">+</span></summary><div class="lane-detail"><p>Choose this lane in the command composer. Use a unique owner for this session.</p></div></details></div><p id="lane-empty" class="empty" hidden>No lanes match this view.</p><p class="panel-footnote">Claims coordinate local sessions. They do not grant permissions or stop an agent when a lease expires.</p></section>
+<aside class="action-column"><section class="panel composer" id="commands"><p class="eyebrow">NEXT ACTION</p><h2>Claim a lane</h2><p class="panel-description">Build a command for your session, then run it in your terminal.</p>
+<form id="claim-form" data-prefix="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27;"><label for="claim-lane">Surface</label><select id="claim-lane"><option value="BROWSER" data-state="held" disabled>Browser · In use</option><option value="GITHUB" data-state="stale">Github · Stale</option><option value="EMAIL" data-state="held" disabled>Email · In use</option><option value="PUBLIC_SOCIAL" data-state="clear">Public Social · Clear</option><option value="COMMERCE" data-state="clear">Commerce · Clear</option><option value="DESKTOP" data-state="clear">Desktop · Clear</option><option value="GLOBAL_WRITE" data-state="clear">Global Write · Clear</option></select><div class="form-row"><div><label for="claim-owner">Session owner</label><input id="claim-owner" placeholder="e.g. DESIGN-02" required autocomplete="off"></div><div><label for="claim-ttl">Lease (seconds)</label><input id="claim-ttl" type="number" min="0" step="1" value="1800" required></div></div><label for="claim-reason">What are you doing?</label><input id="claim-reason" value="Reviewing this project" required autocomplete="off"><p class="field-help">Use a unique owner. A lease of 0 has no expiry.</p><label class="sr-only" for="claim-command">Generated claim command</label><textarea id="claim-command" readonly rows="4" spellcheck="false" placeholder="Enter a session owner to build your command."></textarea><button class="primary-button" id="copy-claim" type="button">Copy claim command <span aria-hidden="true">↗</span></button><p id="claim-help" class="field-help" role="status"></p></form></section>
+<section class="panel health"><div class="health-title"><h2>Hub check</h2><span class="badge clear">Healthy</span></div><p>Hub files and project links are in place.</p><div class="relay-line"><span>Optional Relay</span><strong>not installed</strong></div><button type="button" class="copy quiet" data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; doctor">Copy health check</button></section></aside></div>
+<section class="panel missions-panel" id="missions"><div class="section-heading"><div><p class="eyebrow">PROJECT INDEX</p><h2>Missions <span class="count">04</span></h2></div><div class="mission-tools"><label class="sr-only" for="mission-search">Search missions</label><input id="mission-search" type="search" placeholder="Search missions…"><button type="button" class="copy quiet" data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; discover">Copy discover command</button></div></div><div class="mission-list"><article class="mission" data-search="fn field-notes /Users/example/projects/field-notes">
+          <span class="call-sign">FN</span><div class="mission-name"><h3>field-notes</h3><p>/Users/example/Projects/field-notes</p></div>
+          <div class="mission-meta"><span class="">Outbox · 8m ago</span>
+          <button type="button" class="copy " data-copy="/Users/example/Projects/field-notes">Copy path</button></div></article><article class="mission" data-search="ha harbor-api /Users/example/projects/harbor-api">
+          <span class="call-sign">HA</span><div class="mission-name"><h3>harbor-api</h3><p>/Users/example/Projects/harbor-api</p></div>
+          <div class="mission-meta"><span class="">Outbox · 8m ago</span>
+          <button type="button" class="copy " data-copy="/Users/example/Projects/harbor-api">Copy path</button></div></article><article class="mission" data-search="rt relay-tools /Users/example/projects/relay-tools">
+          <span class="call-sign">RT</span><div class="mission-name"><h3>relay-tools</h3><p>/Users/example/Projects/relay-tools</p></div>
+          <div class="mission-meta"><span class="">Outbox · 8m ago</span>
+          <button type="button" class="copy " data-copy="/Users/example/Projects/relay-tools">Copy path</button></div></article><article class="mission" data-search="ss signal-studio /Users/example/projects/signal-studio">
+          <span class="call-sign">SS</span><div class="mission-name"><h3>signal-studio</h3><p>/Users/example/Projects/signal-studio</p></div>
+          <div class="mission-meta"><span class="">Outbox · 8m ago</span>
+          <button type="button" class="copy " data-copy="/Users/example/Projects/signal-studio">Copy path</button></div></article></div><p id="mission-empty" class="empty" role="status" hidden>No missions match your search.</p></section>
+<section class="reference"><details><summary>Approval packet <span>Prepare the exact action for review</span></summary><pre># MISSION Approval Packet
+
+- Mission: MISSION
+- Exact action: exact action
+- Target: exact target
+- Exact text/change/object: exact text/change/object
+- Evidence checked: current local mission files and live surface state must be rechecked before execution
+- Risk flags: risk flags
+- Why now: why this matters now
+- Proof after execution: proof path after execution
+- Stop condition: stop condition</pre><button type="button" class="copy " data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; packet">Copy packet command</button></details><details><summary>Handoffs <span>Merge mission outboxes</span></summary><p>Write session updates to the mission outbox, then merge them into the global dashboard.</p><code>/Users/example/Codex Mission Control/_ops/CONSOLE_OUTBOX</code><button type="button" class="copy " data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; merge">Copy merge command</button></details></section>
+<footer><span>Interactive example · Synthetic missions and owners · No connected workspace</span><span>Snapshot only · Regenerate with <code>cmc dashboard</code></span></footer></main>
+<dialog id="copy-dialog"><h2>Copy command</h2><p>Automatic copying is unavailable. Select and copy the text below.</p><textarea id="manual-copy" readonly rows="5" aria-label="Text to copy"></textarea><button id="close-copy" type="button">Done</button></dialog><div id="copy-status" class="toast" role="status" aria-live="polite"></div>
+<script>(() => {
+  const notice = document.querySelector('#copy-status');
+  const dialog = document.querySelector('#copy-dialog');
+  let noticeTimer;
+  async function copy(value) {
+    try {
+      await navigator.clipboard.writeText(value);
+      notice.textContent = 'Copied to clipboard.';
+      clearTimeout(noticeTimer);
+      noticeTimer = setTimeout(() => { notice.textContent = ''; }, 3500);
+    } catch (_) {
+      const text = document.querySelector('#manual-copy');
+      text.value = value;
+      dialog.showModal();
+      text.focus();
+      text.select();
+    }
+  }
+  document.querySelectorAll('[data-copy]').forEach(button => {
+    button.addEventListener('click', () => copy(button.dataset.copy));
+  });
+  document.querySelector('#close-copy').addEventListener('click', () => dialog.close());
+
+  document.querySelectorAll('[data-filter]').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter]').forEach(item => {
+        item.setAttribute('aria-pressed', String(item === button));
+      });
+      let visible = 0;
+      document.querySelectorAll('[data-lane-state]').forEach(lane => {
+        const state = lane.dataset.laneState;
+        lane.hidden = !(button.dataset.filter === 'all'
+          || (button.dataset.filter === 'held' && state === 'held')
+          || (button.dataset.filter === 'review' && ['stale', 'unknown'].includes(state)));
+        if (!lane.hidden) visible += 1;
+      });
+      document.querySelector('#lane-count').textContent = `${visible} lane${visible === 1 ? '' : 's'}`;
+      document.querySelector('#lane-empty').hidden = visible !== 0;
+    });
+  });
+  document.querySelector('#mission-search').addEventListener('input', event => {
+    const query = event.target.value.trim().toLowerCase();
+    let visible = 0;
+    document.querySelectorAll('.mission').forEach(mission => {
+      mission.hidden = !mission.dataset.search.includes(query);
+      if (!mission.hidden) visible += 1;
+    });
+    document.querySelector('#mission-empty').hidden = visible !== 0 || !query;
+  });
+
+  const form = document.querySelector('#claim-form');
+  const lane = document.querySelector('#claim-lane');
+  const owner = document.querySelector('#claim-owner');
+  const reason = document.querySelector('#claim-reason');
+  const ttl = document.querySelector('#claim-ttl');
+  const output = document.querySelector('#claim-command');
+  const button = document.querySelector('#copy-claim');
+  // POSIX shell quoting keeps every value one argument, including quotes,
+  // dollar signs, newlines, and command substitutions pasted into the fields.
+  function quote(value) { return /^[a-zA-Z0-9_@%+=:,./-]+$/.test(value) ? value : "'" + value.replaceAll("'", "'\"'\"'") + "'"; }
+  function updateCommand() {
+    const selected = lane.selectedOptions[0];
+    const seconds = Number(ttl.value);
+    const valid = selected && !selected.disabled && owner.value.trim()
+      && reason.value.trim() && ttl.value !== '' && ttl.validity.valid
+      && Number.isSafeInteger(seconds) && seconds >= 0;
+    button.disabled = !valid;
+    output.value = valid ? `${form.dataset.prefix} claim ${quote(lane.value)} ${quote(owner.value)} ${quote(reason.value)} --ttl ${seconds}` : '';
+    document.querySelector('#claim-help').textContent = !selected || selected.disabled
+      ? 'All lanes are held. Check with their owners and regenerate the snapshot.'
+      : !valid ? 'Enter an owner, a reason, and a nonnegative whole number of seconds.'
+      : selected.dataset.state === 'stale' ? 'This lease expired. Recheck the previous session before running this command.' : '';
+  }
+  const options = Array.from(lane.options);
+  const available = options.find(option => option.dataset.state === 'clear')
+    || options.find(option => !option.disabled);
+  if (available) lane.value = available.value;
+  form.addEventListener('input', updateCommand);
+  form.addEventListener('change', updateCommand);
+  form.addEventListener('submit', event => event.preventDefault());
+  button.addEventListener('click', () => { if (!button.disabled) copy(output.value); });
+  updateCommand();
+})();
+</script></body></html>

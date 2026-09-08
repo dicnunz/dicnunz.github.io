@@ -1,44 +1,44 @@
 [
   {
     "demo": "pixelmelt",
-    "repository": "https://github.com/dicnunz/pixelmelt",
+    "repository": "https://github.com/dicnunz/sandglass",
     "source_commit": "4d9d68df914acbf8a8580197aec262d0b889ca76",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/pixelmelt/tree/4d9d68df914acbf8a8580197aec262d0b889ca76"
+    "source_url": "https://github.com/dicnunz/sandglass/tree/4d9d68df914acbf8a8580197aec262d0b889ca76"
   },
   {
     "demo": "boundary-atlas",
-    "repository": "https://github.com/dicnunz/boundary-atlas",
+    "repository": "https://github.com/dicnunz/depgraph",
     "source_commit": "ac22e172c019cea56cc8328563b9a0eefdcf65b4",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/boundary-atlas/tree/ac22e172c019cea56cc8328563b9a0eefdcf65b4"
+    "source_url": "https://github.com/dicnunz/depgraph/tree/ac22e172c019cea56cc8328563b9a0eefdcf65b4"
   },
   {
     "demo": "counterexample",
-    "repository": "https://github.com/dicnunz/counterexample-studio",
+    "repository": "https://github.com/dicnunz/witness",
     "source_commit": "61005c6d4cdaf7bcd7882441d50df501f9f175e8",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/counterexample-studio/tree/61005c6d4cdaf7bcd7882441d50df501f9f175e8"
+    "source_url": "https://github.com/dicnunz/witness/tree/61005c6d4cdaf7bcd7882441d50df501f9f175e8"
   },
   {
     "demo": "asyncio",
-    "repository": "https://github.com/dicnunz/asyncio-thread-timeout-lab",
+    "repository": "https://github.com/dicnunz/threadwait",
     "source_commit": "213f8b53b80a66f04d12d5481f870c8337de358e",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/asyncio-thread-timeout-lab/tree/213f8b53b80a66f04d12d5481f870c8337de358e"
+    "source_url": "https://github.com/dicnunz/threadwait/tree/213f8b53b80a66f04d12d5481f870c8337de358e"
   },
   {
     "demo": "crumby",
-    "repository": "https://github.com/dicnunz/crumby-minimum-18",
+    "repository": "https://github.com/dicnunz/crumby",
     "source_commit": "dff2cef51f406716e68367c380ce69f3e096fceb",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/crumby-minimum-18/tree/dff2cef51f406716e68367c380ce69f3e096fceb"
+    "source_url": "https://github.com/dicnunz/crumby/tree/dff2cef51f406716e68367c380ce69f3e096fceb"
   },
   {
     "demo": "mission-control",
-    "repository": "https://github.com/dicnunz/codex-mission-control",
+    "repository": "https://github.com/dicnunz/dispatch",
     "source_commit": "98506f0257d188a3b48e214a90582c6e612a0e94",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/codex-mission-control/tree/98506f0257d188a3b48e214a90582c6e612a0e94"
+    "source_url": "https://github.com/dicnunz/dispatch/tree/98506f0257d188a3b48e214a90582c6e612a0e94"
   }
 ]

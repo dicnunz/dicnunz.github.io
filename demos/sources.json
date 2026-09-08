@@ -2,23 +2,23 @@
   {
     "demo": "pixelmelt",
     "repository": "https://github.com/dicnunz/falling-sand",
-    "source_commit": "4d9d68df914acbf8a8580197aec262d0b889ca76",
+    "source_commit": "4c08f1c36dd7e7ca19502d5f521ec39607086c3e",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/falling-sand/tree/4d9d68df914acbf8a8580197aec262d0b889ca76"
+    "source_url": "https://github.com/dicnunz/falling-sand/tree/4c08f1c36dd7e7ca19502d5f521ec39607086c3e"
   },
   {
     "demo": "boundary-atlas",
     "repository": "https://github.com/dicnunz/import-graph",
-    "source_commit": "ac22e172c019cea56cc8328563b9a0eefdcf65b4",
+    "source_commit": "67ad27c33171817a990a6c18a74d4021ee8110dc",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/import-graph/tree/ac22e172c019cea56cc8328563b9a0eefdcf65b4"
+    "source_url": "https://github.com/dicnunz/import-graph/tree/67ad27c33171817a990a6c18a74d4021ee8110dc"
   },
   {
     "demo": "counterexample",
     "repository": "https://github.com/dicnunz/property-check",
-    "source_commit": "61005c6d4cdaf7bcd7882441d50df501f9f175e8",
+    "source_commit": "dbb889b858efe101d819416ef7451ca440f0efda",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/property-check/tree/61005c6d4cdaf7bcd7882441d50df501f9f175e8"
+    "source_url": "https://github.com/dicnunz/property-check/tree/dbb889b858efe101d819416ef7451ca440f0efda"
   },
   {
     "demo": "asyncio",

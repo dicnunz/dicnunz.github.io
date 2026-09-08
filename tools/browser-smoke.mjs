@@ -19,12 +19,12 @@ const viewports = [
   { name: "mobile", viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true },
 ];
 const projects = [
-  ["Boundary Atlas links", "/demos/boundary-atlas/", "boundary-atlas"],
-  ["Counterexample Studio links", "/demos/counterexample/", "counterexample-studio"],
-  ["PixelMelt links", "/demos/pixelmelt/", "pixelmelt"],
-  ["Asyncio experiment links", "/demos/asyncio/", "asyncio-thread-timeout-lab"],
-  ["Mission Control links", "/demos/mission-control/", "codex-mission-control"],
-  ["Coloring certificate links", "/demos/crumby/", "crumby-minimum-18"],
+  ["Tutte links", "/demos/boundary-atlas/", "import-graph"],
+  ["Zeller links", "/demos/counterexample/", "property-check"],
+  ["Bagnold links", "/demos/pixelmelt/", "falling-sand"],
+  ["Asyncio experiment links", "/demos/asyncio/", "asyncio-timeouts"],
+  ["Mission Control links", "/demos/mission-control/", "codex-sessions"],
+  ["Coloring certificate links", "/demos/crumby/", "crumby-coloring"],
 ];
 const mime = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
@@ -142,7 +142,7 @@ async function counterexample(page) {
   assert.equal(report.cases.length, 1);
   const entry = report.cases[0];
   assert.equal(entry.status, "fail");
-  await textEquals(page.locator(".status-fail"), "Failed");
+  await eventually(async () => assert.equal((await page.locator(".status-fail").textContent()).trim(), "Failed"));
   const metrics = await page.locator(".metrics > div").evaluateAll((elements) => Object.fromEntries(elements.map((element) => [element.querySelector("dt").textContent, element.querySelector("dd").textContent])));
   assert.deepEqual(metrics, { Seed: String(entry.seed), "Runs before failure": String(entry.numRuns), "Accepted shrinks": String(entry.numShrinks), "Shrink path": entry.counterexamplePath });
   for (const [label, value] of [["Failing input", entry.failingInput.json], ["Expected", entry.expected.value.json], ["Actual", entry.actual.value.json]]) {
@@ -151,7 +151,7 @@ async function counterexample(page) {
   }
   await textEquals(page.locator(".replay-section pre"), entry.rerunCommand);
   await countEquals(page.locator(".details-section tbody tr"), entry.shrinkTrace.length);
-  await page.getByText(/Saved report from the local engine\./).waitFor({ state: "visible" });
+  await page.getByText(/Saved report\. Run and replay tests in the local app\./).waitFor({ state: "visible" });
 }
 
 async function pixelmelt(page) {
@@ -256,7 +256,7 @@ const pages = [
   { name: "home", route: "/", heading: "Nicholas Dunzelman", run: homepage },
   { name: "boundary-atlas", route: "/demos/boundary-atlas/", heading: "ts-cross-feature-portal", run: boundary },
   { name: "counterexample", route: "/demos/counterexample/", heading: "Chunk preserves all values", run: counterexample },
-  { name: "pixelmelt", route: "/demos/pixelmelt/", heading: "Astral Sigil", run: pixelmelt },
+  { name: "pixelmelt", route: "/demos/pixelmelt/", heading: "Strata", run: pixelmelt },
   { name: "mission-control", route: "/demos/mission-control/", heading: "Check the handoff.", run: mission },
   { name: "crumby", route: "/demos/crumby/", heading: "A coloring you can inspect.", run: crumby },
   { name: "asyncio", route: "/demos/asyncio/", heading: "The awaiter stops. The worker keeps going.", run: asyncio },

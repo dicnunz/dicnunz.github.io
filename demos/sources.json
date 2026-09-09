@@ -4,21 +4,24 @@
     "repository": "https://github.com/dicnunz/falling-sand",
     "source_commit": "4c08f1c36dd7e7ca19502d5f521ec39607086c3e",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/falling-sand/tree/4c08f1c36dd7e7ca19502d5f521ec39607086c3e"
+    "source_url": "https://github.com/dicnunz/falling-sand/tree/4c08f1c36dd7e7ca19502d5f521ec39607086c3e",
+    "presentation_changes": "Display names updated in the portfolio snapshot on 2026-09-09. Original source commit, compatibility paths, and report data preserved."
   },
   {
     "demo": "boundary-atlas",
     "repository": "https://github.com/dicnunz/import-graph",
     "source_commit": "67ad27c33171817a990a6c18a74d4021ee8110dc",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/import-graph/tree/67ad27c33171817a990a6c18a74d4021ee8110dc"
+    "source_url": "https://github.com/dicnunz/import-graph/tree/67ad27c33171817a990a6c18a74d4021ee8110dc",
+    "presentation_changes": "Display names updated in the portfolio snapshot on 2026-09-09. Original source commit, compatibility paths, and report data preserved."
   },
   {
     "demo": "counterexample",
     "repository": "https://github.com/dicnunz/property-check",
     "source_commit": "dbb889b858efe101d819416ef7451ca440f0efda",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/property-check/tree/dbb889b858efe101d819416ef7451ca440f0efda"
+    "source_url": "https://github.com/dicnunz/property-check/tree/dbb889b858efe101d819416ef7451ca440f0efda",
+    "presentation_changes": "Display names updated in the portfolio snapshot on 2026-09-09. Original source commit, compatibility paths, and report data preserved."
   },
   {
     "demo": "asyncio",
@@ -39,6 +42,7 @@
     "repository": "https://github.com/dicnunz/codex-sessions",
     "source_commit": "98506f0257d188a3b48e214a90582c6e612a0e94",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/codex-sessions/tree/98506f0257d188a3b48e214a90582c6e612a0e94"
+    "source_url": "https://github.com/dicnunz/codex-sessions/tree/98506f0257d188a3b48e214a90582c6e612a0e94",
+    "presentation_changes": "Display names updated in the portfolio snapshot on 2026-09-09. Original source commit, compatibility paths, and report data preserved."
   }
 ]

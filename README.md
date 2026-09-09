@@ -1,22 +1,24 @@
 # Nicholas Dunzelman
 
-Source for [dicnunz.github.io](https://dicnunz.github.io/), my personal website.
-
-The homepage links a small selection of projects, working browser demos, recorded experiments, and merged upstream contributions. It uses plain HTML and CSS. Screenshots in `previews/` show the published tools; they are not design mockups.
+Source for [dicnunz.github.io](https://dicnunz.github.io/). Plain HTML and CSS with six selected projects and merged upstream contributions.
 
 ## Preview and check
 
 ```sh
 python3 -m http.server 8000
-node tools/qa-check.mjs
+npm ci
+npm run check
+npm run test:browser
 ```
 
-Open http://localhost:8000. The checker validates local links, assets, duplicate IDs, image alternatives, and page metadata. The Google verification token is intentionally not an HTML page.
+Open http://localhost:8000. Browser tests require Playwright Chromium (`npx playwright install chromium`). They check desktop and mobile layouts, image loading, navigation, and demo interactions.
 
-## Updating a demo
+## Content
 
-Each project is developed and tested in its own repository. Copy its reviewed build or generated report into `demos/`, preserve relative asset paths, and update the source revision in [`demos/sources.json`](demos/sources.json). Public snapshots add descriptive page metadata; application behavior comes from the linked source. Bagnold is built with `--base=/demos/pixelmelt/`; Tutte uses relative assets. Keep the distinction between runnable apps, saved runs, and the synthetic Mission Control example visible.
+Project descriptions follow the linked repositories. Preview images show actual results or running software. Mars imagery is NASA/JPL-Caltech; Golden Record source terms are documented in its [data notice](https://github.com/dicnunz/golden-record/blob/main/DATA-NOTICE.md).
 
-GitHub Pages publishes this repository. Folio is a separate course repository and Pages site.
+Develop demos in their own repositories, copy reviewed builds into `demos/`, and record their origin in [sources.json](demos/sources.json). Preserve saved-run and synthetic-data labels. Public display names may differ from compatibility paths.
 
-The homepage layout draws on [MoMA’s exhibition checklist](https://www.moma.org/interactives/exhibitions/2007/serra/serra_checklist.pdf): image, concise description, and direct access.
+The layout follows the compact entries in [Matt Keeter's project index](https://www.mattkeeter.com/projects/) and the output, method, and source links in [Michael Fogleman's projects](https://www.michaelfogleman.com/). The homepage summarizes results; project repositories retain detailed methods and limitations.
+
+GitHub Pages publishes this repository.

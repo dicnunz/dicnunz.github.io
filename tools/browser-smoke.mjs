@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // CI smoke checks use the published snapshots unchanged, including the labeled
-// synthetic Mission Control example. No app engines or credentials are needed.
+// synthetic Codex Sessions example. No app engines or credentials are needed.
 import assert from "node:assert/strict";
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import { createServer } from "node:http";
@@ -19,12 +19,12 @@ const viewports = [
   { name: "mobile", viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true },
 ];
 const projects = [
-  ["Tutte links", "/demos/boundary-atlas/", "import-graph"],
-  ["Zeller links", "/demos/counterexample/", "property-check"],
-  ["Bagnold links", "/demos/pixelmelt/", "falling-sand"],
-  ["Asyncio experiment links", "/demos/asyncio/", "asyncio-timeouts"],
-  ["Mission Control links", "/demos/mission-control/", "codex-sessions"],
-  ["Coloring certificate links", "/demos/crumby/", "crumby-coloring"],
+  ["Import Graph links", "/demos/boundary-atlas/", "import-graph"],
+  ["Mars Stereo links", "https://github.com/dicnunz/mars-stereo/blob/main/demo/wheatstone.mp4", "mars-stereo"],
+  ["Crumby Coloring links", "/demos/crumby/", "crumby-coloring"],
+  ["Vehicle Physics links", "https://github.com/dicnunz/vehicle-physics/releases/latest", "vehicle-physics"],
+  ["Golden Record links", "https://github.com/dicnunz/golden-record/blob/main/demo/sagan.mp4", "golden-record"],
+  ["Codex Sessions links", "/demos/mission-control/", "codex-sessions"],
 ];
 const mime = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
@@ -105,11 +105,13 @@ async function homepage(page) {
     const links = await page.getByRole("navigation", { name: label, exact: true }).getByRole("link").evaluateAll((elements) => elements.map((element) => element.getAttribute("href")));
     assert.deepEqual(links, [demo, `https://github.com/dicnunz/${repository}`], `${label} must link to its demo and source`);
   }
-  await countEquals(page.locator(".projects .preview img"), 3);
+  await countEquals(page.locator(".projects .preview img"), 6);
   await countEquals(page.locator("img.portrait"), 1);
 }
 
 async function boundary(page) {
+  assert.equal(await page.title(), "Import Graph");
+  await page.getByRole("link", { name: "Import Graph report workspace", exact: true }).waitFor({ state: "visible" });
   const modules = page.locator(".module-table tbody tr");
   const query = page.getByRole("searchbox", { name: "Search modules or import specifiers" });
   await textEquals(page.locator(".result-count"), "9 of 9 nodes · 10 edges");
@@ -135,6 +137,7 @@ async function boundary(page) {
 }
 
 async function counterexample(page) {
+  assert.equal(await page.title(), "Property Check · saved report");
   const link = page.getByRole("link", { name: "Download JSON", exact: true });
   const response = await page.request.get(new URL(await link.getAttribute("href"), page.url()).href);
   assert.equal(response.status(), 200, "Saved report JSON must be downloadable");
@@ -155,6 +158,8 @@ async function counterexample(page) {
 }
 
 async function pixelmelt(page) {
+  assert.equal(await page.title(), "Falling Sand");
+  await page.getByRole("link", { name: "Falling Sand home", exact: true }).waitFor({ state: "visible" });
   const canvas = page.getByLabel("Material simulation canvas", { exact: true });
   await canvas.waitFor({ state: "visible" });
   await textEquals(page.getByTestId("tick-count"), "0");
@@ -207,6 +212,7 @@ async function pixelmelt(page) {
 }
 
 async function mission(page) {
+  assert.equal(await page.title(), "Codex Sessions · Example workspace");
   await countEquals(page.locator("[data-lane-state]:visible"), 7);
   await page.getByRole("button", { name: "Needs review", exact: true }).click();
   await textEquals(page.locator("#lane-count"), "1 lane");

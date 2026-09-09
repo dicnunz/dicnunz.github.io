@@ -3,86 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nicholas Dunzelman · Software &amp; Projects</title>
-  <meta name="description" content="Computer science student at Florida Tech and Community Lead at Krea. Explore dependency analysis, property testing, browser simulation, and merged open-source fixes.">
+  <title>Nicholas Dunzelman</title>
+  <meta name="description" content="Computer science student at Florida Tech and Community Lead at Krea. Software projects, scientific reconstructions, and open-source contributions.">
   <meta name="author" content="Nicholas Dunzelman">
-  <meta name="theme-color" content="#f7f5f0">
+  <meta name="theme-color" content="#fcfcfa">
   <link rel="canonical" href="https://dicnunz.github.io/">
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Nicholas Dunzelman">
-  <meta property="og:title" content="Nicholas Dunzelman · Software &amp; Projects">
-  <meta property="og:description" content="Tools you can try, experiments you can reproduce, and contributions you can inspect.">
+  <meta property="og:title" content="Nicholas Dunzelman">
+  <meta property="og:description" content="Software projects, scientific reconstructions, and open-source contributions.">
   <meta property="og:url" content="https://dicnunz.github.io/">
   <meta property="og:image" content="https://dicnunz.github.io/nicholas-dunzelman.jpg">
   <meta property="og:image:alt" content="Portrait of Nicholas Dunzelman">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@nicdunz">
-  <meta name="twitter:title" content="Nicholas Dunzelman · Software &amp; Projects">
-  <meta name="twitter:description" content="Tools you can try, experiments you can reproduce, and contributions you can inspect.">
+  <meta name="twitter:title" content="Nicholas Dunzelman">
+  <meta name="twitter:description" content="Software projects, scientific reconstructions, and open-source contributions.">
   <meta name="twitter:image" content="https://dicnunz.github.io/nicholas-dunzelman.jpg">
   <meta name="twitter:image:alt" content="Portrait of Nicholas Dunzelman">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/nicholas-dunzelman.jpg">
   <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfilePage","dateModified":"2026-09-06","mainEntity":{"@type":"Person","name":"Nicholas Dunzelman","alternateName":"Nic","url":"https://dicnunz.github.io/","image":"https://dicnunz.github.io/nicholas-dunzelman.jpg","description":"Computer science student at Florida Tech and Community Lead at Krea.","sameAs":["https://github.com/dicnunz","https://www.linkedin.com/in/nicdunz/","https://x.com/nicdunz"]}}
+  {"@context":"https://schema.org","@type":"ProfilePage","dateModified":"2026-09-09","mainEntity":{"@type":"Person","name":"Nicholas Dunzelman","alternateName":"Nic","url":"https://dicnunz.github.io/","image":"https://dicnunz.github.io/nicholas-dunzelman.jpg","description":"Computer science student at Florida Tech and Community Lead at Krea.","sameAs":["https://github.com/dicnunz","https://www.linkedin.com/in/nicdunz/","https://x.com/nicdunz"]}}
   </script>
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
   <div class="wrap">
-    <header class="masthead">
-      <a class="wordmark" href="/">Nic Dunzelman</a>
-      <nav aria-label="Main navigation"><a href="#work">Projects</a><a href="#contributions">Contributions</a><a href="https://www.linkedin.com/in/nicdunz/">LinkedIn</a></nav>
+    <header class="intro">
+      <div>
+        <h1>Nicholas Dunzelman</h1>
+        <p>Computer science student at Florida Tech.<br>Community Lead at <a href="https://www.krea.ai/">Krea</a>.</p>
+        <nav aria-label="Profiles"><a href="https://github.com/dicnunz" rel="me">GitHub</a><a href="https://www.linkedin.com/in/nicdunz/" rel="me">LinkedIn</a><a href="https://x.com/nicdunz" rel="me">X</a></nav>
+      </div>
+      <img class="portrait" src="/nicholas-dunzelman.jpg" width="400" height="400" alt="Portrait of Nicholas Dunzelman">
     </header>
     <main id="content">
-      <section class="intro" aria-labelledby="name">
-        <div>
-          <p class="eyebrow">Software / Selected work</p>
-          <h1 id="name">Nicholas Dunzelman</h1>
-          <p>Computer science student at Florida Tech and Community Lead at <a href="https://www.krea.ai/">Krea</a>.</p>
-
-          <p class="availability">Interested in software engineering opportunities. <a href="https://www.linkedin.com/in/nicdunz/">Get in touch</a></p>
-        </div>
-        <img class="portrait" src="/nicholas-dunzelman.jpg" width="400" height="400" alt="Portrait of Nicholas Dunzelman">
-      </section>
       <section id="work" aria-labelledby="work-heading">
-        <div class="section-heading"><h2 id="work-heading">Selected projects</h2></div>
+        <h2 id="work-heading">Selected projects</h2>
         <ol class="projects">
           <li class="project">
-            <a class="preview" href="/demos/boundary-atlas/" aria-label="Open the Tutte demo"><img src="/previews/tutte.jpg" width="1348" height="926" alt="Tutte dependency graph beside structural findings" loading="lazy"></a>
-            <div><p class="eyebrow">01 / Developer tools</p><h3>Tutte</h3><p>Trace imports, inspect modules, and isolate structural problems in JavaScript and TypeScript.</p><p class="detail">TypeScript · Static analysis · Graph exploration</p><nav aria-label="Tutte links"><a class="primary" href="/demos/boundary-atlas/">Explore a report <span aria-hidden="true">↗</span></a><a href="https://github.com/dicnunz/import-graph">Source &amp; setup</a></nav></div>
+            <a class="preview" href="/demos/boundary-atlas/" aria-label="Explore Import Graph"><img src="/previews/import-graph.jpg" width="1440" height="1000" alt="Import Graph showing module dependencies and structural findings"></a>
+            <div><h3>Import Graph</h3><p>Static dependency analysis for JavaScript and TypeScript. Finds cycles, checks configured boundaries, and compares findings between Git revisions.</p><p class="result">The sample report traces nine modules and ten imports. Select a finding to isolate its dependencies.</p><nav aria-label="Import Graph links"><a href="/demos/boundary-atlas/">Demo</a><a href="https://github.com/dicnunz/import-graph">Code &amp; method</a></nav></div>
           </li>
           <li class="project">
-            <a class="preview" href="/demos/counterexample/" aria-label="Inspect a saved Zeller failure"><img src="/previews/zeller.jpg" width="1348" height="926" alt="Saved property-test report with a minimal failing input, seed, and expected versus actual values" loading="lazy"></a>
-            <div><p class="eyebrow">02 / Testing tools</p><h3>Zeller</h3><p>Find a failing input, follow its reduction, and replay the exact case. Local property testing with portable reports.</p><p class="detail">TypeScript · Property testing · Deterministic replay</p><nav aria-label="Zeller links"><a class="primary" href="/demos/counterexample/">Inspect a failure <span aria-hidden="true">↗</span></a><a href="https://github.com/dicnunz/property-check">Source &amp; setup</a></nav><p class="detail">Saved run. Test execution runs locally.</p></div>
+            <a class="preview" href="https://github.com/dicnunz/mars-stereo/blob/main/demo/wheatstone.mp4" aria-label="Watch the Mars Stereo reconstruction"><img src="/previews/mars-stereo.png" width="1920" height="1080" alt="Spirit Navcam stereo observations and the reconstructed terrain" loading="lazy"></a>
+            <div><h3>Mars Stereo</h3><p>Spirit Navcam stereo images reconstructed as textured terrain. Sol 767, 1 March 2006.</p><p class="result">66,459 mesh vertices from calibrated camera geometry. Occlusions leave gaps; absolute terrain accuracy is unvalidated.</p><nav aria-label="Mars Stereo links"><a href="https://github.com/dicnunz/mars-stereo/blob/main/demo/wheatstone.mp4">Video</a><a href="https://github.com/dicnunz/mars-stereo">Code &amp; method</a></nav><p class="credit">Imagery: NASA/JPL-Caltech.</p></div>
           </li>
           <li class="project">
-            <a class="preview" href="/demos/pixelmelt/" aria-label="Try Bagnold"><img src="/previews/bagnold.jpg" width="1348" height="926" alt="Bagnold canvas with a material scene, brush controls, and playback controls" loading="lazy"></a>
-            <div><p class="eyebrow">03 / Creative coding</p><h3>Bagnold</h3><p>Turn images into moving materials. Paint, flood, burn, and record the simulation.</p><p class="detail">Canvas · Web Workers · Versioned scene files</p><nav aria-label="Bagnold links"><a class="primary" href="/demos/pixelmelt/">Try the simulation <span aria-hidden="true">↗</span></a><a href="https://github.com/dicnunz/falling-sand">Source &amp; setup</a></nav></div>
+            <a class="preview" href="/demos/crumby/" aria-label="Inspect a Crumby Coloring certificate"><img src="/previews/crumby-coloring.jpg" width="1440" height="1000" alt="Graph vertices colored to check the crumby-coloring constraints" loading="lazy"></a>
+            <div><h3>Crumby Coloring</h3><p>Exhaustive graph enumeration with independently checkable coloring certificates.</p><p class="result">The viewer checks one certificate. Recolor a vertex to see which constraints fail. The repository contains the full computation and credits.</p><nav aria-label="Crumby Coloring links"><a href="/demos/crumby/">Demo</a><a href="https://github.com/dicnunz/crumby-coloring">Code &amp; method</a></nav></div>
+          </li>
+          <li class="project">
+            <a class="preview" href="https://github.com/dicnunz/vehicle-physics/releases/latest" aria-label="Download Vehicle Physics"><img src="/previews/vehicle-physics.png" width="1440" height="900" alt="Vehicle Physics sedan on the suspension and crash test course" loading="lazy"></a>
+            <div><h3>Vehicle Physics</h3><p>A Godot driving sandbox with custom suspension, tire forces, and deformable bodywork.</p><p class="result">Scripted scenarios export telemetry. The model is a game-physics approximation, unvalidated against real vehicle data.</p><nav aria-label="Vehicle Physics links"><a href="https://github.com/dicnunz/vehicle-physics/releases/latest">Mac download</a><a href="https://github.com/dicnunz/vehicle-physics">Code &amp; method</a></nav></div>
+          </li>
+          <li class="project">
+            <a class="preview" href="https://github.com/dicnunz/golden-record/blob/main/demo/sagan.mp4" aria-label="Watch Golden Record image recovery"><img src="/previews/golden-record.png" width="1920" height="1080" alt="Calibration raster recovered from a Golden Record preservation recording" loading="lazy"></a>
+            <div><h3>Golden Record</h3><p>Voyager's analog picture signal decoded into 156 grayscale raster planes.</p><p class="result">Recovered from a community preservation recording. Analog artifacts remain, and color-channel assembly is incomplete.</p><nav aria-label="Golden Record links"><a href="https://github.com/dicnunz/golden-record/blob/main/demo/sagan.mp4">Video</a><a href="https://github.com/dicnunz/golden-record">Code &amp; method</a></nav></div>
+          </li>
+          <li class="project">
+            <a class="preview" href="/demos/mission-control/" aria-label="Inspect the Codex Sessions example dashboard"><img src="/previews/codex-sessions.jpg" width="1440" height="1000" alt="Codex Sessions example dashboard with local projects and cooperative locks" loading="lazy"></a>
+            <div><h3>Codex Sessions</h3><p>Local project discovery and cooperative filesystem locks for Codex sessions.</p><p class="result">An optional Telegram relay connects to the running Mac. The dashboard shown here uses synthetic data.</p><nav aria-label="Codex Sessions links"><a href="/demos/mission-control/">Example dashboard</a><a href="https://github.com/dicnunz/codex-sessions">Code &amp; setup</a></nav></div>
           </li>
         </ol>
       </section>
-      <section aria-labelledby="worlds-heading"><div class="section-heading"><h2 id="worlds-heading">Worlds & collections</h2></div><div class="more-work world-links"><article><h3><a href="https://github.com/dicnunz/tokyo">Inō</a></h3><p>Walk Tokyo through survey imagery and PLATEAU buildings. Partial coverage.</p></article><article><h3><a href="https://github.com/dicnunz/vehicle-physics">Olley</a></h3><p>A driving sandbox with custom suspension and deformable bodywork.</p></article><article><h3><a href="https://github.com/dicnunz/hidden-leaf">Hidden Leaf</a></h3><p>A modeled village to explore on foot.</p></article><article><h3><a href="https://dicnunz.github.io/references/library.html">Mnemosyne</a></h3><p>A visual reference board with sources and inspection notes.</p></article></div></section>
-      <section aria-labelledby="further-heading">
-        <div class="section-heading"><h2 id="further-heading">Further work</h2></div>
-        <div class="more-work">
-          <article><p class="eyebrow">04 / Python experiment</p><h3>What survives an async timeout?</h3><p>A measured timeline of blocking threads that survive an asyncio timeout.</p><nav aria-label="Asyncio experiment links"><a href="/demos/asyncio/">Measured timeline</a><a href="https://github.com/dicnunz/asyncio-timeouts">Code &amp; tests</a></nav></article>
-          <article><p class="eyebrow">05 / Local coordination</p><h3>Mission Control</h3><p>Local session coordination for macOS. Dashboard shows synthetic example data.</p><nav aria-label="Mission Control links"><a href="/demos/mission-control/">Example dashboard</a><a href="https://github.com/dicnunz/codex-sessions">Code &amp; setup</a></nav></article>
-          <article><p class="eyebrow">06 / Computational mathematics</p><h3>Coloring certificates</h3><p>Inspect a verified graph coloring. Recolor a vertex to test the constraints.</p><nav aria-label="Coloring certificate links"><a href="/demos/crumby/">Inspect a certificate</a><a href="https://github.com/dicnunz/crumby-coloring">Computation &amp; credits</a></nav></article>
-        </div>
-      </section>
       <section id="contributions" class="contributions" aria-labelledby="contribution-heading">
-        <div class="section-heading"><h2 id="contribution-heading">Merged upstream</h2></div>
-        <article class="contribution"><div><h3><a href="https://github.com/maximhq/bifrost/pull/3640">Bifrost #3640</a></h3><small>Streaming response conversion</small></div><p>Preserves tool-call completion information through chat, Responses API, and Anthropic response conversions. Adds regression tests, including streams with both text and tool calls.</p></article>
-        <article class="contribution"><div><h3><a href="https://github.com/Mozzo1000/booklogr/pull/95">Booklogr #95</a></h3><small>Equivalent ISBN lookup</small></div><p>Normalizes and validates identifiers so a book saved under ISBN-10 can also be found using its equivalent ISBN-13, while keeping lookups scoped to the current user.</p></article>
-      </section>
-      <section class="school" aria-labelledby="folio-heading">
-        <div><p class="eyebrow">Senior project</p><h2 id="folio-heading">Folio</h2></div>
-        <div><p>My senior project with Caleb Brooks, advised by Dr. David Luginbuhl. We are developing a student planning app for turning coursework into editable plans and a daily or weekly schedule, with optional task-completion rewards.</p><p class="status">In development. The repository currently contains the project plan, presentation, and course website.</p><nav aria-label="Folio links"><a href="https://github.com/dicnunz/folio">Repository</a><a href="https://dicnunz.github.io/folio/">Course website</a><a href="https://github.com/dicnunz/folio/blob/main/docs/documents/first-semester/project-plan/project-plan-2026-08-30.pdf">Project plan</a></nav></div>
+        <h2 id="contribution-heading">Merged contributions</h2>
+        <ul>
+          <li><a href="https://github.com/maximhq/bifrost/pull/3640">Bifrost #3640</a>: preserved tool-call stop reasons in streaming conversions.</li>
+          <li><a href="https://github.com/Mozzo1000/booklogr/pull/95">Booklogr #95</a>: added equivalent ISBN-10 and ISBN-13 lookups.</li>
+        </ul>
       </section>
     </main>
-    <footer><p>Nicholas Dunzelman · <a href="/demos/sources.json">Demo source versions</a></p><nav aria-label="Profiles"><a rel="me" href="https://github.com/dicnunz">GitHub</a><a rel="me" href="https://www.linkedin.com/in/nicdunz/">LinkedIn</a><a rel="me" href="https://x.com/nicdunz">X</a></nav></footer>
+    <footer><a href="https://github.com/dicnunz?tab=repositories">All repositories</a><a href="/demos/sources.json">Demo sources</a></footer>
   </div>
 </body>
 </html>

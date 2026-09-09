@@ -155,7 +155,7 @@ dialog button { margin-top:12px; }
 <div class="workspace-label">LOCAL WORKSPACE</div><nav aria-label="Workspace"><a href="#overview" class="current"><span>01</span> Overview</a><a href="#lanes"><span>02</span> Surface lanes</a><a href="#missions"><span>03</span> Missions</a><a href="#commands"><span>04</span> Commands</a></nav>
 <div class="sidebar-bottom"><span class="local-dot"></span> Example hub<p>/Users/example/Codex Mission Control</p><span class="version">CMC / 0.2.6</span></div></aside>
 <main id="overview"><header class="topbar"><span>EXAMPLE WORKSPACE / SYNTHETIC DATA</span><span class="snapshot-label"><span class="snapshot-dot"></span> Example snapshot</span></header>
-<section class="intro"><div><p class="eyebrow">YOUR CONTROL ROOM</p><h1>Check the handoff.</h1><p class="intro-description">1 lane needs a review. Confirm the previous session has stopped before reclaiming.</p></div><div class="snapshot"><time>06 Sep 2026 · 15:03 EDT</time><button type="button" class="copy quiet" data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; dashboard">Copy refresh command</button><small>Run in your terminal to take a new snapshot.</small></div></section>
+<section class="intro"><div><h1>Codex Sessions</h1><p class="intro-description">1 lane needs a review. Confirm the previous session has stopped before reclaiming.</p></div><div class="snapshot"><time datetime="2026-09-06T15:03:00-04:00">06 Sep 2026 · 15:03 EDT</time><button type="button" class="copy quiet" data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; dashboard">Copy refresh command</button><small>Static example. All states and durations were recorded at this time.</small></div></section>
 <section class="metrics" aria-label="Workspace totals"><div><span class="metric-label">Lanes in use</span><strong>02</strong><span>Owned by a session</span></div><div><span class="metric-label">Clear lanes</span><strong class="green-text">04</strong><span>Available to claim</span></div><div class="metric-alert"><span class="metric-label">Need review</span><strong>01</strong><span>1 stale · 0 unknown</span></div><div><span class="metric-label">Missions</span><strong>04</strong><span>Projects in this hub</span></div></section>
 <div class="workspace-grid"><section class="panel lane-panel" id="lanes"><div class="section-heading"><div><p class="eyebrow">COORDINATION</p><h2>Surface lanes <span class="count">07</span></h2></div><span class="section-note">One owner per surface</span></div>
 <div class="filters" role="group" aria-label="Filter lanes"><button data-filter="all" aria-pressed="true">All lanes</button><button data-filter="held" aria-pressed="false">In use</button><button data-filter="review" aria-pressed="false">Needs review</button><span id="lane-count" role="status">7 lanes</span></div>
@@ -163,12 +163,12 @@ dialog button { margin-top:12px; }
           <summary><span class="lane-symbol">BR</span>
             <span class="lane-name">Browser<small>BROWSER</small></span>
             <span class="lane-owner">DESIGN SESSION<small>Reviewing the settings flow</small></span>
-            <span class="lane-state"><span class="badge held">In use</span><small>13m left</small></span>
+            <span class="lane-state"><span class="badge held">In use</span><small>13m remaining at snapshot</small></span>
             <span class="expand" aria-hidden="true">+</span></summary><div class="lane-detail"><p>Coordinate with the current owner. Release only when that session has finished.</p><div class="command-line"><code>/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release BROWSER &#x27;DESIGN SESSION&#x27;</code><button type="button" class="copy " data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release BROWSER &#x27;DESIGN SESSION&#x27;">Copy release</button></div></div></details><details class="lane" data-lane-state="stale">
           <summary><span class="lane-symbol">GH</span>
             <span class="lane-name">Github<small>GITHUB</small></span>
             <span class="lane-owner">RELEASE CHECK<small>Checking the next release</small></span>
-            <span class="lane-state"><span class="badge stale">Stale</span><small>Expired 23m ago</small></span>
+            <span class="lane-state"><span class="badge stale">Stale</span><small>Expired 23m before snapshot</small></span>
             <span class="expand" aria-hidden="true">+</span></summary><div class="lane-detail"><p>The lease expired. Check that the previous session has stopped before claiming again.</p><div class="command-line"><code>/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release GITHUB &#x27;RELEASE CHECK&#x27;</code><button type="button" class="copy " data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; release GITHUB &#x27;RELEASE CHECK&#x27;">Copy release</button></div></div></details><details class="lane" data-lane-state="held">
           <summary><span class="lane-symbol">EM</span>
             <span class="lane-name">Email<small>EMAIL</small></span>
@@ -200,16 +200,16 @@ dialog button { margin-top:12px; }
 <section class="panel health"><div class="health-title"><h2>Hub check</h2><span class="badge clear">Healthy</span></div><p>Hub files and project links are in place.</p><div class="relay-line"><span>Optional Relay</span><strong>not installed</strong></div><button type="button" class="copy quiet" data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; doctor">Copy health check</button></section></aside></div>
 <section class="panel missions-panel" id="missions"><div class="section-heading"><div><p class="eyebrow">PROJECT INDEX</p><h2>Missions <span class="count">04</span></h2></div><div class="mission-tools"><label class="sr-only" for="mission-search">Search missions</label><input id="mission-search" type="search" placeholder="Search missions…"><button type="button" class="copy quiet" data-copy="/Users/example/Developer/codex-mission-control/cmc --hub &#x27;/Users/example/Codex Mission Control&#x27; discover">Copy discover command</button></div></div><div class="mission-list"><article class="mission" data-search="fn field-notes /Users/example/projects/field-notes">
           <span class="call-sign">FN</span><div class="mission-name"><h3>field-notes</h3><p>/Users/example/Projects/field-notes</p></div>
-          <div class="mission-meta"><span class="">Outbox · 8m ago</span>
+          <div class="mission-meta"><span class="">Outbox · 8m before snapshot</span>
           <button type="button" class="copy " data-copy="/Users/example/Projects/field-notes">Copy path</button></div></article><article class="mission" data-search="ha harbor-api /Users/example/projects/harbor-api">
           <span class="call-sign">HA</span><div class="mission-name"><h3>harbor-api</h3><p>/Users/example/Projects/harbor-api</p></div>
-          <div class="mission-meta"><span class="">Outbox · 8m ago</span>
+          <div class="mission-meta"><span class="">Outbox · 8m before snapshot</span>
           <button type="button" class="copy " data-copy="/Users/example/Projects/harbor-api">Copy path</button></div></article><article class="mission" data-search="rt relay-tools /Users/example/projects/relay-tools">
           <span class="call-sign">RT</span><div class="mission-name"><h3>relay-tools</h3><p>/Users/example/Projects/relay-tools</p></div>
-          <div class="mission-meta"><span class="">Outbox · 8m ago</span>
+          <div class="mission-meta"><span class="">Outbox · 8m before snapshot</span>
           <button type="button" class="copy " data-copy="/Users/example/Projects/relay-tools">Copy path</button></div></article><article class="mission" data-search="ss signal-studio /Users/example/projects/signal-studio">
           <span class="call-sign">SS</span><div class="mission-name"><h3>signal-studio</h3><p>/Users/example/Projects/signal-studio</p></div>
-          <div class="mission-meta"><span class="">Outbox · 8m ago</span>
+          <div class="mission-meta"><span class="">Outbox · 8m before snapshot</span>
           <button type="button" class="copy " data-copy="/Users/example/Projects/signal-studio">Copy path</button></div></article></div><p id="mission-empty" class="empty" role="status" hidden>No missions match your search.</p></section>
 <section class="reference"><details><summary>Approval packet <span>Prepare the exact action for review</span></summary><pre># MISSION Approval Packet
 

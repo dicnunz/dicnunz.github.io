@@ -2,47 +2,93 @@
   {
     "demo": "pixelmelt",
     "repository": "https://github.com/dicnunz/falling-sand",
-    "source_commit": "4c08f1c36dd7e7ca19502d5f521ec39607086c3e",
+    "source_commit": "c6539ca07940306f09be2f6444b7fdda4012a9f0",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/falling-sand/tree/4c08f1c36dd7e7ca19502d5f521ec39607086c3e",
-    "presentation_changes": "Display names updated in the portfolio snapshot on 2026-09-09. Original source commit, compatibility paths, and report data preserved."
+    "source_url": "https://github.com/dicnunz/falling-sand/tree/c6539ca07940306f09be2f6444b7fdda4012a9f0"
   },
   {
     "demo": "boundary-atlas",
     "repository": "https://github.com/dicnunz/import-graph",
-    "source_commit": "67ad27c33171817a990a6c18a74d4021ee8110dc",
+    "source_commit": "7f1e775c41adfa37fb43e7ee5dba2fb43f1bbfeb",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/import-graph/tree/67ad27c33171817a990a6c18a74d4021ee8110dc",
-    "presentation_changes": "Display names updated in the portfolio snapshot on 2026-09-09. Original source commit, compatibility paths, and report data preserved."
+    "source_url": "https://github.com/dicnunz/import-graph/tree/7f1e775c41adfa37fb43e7ee5dba2fb43f1bbfeb"
   },
   {
     "demo": "counterexample",
     "repository": "https://github.com/dicnunz/property-check",
-    "source_commit": "dbb889b858efe101d819416ef7451ca440f0efda",
+    "source_commit": "9ded0db6a0a90a2e7f093d869519b84b50c1de3d",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/property-check/tree/dbb889b858efe101d819416ef7451ca440f0efda",
-    "presentation_changes": "Display names updated in the portfolio snapshot on 2026-09-09. Original source commit, compatibility paths, and report data preserved."
+    "source_url": "https://github.com/dicnunz/property-check/tree/9ded0db6a0a90a2e7f093d869519b84b50c1de3d"
   },
   {
     "demo": "asyncio",
     "repository": "https://github.com/dicnunz/asyncio-timeouts",
-    "source_commit": "213f8b53b80a66f04d12d5481f870c8337de358e",
+    "source_commit": "eabca4f4d03cea989058080ab50f6f6e3e032dcf",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/asyncio-timeouts/tree/213f8b53b80a66f04d12d5481f870c8337de358e"
+    "source_url": "https://github.com/dicnunz/asyncio-timeouts/tree/eabca4f4d03cea989058080ab50f6f6e3e032dcf"
   },
   {
     "demo": "crumby",
     "repository": "https://github.com/dicnunz/crumby-coloring",
-    "source_commit": "dff2cef51f406716e68367c380ce69f3e096fceb",
+    "source_commit": "0cfa73e7224a9f4ebaa057c2ca7869f5e636af5f",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/crumby-coloring/tree/dff2cef51f406716e68367c380ce69f3e096fceb"
+    "source_url": "https://github.com/dicnunz/crumby-coloring/tree/0cfa73e7224a9f4ebaa057c2ca7869f5e636af5f"
   },
   {
     "demo": "mission-control",
     "repository": "https://github.com/dicnunz/codex-sessions",
-    "source_commit": "98506f0257d188a3b48e214a90582c6e612a0e94",
+    "source_commit": "d627b788fc7ac793a5f3e0d70e858e9d13683fd8",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/codex-sessions/tree/98506f0257d188a3b48e214a90582c6e612a0e94",
-    "presentation_changes": "Display names updated in the portfolio snapshot on 2026-09-09. Original source commit, compatibility paths, and report data preserved."
+    "source_url": "https://github.com/dicnunz/codex-sessions/tree/d627b788fc7ac793a5f3e0d70e858e9d13683fd8",
+    "presentation_changes": "Synthetic example workspace; rounded lease durations refer to the recorded snapshot time."
+  },
+  {
+    "demo": "golden-record",
+    "repository": "https://github.com/dicnunz/golden-record",
+    "source_commit": "927c39f657c1d4e85337385f77b567aae7557fbd",
+    "source_url": "https://github.com/dicnunz/golden-record/tree/927c39f657c1d4e85337385f77b567aae7557fbd/web",
+    "kind": "recorded results inspector"
+  },
+  {
+    "demo": "eht-imaging",
+    "repository": "https://github.com/dicnunz/eht-imaging",
+    "source_commit": "c9941b4c0cf143866ed3fec7075fe0da94d659dc",
+    "source_url": "https://github.com/dicnunz/eht-imaging/tree/c9941b4c0cf143866ed3fec7075fe0da94d659dc/web",
+    "kind": "recorded results inspector"
+  },
+  {
+    "demo": "mars-stereo",
+    "repository": "https://github.com/dicnunz/mars-stereo",
+    "source_commit": "012c47369c129595c80358843f6143d000eb03c7",
+    "source_url": "https://github.com/dicnunz/mars-stereo/tree/012c47369c129595c80358843f6143d000eb03c7/web",
+    "kind": "recorded results inspector"
+  },
+  {
+    "demo": "apollo-guidance",
+    "repository": "https://github.com/dicnunz/apollo-guidance",
+    "source_commit": "ed26e2504990357a759dfc549d30534ec5de093b",
+    "source_url": "https://github.com/dicnunz/apollo-guidance/tree/ed26e2504990357a759dfc549d30534ec5de093b/web",
+    "kind": "recorded results inspector"
+  },
+  {
+    "demo": "quartet-recovery",
+    "repository": "https://github.com/dicnunz/quartet-recovery",
+    "source_commit": "952ed78e3ea47ee6dcca4c9192a3158f91502a90",
+    "source_url": "https://github.com/dicnunz/quartet-recovery/tree/952ed78e3ea47ee6dcca4c9192a3158f91502a90/web",
+    "kind": "recorded results inspector"
+  },
+  {
+    "demo": "vehicle-physics",
+    "repository": "https://github.com/dicnunz/vehicle-physics",
+    "source_commit": "53581de2ce4e87c3ca57a3735981cccd740a6ed0",
+    "source_url": "https://github.com/dicnunz/vehicle-physics/tree/53581de2ce4e87c3ca57a3735981cccd740a6ed0/web",
+    "kind": "recorded results inspector"
+  },
+  {
+    "demo": "hidden-leaf",
+    "repository": "https://github.com/dicnunz/hidden-leaf",
+    "source_commit": "d27b8913f71e1d4857d230797a0ba6a62d7b73bc",
+    "source_url": "https://github.com/dicnunz/hidden-leaf/tree/d27b8913f71e1d4857d230797a0ba6a62d7b73bc/web",
+    "kind": "native app screenshots"
   }
 ]

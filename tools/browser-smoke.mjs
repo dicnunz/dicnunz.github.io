@@ -20,10 +20,10 @@ const viewports = [
 ];
 const projects = [
   ["Import Graph links", "/demos/boundary-atlas/", "import-graph"],
-  ["Mars Stereo links", "https://github.com/dicnunz/mars-stereo/blob/main/demo/wheatstone.mp4", "mars-stereo"],
+  ["Mars Stereo links", "/demos/mars-stereo/", "mars-stereo"],
   ["Crumby Coloring links", "/demos/crumby/", "crumby-coloring"],
-  ["Vehicle Physics links", "https://github.com/dicnunz/vehicle-physics/releases/latest", "vehicle-physics"],
-  ["Golden Record links", "https://github.com/dicnunz/golden-record/blob/main/demo/sagan.mp4", "golden-record"],
+  ["Vehicle Physics links", "/demos/vehicle-physics/", "vehicle-physics"],
+  ["Golden Record links", "/demos/golden-record/", "golden-record"],
   ["Codex Sessions links", "/demos/mission-control/", "codex-sessions"],
 ];
 const mime = {
@@ -110,7 +110,7 @@ async function homepage(page) {
 }
 
 async function boundary(page) {
-  assert.equal(await page.title(), "Import Graph");
+  assert.equal(await page.title(), "Import Graph | Import graph");
   await page.getByRole("link", { name: "Import Graph report workspace", exact: true }).waitFor({ state: "visible" });
   const modules = page.locator(".module-table tbody tr");
   const query = page.getByRole("searchbox", { name: "Search modules or import specifiers" });
@@ -237,6 +237,9 @@ async function crumby(page) {
   await eventually(async () => assert.match(await status.innerText(), /^This coloring breaks [1-9]/));
   assert.match(await page.locator("#violations").innerText(), /four-vertex path/);
   assert.equal(await page.locator("#vertices").getByRole("button", { name: "Vertex 0, red. Change color.", exact: true }).getAttribute("aria-pressed"), "true");
+  await page.getByRole("button", { name: "Undo", exact: true }).click();
+  await textEquals(status, "Released witness: all three coloring rules hold.");
+  await page.locator("#vertices").getByRole("button", { name: "Vertex 0, blue. Change color.", exact: true }).click();
   await page.getByRole("button", { name: "Restore witness", exact: true }).click();
   await textEquals(status, "Released witness: all three coloring rules hold.");
   await countEquals(page.locator("#violations li"), 0);
@@ -258,12 +261,50 @@ async function asyncio(page) {
   }
 }
 
+async function recordedResults(page) {
+  const choice = page.locator('#choice');
+  const count = await choice.locator('option').count();
+  assert.ok(count > 1, 'Recorded outputs must be available');
+  const initial = await page.locator('#caption').textContent();
+  await page.getByRole('button', { name: 'Next result', exact: true }).click();
+  assert.equal(await choice.inputValue(), '1');
+  assert.notEqual(await page.locator('#caption').textContent(), initial);
+  await choice.selectOption(String(count - 1));
+  assert.equal(await page.locator('#position').inputValue(), String(count - 1));
+  assert.ok(await page.getByRole('button', { name: 'Next result', exact: true }).isDisabled());
+  await page.locator('#position').focus();
+  await page.keyboard.press('Home');
+  assert.equal(await choice.inputValue(), '0');
+  assert.equal(await page.locator('#caption').textContent(), initial);
+  await imagesLoad(page);
+}
+
+async function vehicle(page) {
+ const range=page.locator('#sample');
+ const read=page.locator('#reading');
+ const before=await read.textContent();
+ await page.getByRole('button',{name:'Next',exact:true}).click();
+ assert.notEqual(await read.textContent(),before);
+ await page.getByRole('button',{name:'First impact sample',exact:true}).click();
+ assert.match(await read.textContent(),/km\/h/);
+}
+async function hiddenLeaf(page) {
+ await countEquals(page.locator('figure img'),2);
+ await page.getByRole('heading',{name:'Controls',exact:true}).waitFor({state:'visible'});
+}
 const pages = [
+ {name:'vehicle-physics',route:'/demos/vehicle-physics/',heading:'Vehicle Physics',run:vehicle},
+ {name:'hidden-leaf',route:'/demos/hidden-leaf/',heading:'Hidden Leaf',run:hiddenLeaf},
+  { name: "quartet-recovery", route: "/demos/quartet-recovery/", heading: "Quartet Recovery", run: recordedResults },
+  { name: "apollo-guidance", route: "/demos/apollo-guidance/", heading: "Apollo Guidance", run: recordedResults },
+  { name: "mars-stereo", route: "/demos/mars-stereo/", heading: "Mars Stereo", run: recordedResults },
+  { name: "eht-imaging", route: "/demos/eht-imaging/", heading: "EHT Imaging", run: recordedResults },
+  { name: "golden-record", route: "/demos/golden-record/", heading: "Golden Record", run: recordedResults },
   { name: "home", route: "/", heading: "Nicholas Dunzelman", run: homepage },
   { name: "boundary-atlas", route: "/demos/boundary-atlas/", heading: "ts-cross-feature-portal", run: boundary },
   { name: "counterexample", route: "/demos/counterexample/", heading: "Chunk preserves all values", run: counterexample },
   { name: "pixelmelt", route: "/demos/pixelmelt/", heading: "Strata", run: pixelmelt },
-  { name: "mission-control", route: "/demos/mission-control/", heading: "Check the handoff.", run: mission },
+  { name: "mission-control", route: "/demos/mission-control/", heading: "Codex Sessions", run: mission },
   { name: "crumby", route: "/demos/crumby/", heading: "A coloring you can inspect.", run: crumby },
   { name: "asyncio", route: "/demos/asyncio/", heading: "The awaiter stops. The worker keeps going.", run: asyncio },
 ];

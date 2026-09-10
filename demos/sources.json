@@ -2,93 +2,93 @@
   {
     "demo": "pixelmelt",
     "repository": "https://github.com/dicnunz/falling-sand",
-    "source_commit": "c6539ca07940306f09be2f6444b7fdda4012a9f0",
+    "source_commit": "28b8b3627fc2ccc39ebf76406d8af8affc4b5628",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/falling-sand/tree/c6539ca07940306f09be2f6444b7fdda4012a9f0"
+    "source_url": "https://github.com/dicnunz/falling-sand/tree/28b8b3627fc2ccc39ebf76406d8af8affc4b5628"
   },
   {
     "demo": "boundary-atlas",
     "repository": "https://github.com/dicnunz/import-graph",
-    "source_commit": "7f1e775c41adfa37fb43e7ee5dba2fb43f1bbfeb",
+    "source_commit": "66f95a05a4d42b21c5bce3c93ec98908812f8cfc",
     "kind": "interactive app",
-    "source_url": "https://github.com/dicnunz/import-graph/tree/7f1e775c41adfa37fb43e7ee5dba2fb43f1bbfeb"
+    "source_url": "https://github.com/dicnunz/import-graph/tree/66f95a05a4d42b21c5bce3c93ec98908812f8cfc"
   },
   {
     "demo": "counterexample",
     "repository": "https://github.com/dicnunz/property-check",
-    "source_commit": "9ded0db6a0a90a2e7f093d869519b84b50c1de3d",
+    "source_commit": "be2c0f410a5cd5e38f878d4063b16e328ee77ccf",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/property-check/tree/9ded0db6a0a90a2e7f093d869519b84b50c1de3d"
+    "source_url": "https://github.com/dicnunz/property-check/tree/be2c0f410a5cd5e38f878d4063b16e328ee77ccf"
   },
   {
     "demo": "asyncio",
     "repository": "https://github.com/dicnunz/asyncio-timeouts",
-    "source_commit": "eabca4f4d03cea989058080ab50f6f6e3e032dcf",
+    "source_commit": "bc2096b6caf2a6d501733bc15c3850d3f619e66b",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/asyncio-timeouts/tree/eabca4f4d03cea989058080ab50f6f6e3e032dcf"
+    "source_url": "https://github.com/dicnunz/asyncio-timeouts/tree/bc2096b6caf2a6d501733bc15c3850d3f619e66b"
   },
   {
     "demo": "crumby",
     "repository": "https://github.com/dicnunz/crumby-coloring",
-    "source_commit": "0cfa73e7224a9f4ebaa057c2ca7869f5e636af5f",
+    "source_commit": "e3bc770d573e6bccfaaccc4f23f727b7f99a8abc",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/crumby-coloring/tree/0cfa73e7224a9f4ebaa057c2ca7869f5e636af5f"
+    "source_url": "https://github.com/dicnunz/crumby-coloring/tree/e3bc770d573e6bccfaaccc4f23f727b7f99a8abc"
   },
   {
     "demo": "mission-control",
     "repository": "https://github.com/dicnunz/codex-sessions",
-    "source_commit": "d627b788fc7ac793a5f3e0d70e858e9d13683fd8",
+    "source_commit": "21bf71c2e712fefbd73d3809f80eb931445e1a8d",
     "kind": "saved example report",
-    "source_url": "https://github.com/dicnunz/codex-sessions/tree/d627b788fc7ac793a5f3e0d70e858e9d13683fd8",
+    "source_url": "https://github.com/dicnunz/codex-sessions/tree/21bf71c2e712fefbd73d3809f80eb931445e1a8d",
     "presentation_changes": "Synthetic example workspace; rounded lease durations refer to the recorded snapshot time."
   },
   {
     "demo": "golden-record",
     "repository": "https://github.com/dicnunz/golden-record",
-    "source_commit": "927c39f657c1d4e85337385f77b567aae7557fbd",
-    "source_url": "https://github.com/dicnunz/golden-record/tree/927c39f657c1d4e85337385f77b567aae7557fbd/web",
+    "source_commit": "55f0a55db3369542482c085f3803283d051f5eb4",
+    "source_url": "https://github.com/dicnunz/golden-record/tree/55f0a55db3369542482c085f3803283d051f5eb4/web",
     "kind": "recorded results inspector"
   },
   {
     "demo": "eht-imaging",
     "repository": "https://github.com/dicnunz/eht-imaging",
-    "source_commit": "c9941b4c0cf143866ed3fec7075fe0da94d659dc",
-    "source_url": "https://github.com/dicnunz/eht-imaging/tree/c9941b4c0cf143866ed3fec7075fe0da94d659dc/web",
+    "source_commit": "794db7b803398bb6f416f56e62e30a9ac412146b",
+    "source_url": "https://github.com/dicnunz/eht-imaging/tree/794db7b803398bb6f416f56e62e30a9ac412146b/web",
     "kind": "recorded results inspector"
   },
   {
     "demo": "mars-stereo",
     "repository": "https://github.com/dicnunz/mars-stereo",
-    "source_commit": "012c47369c129595c80358843f6143d000eb03c7",
-    "source_url": "https://github.com/dicnunz/mars-stereo/tree/012c47369c129595c80358843f6143d000eb03c7/web",
+    "source_commit": "c71022508062a13272817386ad44193c25b98c70",
+    "source_url": "https://github.com/dicnunz/mars-stereo/tree/c71022508062a13272817386ad44193c25b98c70/web",
     "kind": "recorded results inspector"
   },
   {
     "demo": "apollo-guidance",
     "repository": "https://github.com/dicnunz/apollo-guidance",
-    "source_commit": "ed26e2504990357a759dfc549d30534ec5de093b",
-    "source_url": "https://github.com/dicnunz/apollo-guidance/tree/ed26e2504990357a759dfc549d30534ec5de093b/web",
+    "source_commit": "266479191614297beb8a660f4f69518524db4194",
+    "source_url": "https://github.com/dicnunz/apollo-guidance/tree/266479191614297beb8a660f4f69518524db4194/web",
     "kind": "recorded results inspector"
   },
   {
     "demo": "quartet-recovery",
     "repository": "https://github.com/dicnunz/quartet-recovery",
-    "source_commit": "952ed78e3ea47ee6dcca4c9192a3158f91502a90",
-    "source_url": "https://github.com/dicnunz/quartet-recovery/tree/952ed78e3ea47ee6dcca4c9192a3158f91502a90/web",
+    "source_commit": "0514e6a72423e891a1d8b5d0c2d15f523c5b5d7a",
+    "source_url": "https://github.com/dicnunz/quartet-recovery/tree/0514e6a72423e891a1d8b5d0c2d15f523c5b5d7a/web",
     "kind": "recorded results inspector"
   },
   {
     "demo": "vehicle-physics",
     "repository": "https://github.com/dicnunz/vehicle-physics",
-    "source_commit": "53581de2ce4e87c3ca57a3735981cccd740a6ed0",
-    "source_url": "https://github.com/dicnunz/vehicle-physics/tree/53581de2ce4e87c3ca57a3735981cccd740a6ed0/web",
+    "source_commit": "d61a6650741aab08d495a5ed002d7b0e97b288a7",
+    "source_url": "https://github.com/dicnunz/vehicle-physics/tree/d61a6650741aab08d495a5ed002d7b0e97b288a7/web",
     "kind": "recorded results inspector"
   },
   {
     "demo": "hidden-leaf",
     "repository": "https://github.com/dicnunz/hidden-leaf",
-    "source_commit": "d27b8913f71e1d4857d230797a0ba6a62d7b73bc",
-    "source_url": "https://github.com/dicnunz/hidden-leaf/tree/d27b8913f71e1d4857d230797a0ba6a62d7b73bc/web",
+    "source_commit": "b87fbd817824725cb203af4ed4c5b561040720a9",
+    "source_url": "https://github.com/dicnunz/hidden-leaf/tree/b87fbd817824725cb203af4ed4c5b561040720a9/web",
     "kind": "native app screenshots"
   }
 ]

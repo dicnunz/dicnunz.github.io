@@ -305,7 +305,7 @@ const pages = [
   { name: "counterexample", route: "/demos/counterexample/", heading: "Chunk preserves all values", run: counterexample },
   { name: "pixelmelt", route: "/demos/pixelmelt/", heading: "Strata", run: pixelmelt },
   { name: "mission-control", route: "/demos/mission-control/", heading: "Codex Sessions", run: mission },
-  { name: "crumby", route: "/demos/crumby/", heading: "A coloring you can inspect.", run: crumby },
+  { name: "crumby", route: "/demos/crumby/", heading: "Crumby coloring", run: crumby },
   { name: "asyncio", route: "/demos/asyncio/", heading: "The awaiter stops. The worker keeps going.", run: asyncio },
 ];
 

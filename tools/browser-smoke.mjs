@@ -101,6 +101,8 @@ async function imagesLoad(page) {
 }
 
 async function homepage(page) {
+  await page.getByRole("link", { name: "Skip to content", exact: true }).press("Enter");
+  assert.equal(await page.evaluate(() => document.activeElement.id), "content", "Skip link must move keyboard focus to main content");
   for (const [label, demo, repository] of projects) {
     const links = await page.getByRole("navigation", { name: label, exact: true }).getByRole("link").evaluateAll((elements) => elements.map((element) => element.getAttribute("href")));
     assert.deepEqual(links, [demo, `https://github.com/dicnunz/${repository}`], `${label} must link to its demo and source`);

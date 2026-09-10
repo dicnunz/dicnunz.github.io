@@ -5,13 +5,12 @@ Source for [dicnunz.github.io](https://dicnunz.github.io/). Plain HTML and CSS w
 ## Preview and check
 
 ```sh
-python3 -m http.server 8000
 npm ci
 npm run check
 npm run test:browser
 ```
 
-Open http://localhost:8000. Browser tests require Playwright Chromium (`npx playwright install chromium`). They check desktop and mobile layouts, image loading, navigation, and demo interactions.
+For a local preview, run `python3 -m http.server 8000` and open http://localhost:8000. Browser tests require Playwright Chromium (`npx playwright install chromium`). They check desktop and mobile layouts, image loading, navigation, and demo interactions.
 
 ## Content
 

@@ -35,6 +35,7 @@
       <div>
         <h1>Nicholas Dunzelman</h1>
         <p>Computer science student at Florida Tech.<br>Community Lead at <a href="https://www.krea.ai/">Krea</a>.</p>
+        <p>I build developer tools, simulations, and software for inspecting real data.</p>
         <nav aria-label="Profiles"><a href="https://github.com/dicnunz" rel="me">GitHub</a><a href="https://www.linkedin.com/in/nicdunz/" rel="me">LinkedIn</a><a href="https://x.com/nicdunz" rel="me">X</a></nav>
       </div>
       <img class="portrait" src="/nicholas-dunzelman.jpg" width="400" height="400" alt="Portrait of Nicholas Dunzelman">
@@ -45,7 +46,11 @@
         <ol class="projects">
           <li class="project">
             <a class="preview" href="/demos/boundary-atlas/" aria-label="Explore Import Graph"><img src="/previews/import-graph.png" width="1144" height="928" alt="Import Graph showing module dependencies and structural findings"></a>
-            <div><h3>Import Graph</h3><p>Static dependency analysis for JavaScript and TypeScript. Finds cycles, checks configured boundaries, and compares findings between Git revisions.</p><p class="result">The sample report traces nine modules and ten imports. Select a finding to isolate its dependencies.</p><nav aria-label="Import Graph links"><a href="/demos/boundary-atlas/">Demo</a><a href="https://github.com/dicnunz/import-graph">Code &amp; method</a></nav></div>
+            <div><h3>Import Graph</h3><p>Static dependency analysis for JavaScript and TypeScript. Finds cycles, checks configured boundaries, and compares findings between Git revisions.</p><p class="result">Analyze your repository locally or explore the sample dependency graph.</p><nav aria-label="Import Graph links"><a href="/demos/boundary-atlas/">Demo</a><a href="https://github.com/dicnunz/import-graph">Code &amp; method</a></nav></div>
+          </li>
+          <li class="project">
+            <a class="preview" href="/demos/counterexample/" aria-label="Inspect a Property Check counterexample"><img src="/previews/property-check.jpg" width="1654" height="969" alt="Property Check showing a failing input, shrink trace, and replay command" loading="lazy"></a>
+            <div><h3>Property Check</h3><p>Find and shrink failing inputs for JavaScript and TypeScript functions. Inspect counterexamples and replay failures locally.</p><p class="result">Six buggy/fixed example pairs. The demo shows a saved run; the local app executes your properties.</p><nav aria-label="Property Check links"><a href="/demos/counterexample/">Saved report</a><a href="https://github.com/dicnunz/property-check">Code &amp; setup</a></nav></div>
           </li>
           <li class="project">
             <a class="preview" href="/demos/mars-stereo/" aria-label="Inspect the Mars Stereo reconstruction"><img src="/previews/mars-stereo.png" width="1920" height="1080" alt="Spirit Navcam stereo observations and the reconstructed terrain" loading="lazy"></a>
@@ -53,15 +58,11 @@
           </li>
           <li class="project">
             <a class="preview" href="/demos/crumby/" aria-label="Inspect a Crumby Coloring certificate"><img src="/previews/crumby-coloring.png" width="1144" height="928" alt="Graph vertices colored to check the crumby-coloring constraints" loading="lazy"></a>
-            <div><h3>Crumby Coloring</h3><p>Exhaustive graph enumeration with independently checkable coloring certificates.</p><p class="result">The viewer checks one certificate. Recolor a vertex to see which constraints fail. The repository contains the full computation and credits.</p><nav aria-label="Crumby Coloring links"><a href="/demos/crumby/">Demo</a><a href="https://github.com/dicnunz/crumby-coloring">Code &amp; method</a></nav></div>
+            <div><h3>Crumby Coloring</h3><p>Exhaustive graph enumeration with independently checkable coloring certificates.</p><p class="result">Inspect and recolor a certificate, or verify the released enumeration independently.</p><nav aria-label="Crumby Coloring links"><a href="/demos/crumby/">Demo</a><a href="https://github.com/dicnunz/crumby-coloring">Code &amp; method</a></nav></div>
           </li>
           <li class="project">
             <a class="preview" href="/demos/vehicle-physics/" aria-label="Inspect Vehicle Physics telemetry"><img src="/previews/vehicle-physics.png" width="1440" height="900" alt="Vehicle Physics sedan on the suspension and crash test course" loading="lazy"></a>
             <div><h3>Vehicle Physics</h3><p>A Godot driving sandbox with custom suspension, tire forces, and deformable bodywork.</p><p class="result">Scripted scenarios export telemetry. The model is a game-physics approximation, unvalidated against real vehicle data.</p><nav aria-label="Vehicle Physics links"><a href="/demos/vehicle-physics/">Recorded test</a><a href="https://github.com/dicnunz/vehicle-physics">Code &amp; method</a></nav></div>
-          </li>
-          <li class="project">
-            <a class="preview" href="/demos/golden-record/" aria-label="Inspect Golden Record image recovery"><img src="/previews/golden-record.png" width="1920" height="1080" alt="Calibration raster recovered from a Golden Record preservation recording" loading="lazy"></a>
-            <div><h3>Golden Record</h3><p>Voyager's analog picture signal decoded into 156 grayscale raster planes.</p><p class="result">Recovered from a community preservation recording. Analog artifacts remain, and color-channel assembly is incomplete.</p><nav aria-label="Golden Record links"><a href="/demos/golden-record/">Explore</a><a href="https://github.com/dicnunz/golden-record">Code &amp; method</a></nav></div>
           </li>
           <li class="project">
             <a class="preview" href="/demos/mission-control/" aria-label="Inspect the Codex Sessions example dashboard"><img src="/previews/codex-sessions.png" width="1144" height="928" alt="Codex Sessions example dashboard with local projects and cooperative locks" loading="lazy"></a>

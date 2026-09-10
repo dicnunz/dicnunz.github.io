@@ -23,7 +23,7 @@ const projects = [
   ["Mars Stereo links", "/demos/mars-stereo/", "mars-stereo"],
   ["Crumby Coloring links", "/demos/crumby/", "crumby-coloring"],
   ["Vehicle Physics links", "/demos/vehicle-physics/", "vehicle-physics"],
-  ["Golden Record links", "/demos/golden-record/", "golden-record"],
+  ["Property Check links", "/demos/counterexample/", "property-check"],
   ["Codex Sessions links", "/demos/mission-control/", "codex-sessions"],
 ];
 const mime = {

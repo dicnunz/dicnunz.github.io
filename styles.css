@@ -11,7 +11,7 @@ a:hover{color:var(--ink)}
 .intro{display:flex;justify-content:space-between;gap:24px;padding:54px 0 38px;align-items:flex-start}
 h1{font-size:32px;line-height:1.2;font-weight:550;letter-spacing:-.035em;margin:0 0 12px}
 .intro p{margin:0 0 14px;color:var(--muted)}
-.portrait{width:76px;height:92px;object-fit:cover;filter:grayscale(1);margin-top:4px}
+.portrait{width:76px;height:76px;object-fit:cover;margin-top:4px}
 nav{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px}
 h2{font-size:14px;font-weight:600;margin:0;padding:18px 0 8px;border-top:1px solid var(--line)}
 .projects{list-style:none;padding:0;margin:0}
@@ -28,5 +28,5 @@ p{margin:0 0 10px}
 .contributions ul{padding:0;margin:12px 0 30px;list-style:none;font-size:14px}
 .contributions li{margin:8px 0}
 footer{border-top:1px solid var(--line);padding:20px 0 36px;display:flex;gap:24px;font-size:12px}
-@media(max-width:650px){.wrap{width:calc(100% - 36px)}.intro{padding:32px 0 28px;gap:16px}h1{font-size:27px}.intro p{font-size:14px}.portrait{width:52px;height:64px}.project{grid-template-columns:1fr;gap:20px;padding:22px 0 28px}.preview img{aspect-ratio:1.6}h3{font-size:23px}.project p{font-size:15px}.project .result{font-size:14px}}
+@media(max-width:650px){.wrap{width:calc(100% - 36px)}.intro{padding:32px 0 28px;gap:16px}h1{font-size:27px}.intro p{font-size:14px}.portrait{width:52px;height:52px}.project{grid-template-columns:1fr;gap:20px;padding:22px 0 28px}.preview img{aspect-ratio:1.6}h3{font-size:23px}.project p{font-size:15px}.project .result{font-size:14px}}
 @media(max-width:370px){.portrait{display:none}}

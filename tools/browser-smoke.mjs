@@ -18,14 +18,6 @@ const viewports = [
   { name: "desktop", viewport: { width: 1440, height: 1000 }, isMobile: false, hasTouch: false },
   { name: "mobile", viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true },
 ];
-const projects = [
-  ["Import Graph links", "/demos/boundary-atlas/", "import-graph"],
-  ["Mars Stereo links", "/demos/mars-stereo/", "mars-stereo"],
-  ["Crumby Coloring links", "/demos/crumby/", "crumby-coloring"],
-  ["Vehicle Physics links", "/demos/vehicle-physics/", "vehicle-physics"],
-  ["Property Check links", "/demos/counterexample/", "property-check"],
-  ["Codex Sessions links", "/demos/mission-control/", "codex-sessions"],
-];
 const mime = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8", ".json": "application/json; charset=utf-8",
@@ -103,11 +95,9 @@ async function imagesLoad(page) {
 async function homepage(page) {
   await page.getByRole("link", { name: "Skip to content", exact: true }).press("Enter");
   assert.equal(await page.evaluate(() => document.activeElement.id), "content", "Skip link must move keyboard focus to main content");
-  for (const [label, demo, repository] of projects) {
-    const links = await page.getByRole("navigation", { name: label, exact: true }).getByRole("link").evaluateAll((elements) => elements.map((element) => element.getAttribute("href")));
-    assert.deepEqual(links, [demo, `https://github.com/dicnunz/${repository}`], `${label} must link to its demo and source`);
-  }
-  await countEquals(page.locator(".projects .preview img"), 6);
+  const links = await page.getByRole("navigation", { name: "Profiles", exact: true }).getByRole("link").evaluateAll((elements) => elements.map((element) => element.getAttribute("href")));
+  assert.deepEqual(links, ["https://x.com/nicdunz", "https://www.linkedin.com/in/nicdunz/"]);
+  await countEquals(page.locator(".projects"), 0);
   await countEquals(page.locator("img.portrait"), 1);
 }
 
